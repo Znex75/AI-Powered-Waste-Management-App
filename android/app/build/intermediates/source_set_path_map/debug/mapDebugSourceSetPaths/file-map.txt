@@ -1,0 +1,39 @@
+com.ecocycle.wastemanagement.app-coordinatorlayout-1.0.0-0 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\0c88ab3ead88f1c771001bd1c9d91595\transformed\coordinatorlayout-1.0.0\res
+com.ecocycle.wastemanagement.app-jetified-credentials-play-services-auth-1.2.0-rc01-1 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\10dd21f2b67845db793b55f96b673d71\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\res
+com.ecocycle.wastemanagement.app-lifecycle-livedata-core-2.5.1-2 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\1334f55afc75a550fbc1318601645e82\transformed\lifecycle-livedata-core-2.5.1\res
+com.ecocycle.wastemanagement.app-jetified-core-common-2.0.3-3 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\1bd3c6269d9eb4e533de62087869e6b6\transformed\jetified-core-common-2.0.3\res
+com.ecocycle.wastemanagement.app-lifecycle-viewmodel-2.5.1-4 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\25c4e9aa23f5c0ec571e92351f57759e\transformed\lifecycle-viewmodel-2.5.1\res
+com.ecocycle.wastemanagement.app-jetified-play-services-basement-18.9.0-5 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\2845225a3356bf975a22a7ddc63df26a\transformed\jetified-play-services-basement-18.9.0\res
+com.ecocycle.wastemanagement.app-cardview-1.0.0-6 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\2b41441b7e4748ec6a919b52ece3dd46\transformed\cardview-1.0.0\res
+com.ecocycle.wastemanagement.app-jetified-core-ktx-1.9.0-7 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\3bdca3eaf0e190d4ae8c3b5591f29701\transformed\jetified-core-ktx-1.9.0\res
+com.ecocycle.wastemanagement.app-jetified-appcompat-resources-1.1.0-8 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\3cd0a3f2cd51ddd652881519ade83be6\transformed\jetified-appcompat-resources-1.1.0\res
+com.ecocycle.wastemanagement.app-jetified-ads-adservices-1.1.0-beta11-9 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\3f4f9ff043625563bd27467828ab8a7a\transformed\jetified-ads-adservices-1.1.0-beta11\res
+com.ecocycle.wastemanagement.app-jetified-play-services-auth-21.0.0-10 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\55fd587c620e28beedb1007d34acbecf\transformed\jetified-play-services-auth-21.0.0\res
+com.ecocycle.wastemanagement.app-jetified-play-services-base-18.5.0-11 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\5a6b11d8e0270ebf656ddf4013c52791\transformed\jetified-play-services-base-18.5.0\res
+com.ecocycle.wastemanagement.app-media-1.0.0-12 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\6a8bf4bd9d8b614ab91c0187964937ff\transformed\media-1.0.0\res
+com.ecocycle.wastemanagement.app-jetified-firebase-common-22.0.1-13 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\86f02e21bee080a3566efb4849d57520\transformed\jetified-firebase-common-22.0.1\res
+com.ecocycle.wastemanagement.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-14 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\894b8af2f843a35c631feb41118d984a\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.ecocycle.wastemanagement.app-jetified-facebook-common-16.3.0-15 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\93980c5b4a9bcf806fb5fd01252eb2b3\transformed\jetified-facebook-common-16.3.0\res
+com.ecocycle.wastemanagement.app-jetified-datastore-release-16 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\9bb855a489b956300b1740ece238cf23\transformed\jetified-datastore-release\res
+com.ecocycle.wastemanagement.app-jetified-savedstate-1.2.0-17 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\9e29ca353fde9063772097adbc79d16a\transformed\jetified-savedstate-1.2.0\res
+com.ecocycle.wastemanagement.app-jetified-facebook-login-16.3.0-18 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\ac6dc6ff4f7d62e81de3ee6b8e7c9fd2\transformed\jetified-facebook-login-16.3.0\res
+com.ecocycle.wastemanagement.app-core-1.9.0-19 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\b0d248aac242911131c12051308c0608\transformed\core-1.9.0\res
+com.ecocycle.wastemanagement.app-jetified-datastore-preferences-core-release-20 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\b23a887935e8a44d1da834b15fe53c3d\transformed\jetified-datastore-preferences-core-release\res
+com.ecocycle.wastemanagement.app-jetified-ads-adservices-java-1.1.0-beta11-21 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\bc7df64aeec32b39816a0a4b54a0e401\transformed\jetified-ads-adservices-java-1.1.0-beta11\res
+com.ecocycle.wastemanagement.app-jetified-datastore-preferences-release-22 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\c0d0c26fb968147803fb8d4b82aecdab\transformed\jetified-datastore-preferences-release\res
+com.ecocycle.wastemanagement.app-lifecycle-runtime-2.5.1-23 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\cb605bbbb7778d6b2de2cb929beea5a6\transformed\lifecycle-runtime-2.5.1\res
+com.ecocycle.wastemanagement.app-jetified-credentials-1.2.0-rc01-24 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\dac1adbd80eb39f5cf56a0edd974a1e7\transformed\jetified-credentials-1.2.0-rc01\res
+com.ecocycle.wastemanagement.app-appcompat-1.1.0-25 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\e466248864f470cfab76659ade8df0b0\transformed\appcompat-1.1.0\res
+com.ecocycle.wastemanagement.app-jetified-datastore-core-release-26 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\e5e3007bb6c9509b4b1565fdb40b1d0b\transformed\jetified-datastore-core-release\res
+com.ecocycle.wastemanagement.app-fragment-1.5.7-27 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\e9988ed90fafe65ba43068f488fd985c\transformed\fragment-1.5.7\res
+com.ecocycle.wastemanagement.app-jetified-activity-1.5.1-28 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\f40463b89bb59a0b55210e8778efae44\transformed\jetified-activity-1.5.1\res
+com.ecocycle.wastemanagement.app-jetified-annotation-experimental-1.3.0-29 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\f602ea694242b9beab20d7b01e87c737\transformed\jetified-annotation-experimental-1.3.0\res
+com.ecocycle.wastemanagement.app-browser-1.4.0-30 C:\Users\sundi\.gradle\caches\9.0-milestone-1\transforms\ff852bb63dff0c6a5caafc0b3a370777\transformed\browser-1.4.0\res
+com.ecocycle.wastemanagement.app-pngs-31 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\build\generated\res\pngs\debug
+com.ecocycle.wastemanagement.app-res-32 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\build\generated\res\processDebugGoogleServices
+com.ecocycle.wastemanagement.app-resValues-33 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\build\generated\res\resValues\debug
+com.ecocycle.wastemanagement.app-packageDebugResources-34 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.ecocycle.wastemanagement.app-packageDebugResources-35 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.ecocycle.wastemanagement.app-debug-36 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.ecocycle.wastemanagement.app-debug-37 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\debug\res
+com.ecocycle.wastemanagement.app-main-38 C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\res

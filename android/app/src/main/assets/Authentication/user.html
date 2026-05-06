@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .bg-mesh {
+      background-color: #f7f9fb;
+      background-image: radial-gradient(at 0% 0%, rgba(45, 212, 191, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 107, 95, 0.05) 0px, transparent 50%);
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-background": "#191c1e",
+            "tertiary-container": "#91c8c2",
+            "secondary": "#006e2f",
+            "on-secondary-fixed": "#002109",
+            "on-primary-fixed-variant": "#005047",
+            "tertiary": "#316763",
+            "on-surface": "#191c1e",
+            "error-container": "#ffdad6",
+            "surface": "#f7f9fb",
+            "surface-bright": "#f7f9fb",
+            "surface-container": "#eceef0",
+            "surface-container-high": "#e6e8ea",
+            "outline": "#6b7a76",
+            "inverse-surface": "#2d3133",
+            "on-primary-container": "#00574d",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#6bff8f",
+            "surface-tint": "#006b5f",
+            "secondary-fixed-dim": "#4ae176",
+            "on-tertiary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "primary": "#006b5f",
+            "surface-container-highest": "#e0e3e5",
+            "secondary-container": "#6bff8f",
+            "primary-container": "#2dd4bf",
+            "on-error": "#ffffff",
+            "outline-variant": "#bacac5",
+            "on-tertiary-fixed": "#00201e",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "surface-container-low": "#f2f4f6",
+            "on-tertiary-fixed-variant": "#144f4b",
+            "tertiary-fixed": "#b5ede7",
+            "on-surface-variant": "#3c4a46",
+            "on-primary-fixed": "#00201c",
+            "surface-dim": "#d8dadc",
+            "on-secondary-container": "#007432",
+            "surface-variant": "#e0e3e5",
+            "inverse-primary": "#3cddc7",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#9ad1cb",
+            "on-tertiary-container": "#1c5551",
+            "on-secondary-fixed-variant": "#005321",
+            "background": "#f7f9fb",
+            "primary-fixed-dim": "#3cddc7",
+            "primary-fixed": "#62fae3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "12px",
+            "xl": "64px",
+            "xs": "4px",
+            "md": "24px",
+            "gutter": "16px",
+            "lg": "40px",
+            "margin": "20px",
+            "base": "8px"
+          },
+          "fontFamily": {
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    .mobile-top-bar {
+      height: 72px;
+      padding: 10px 20px;
+    }
+
+    .mobile-bottom-nav {
+      min-height: 76px;
+      padding: 8px 16px 12px;
+    }
+
+    .mobile-bottom-nav a {
+      min-width: 64px;
+    }
+
+    @media (max-width: 380px) {
+      .mobile-bottom-nav {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .mobile-bottom-nav a {
+        min-width: 56px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-mesh font-body-md text-on-background selection:bg-primary-container">
+  <!-- TopAppBar Shell -->
+  <header
+    class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex items-center justify-between bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-100 dark:border-slate-800">
+    <div class="flex items-center gap-3">
+      <a href="../dashboard.html"
+        class="flex items-center justify-center p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+        <span
+          class="material-symbols-outlined text-on-surface-variant active:scale-95 transition-transform duration-200">arrow_back</span>
+      </a>
+      <h1 class="text-2xl font-extrabold tracking-normal text-teal-600 dark:text-teal-400 font-['Plus_Jakarta_Sans']">
+        EcoCycle</h1>
+    </div>
+    <div
+      class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-container shadow-sm active:scale-95 transition-transform duration-200">
+      <img alt="User Profile" class="w-full h-full object-cover"
+        data-alt="Close-up portrait of a professional woman with a friendly smile, natural daylight, soft focus urban background, high quality photography"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6LHAluj_vZyu7jogBDIagcEyzwCgyAHyhM5pNFMjEI_DKM_audKLIMkE9Mc74ZlgBMCkNjebzNb9dno44h8p7t3GVrwZhDLCX5003GMjYsRD7CfBuHRefG6lrQDiiOlCJIGtZi1oIr6G6SBZ2GMc-ATY3EiTMWrYfplmX1iLHyWlPHBFA7DYrjNW16cJ6jD7nFWrnBk2tHphYpZx4_Q9svnYgMMmx_a-gfUHqqnOZcmwM39Ap2yY_lxHfxGHIxXRm0-hjSFvbMLvH" />
+    </div>
+  </header>
+  <main class="pt-28 pb-36 px-4 max-w-2xl mx-auto space-y-md">
+    <!-- Profile Overview Section -->
+    <section class="flex flex-col items-center text-center space-y-sm">
+      <div class="relative group">
+  <div class="h-28 w-28 rounded-full overflow-hidden border-4 border-white shadow-xl">
+    <img id="avatar-img"
+      class="w-full h-full object-cover"
+      src="https://via.placeholder.com/150" />
+  </div>
+
+  <!-- Hidden file input -->
+  <input type="file" id="avatar-input" accept="image/*" hidden onchange="uploadAvatar(event)" />
+
+  <!-- Edit button -->
+  <button onclick="document.getElementById('avatar-input').click()"
+    class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:scale-105 transition-transform">
+    <span class="material-symbols-outlined text-[20px]">edit</span>
+  </button>
+</div>
+      <div>
+        <h2 id="username" class="font-headline-md text-headline-md text-on-surface">Loading...</h2>
+        <p id="useremail" class="font-body-md text-body-md text-on-surface-variant">Please wait...</p>
+      </div>
+      <!-- Sustainability Stats - Bento Style -->
+      <div class="grid grid-cols-2 gap-sm w-full pt-md">
+        <div
+          class="bg-white p-sm rounded-xl shadow-sm border-l-4 border-primary flex flex-col items-center justify-center">
+          <span id="xp-points" class="text-primary font-bold text-headline-md">...</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">EcoPoints</span>
+        </div>
+        <div
+          class="bg-white p-sm rounded-xl shadow-sm border-l-4 border-secondary flex flex-col items-center justify-center">
+          <span id="co2-saved" class="text-secondary font-bold text-headline-md">...</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">CO2 Saved</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-sm w-full pt-md">
+        <div
+          class="bg-white p-sm rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center">
+          <span id="scan-credits" class="text-primary font-bold text-headline-md">...</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Scan Credits</span>
+        </div>
+        <div
+          class="bg-white p-sm rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center">
+          <span id="market-credits" class="text-secondary font-bold text-headline-md">...</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Market Credits</span>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-sm pt-md">
+        <button onclick="buyCredits('scan')" class="bg-primary text-white px-5 py-3 rounded-2xl text-sm font-semibold hover:bg-teal-700 transition">Buy Scan Credits</button>
+        <button onclick="buyCredits('market')" class="border border-primary text-primary px-5 py-3 rounded-2xl text-sm font-semibold hover:bg-primary/10 transition">Buy Market Credits</button>
+      </div>
+    </section>
+    <!-- Settings Groups -->
+    <div class="space-y-sm">
+      <!-- Account Settings Group -->
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
+        <div class="p-sm px-md border-b border-slate-50">
+          <h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">Account Settings</h3>
+        </div>
+        <div class="divide-y divide-slate-50">
+          <button class="w-full flex items-center justify-between p-md hover:bg-slate-50 transition-colors group">
+            <div class="flex items-center gap-md">
+              <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">person</span>
+              <span class="font-body-md text-body-md">Personal Information</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+          </button>
+          <button class="w-full flex items-center justify-between p-md hover:bg-slate-50 transition-colors group">
+            <div class="flex items-center gap-md">
+              <span
+                class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">location_on</span>
+              <span class="font-body-md text-body-md">Address Details</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+          </button>
+        </div>
+      </div>
+      <!-- Notification Preferences -->
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
+        <div class="p-sm px-md border-b border-slate-50">
+          <h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">Notification Preferences</h3>
+        </div>
+        <div class="divide-y divide-slate-50">
+          <div class="flex items-center justify-between p-md">
+            <div class="flex items-center gap-md">
+              <span class="material-symbols-outlined text-on-surface-variant">notifications_active</span>
+              <span class="font-body-md text-body-md">Collection Reminders</span>
+            </div>
+            <div class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-md">
+            <div class="flex items-center gap-md">
+              <span class="material-symbols-outlined text-on-surface-variant">campaign</span>
+              <span class="font-body-md text-body-md">Eco Tips &amp; Updates</span>
+            </div>
+            <div class="relative inline-flex items-center cursor-pointer">
+              <input class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Privacy & Security -->
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
+        <div class="p-sm px-md border-b border-slate-50">
+          <h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">Privacy &amp; Security</h3>
+        </div>
+        <div class="divide-y divide-slate-50">
+          <button onclick="openModal('change-password-modal')"
+            class="w-full flex items-center justify-between p-md hover:bg-slate-50 transition-colors group">
+            <div class="flex items-center gap-md">
+              <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">lock</span>
+              <span class="font-body-md text-body-md">Change Password</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+          </button>
+          <button onclick="openChangeEmail()"
+            class="w-full flex items-center justify-between p-md hover:bg-slate-50 transition-colors group">
+            <div class="flex items-center gap-md">
+              <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">mail</span>
+              <span class="font-body-md text-body-md">Change Email Address</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+          </button>
+        </div>
+      </div>
+      <!-- Help & Support -->
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-slate-100">
+        <div class="p-sm px-md border-b border-slate-50">
+          <h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">Help &amp; Support</h3>
+        </div>
+        <div class="divide-y divide-slate-50">
+          <button class="w-full flex items-center justify-between p-md hover:bg-slate-50 transition-colors group">
+            <div class="flex items-center gap-md">
+              <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">help</span>
+              <span class="font-body-md text-body-md">FAQ</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+          </button>
+          <button class="w-full flex items-center justify-between p-md hover:bg-slate-50 transition-colors group">
+            <div class="flex items-center gap-md">
+              <span
+                class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">chat_bubble</span>
+              <span class="font-body-md text-body-md">Contact Support</span>
+            </div>
+            <span class="material-symbols-outlined text-slate-300">chevron_right</span>
+          </button>
+        </div>
+      </div>
+      <!-- Log Out Action -->
+      <button onclick="logout()"
+        class="w-full mt-lg py-md flex items-center justify-center gap-sm bg-white text-error border border-error/10 rounded-xl shadow-sm active:scale-[0.98] transition-all hover:bg-error-container/20">
+        <span class="material-symbols-outlined">logout</span>
+        <span class="font-label-md text-label-md">Log Out</span>
+      </button>
+      <p class="text-center font-label-sm text-label-sm text-on-surface-variant/40 pt-md">
+        EcoCycle v2.4.1 — Building a greener future together.
+      </p>
+    </div>
+  </main>
+  <!-- BottomNavBar Shell -->
+  <nav class="mobile-bottom-nav fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(45,212,191,0.08)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out"  href="../dashboard.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="../scan.html">
+<span class="material-symbols-outlined mb-1">center_focus_weak</span>
+<span class="font-plus-jakarta text-[11px] font-medium">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="../marketPlace.html">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Market</span>
+</a>
+    <!-- ACTIVE STATE: Account -->
+    <button
+      class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 rounded-xl px-3 py-1 active:scale-90 transition-all duration-200 ease-out">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+      <span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Account</span>
+    </button>
+  </nav>
+
+  <!-- ===== MODALS ===== -->
+  <!-- Modal Backdrop -->
+  <div id="modal-backdrop" onclick="closeAllModals()" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40">
+  </div>
+
+  <!-- Change Password Modal -->
+  <div id="change-password-modal"
+    class="hidden fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white rounded-t-3xl z-50 p-6 shadow-2xl">
+    <div class="w-10 h-1 bg-slate-200 rounded-full mx-auto mb-6"></div>
+    <h3 class="font-bold text-lg mb-1">Change Password</h3>
+    <p class="text-sm text-slate-500 mb-5">You'll be asked to re-enter your current password first.</p>
+    <div class="space-y-3">
+      <input id="cp-current" type="password" placeholder="Current password"
+        class="w-full bg-slate-50 rounded-xl px-4 h-12 text-sm outline-none focus:ring-2 focus:ring-teal-400" />
+      <input id="cp-new" type="password" placeholder="New password (min 8 chars)"
+        class="w-full bg-slate-50 rounded-xl px-4 h-12 text-sm outline-none focus:ring-2 focus:ring-teal-400" />
+      <input id="cp-confirm" type="password" placeholder="Confirm new password"
+        class="w-full bg-slate-50 rounded-xl px-4 h-12 text-sm outline-none focus:ring-2 focus:ring-teal-400" />
+      <button onclick="changePassword()"
+        class="w-full bg-[#006b5f] text-white h-12 rounded-xl font-semibold text-sm hover:bg-[#005047] transition-all">Update
+        Password</button>
+      <p id="cp-msg" class="text-sm text-center"></p>
+    </div>
+  </div>
+
+  <!-- Change Email Modal -->
+  <div id="change-email-modal"
+    class="hidden fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white rounded-t-3xl z-50 p-6 shadow-2xl">
+    <div class="w-10 h-1 bg-slate-200 rounded-full mx-auto mb-6"></div>
+    <h3 class="font-bold text-lg mb-1">Change Email Address</h3>
+    <p class="text-sm text-slate-500 mb-5">A confirmation link will be sent to both your old and new email addresses.
+    </p>
+    <div class="space-y-3">
+      <input id="ce-current-pass" type="password" placeholder="Confirm your current password"
+        class="w-full bg-slate-50 rounded-xl px-4 h-12 text-sm outline-none focus:ring-2 focus:ring-teal-400" />
+      <input id="ce-new-email" type="email" placeholder="New email address"
+        class="w-full bg-slate-50 rounded-xl px-4 h-12 text-sm outline-none focus:ring-2 focus:ring-teal-400" />
+      <button onclick="changeEmail()"
+        class="w-full bg-[#006b5f] text-white h-12 rounded-xl font-semibold text-sm hover:bg-[#005047] transition-all">Send
+        Confirmation</button>
+      <p id="ce-msg" class="text-sm text-center"></p>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<script>
+const supabase = window.supabase.createClient(
+  "https://eupolobairqsuzjnihkc.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+);
+const apiBase = window.ECOCYCLE_API_BASE || "http://10.212.187.163:3000";
+
+// ================= AUTH CHECK =================
+async function checkUser() {
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if (!session) {
+    window.location.href = "signIn.html";
+    return;
+  }
+
+  const user = session.user;
+
+  // ✅ ALWAYS SET BASIC DATA FIRST
+  document.getElementById("useremail").innerText = user.email;
+  document.getElementById("username").innerText =
+    user.user_metadata?.name || user.email.split("@")[0];
+
+  // ✅ Try backend (optional)
+  try {
+    const apiBase = window.ECOCYCLE_API_BASE || "http://10.212.187.163:3000";
+    const response = await fetch(`${apiBase}/api/user/profile`, {
+      headers: {
+        Authorization: `Bearer ${session.access_token}`
+      }
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.user) {
+      document.getElementById("username").innerText = data.user.name;
+      document.getElementById("xp-points").innerText = data.user.xpPoints;
+      document.getElementById("co2-saved").innerText = data.user.co2Saved + "kg";
+      document.getElementById("scan-credits").innerText = data.user.scanCredits ?? 0;
+      document.getElementById("market-credits").innerText = data.user.marketCredits ?? 0;
+    }
+  } catch (err) {
+    console.log("Backend not working, using fallback");
+  }
+// ✅ Avatar from metadata (client-side)
+  const avatar = document.getElementById("avatar-img");
+
+if (user.user_metadata?.avatar_url) {
+  avatar.src = user.user_metadata.avatar_url;
+} else {
+  avatar.src = "https://via.placeholder.com/150";
+}
+  
+}
+// ================= LOGOUT =================
+async function logout() {
+  await supabase.auth.signOut();
+  window.location.href = "signIn.html";
+}
+
+// ================= MODALS =================
+function openModal(modalId) {
+  closeAllModals();
+
+  const backdrop = document.getElementById("modal-backdrop");
+  const modal = document.getElementById(modalId);
+
+  if (!modal || !backdrop) return;
+
+  backdrop.classList.remove("hidden");
+  modal.classList.remove("hidden");
+}
+
+function openChangeEmail() {
+  openModal("change-email-modal");
+}
+
+function closeAllModals() {
+  document.getElementById("modal-backdrop")?.classList.add("hidden");
+  document.getElementById("change-password-modal")?.classList.add("hidden");
+  document.getElementById("change-email-modal")?.classList.add("hidden");
+
+  ["cp-msg", "ce-msg"].forEach((id) => {
+    const message = document.getElementById(id);
+    if (message) message.innerText = "";
+  });
+}
+
+// ================= CHANGE PASSWORD =================
+async function changePassword() {
+  const currentPass = document.getElementById('cp-current').value;
+  const newPass = document.getElementById('cp-new').value;
+  const confirmPass = document.getElementById('cp-confirm').value;
+  const msg = document.getElementById('cp-msg');
+
+  if (!currentPass || !newPass || !confirmPass) {
+    msg.innerText = 'All fields required';
+    return;
+  }
+
+  if (newPass !== confirmPass) {
+    msg.innerText = 'Passwords do not match';
+    return;
+  }
+
+  const { data: { user } } = await supabase.auth.getUser();
+
+  // Re-auth
+  const { error: reauthError } = await supabase.auth.signInWithPassword({
+    email: user.email,
+    password: currentPass
+  });
+
+  if (reauthError) {
+    msg.innerText = "Wrong current password";
+    return;
+  }
+
+  const { error } = await supabase.auth.updateUser({
+    password: newPass
+  });
+
+  if (error) {
+    msg.innerText = error.message;
+  } else {
+    msg.innerText = "Password updated!";
+  }
+}
+
+// ================= CHANGE EMAIL =================
+async function changeEmail() {
+  const current = document.getElementById("ce-current-pass").value;
+  const newEmail = document.getElementById("ce-new-email").value;
+  const msg = document.getElementById("ce-msg");
+
+  if (!current || !newEmail) {
+    msg.innerText = "Fill all fields";
+    return;
+  }
+
+  const { data: { user } } = await supabase.auth.getUser();
+
+  const { error: reauthError } = await supabase.auth.signInWithPassword({
+    email: user.email,
+    password: current
+  });
+
+  if (reauthError) {
+    msg.innerText = "Wrong password";
+    return;
+  }
+
+  const { error } = await supabase.auth.updateUser({
+    email: newEmail
+  });
+
+  if (error) {
+    msg.innerText = error.message;
+  } else {
+    msg.innerText = "Check email for confirmation!";
+  }
+}
+
+async function buyCredits(type) {
+  try {
+    const response = await fetch(`${apiBase}/api/user/purchase`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${(await supabase.auth.getSession()).data.session?.access_token}`
+      },
+      body: JSON.stringify({ type, quantity: 5 })
+    });
+
+    const data = await response.json();
+    if (data.paymentUrl) {
+      window.open(data.paymentUrl, '_blank');
+    } else {
+      alert(data.message || 'Unable to start purchase');
+    }
+  } catch (error) {
+    console.error(error);
+    alert('Payment flow failed.');
+  }
+}
+
+// Run on load
+checkUser();
+// ================= AVATAR UPLOAD (METADATA) =================
+async function uploadAvatar(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const { data: { user } } = await supabase.auth.getUser();
+
+  // 🔥 Temporary preview (instant UX)
+  const previewURL = URL.createObjectURL(file);
+  document.getElementById("avatar-img").src = previewURL;
+
+  // ✅ Save to Supabase metadata
+  const { error } = await supabase.auth.updateUser({
+    data: {
+      avatar_url: previewURL
+    }
+  });
+
+  if (error) {
+    alert("Upload failed");
+    console.error(error);
+  }
+}
+</script>
+

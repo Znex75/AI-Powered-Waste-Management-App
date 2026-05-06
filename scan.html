@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#2dd4bf",
+                        "on-tertiary-fixed-variant": "#144f4b",
+                        "primary-fixed-dim": "#3cddc7",
+                        "tertiary-container": "#91c8c2",
+                        "on-background": "#191c1e",
+                        "tertiary": "#316763",
+                        "on-tertiary-container": "#1c5551",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-fixed-variant": "#005321",
+                        "on-secondary-fixed": "#002109",
+                        "inverse-primary": "#3cddc7",
+                        "background": "#f7f9fb",
+                        "secondary-fixed": "#6bff8f",
+                        "surface-container": "#eceef0",
+                        "secondary": "#006e2f",
+                        "surface-bright": "#f7f9fb",
+                        "outline-variant": "#bacac5",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed-dim": "#9ad1cb",
+                        "outline": "#6b7a76",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#007432",
+                        "on-primary-container": "#00574d",
+                        "tertiary-fixed": "#b5ede7",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-fixed-variant": "#005047",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed": "#62fae3",
+                        "surface-tint": "#006b5f",
+                        "on-surface-variant": "#3c4a46",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#4ae176",
+                        "on-surface": "#191c1e",
+                        "on-primary-fixed": "#00201c",
+                        "primary": "#006b5f",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-low": "#f2f4f6",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#6bff8f",
+                        "on-tertiary-fixed": "#00201e",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin": "20px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .scanner-gradient {
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.6) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    .mobile-top-bar {
+      height: 72px;
+      padding: 10px 20px;
+    }
+
+    .mobile-bottom-nav {
+      min-height: 76px;
+      padding: 8px 16px 12px;
+    }
+
+    .mobile-bottom-nav a {
+      min-width: 64px;
+    }
+
+    @media (max-width: 380px) {
+      .mobile-bottom-nav {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .mobile-bottom-nav a {
+        min-width: 56px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-hidden">
+<!-- TopAppBar -->
+<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+<div class="flex items-center gap-3">
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly smiling man in his 30s with short hair, clean studio lighting, soft blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+</div>
+<button class="w-11 h-11 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</header>
+<main class="pt-28 pb-36 px-margin max-w-lg mx-auto">
+<!-- Mock Camera Feed -->
+<div class="absolute inset-0 w-full h-full">
+<video id="camera-feed" class="hidden w-full h-full object-cover opacity-90" autoplay muted playsinline></video>
+<canvas id="capture-canvas" class="hidden"></canvas>
+<img id="camera-fallback" class="w-full h-full object-cover opacity-80" data-alt="a clear plastic water bottle sitting on a clean modern wooden table in a brightly lit eco-friendly apartment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCI2CkRmRabsexq5s2yCcYuRocjSqMecK_1_q1x7_1brJENDviy-nUte7uXupU1U9ubm_wLHunyE9h6z8TWXhR0GuYAn8ihc8nsW4XgztOn8e2WTlc4ooMkHceKjJ93mQLor8j-U3WjzzIL43R2pT2SBFPmnaCn7UUluWiwP-kzbisY08HCbr03-mMnUObCZyCfBgpfme8_23loZOAJfhaW82qz6Lxw0ap2ECmGAZV1OWRwXxWU7z6wE03dHnIEdZcYaoXL-gZOGD8"/>
+<div class="absolute inset-0 scanner-gradient"></div>
+</div>
+<!-- Scanning Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<!-- Bounding Box Around Bottle -->
+<div class="relative w-64 h-80 border-2 border-primary-container rounded-3xl shadow-[0_0_40px_rgba(45,212,191,0.3)]">
+<!-- Corner Accents -->
+<div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
+<div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
+<div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
+<!-- Analyzing Indicator -->
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10">
+<div class="relative w-5 h-5">
+<svg class="w-full h-full animate-spin text-primary-container" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+</div>
+<span id="scan-status" class="text-white font-label-md text-label-md">Starting camera...</span>
+</div>
+</div>
+<!-- Hint Text -->
+<p id="scan-hint" class="mt-8 text-white/80 font-body-md text-body-md tracking-wide px-12 text-center">
+                Center the item in the frame for instant AI identification
+            </p>
+<button onclick="startCamera()" class="mt-5 pointer-events-auto bg-white/90 text-primary px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95" type="button">
+  Enable Camera
+</button>
+</div>
+<!-- Result Drawer (Actionable) -->
+<input class="hidden peer" id="drawer-toggle" type="checkbox"/>
+<style>
+    .result-drawer {
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(100%);
+    }
+    #drawer-toggle:checked ~ .result-drawer {
+        transform: translateY(0);
+    }
+    #drawer-toggle:checked ~ .result-drawer .drawer-handle {
+        background-color: #2dd4bf;
+    }
+</style><div class="fixed bottom-0 left-0 w-full z-50 transform transition-transform duration-500 ease-out result-drawer">
+<div class="bg-white dark:bg-slate-900 rounded-t-[32px] shadow-[0_-12px_40px_rgba(0,0,0,0.15)] px-6 pt-3 pb-32">
+<!-- Drawer Handle -->
+<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6 cursor-pointer" onclick="document.getElementById('drawer-toggle').click()"></div>
+<!-- Result Content -->
+<div class="flex items-center gap-5 p-4 bg-primary-container/10 border border-primary-container/20 rounded-2xl">
+<div class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="recycling">recycling</span>
+</div>
+<div class="flex-1">
+<h2 id="result-title" class="font-headline-md text-headline-md text-on-surface">Waiting for scan</h2>
+<p id="result-bin" class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                            Place the item in the correct bin.
+                        </p>
+<p id="result-confidence" class="text-sm text-slate-600 mt-2">Confidence: --</p>
+<p id="result-price" class="text-sm text-slate-600 mt-1">Price estimate: --</p>
+</div>
+</div>
+<!-- Extra Info/Tips Grid (Bento Style) -->
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Eco Impact</p>
+<p class="font-headline-md text-headline-md text-primary">+12 XP</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Pro Tip</p>
+<p class="font-body-md text-[13px] leading-tight text-on-surface-variant">Remove cap before disposal.</p>
+</div>
+<button id="sell-button" onclick="sellScannedItem()" class="col-span-2 mt-2 w-full bg-primary text-white rounded-2xl py-4 font-label-md active:scale-95 transition-transform disabled:opacity-40" type="button" disabled>
+  Sell this item in Market
+</button>
+<button id="skip-sell-button" onclick="skipSelling()" class="col-span-2 w-full border border-outline-variant text-on-surface-variant rounded-2xl py-3 font-label-md active:scale-95 transition-transform hidden" type="button">
+  Do not sell
+</button>
+<p id="scan-message" class="col-span-2 mt-1 text-center text-sm text-slate-600"></p>
+</div>
+</div>
+</div>
+</main>
+<!-- Dashboard (Active) -->
+<nav class="mobile-bottom-nav fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(45,212,191,0.08)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20 rounded-2xl px-4 py-2 active:scale-90 transition-all duration-300 ease-out"  href="scan.html">
+<span class="material-symbols-outlined mb-1">center_focus_weak</span>
+<span class="font-plus-jakarta text-[11px] font-medium">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="marketPlace.html">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 dark:hover:text-teal-300 active:scale-90 transition-transform duration-150" href="Authentication/user.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Profile</span>
+</a>
+</nav>
+<script>
+const supabase = window.supabase.createClient(
+  "https://eupolobairqsuzjnihkc.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+);
+const apiBase = window.ECOCYCLE_API_BASE || "http://10.212.187.163:3000";
+let lastScanResult = null;
+let accessToken = null;
+
+async function checkSession() {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) {
+    window.location.href = "Authentication/signIn.html";
+    return;
+  }
+  accessToken = session.access_token;
+  document.getElementById("scan-status").innerText = "Ready to scan with AI.";
+  document.getElementById("scan-hint").innerText = "Use camera or upload a photo to identify waste.";
+}
+
+async function startCamera() {
+  if (!accessToken) {
+    await checkSession();
+  }
+
+  const video = document.getElementById("camera-feed");
+  const fallback = document.getElementById("camera-fallback");
+  const status = document.getElementById("scan-status");
+  const hint = document.getElementById("scan-hint");
+
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    status.innerText = "Camera unavailable";
+    hint.innerText = "Your device does not allow camera access here.";
+    return;
+  }
+
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: "environment" } },
+      audio: false
+    });
+
+    video.srcObject = stream;
+    video.classList.remove("hidden");
+    fallback.classList.add("hidden");
+    status.innerText = "Analyzing item...";
+    hint.innerText = "Hold the waste item inside the frame.";
+
+    setTimeout(captureFrameAndIdentify, 1800);
+  } catch (error) {
+    console.error(error);
+    status.innerText = "Camera permission needed";
+    hint.innerText = "Allow camera permission, then tap Enable Camera again.";
+  }
+}
+
+function handleUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = async () => {
+    const imageData = reader.result;
+    const base64 = imageData.split(',')[1];
+    await identifyImage(base64);
+  };
+  reader.readAsDataURL(file);
+}
+
+async function captureFrameAndIdentify() {
+  const video = document.getElementById("camera-feed");
+  const canvas = document.getElementById("capture-canvas");
+  const status = document.getElementById("scan-status");
+
+  if (!canvas) {
+    status.innerText = "Capture canvas unavailable.";
+    console.error('Missing capture-canvas element');
+    return;
+  }
+
+  if (!video.videoWidth || !video.videoHeight) {
+    status.innerText = "Waiting for camera feed...";
+    setTimeout(captureFrameAndIdentify, 500);
+    return;
+  }
+
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+  const base64 = dataUrl.split(',')[1];
+
+  await identifyImage(base64);
+}
+
+async function identifyImage(base64) {
+  setResultState(false, false);
+  document.getElementById('scan-status').innerText = 'Analyzing item...';
+  showMessage('Analyzing waste...');
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 30000);
+    const response = await fetch(`${apiBase}/api/scans/identify`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`
+      },
+      body: JSON.stringify({ imageBase64: base64 }),
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      const message = data.message || data.error || 'Failed to identify item';
+      document.getElementById('scan-status').innerText = data.paymentRequired ? 'Payment needed' : 'Scan failed';
+      showMessage(message);
+      if (data.paymentUrl) {
+        showMessage(`${message} Click to purchase more credits.`);
+        window.open(data.paymentUrl, '_blank');
+      }
+      return;
+    }
+
+    lastScanResult = data.result;
+    updateResultUI(data.result);
+
+    await logScan(data.result);
+  } catch (error) {
+    console.error(error);
+    const timedOut = error.name === 'AbortError';
+    document.getElementById('scan-status').innerText = timedOut ? 'Scan timed out' : 'Scan failed';
+    showMessage(timedOut ? 'Roboflow took too long. Try again with a clearer photo.' : 'Scan failed. Check backend/Roboflow settings and try again.');
+  }
+}
+
+async function logScan(result) {
+  if (!result) return;
+
+  try {
+    const response = await fetch(`${apiBase}/api/scans`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`
+      },
+      body: JSON.stringify({
+        type: result.label,
+        binCategory: result.binCategory,
+        xpReward: result.xpReward,
+        co2Saved: result.co2Saved
+      })
+    });
+
+    const data = await response.json();
+    if (!response.ok) {
+      showMessage(data.error || 'Could not save scan to your profile.');
+    } else {
+      showMessage('Scan saved. You earned points and reduced credits.');
+    }
+  } catch (error) {
+    console.error(error);
+    showMessage('Error logging scan.');
+  }
+}
+
+async function sellScannedItem() {
+  const messageEl = document.getElementById('scan-message');
+  if (!lastScanResult) {
+    showMessage('Scan an item first before listing.');
+    return;
+  }
+
+  try {
+    const response = await fetch(`${apiBase}/api/market/list`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`
+      },
+      body: JSON.stringify({
+        title: lastScanResult.label,
+        description: `Identified waste item: ${lastScanResult.label} (${lastScanResult.binCategory}).`,
+        price: Math.max(1, Math.round((lastScanResult.confidence || 0.6) * 10)),
+        category: lastScanResult.materialCategory || lastScanResult.binCategory || 'Other',
+        image: ''
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      const message = data.message || data.error || 'Unable to list item';
+      showMessage(message);
+      if (data.paymentUrl) {
+        window.open(data.paymentUrl, '_blank');
+      }
+      return;
+    }
+
+    showMessage('Item listed in market. Redirecting...');
+    window.location.href = 'marketPlace.html';
+  } catch (error) {
+    console.error(error);
+    showMessage('Selling failed. Try again later.');
+  }
+}
+
+function updateResultUI(result) {
+  document.getElementById('result-title').innerText = result.label;
+  document.getElementById('result-bin').innerText = `Place in ${result.binCategory}`;
+  document.getElementById('result-confidence').innerText = `Confidence: ${Math.round((result.confidence || 0) * 100)}%`;
+  document.getElementById('result-price').innerText = `Price estimate: ${result.priceEstimate || '--'}`;
+  setResultState(result.sellable, result.sellable);
+  document.getElementById('skip-sell-button').classList.toggle('hidden', !result.sellable);
+  showMessage(result.sellable ? 'Result saved. You can sell it in the market, or skip selling.' : (result.recommendation || 'Review the suggested bin category.'));
+  const drawerToggle = document.getElementById('drawer-toggle');
+  if (drawerToggle) drawerToggle.checked = true;
+  document.getElementById('scan-status').innerText = 'Analysis complete';
+}
+
+function setResultState(enabled, active) {
+  const button = document.getElementById('sell-button');
+  button.disabled = !enabled;
+  button.classList.toggle('bg-primary', active);
+  button.classList.toggle('bg-slate-300', !active);
+}
+
+function showMessage(text) {
+  document.getElementById('scan-message').innerText = text;
+}
+
+function skipSelling() {
+  showMessage('No problem. Scan saved without listing it for sale.');
+  const drawerToggle = document.getElementById('drawer-toggle');
+  if (drawerToggle) drawerToggle.checked = false;
+}
+
+window.addEventListener('load', checkSession);
+</script>
+</body></html>
+

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoCycle - Nurture Your Urban Ecosystem</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f2f4f6",
+                      "secondary": "#006e2f",
+                      "on-tertiary-fixed-variant": "#144f4b",
+                      "on-secondary-fixed-variant": "#005321",
+                      "on-primary-fixed-variant": "#005047",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#191c1e",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-container": "#eceef0",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#316763",
+                      "surface-container-high": "#e6e8ea",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#9ad1cb",
+                      "secondary-fixed-dim": "#4ae176",
+                      "outline": "#6b7a76",
+                      "on-secondary-fixed": "#002109",
+                      "primary-fixed-dim": "#3cddc7",
+                      "surface-tint": "#006b5f",
+                      "secondary-fixed": "#6bff8f",
+                      "background": "#f7f9fb",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#6bff8f",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#00574d",
+                      "on-tertiary-container": "#1c5551",
+                      "primary-container": "#2dd4bf",
+                      "inverse-surface": "#2d3133",
+                      "on-primary-fixed": "#00201c",
+                      "surface-variant": "#e0e3e5",
+                      "on-secondary-container": "#007432",
+                      "inverse-primary": "#3cddc7",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-surface-variant": "#3c4a46",
+                      "surface": "#f7f9fb",
+                      "tertiary-fixed": "#b5ede7",
+                      "primary-fixed": "#62fae3",
+                      "error": "#ba1a1a",
+                      "surface-bright": "#f7f9fb",
+                      "primary": "#006b5f",
+                      "outline-variant": "#bacac5",
+                      "on-tertiary-fixed": "#00201e",
+                      "on-surface": "#191c1e",
+                      "tertiary-container": "#91c8c2",
+                      "surface-dim": "#d8dadc"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "md": "24px",
+                      "lg": "40px",
+                      "xl": "64px",
+                      "sm": "12px",
+                      "margin": "20px",
+                      "gutter": "16px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow-primary {
+            box-shadow: 0 12px 32px -8px rgba(0, 107, 95, 0.15);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-slate-200/50 dark:shadow-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600 dark:text-teal-400 text-2xl" data-icon="recycling">recycling</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xl font-extrabold text-teal-600 dark:text-teal-400 tracking-tighter">EcoCycle</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 dark:text-slate-500 hover:bg-teal-50 dark:hover:bg-teal-900/30 transition-colors p-2 rounded-full active:scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</header>
+<main class="pt-16 min-h-screen">
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden px-6 pt-12 pb-24 md:py-32">
+<div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-container rounded-full text-on-primary-container font-label-md">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        Join the Movement
+                    </div>
+<h1 class="font-display-lg text-display-lg text-on-background tracking-tight">
+                        Nurture Your Urban Ecosystem
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Transform waste management into a rewarding ritual. Connect with your community, track your impact, and build a greener city one step at a time.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-xl font-label-md flex items-center justify-center gap-2 soft-shadow-primary hover:bg-on-primary-container transition-all active:scale-95">
+                            Get Started
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<a href="signIn.html" class="px-8 py-4 border-2 border-primary text-primary bg-transparent rounded-xl font-label-md hover:bg-primary-container/10 transition-all active:scale-95">
+                            Sign In
+</a>
+</div>
+<div class="flex items-center gap-6 pt-6 text-on-surface-variant">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="portrait of a young smiling man in a creative studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3MzvARGXupnDJKg-bahCPUGtrhk7roaBYHBZwVpvEHaKX9LTqtEUN1Kd3UsuGAdzcl8DJQfqrW2YvsJXIyAM3OAZOW-yYst9wu9zswEZ8gJX-D8g9GCJpbYdvJkHWhGcFd_NPZ4Aq31wau8uhjYF7R8stM6ENRHoO1Vpciz_w64v44MKwc-VBMR4Bub2XoPZ57VvpNzKw6GSUyhFMuYdtI70iXKux2yxT5uUDVyLrCLIGrLCQFjTyvUiD7oWf1oKL4GTqvxS7ARJ5"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="close-up portrait of a woman with a natural confident expression outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVAowll44TvWzDlTlsmnSItvHpoGubiEgRWMGikLco1NkSpZ_tQfBJuzW1C-3kSWk_1b7c_G85IXN6e8Cr1No6QJsqKlkyL_9WkcuAdXb-QxaL4ORTbOrjSBnrxJMDD6oVcaUbE5GaCccMtFs41zsEvVxiQxfolTDPLCsr_CuDvCg8keWPErTiW_EHlMDSJ7XkgYkrTWBsobXiKdLWPQFrueJYLaAJxx5rLU-G9hJSGWO9BVKi4kLCh7Qy0Bawbg-46CeCvc8BsCIY"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="portrait of a young professional with short hair and glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAghw-xKsVbEdfOoIdW2KKhiaVEgu9VuithWV-p5Hfyob8U0hSHv7olUF-m1LV-9KNQjXIlY6ZOCLeIHOLglaSntbaKD2J7V_f_rAkQRf-sZ7G641S-rBOhngQ39RsGTDeNUL7U6BqB3mmhXtRDgzMcglVWh9FJ98uATQzbscBZyvXtodqHGhokqqW7dEEN3JDjxpSi9_7_ikDlimQnKSfdgd0_s9BcQhMbBnt4VyNSZVoOduSPSdGIcmaMN4jBz6uZD75fF2H8oNVM"/>
+</div>
+<p class="font-label-sm">Joined by 12,000+ urban recyclers</p>
+</div>
+</div>
+<!-- Asymmetric Bento-style Image Composition -->
+<div class="relative grid grid-cols-6 grid-rows-6 gap-4 h-[500px] md:h-[600px]">
+<div class="col-span-4 row-span-4 rounded-3xl overflow-hidden shadow-xl shadow-teal-900/5">
+<img class="w-full h-full object-cover" data-alt="lush urban garden on a rooftop with sustainable wooden planters and vibrant green vegetables in morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmBU_js38fxz30wuWellI79rc1Bv5qZCze6ddrBlwA6t9fSXDGBc5Z_PLWLcAH_22tDn4iOwOQvt_hwYyGnhp8OXJy3MafM6_Mhh2oiXE5fGbgEOezd8I044b6KlFBeRAxi_ge9E2yT5heLk-yEfQ9wgQ5E9uX6lZgDBc2gSI2qykUiWfMriqmUQwflyY4IaHD3YqWDfbwHfT9xMaJHWBBNEFZuaLdEZJTpp3NzexKOKhYgpho_aLLO1ibhorB-2cvwf1HgUOzNqGx"/>
+</div>
+<div class="col-span-2 row-span-3 rounded-3xl overflow-hidden shadow-xl shadow-teal-900/5">
+<img class="w-full h-full object-cover" data-alt="close up of glass jars and reusable containers neatly organized on a clean kitchen shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtf_acNYVTE-yUO26tfii4x-OskB33RTe1He2AVADPyzZ0_TguPcM8cDG3jutSZhkESSvhXeVQGIdDwEzoEY_wF9Ff8qLRB0qts2OQw5hFqFRrusAmjC0SYBIELLUGFTWAR7i1w1OFL675QbJwEulM-6DXEysZr9WWXsCjvlhtcV54zrY0ZXWkrJX1CUu9vKHia94auSkq3evP4Ed8xoB-VNwj3mvyVVJilWKf74hHmeJsdH90saSSxYRLahTJKqrbFivi8W-MbLR4"/>
+</div>
+<div class="col-span-2 row-span-3 row-start-4 col-start-5 rounded-3xl overflow-hidden shadow-xl shadow-teal-900/5">
+<img class="w-full h-full object-cover" data-alt="aerial view of a modern apartment building featuring integrated solar panels and green balconies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB87tRP52uZ9T9jttirC5jBoQsewqB1nv3bMCm_czaCN-AV5DGIhvrf7RIAGf2TPIcbD5fx5iLL43hLnHRiwlRZlnk4YwiF07DHgJdHPqpGNtw_S5gtsVGUb_xH40F-tRrkbGqfpiDVLl_O1JZoDo2I_LodMJKkw8tVZaITuTuLm7wuY7m3-aMuKxNSUFdSL0743KbiZ4I5a2HYEuMzeL1iOfT3xUZW_UqzYdXlLyaTQdAsDDutBfQxN5AJSWY5-d0bsdo9CkyOak6N"/>
+</div>
+<div class="col-span-4 row-span-2 col-start-1 row-start-5 rounded-3xl overflow-hidden shadow-xl shadow-teal-900/5 bg-tertiary-container flex items-center p-8 gap-6">
+<div class="p-3 bg-white rounded-2xl">
+<span class="material-symbols-outlined text-teal-600 text-3xl" data-icon="energy_savings_leaf" style="font-variation-settings: 'FILL' 1;">energy_savings_leaf</span>
+</div>
+<div>
+<h4 class="font-headline-md text-on-tertiary-container">2.4 Tons</h4>
+<p class="font-label-md text-on-tertiary-container opacity-80">CO2 emissions saved this month</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Crafting a Sustainable Ritual</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">EcoCycle helps you manage your ecological footprint through intuitive tools designed for modern living.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature Card 1 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow group">
+<div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="calendar_today">calendar_today</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-background">Smart Scheduling</h3>
+<p class="text-on-surface-variant font-body-md">Never miss a collection day. Get personalized reminders and track bin capacity in real-time.</p>
+<div class="mt-6 h-1 w-12 bg-primary rounded-full"></div>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow group">
+<div class="w-14 h-14 bg-secondary-container rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-background">AI Waste Guide</h3>
+<p class="text-on-surface-variant font-body-md">Not sure if it's recyclable? Snap a photo and let our AI assistant guide your disposal process instantly.</p>
+<div class="mt-6 h-1 w-12 bg-secondary rounded-full"></div>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-lg transition-shadow group">
+<div class="w-14 h-14 bg-tertiary-container rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl" data-icon="groups">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3 text-on-background">Urban Network</h3>
+<p class="text-on-surface-variant font-body-md">Connect with neighbors to share composting bins, trade goods, and participate in community clean-ups.</p>
+<div class="mt-6 h-1 w-12 bg-tertiary rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-24 bg-background">
+<div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="relative bg-white p-4 rounded-[40px] shadow-2xl border border-teal-50">
+<img class="rounded-[32px] w-full h-[450px] object-cover" data-alt="close up of an eco-friendly mobile app interface displayed on a sleek smartphone screen with soft green lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgj91ka12Zx9th4_jfG8CzawdEPFz1vRaOyO7y7fCQGczW8tLaLWPRQkgKCSuJIRhi3k76CIal8lg1cGY6I05LgvtwFF3-yKa0JcKd5hOKctIWaNR9ene88CPtHT3Xw7Ht3aOGAtB2t_P1Dj62TGhtROgVivXY7uQMghT7XZ_LV2NbNsxxOR9bsw9IOGJpXkErSWn2Ba4MkrJ6UL3Pc2PKjsLt8-NI5F6j1TPsWt7TwXSW8ixtKvTfyzhvu9AP5WoR2DsjojGhrxrh"/>
+<!-- Floating Glass Metric -->
+<div class="absolute bottom-12 right-[-20px] glass-card p-6 rounded-2xl shadow-xl border border-white/50 max-w-[200px]">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+<span class="font-label-md text-secondary">Efficiency</span>
+</div>
+<p class="font-headline-md text-on-background">+42%</p>
+<p class="font-label-sm text-on-surface-variant">Better sorting habits</p>
+</div>
+</div>
+</div>
+<div class="order-1 md:order-2 space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Your Impact, Visualized.</h2>
+<p class="font-body-md text-on-surface-variant">We believe that small actions lead to massive change. EcoCycle tracks every piece of composted food and every recycled bottle to show you the tangible difference you're making for the planet.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 bg-surface-container-high rounded-lg flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="task_alt">task_alt</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px]">Verified Impact Scores</h4>
+<p class="text-on-surface-variant font-body-md">Earn digital badges and social recognition for reaching sustainability milestones.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 bg-surface-container-high rounded-lg flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px]">Smart Bin Integration</h4>
+<p class="text-on-surface-variant font-body-md">Sync with IoT-enabled home bins to automate your recycling reporting.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-6">
+<div class="container mx-auto max-w-5xl bg-teal-950 rounded-[48px] overflow-hidden relative">
+<div class="absolute inset-0 opacity-20">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-500 via-transparent to-transparent"></div>
+</div>
+<div class="relative px-8 py-16 md:py-24 text-center space-y-8">
+<h2 class="font-display-lg text-white max-w-2xl mx-auto">Ready to revitalize your neighborhood?</h2>
+<p class="text-teal-100/80 font-body-lg max-w-xl mx-auto">Join the EcoCycle community today and start making your urban life more sustainable, one bin at a time.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="px-10 py-5 bg-primary-container text-on-primary-container rounded-2xl font-label-md hover:bg-white transition-all">
+                            Download for iOS
+                        </button>
+<button class="px-10 py-5 bg-white/10 text-white border border-white/20 rounded-2xl font-label-md hover:bg-white/20 transition-all">
+                            Download for Android
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600 dark:text-teal-400 text-xl" data-icon="recycling">recycling</span>
+<span class="font-bold text-teal-600 dark:text-teal-400">EcoCycle</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-slate-500 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-300 transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-slate-500 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-300 transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm text-slate-500 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-300 transition-all opacity-80 hover:opacity-100" href="#">Sustainability Report</a>
+</nav>
+<p class="font-['Plus_Jakarta_Sans'] text-sm text-slate-500 dark:text-slate-400">© 2024 EcoCycle. Nurturing the urban ecosystem.</p>
+</footer>
+</body></html>

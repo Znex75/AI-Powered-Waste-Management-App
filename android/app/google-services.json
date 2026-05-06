@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "953873322461",
+    "project_id": "ai-waste-343d1",
+    "storage_bucket": "ai-waste-343d1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953873322461:android:1bef1781353c50c189a634",
+        "android_client_info": {
+          "package_name": "com.ecocycle.wastemanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953873322461-glu84n0hegd2bdembdfcl3kp0h1f6ocn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ8A2NCuoOVmoI6KqPD9FUaKIPVdUvkGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953873322461-glu84n0hegd2bdembdfcl3kp0h1f6ocn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoCycle Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "primary-container": "#2dd4bf",
+                    "on-tertiary-fixed-variant": "#144f4b",
+                    "primary-fixed-dim": "#3cddc7",
+                    "tertiary-container": "#91c8c2",
+                    "on-background": "#191c1e",
+                    "tertiary": "#316763",
+                    "on-tertiary-container": "#1c5551",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed-variant": "#005321",
+                    "on-secondary-fixed": "#002109",
+                    "inverse-primary": "#3cddc7",
+                    "background": "#f7f9fb",
+                    "secondary-fixed": "#6bff8f",
+                    "surface-container": "#eceef0",
+                    "secondary": "#006e2f",
+                    "surface-bright": "#f7f9fb",
+                    "outline-variant": "#bacac5",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-fixed-dim": "#9ad1cb",
+                    "outline": "#6b7a76",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#007432",
+                    "on-primary-container": "#00574d",
+                    "tertiary-fixed": "#b5ede7",
+                    "inverse-surface": "#2d3133",
+                    "on-primary-fixed-variant": "#005047",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "primary-fixed": "#62fae3",
+                    "surface-tint": "#006b5f",
+                    "on-surface-variant": "#3c4a46",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00201c",
+                    "primary": "#006b5f",
+                    "surface-dim": "#d8dadc",
+                    "surface-container-low": "#f2f4f6",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#6bff8f",
+                    "on-tertiary-fixed": "#00201e",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "40px",
+                    "xl": "64px",
+                    "margin": "20px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .donut-segment {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    .mobile-top-bar {
+      height: 72px;
+      padding: 10px 20px;
+    }
+
+    .mobile-bottom-nav {
+      min-height: 76px;
+      padding: 8px 16px 12px;
+    }
+
+    .mobile-bottom-nav a {
+      min-width: 64px;
+    }
+
+    .mobile-fab {
+      bottom: 92px;
+    }
+
+    @media (max-width: 380px) {
+      .mobile-bottom-nav {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .mobile-bottom-nav a {
+        min-width: 56px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+<div class="flex items-center gap-3">
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly smiling man in his 30s with short hair, clean studio lighting, soft blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+</div>
+<button class="w-11 h-11 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</header>
+<main class="pt-28 pb-36 px-margin max-w-lg mx-auto">
+<!-- Hero Summary Section -->
+<section class="mb-lg">
+<div class="flex justify-between items-end mb-sm">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Weekly Impact</h1>
+<p class="text-label-md font-label-md text-outline">You've diverted 12.4kg of waste</p>
+</div>
+<div class="bg-primary-container/20 px-3 py-1 rounded-full">
+<span class="text-label-sm font-label-sm text-primary">+12% vs last wk</span>
+</div>
+</div>
+<!-- Bento Card: Donut Chart & Legend -->
+<div class="bg-white dark:bg-slate-900 rounded-[32px] p-md shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-50 relative overflow-hidden">
+<div class="flex items-center justify-between gap-gutter">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#f1f5f9" stroke-width="3"></circle>
+<!-- Recyclables (Blue-ish Teal) 50% -->
+<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#2dd4bf" stroke-dasharray="50 50" stroke-dashoffset="25" stroke-width="3"></circle>
+<!-- Compost (Green) 30% -->
+<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#6bff8f" stroke-dasharray="30 70" stroke-dashoffset="-25" stroke-width="3"></circle>
+<!-- Landfill (Grey) 20% -->
+<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#e0e3e5" stroke-dasharray="20 80" stroke-dashoffset="-55" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-headline-md font-headline-md leading-none">82%</span>
+<span class="text-[10px] uppercase font-bold text-outline">Sorted</span>
+</div>
+</div>
+<div class="flex-1 space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-[#2dd4bf]"></div>
+<div class="flex-1">
+<p class="text-label-sm font-label-sm text-outline">Recyclables</p>
+<p class="text-label-md font-label-md">6.2 kg</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-[#6bff8f]"></div>
+<div class="flex-1">
+<p class="text-label-sm font-label-sm text-outline">Compost</p>
+<p class="text-label-md font-label-md">3.7 kg</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-[#e0e3e5]"></div>
+<div class="flex-1">
+<p class="text-label-sm font-label-sm text-outline">Landfill</p>
+<p class="text-label-md font-label-md">2.5 kg</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Next Collection Card -->
+<section class="mb-lg">
+<h2 class="text-label-md font-label-md text-outline mb-base uppercase tracking-wider">Upcoming Schedule</h2>
+<div class="bg-white dark:bg-slate-900 rounded-3xl p-md shadow-sm border-l-4 border-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-6xl">calendar_today</span>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<p class="text-headline-md font-headline-md text-primary mb-xs">Tuesday, 8:00 AM</p>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">recycling</span>
+                            Plastic &amp; Paper
+                        </p>
+</div>
+<div class="bg-surface-container px-3 py-2 rounded-2xl flex flex-col items-center min-w-[60px]">
+<span class="text-label-sm font-label-sm text-outline">IN</span>
+<span class="text-headline-md font-headline-md leading-none">2</span>
+<span class="text-[10px] font-bold text-outline">DAYS</span>
+</div>
+</div>
+<div class="mt-md pt-md border-t border-slate-50 flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Reminders are active</span>
+<button class="text-primary font-label-md hover:underline">Reschedule</button>
+</div>
+</div>
+</section>
+<!-- Quick AI Action -->
+<section class="mb-xl">
+<div class="relative rounded-[32px] overflow-hidden group">
+<img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Top down aesthetic view of clean plastic and cardboard items sorted neatly on a minimalist white background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYbJfkVnVrPb-Xx3aarpfbOa-KoEakrCtllFjHLnotZHorXBcghGUbIfDCDvFzEPvzgbN2Ji26zo2rXtt4MVhl5Vkcrqg9ZUFUTuiFHsz9KPlwTnSPUEBrXZuddQHTChNRZjPmzQOyumHdvBqAROEGzqCRdrX41KoUPF60gb2cVxP8RpI7ogGiIy8fidr3SDwBPZf3OCmeRS2BuyWmTYGa83HEtbkWun-FB2Red0QSW7PlD-aLOUF5H3iY90aDSKBKANrsLXoPNSZY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-teal-900/90 to-transparent flex flex-col justify-end p-md">
+<h3 class="text-white font-headline-md mb-xs">Unsure how to sort?</h3>
+<p class="text-teal-100 text-body-md mb-md">Scan any item with AI to get instant disposal guides.</p>
+<a href="scan.html" class="bg-primary text-white font-label-md py-3 px-6 rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-teal-950/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">center_focus_weak</span>
+                        Launch AI Scanner
+                    </a>
+</div>
+</div>
+</section>
+<!-- Secondary Tips / Bento Items -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-secondary-container/20 p-md rounded-3xl">
+<span class="material-symbols-outlined text-secondary mb-base">emoji_events</span>
+<p class="text-label-sm font-label-sm text-secondary-fixed-variant uppercase">Rank</p>
+<p class="text-headline-md font-headline-md text-on-secondary-container">#12 <span class="text-label-md">in area</span></p>
+</div>
+<div class="bg-tertiary-container/20 p-md rounded-3xl">
+<span class="material-symbols-outlined text-tertiary mb-base">eco</span>
+<p class="text-label-sm font-label-sm text-on-tertiary-container uppercase">CO2 Saved</p>
+<p class="text-headline-md font-headline-md text-on-tertiary-container">4.2 <span class="text-label-md">kg</span></p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<button class="mobile-fab fixed right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-[0_8px_24px_rgba(0,107,95,0.4)] flex items-center justify-center active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<!-- Dashboard (Active) -->
+<nav class="mobile-bottom-nav fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(45,212,191,0.08)]">
+<a class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20 rounded-2xl px-4 py-2 active:scale-90 transition-all duration-300 ease-out" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="scan.html">
+<span class="material-symbols-outlined mb-1">center_focus_weak</span>
+<span class="font-plus-jakarta text-[11px] font-medium">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="marketPlace.html">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 dark:hover:text-teal-300 active:scale-90 transition-transform duration-150" href="Authentication/user.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button Contextual (Suppress for Dashboard as per rules if needed, but here it acts as a primary CTA for EcoCycle ecosystem) -->
+<!-- Rule says suppress on Details, Transactional, etc. Keeping it here as "Quick Add/Scan" if desired, but following the suppression rule for specific screens -->
+</body></html>
+<script>
+const supabase = window.supabase.createClient(
+  "https://eupolobairqsuzjnihkc.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+);
+
+// ✅ Check auth (only ONE function)
+async function checkAuth() {
+  if (localStorage.getItem("ecocycle_admin") === "true") {
+    return;
+  }
+
+  const { data: { session } } = await supabase.auth.getSession();
+
+  if (!session) {
+    window.location.href = "Authentication/signIn.html";
+  }
+}
+
+// ✅ Logout (fixed)
+async function logout() {
+  if (localStorage.getItem("ecocycle_admin") === "true") {
+    localStorage.removeItem("ecocycle_admin");
+    window.location.href = "Authentication/signIn.html";
+    return;
+  }
+
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    console.error(error);
+    alert("Logout failed");
+  } else {
+    window.location.href = "Authentication/signIn.html";
+  }
+}
+
+// Run auth check
+checkAuth();
+</script>

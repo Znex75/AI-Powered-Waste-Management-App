@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoCycle Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Plus Jakarta Sans", "sans-serif"] },
+          colors: {
+            primary: "#006b5f",
+            surface: "#f7f9fb",
+            mint: "#62fae3"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-surface font-sans text-slate-900">
+  <main class="mx-auto flex min-h-screen w-full max-w-md flex-col px-5 py-8">
+    <header class="flex items-center justify-between">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-primary">Admin</p>
+        <h1 class="text-3xl font-extrabold">EcoCycle Panel</h1>
+      </div>
+      <button onclick="adminLogout()" class="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-primary shadow-sm" type="button" aria-label="Log out">
+        <span class="material-symbols-outlined">logout</span>
+      </button>
+    </header>
+
+    <section class="mt-8 rounded-2xl bg-primary p-5 text-white shadow-lg shadow-teal-900/20">
+      <p class="text-sm opacity-80">Signed in as</p>
+      <p class="mt-1 text-lg font-bold">sundijason@gmail.com</p>
+    </section>
+
+    <section class="mt-6 grid grid-cols-2 gap-4">
+      <article class="rounded-2xl bg-white p-4 shadow-sm">
+        <span class="material-symbols-outlined text-primary">groups</span>
+        <p class="mt-4 text-2xl font-extrabold">Users</p>
+        <p class="text-sm text-slate-500">Manage accounts</p>
+      </article>
+      <article class="rounded-2xl bg-white p-4 shadow-sm">
+        <span class="material-symbols-outlined text-primary">qr_code_scanner</span>
+        <p class="mt-4 text-2xl font-extrabold">Scans</p>
+        <p class="text-sm text-slate-500">Review activity</p>
+      </article>
+      <article class="rounded-2xl bg-white p-4 shadow-sm">
+        <span class="material-symbols-outlined text-primary">storefront</span>
+        <p class="mt-4 text-2xl font-extrabold">Market</p>
+        <p class="text-sm text-slate-500">Listings</p>
+      </article>
+      <article class="rounded-2xl bg-white p-4 shadow-sm">
+        <span class="material-symbols-outlined text-primary">analytics</span>
+        <p class="mt-4 text-2xl font-extrabold">Reports</p>
+        <p class="text-sm text-slate-500">Insights</p>
+      </article>
+    </section>
+
+    <nav class="mt-auto grid grid-cols-2 gap-3 pb-4 pt-8">
+      <a href="dashboard.html" class="rounded-xl border border-teal-100 bg-white px-4 py-3 text-center font-semibold text-primary">User Dashboard</a>
+      <button onclick="adminLogout()" class="rounded-xl bg-primary px-4 py-3 font-semibold text-white" type="button">Log Out</button>
+    </nav>
+  </main>
+
+  <script>
+    if (localStorage.getItem("ecocycle_admin") !== "true") {
+      window.location.href = "Authentication/signIn.html";
+    }
+
+    function adminLogout() {
+      localStorage.removeItem("ecocycle_admin");
+      window.location.href = "Authentication/signIn.html";
+    }
+  </script>
+</body>
+</html>

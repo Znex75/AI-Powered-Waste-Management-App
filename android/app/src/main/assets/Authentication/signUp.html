@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f7f9fb;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#91c8c2",
+                        "secondary": "#006e2f",
+                        "on-secondary-fixed": "#002109",
+                        "on-primary-fixed-variant": "#005047",
+                        "tertiary": "#316763",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "outline": "#6b7a76",
+                        "inverse-surface": "#2d3133",
+                        "on-primary-container": "#00574d",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#6bff8f",
+                        "surface-tint": "#006b5f",
+                        "secondary-fixed-dim": "#4ae176",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#006b5f",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-container": "#6bff8f",
+                        "primary-container": "#2dd4bf",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#bacac5",
+                        "on-tertiary-fixed": "#00201e",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed-variant": "#144f4b",
+                        "tertiary-fixed": "#b5ede7",
+                        "on-surface-variant": "#3c4a46",
+                        "on-primary-fixed": "#00201c",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary-container": "#007432",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-primary": "#3cddc7",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#9ad1cb",
+                        "on-tertiary-container": "#1c5551",
+                        "on-secondary-fixed-variant": "#005321",
+                        "background": "#f7f9fb",
+                        "primary-fixed-dim": "#3cddc7",
+                        "primary-fixed": "#62fae3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "16px",
+                        "lg": "40px",
+                        "margin": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+<!-- Left Side: Immersive Visual (Hidden on mobile for focus) -->
+<section class="hidden md:flex md:w-1/2 relative bg-primary-container items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80 mix-blend-overlay" data-alt="lush urban garden rooftop with organized recycling bins and bright sunlight morning atmosphere eco-friendly city living" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAvyBDpsoImZQwtdsK1z28RCxJZLLqzhWvxJ6B_KewzOB_T2k-ZRpSdru0kH0oUXPmvg91qKKfrQtPHXK892Vji-DmimtMnN8EAKmeMPfUgLrGroEyrVNR3h69rmQDLtOUBpnA767Kbnj29Ot3WtBrmvt3_nm_wQ2Wua8CyqBGxelSyqWEUU42Osjjr8mxHEXHqjwxhqyjUD0JYtfJq4UJHpMc3vl70fPs76GIDDAHSoN6O-H1zeSe4RgjrjTRi_nceGQ1Krsn97sC"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/60 to-transparent"></div>
+</div>
+<div class="relative z-10 px-lg text-on-primary-container max-w-md">
+<h1 class="font-display-lg text-display-lg mb-md leading-tight text-white drop-shadow-md">Join the Ritual of Renewal</h1>
+<p class="font-body-lg text-body-lg text-white/90">
+                EcoCycle transforms waste management into a rewarding, proactive journey for your household and the planet.
+            </p>
+<div class="mt-lg flex items-center gap-base">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-white" data-alt="portrait of a smiling man in casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Q9p8FIol1AfBHz6Btlw-2haik0fYPYBJKedmJ2aa_1cnlfmsQHHCJQ9BUxtufXEoI70seTNOpHwEnqFj8zZ_tqIygCXLt8_6Q0XCE1cXdLFN7XVJvxJceJjtPMthjLwk6au6B_C3_yrRfjGLAHU3wZnZz3YTxB0l0g4IyJL3ffUzdPS1LV9k9kabacHaa5fvrF4IRbSVDjsBe3Ro4lly1B4zA15d_8VI-iBhv1u90-4KJ8pzHSQcEnyXX1zmQrtbjg6NKsWJ1wg3"/>
+<img class="w-8 h-8 rounded-full border-2 border-white" data-alt="portrait of a professional woman with a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvxl4bEbicHxwxmhvHZtQTFtECSg9Etxom1sBIJFUkXOYkO6N1GkitK2QEIwNmE063cgGBwuyYhFZmqoja-8862DqxhV9763eCA6c6sVFapKYkbUh8_inXEPiBDpplAAtu-elo4XHkrFBwqB6asF0D9KmC84PdXRD4YZaByBlOv41B28zy0qh4g7Hf37gbnIsQPjjTPARt58zac-wTYgiqhS9KsWPJNFm_aSRpdtTHJ3Gpu5aOxOFBORW3BPC5BRKHylsoX_zAPlJf"/>
+<img class="w-8 h-8 rounded-full border-2 border-white" data-alt="portrait of a young person wearing modern glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB51gM0aS9_8ZLrOQxH9BFO2KUXIYiElkZIcckHQk5K3ZH_V9tFJ7QUJllahl5r0SLFPGVkU_jhem2fXnXhyQ2Kh6VjGal5_RIowbkP5GN4NN4Dt6CC0gXy3kfR56OTYbNtGa1tPEYBXoPBsyUVE3W7ef7W-u5B9AkaP-2z2nra6nnK2QMRF86KAXgu9iYdfN8xLwS64Hv1kib2Ugd6AX9agdyZzElfHudrGCCH4glVC1ehbrnBUMhWxFX2bA7UwiCHdnzbqorXGKzv"/>
+</div>
+<span class="font-label-sm text-label-sm text-white/80">Joined by 12k+ eco-warriors this month</span>
+</div>
+</div>
+</section>
+<!-- Right Side: Sign Up Form -->
+<main class="flex-1 flex flex-col justify-center items-center px-gutter py-xl md:px-lg">
+<div class="w-full max-w-md">
+<!-- Brand Anchor -->
+<header class="mb-lg text-center md:text-left">
+<div class="inline-flex items-center justify-center p-base bg-primary-container rounded-xl mb-md">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">recycling</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">EcoCycle</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Create your account to start your eco-ritual.</p>
+</header>
+<form class="space-y-md">
+<!-- Full Name Field -->
+<div class="group">
+<label class="font-label-md text-label-md text-on-surface-variant mb-xs block">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface"  id="name" placeholder="Sameer Johnson" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="group">
+    
+<label class="font-label-md text-label-md text-on-surface-variant mb-xs block">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface" id="email" placeholder="sameer@example.com" type="email"/>
+</div>
+</div>
+<!-- Password Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="group">
+<label class="font-label-md text-label-md text-on-surface-variant mb-xs block">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full pl-12 pr-12 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-outline-variant hover:text-primary transition-colors" type="button" onclick="togglePasswordVisibility('password', this)" aria-label="Show password" aria-pressed="false">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="group">
+<label class="font-label-md text-label-md text-on-surface-variant mb-xs block">Confirm Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">lock_reset</span>
+<input class="w-full pl-12 pr-12 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface" id="confirmPassword" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center text-outline-variant hover:text-primary transition-colors" type="button" onclick="togglePasswordVisibility('confirmPassword', this)" aria-label="Show confirm password" aria-pressed="false">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Terms & Conditions -->
+<div class="flex items-start gap-sm py-xs">
+<div class="flex items-center h-5">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20 cursor-pointer transition-all" id="terms" type="checkbox"/>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant leading-tight cursor-pointer" for="terms">
+                        I agree to the <span class="text-primary font-semibold">Terms of Service</span> and <span class="text-primary font-semibold">Privacy Policy</span> regarding my waste disposal data.
+                    </label>
+</div>
+<!-- Action Button -->
+<button id="signupBtn" type="button" onclick="signup()" 
+class="w-full bg-primary text-on-primary py-4 rounded-xl shadow-lg transition-all">
+  <span id="signupText">Create Account</span>
+</button>
+<p id="message" class="text-sm text-center mt-2"></p>
+<!-- OR Divider -->
+<div class="flex items-center gap-md py-1">
+  <div class="h-[1px] flex-1 bg-surface-container-highest"></div>
+  <span class="font-label-sm text-label-sm text-outline-variant">OR SIGN UP WITH</span>
+  <div class="h-[1px] flex-1 bg-surface-container-highest"></div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-md">
+<button onclick="signUpWithGoogle()" class="flex items-center justify-center gap-sm h-12 border border-outline-variant rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors" type="button">
+<svg class="w-5 h-5" viewBox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+</svg>
+Google
+</button>
+<button onclick="signUpWithFacebook()" class="flex items-center justify-center gap-sm h-12 border border-outline-variant rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors" type="button">
+<svg class="w-5 h-5" viewBox="0 0 24 24">
+<path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+</svg>
+Facebook
+</button>
+</div>
+</form>
+<footer class="mt-lg pt-lg border-t border-surface-container-high text-center">
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Already have an account?</p>
+<a href="signIn.html" class="w-full py-3 px-md border-2 border-primary/20 text-primary font-label-md text-label-md rounded-xl hover:bg-primary-container/10 transition-colors active:scale-95 duration-200">
+                    Sign In Instead
+</a>
+</footer>
+</div>
+</main>
+<!-- Background Decorative Elements -->
+<div class="fixed top-0 right-0 -z-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
+</body></html>
+<script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+<script>
+const supabaseUrl = "https://eupolobairqsuzjnihkc.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4";
+let _supabase = null;
+function getClient() {
+  if (!_supabase) _supabase = supabase.createClient(supabaseUrl, supabaseKey);
+  return _supabase;
+}
+
+function togglePasswordVisibility(inputId, button) {
+  const input = document.getElementById(inputId);
+  const icon = button.querySelector(".material-symbols-outlined");
+  const isHidden = input.type === "password";
+  const labelPrefix = inputId === "confirmPassword" ? "confirm password" : "password";
+
+  input.type = isHidden ? "text" : "password";
+  icon.innerText = isHidden ? "visibility_off" : "visibility";
+  button.setAttribute("aria-label", `${isHidden ? "Hide" : "Show"} ${labelPrefix}`);
+  button.setAttribute("aria-pressed", String(isHidden));
+}
+</script>
+<script>
+async function signup() {
+  const sb = getClient();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const password = document.getElementById("password").value;
+  const confirm = document.getElementById("confirmPassword").value;
+  const terms = document.getElementById("terms").checked;
+  const btn = document.getElementById("signupBtn");
+  const text = document.getElementById("signupText");
+  const msg = document.getElementById("message");
+
+  if (!name) { msg.innerText = "Please enter your name"; msg.className = "text-red-500 text-sm text-center mt-2"; return; }
+  if (!email) { msg.innerText = "Please enter your email"; msg.className = "text-red-500 text-sm text-center mt-2"; return; }
+  if (password.length < 6) { msg.innerText = "Password must be at least 6 characters"; msg.className = "text-red-500 text-sm text-center mt-2"; return; }
+  if (password !== confirm) { msg.innerText = "Passwords do not match"; msg.className = "text-red-500 text-sm text-center mt-2"; return; }
+  if (!terms) { msg.innerText = "Please accept the terms to continue"; msg.className = "text-red-500 text-sm text-center mt-2"; return; }
+
+  btn.disabled = true;
+  text.innerText = "Creating account...";
+  msg.innerText = "";
+
+  try {
+    const { data, error } = await sb.auth.signUp({
+      email, password,
+      options: { data: { name } }
+    });
+
+    if (error) {
+      msg.innerText = error.message;
+      msg.className = "text-red-500 text-sm text-center mt-2";
+      btn.disabled = false; text.innerText = "Create Account"; return;
+    }
+
+    if (!data.session) {
+      msg.innerText = "Account created! Please check your email to confirm, then sign in.";
+      msg.className = "text-yellow-600 text-sm text-center mt-2";
+      btn.disabled = false; text.innerText = "Create Account"; return;
+    }
+
+    msg.innerText = "Account created! Signing you in...";
+    msg.className = "text-green-500 text-sm text-center mt-2";
+    setTimeout(() => { window.location.href = "../dashboard.html"; }, 1200);
+    return;
+
+    msg.innerText = "✅ Account created! Check your email to confirm, then sign in.";
+    msg.className = "text-green-500 text-sm text-center mt-2";
+    setTimeout(() => { window.location.href = "signIn.html"; }, 2500);
+
+  } catch (err) {
+    console.error('SignUp Error:', err);
+    msg.innerText = "Error: " + (err.message || JSON.stringify(err));
+    msg.className = "text-red-500 text-sm text-center mt-2";
+    btn.disabled = false; text.innerText = "Create Account";
+  }
+}
+
+async function signUpWithGoogle() {
+  const { error } = await getClient().auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + '/../dashboard.html' }
+  });
+  if (error) { document.getElementById("message").innerText = error.message; }
+}
+
+async function signUpWithFacebook() {
+  const { error } = await getClient().auth.signInWithOAuth({
+    provider: 'facebook',
+    options: { redirectTo: window.location.origin + '/../dashboard.html' }
+  });
+  if (error) { document.getElementById("message").innerText = error.message; }
+}
+</script>

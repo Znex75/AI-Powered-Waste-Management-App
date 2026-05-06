@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#007432",
+                    "background": "#f7f9fb",
+                    "surface": "#f7f9fb",
+                    "primary-container": "#2dd4bf",
+                    "tertiary-fixed": "#b5ede7",
+                    "on-primary-fixed-variant": "#005047",
+                    "tertiary": "#316763",
+                    "surface-container": "#eceef0",
+                    "on-background": "#191c1e",
+                    "on-tertiary-fixed-variant": "#144f4b",
+                    "tertiary-fixed-dim": "#9ad1cb",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00201c",
+                    "primary-fixed-dim": "#3cddc7",
+                    "secondary-fixed": "#6bff8f",
+                    "on-secondary-fixed": "#002109",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-tertiary-container": "#1c5551",
+                    "outline": "#6b7a76",
+                    "surface-container-high": "#e6e8ea",
+                    "outline-variant": "#bacac5",
+                    "on-tertiary-fixed": "#00201e",
+                    "on-secondary-fixed-variant": "#005321",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed": "#62fae3",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#00574d",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f7f9fb",
+                    "surface-dim": "#d8dadc",
+                    "inverse-primary": "#3cddc7",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-container": "#91c8c2",
+                    "on-surface-variant": "#3c4a46",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#6bff8f",
+                    "primary": "#006b5f",
+                    "on-error-container": "#93000a",
+                    "secondary": "#006e2f",
+                    "surface-tint": "#006b5f",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "20px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "sm": "12px",
+                    "gutter": "16px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-effect { backdrop-filter: blur(8px); background-color: rgba(255, 255, 255, 0.8); }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    .mobile-top-bar {
+      height: 72px;
+      padding: 10px 20px;
+    }
+
+    .mobile-bottom-nav {
+      min-height: 76px;
+      padding: 8px 16px 12px;
+    }
+
+    .mobile-bottom-nav a {
+      min-width: 64px;
+    }
+
+    .mobile-fab {
+      bottom: 92px;
+    }
+
+    @media (max-width: 380px) {
+      .mobile-bottom-nav {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .mobile-bottom-nav a {
+        min-width: 56px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+<div class="flex items-center gap-3">
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly smiling man in his 30s with short hair, clean studio lighting, soft blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+</div>
+<button class="w-11 h-11 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</header>
+<main class="pt-28 pb-36 px-margin max-w-lg mx-auto">
+<!-- Search Bar -->
+<section class="mb-6">
+<div class="relative flex items-center gap-3">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md transition-all" placeholder="Search items for a better planet..." type="text"/>
+</div>
+<button class="p-4 bg-primary text-on-primary rounded-xl shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+</div>
+</section>
+<!-- Category Chips -->
+<section class="mb-8 -mx-4">
+<div class="flex gap-3 overflow-x-auto px-4 no-scrollbar">
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full text-label-md whitespace-nowrap">All Items</button>
+<button class="px-6 py-2 bg-tertiary-container text-on-tertiary-container rounded-full text-label-md whitespace-nowrap hover:bg-tertiary-fixed transition-colors">Furniture</button>
+<button class="px-6 py-2 bg-tertiary-container text-on-tertiary-container rounded-full text-label-md whitespace-nowrap hover:bg-tertiary-fixed transition-colors">Electronics</button>
+<button class="px-6 py-2 bg-tertiary-container text-on-tertiary-container rounded-full text-label-md whitespace-nowrap hover:bg-tertiary-fixed transition-colors">Materials</button>
+<button class="px-6 py-2 bg-tertiary-container text-on-tertiary-container rounded-full text-label-md whitespace-nowrap hover:bg-tertiary-fixed transition-colors">Compost</button>
+</div>
+</section>
+<!-- Featured Finds -->
+<section class="mb-10">
+<h2 class="font-headline-md text-on-surface mb-4">Featured Finds</h2>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="min-w-[280px] bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex-shrink-0">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="a beautifully restored mid-century modern wooden chair in a sunlit bright studio with plants in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1MLBnN0Ihoqh2LXTHr0KGZcEKoo1GgGXvJFvwAi3Hhz-1B1X8dLNT-NbRXw0i-DmNVM9bYhCjkjLuDQUwG14jzMQ6U_EQdd25cjE9J0t2BdIZVSpVYyx58vSiNwcQdyPK_s2lgDDYRa-UkLwm84iSsnFlIABG9AjwZLQfbRk0U2SBH1YKcqhv6B3LgC58wvRo4D1g8uP_kfyP-O-PbxlWXu_Lsw7L2WZ_fCQxl-IvOZkxpreM-GL96_wLh3-GB831qVNvuNVYJfYf"/>
+<div class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm">Premium Upcycle</div>
+</div>
+<div class="p-4">
+<h3 class="font-label-md text-on-surface mb-1">Restored Oak Lounge Chair</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">$120</span>
+<span class="flex items-center gap-1 text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-md text-[10px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">eco</span> -45kg CO2
+                            </span>
+</div>
+</div>
+</div>
+<div class="min-w-[280px] bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex-shrink-0">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="a large linen bag of organic dark brown soil compost sitting on a rustic wooden patio surrounded by green herbs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7QcFl-vs5CAU8shiZUe8D6chlDBTQTSyEW6oJX111oU_1msY8bsTWTr0O3HwGNm5j0InjWKRh0Fftk0Ih9Z6Ng8vucBNJh6IM1jTyMVYD6b4P3uQzvlPOVVJJSnN7wamS5YkDKJzIgXFcmlZF9tYdAyHE-TjSj2-Liqa2xCYuO0i-Tx7Cr4RwQ3YARb2UIxengrodX399RnLc6mdsX1IaW5OMeyZwHQB2AayTHz5u2HsoDr2b5HcQQopZbMWRe5V6WrytxqVHfGoR"/>
+<div class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm">Nutrient Rich</div>
+</div>
+<div class="p-4">
+<h3 class="font-label-md text-on-surface mb-1">Premium Forest Compost</h3>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold">$25</span>
+<span class="flex items-center gap-1 text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-md text-[10px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">eco</span> Circular
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Listings Grid -->
+<section>
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-headline-md text-on-surface">For You</h2>
+<button class="text-primary text-label-md">View All</button>
+</div>
+<div id="market-grid" class="grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-surface-variant/30 flex flex-col">
+<div class="h-40 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="collection of assorted vintage glass bottles in different shapes and colors like amber and green catching soft light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANc75uiunJaY6k4nE1qdzH_Za4_iZ9UJ3owovAt1svdbwgTe_P5FcKMvD2rH6fh8cP_7nxdX3uaxxho6SgPprPkcxjWN_PYiE4bmzBnAyCWGKdR6HbObL17Cm1ukTGUYGCniFhdgqqc0nGc1bIwy07SyeBFltj9L4T14ccgr4R2uOzb82qKTbbzavNSCbOYdVmEUOEF86R6uBr_nPnfmBEnkT3M0JZ4G8LjKCypBgKs7UAotriXhRnOAnZMGGXERsFaTgFg5Jn675K"/>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h4 class="font-label-md text-on-surface truncate">Vintage Glass Set</h4>
+<div class="flex items-center gap-1">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded text-[10px]">Recycled</span>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-bold text-on-background">$15</span>
+<button class="p-1.5 bg-surface-container text-primary rounded-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-surface-variant/30 flex flex-col">
+<div class="h-40 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="a neat stack of vintage hardcover books with worn linen covers and textured paper edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAKxolvv75UVgRjUTFsEmsDjAio8LgqTo79q3eo_ian5rPXKF8lpyvSbm992r1H6MDS_FrL_MtSRMansw-GRgWy8UbtUFwu2BC_xTfWXlUmXZYirfLtfifsL2GzsXlLz_x13kpDnsCyQ4znQLDz8X11KL9MzIMBQQtNJ9GHPf2NpVa2fY5eU5HJ-SjkN6dfNQJP_9XOF3XWjWTsY2yB0d26aBVeNmErU7I4CoEErlxusGJCgG8ILPWweh43oF-_P2ulh8bUSkxl6VN"/>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h4 class="font-label-md text-on-surface truncate">Bundle of Books</h4>
+<div class="flex items-center gap-1">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded text-[10px]">Eco-Impact</span>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-bold text-on-background">$8</span>
+<button class="p-1.5 bg-surface-container text-primary rounded-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-surface-variant/30 flex flex-col">
+<div class="h-40 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="clean rolled white towels made from bamboo fiber on a minimalist light wood shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ALcjYYETg53s1ezWw1lneDZwyBfH0aInaNdMxibFPNv6BouFrMXf1CA5Q_k2AQYpya_UAV43f0xmIHt5BpPerZ_LokvmcNqJiM4LELvtolxkoq92rKTbrPboXwWbnDXgcVaEqaPTsonPCPIZcXuXUufLFGHGnSAsbB2SgVZ7RGjircdSUljaB-xZXnJR3dYnBPxp7Fv9lv_e9KIydMApKInIA8TYGxqjrJGdUc_z7bZnIx7TJdk6TuCVLDf4ZsHF504dcSwtoMzy"/>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h4 class="font-label-md text-on-surface truncate">Bamboo Towels</h4>
+<div class="flex items-center gap-1">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded text-[10px]">Natural</span>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-bold text-on-background">$12</span>
+<button class="p-1.5 bg-surface-container text-primary rounded-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-surface-variant/30 flex flex-col">
+<div class="h-40 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="collection of industrial metal pipes and copper fittings organized on a workbench" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIKFTJ-p0txkzW7Dov52grgWOab8QkEgqR03XLKufcYBOIlgp87yTQoRor4aEJjS2wSiC0yxKJ6i3hDga7xhHDz_kOJN6Efl9htFwXLy7lu_5lfKS1nTliCoixwFkOO8mqFwt6aobGrhsneUwOndbgfbterf5NiX0DEvqCnrD59LR7yIr8ZggN5i7li0FJMO9Jtk09o1F7p_KlVB3fg40mfPYSF_mcudZcmblrgF9JXDe-vI4prdtRVsrhtC6Bos-k34BgVnbHatr"/>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h4 class="font-label-md text-on-surface truncate">Raw Copper Pipes</h4>
+<div class="flex items-center gap-1">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded text-[10px]">Recycled</span>
+</div>
+<div class="flex justify-between items-center mt-auto">
+<span class="font-bold text-on-background">$45</span>
+<button class="p-1.5 bg-surface-container text-primary rounded-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<div id="sell-modal" class="hidden fixed inset-0 z-[70] bg-black/40 backdrop-blur-sm px-4 py-6 overflow-y-auto">
+<div class="min-h-full flex items-end sm:items-center justify-center">
+<form onsubmit="saveMarketItem(event)" class="w-full max-w-md bg-white rounded-t-[28px] sm:rounded-[28px] p-5 shadow-2xl">
+<div class="flex items-center justify-between mb-5">
+<div>
+<p class="text-primary text-label-sm font-label-sm uppercase tracking-wide">Sell Waste</p>
+<h2 class="text-headline-md font-headline-md text-on-surface">Add marketplace item</h2>
+</div>
+<button onclick="closeSellModal()" class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center" type="button" aria-label="Close">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-4">
+<label class="block">
+<span class="text-label-md font-label-md text-on-surface-variant">Waste name</span>
+<input id="item-title" class="mt-2 w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 outline-none focus:border-primary" placeholder="Plastic bottles, copper wires..." required type="text"/>
+</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="block">
+<span class="text-label-md font-label-md text-on-surface-variant">Category</span>
+<select id="item-category" class="mt-2 w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-3 py-3 outline-none focus:border-primary">
+<option>Plastic</option>
+<option>Paper</option>
+<option>Metal</option>
+<option>Glass</option>
+<option>Electronics</option>
+<option>Compost</option>
+<option>Other</option>
+</select>
+</label>
+<label class="block">
+<span class="text-label-md font-label-md text-on-surface-variant">Quantity</span>
+<input id="item-quantity" class="mt-2 w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 outline-none focus:border-primary" placeholder="2 kg" required type="text"/>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<label class="block">
+<span class="text-label-md font-label-md text-on-surface-variant">Price</span>
+<input id="item-price" class="mt-2 w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 outline-none focus:border-primary" min="0" placeholder="50" required type="number"/>
+</label>
+<label class="block">
+<span class="text-label-md font-label-md text-on-surface-variant">Photo</span>
+<input id="item-image" accept="image/*" class="mt-2 w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-3 py-2.5 text-sm outline-none focus:border-primary" type="file"/>
+</label>
+</div>
+<label class="block">
+<span class="text-label-md font-label-md text-on-surface-variant">Description</span>
+<textarea id="item-description" class="mt-2 w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 outline-none focus:border-primary" placeholder="Clean, sorted, ready for pickup..." rows="3"></textarea>
+</label>
+</div>
+<button class="mt-6 w-full bg-primary text-on-primary rounded-2xl py-4 font-label-md shadow-lg shadow-teal-900/20 active:scale-95 transition-transform" type="submit">
+Sell in Marketplace
+</button>
+</form>
+</div>
+</div>
+<button onclick="openSellModal()" class="mobile-fab fixed right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-[0_8px_24px_rgba(0,107,95,0.4)] flex items-center justify-center active:scale-90 transition-transform z-40" type="button" aria-label="Add waste item">
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="mobile-bottom-nav fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(45,212,191,0.08)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 dark:hover:text-teal-300 active:scale-90 transition-transform duration-150" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="scan.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">center_focus_weak</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold mt-1">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-150" href="marketPlace.html">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Market</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 dark:hover:text-teal-300 active:scale-90 transition-transform duration-150" href="Authentication/user.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-plus-jakarta-sans text-[11px] font-semibold">Profile</span>
+</a>
+</nav>
+<script>
+const supabase = window.supabase.createClient(
+  "https://eupolobairqsuzjnihkc.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+);
+const apiBase = window.ECOCYCLE_API_BASE || "http://10.212.187.163:3000";
+
+const fallbackImages = {
+  Plastic: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=600&q=80",
+  Paper: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80",
+  Metal: "https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80",
+  Glass: "https://images.unsplash.com/photo-1604187351574-c75ca79f5807?auto=format&fit=crop&w=600&q=80",
+  Electronics: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=600&q=80",
+  Compost: "https://images.unsplash.com/photo-1589131963103-c4c431f0a6ff?auto=format&fit=crop&w=600&q=80",
+  Other: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=600&q=80"
+};
+
+function openSellModal() {
+  document.getElementById("sell-modal").classList.remove("hidden");
+}
+
+function closeSellModal() {
+  document.getElementById("sell-modal").classList.add("hidden");
+}
+
+function getMarketItems() {
+  return JSON.parse(localStorage.getItem("ecocycle_market_items") || "[]");
+}
+
+function setMarketItems(items) {
+  localStorage.setItem("ecocycle_market_items", JSON.stringify(items));
+}
+
+async function saveMarketItem(event) {
+  event.preventDefault();
+  const file = document.getElementById("item-image").files[0];
+  const item = {
+    id: Date.now(),
+    title: document.getElementById("item-title").value.trim(),
+    category: document.getElementById("item-category").value,
+    quantity: document.getElementById("item-quantity").value.trim(),
+    price: document.getElementById("item-price").value.trim(),
+    description: document.getElementById("item-description").value.trim(),
+    image: "",
+    createdAt: new Date().toISOString()
+  };
+
+  const saveLocal = () => {
+    const items = getMarketItems();
+    items.unshift(item);
+    setMarketItems(items);
+    event.target.reset();
+    closeSellModal();
+    renderMarketItems();
+  };
+
+  if (file) {
+    item.image = await readFileAsDataUrl(file);
+  }
+
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      saveLocal();
+      return;
+    }
+
+    const response = await fetch(`${apiBase}/api/market/list`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.access_token}`
+      },
+      body: JSON.stringify(item)
+    });
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      if (data.paymentUrl) {
+        window.open(data.paymentUrl, "_blank");
+        alert(data.message || "Buy more market credits to list this item.");
+        return;
+      }
+      throw new Error(data.message || data.error || "Backend listing failed");
+    }
+
+    event.target.reset();
+    closeSellModal();
+    renderMarketItems();
+  } catch (error) {
+    console.error("Backend listing failed, saving locally:", error);
+    saveLocal();
+  }
+}
+
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function fetchServerListings() {
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return [];
+
+    const response = await fetch(`${apiBase}/api/market/listings`, {
+      headers: {
+        Authorization: `Bearer ${session.access_token}`
+      }
+    });
+
+    if (!response.ok) {
+      return [];
+    }
+
+    const data = await response.json();
+    return data.listings || [];
+  } catch (error) {
+    console.error('Error fetching remote listings:', error);
+    return [];
+  }
+}
+
+async function renderMarketItems() {
+  const grid = document.getElementById("market-grid");
+  grid.querySelectorAll("[data-local-item='true'], [data-server-item='true']").forEach((node) => node.remove());
+
+  const serverItems = await fetchServerListings();
+  const localItems = getMarketItems();
+
+  serverItems.forEach((item) => {
+    const card = document.createElement("div");
+    card.dataset.serverItem = "true";
+    card.className = "bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-surface-variant/30 flex flex-col";
+    card.innerHTML = `
+      <div class="h-40 overflow-hidden relative">
+        <img class="w-full h-full object-cover" alt="${item.title}" src="${item.image || fallbackImages[item.category] || fallbackImages.Other}">
+        <span class="absolute top-2 left-2 bg-primary text-white px-2 py-1 rounded-full text-[10px]">Marketplace</span>
+      </div>
+      <div class="p-3 flex flex-col gap-2">
+        <h4 class="font-label-md text-on-surface truncate">${item.title}</h4>
+        <p class="text-[11px] text-on-surface-variant truncate">${item.category} • ${item.seller?.name || item.seller?.email || 'Seller'}</p>
+        <div class="flex items-center gap-1">
+          <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded text-[10px]">From backend</span>
+        </div>
+        <div class="flex justify-between items-center mt-auto">
+          <span class="font-bold text-on-background">$${item.price}</span>
+        </div>
+      </div>
+    `;
+    grid.prepend(card);
+  });
+
+  localItems.forEach((item) => {
+    const card = document.createElement("div");
+    card.dataset.localItem = "true";
+    card.className = "bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-surface-variant/30 flex flex-col";
+    card.innerHTML = `
+      <div class="h-40 overflow-hidden relative">
+        <img class="w-full h-full object-cover" alt="${item.title}" src="${item.image || fallbackImages[item.category] || fallbackImages.Other}">
+        <span class="absolute top-2 left-2 bg-primary text-white px-2 py-1 rounded-full text-[10px]">Your listing</span>
+      </div>
+      <div class="p-3 flex flex-col gap-2">
+        <h4 class="font-label-md text-on-surface truncate">${item.title}</h4>
+        <p class="text-[11px] text-on-surface-variant truncate">${item.quantity} • ${item.category}</p>
+        <div class="flex items-center gap-1">
+          <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-0.5 rounded text-[10px]">Manual Waste</span>
+        </div>
+        <div class="flex justify-between items-center mt-auto">
+          <span class="font-bold text-on-background">$${item.price}</span>
+          <button onclick="removeMarketItem(${item.id})" class="p-1.5 bg-surface-container text-red-500 rounded-lg active:scale-90 transition-transform" type="button">
+            <span class="material-symbols-outlined text-[20px]">delete</span>
+          </button>
+        </div>
+      </div>
+    `;
+    grid.prepend(card);
+  });
+}
+
+function removeMarketItem(id) {
+  setMarketItems(getMarketItems().filter((item) => item.id !== id));
+  renderMarketItems();
+}
+
+window.addEventListener("load", renderMarketItems);
+</script>
+</body></html>
+

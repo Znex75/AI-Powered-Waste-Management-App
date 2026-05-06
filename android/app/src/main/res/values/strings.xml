@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EcoCycle</string>
+
+    <!-- Facebook Configuration -->
+    <!-- Replace YOUR_FACEBOOK_APP_ID with your actual Facebook App ID -->
+    <string name="facebook_app_id">your_facebook_app_id</string>
+    <string name="fb_login_protocol_scheme">fbyour_facebook_app_id</string>
+
+    <!-- Google Sign In Configuration -->
+    <!-- Replace YOUR_WEB_CLIENT_ID with your Firebase project's web client ID -->
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID</string>
+</resources>
