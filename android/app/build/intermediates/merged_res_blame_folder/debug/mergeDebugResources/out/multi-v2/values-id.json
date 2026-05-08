@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-34:/values-id/values-id.xml",
+            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-31:/values-id/values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sundi\\.gradle\\caches\\9.0-milestone-1\\transforms\\93980c5b4a9bcf806fb5fd01252eb2b3\\transformed\\jetified-facebook-common-16.3.0\\res\\values-id\\values-id.xml",
+                    "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\6fd3d60c759a7841f44fbc49a70e4073\\transformed\\jetified-facebook-common-16.3.0\\res\\values-id\\values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

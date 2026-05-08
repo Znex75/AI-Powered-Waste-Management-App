@@ -191,6 +191,13 @@
 <button onclick="startCamera()" class="mt-5 pointer-events-auto bg-white/90 text-primary px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95" type="button">
   Enable Camera
 </button>
+    <label class="mt-4 pointer-events-auto bg-primary text-white px-5 py-3 rounded-2xl font-label-md shadow-lg cursor-pointer">
+        Upload Image
+        <input type="file"
+               accept="image/*"
+               onchange="handleUpload(event)"
+               class="hidden">
+    </label>
 </div>
 <!-- Result Drawer (Actionable) -->
 <input class="hidden peer" id="drawer-toggle" type="checkbox"/>
@@ -267,248 +274,575 @@
 </a>
 </nav>
 <script>
-const supabase = window.supabase.createClient(
-  "https://eupolobairqsuzjnihkc.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
-);
-const apiBase = window.ECOCYCLE_API_BASE || "http://10.212.187.163:3000";
-let lastScanResult = null;
-let accessToken = null;
+    const supabase = window.supabase.createClient(
+      "https://eupolobairqsuzjnihkc.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
 
-async function checkSession() {
-  const { data: { session } } = await supabase.auth.getSession();
-  if (!session) {
-    window.location.href = "Authentication/signIn.html";
-    return;
-  }
-  accessToken = session.access_token;
-  document.getElementById("scan-status").innerText = "Ready to scan with AI.";
-  document.getElementById("scan-hint").innerText = "Use camera or upload a photo to identify waste.";
-}
+    );
 
-async function startCamera() {
-  if (!accessToken) {
-    await checkSession();
-  }
+    const apiBase = window.ECOCYCLE_API_BASE || "http://10.212.187.163:3000";
 
-  const video = document.getElementById("camera-feed");
-  const fallback = document.getElementById("camera-fallback");
-  const status = document.getElementById("scan-status");
-  const hint = document.getElementById("scan-hint");
+    let lastScanResult = null;
+    let accessToken = null;
 
-  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-    status.innerText = "Camera unavailable";
-    hint.innerText = "Your device does not allow camera access here.";
-    return;
-  }
+    async function checkSession() {
 
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: { ideal: "environment" } },
-      audio: false
-    });
+      const { data: { session } } = await supabase.auth.getSession();
 
-    video.srcObject = stream;
-    video.classList.remove("hidden");
-    fallback.classList.add("hidden");
-    status.innerText = "Analyzing item...";
-    hint.innerText = "Hold the waste item inside the frame.";
-
-    setTimeout(captureFrameAndIdentify, 1800);
-  } catch (error) {
-    console.error(error);
-    status.innerText = "Camera permission needed";
-    hint.innerText = "Allow camera permission, then tap Enable Camera again.";
-  }
-}
-
-function handleUpload(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = async () => {
-    const imageData = reader.result;
-    const base64 = imageData.split(',')[1];
-    await identifyImage(base64);
-  };
-  reader.readAsDataURL(file);
-}
-
-async function captureFrameAndIdentify() {
-  const video = document.getElementById("camera-feed");
-  const canvas = document.getElementById("capture-canvas");
-  const status = document.getElementById("scan-status");
-
-  if (!canvas) {
-    status.innerText = "Capture canvas unavailable.";
-    console.error('Missing capture-canvas element');
-    return;
-  }
-
-  if (!video.videoWidth || !video.videoHeight) {
-    status.innerText = "Waiting for camera feed...";
-    setTimeout(captureFrameAndIdentify, 500);
-    return;
-  }
-
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  const ctx = canvas.getContext("2d");
-  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-  const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
-  const base64 = dataUrl.split(',')[1];
-
-  await identifyImage(base64);
-}
-
-async function identifyImage(base64) {
-  setResultState(false, false);
-  document.getElementById('scan-status').innerText = 'Analyzing item...';
-  showMessage('Analyzing waste...');
-
-  try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 30000);
-    const response = await fetch(`${apiBase}/api/scans/identify`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`
-      },
-      body: JSON.stringify({ imageBase64: base64 }),
-      signal: controller.signal
-    });
-    clearTimeout(timeout);
-
-    const data = await response.json().catch(() => ({}));
-
-    if (!response.ok) {
-      const message = data.message || data.error || 'Failed to identify item';
-      document.getElementById('scan-status').innerText = data.paymentRequired ? 'Payment needed' : 'Scan failed';
-      showMessage(message);
-      if (data.paymentUrl) {
-        showMessage(`${message} Click to purchase more credits.`);
-        window.open(data.paymentUrl, '_blank');
+      if (!session) {
+        window.location.href = "Authentication/signIn.html";
+        return;
       }
-      return;
+
+      accessToken = session.access_token;
+
+      document.getElementById("scan-status").innerText =
+        "Ready to scan with AI.";
+
+      document.getElementById("scan-hint").innerText =
+        "Use camera or upload a photo to identify waste.";
     }
 
-    lastScanResult = data.result;
-    updateResultUI(data.result);
+    async function startCamera() {
 
-    await logScan(data.result);
-  } catch (error) {
-    console.error(error);
-    const timedOut = error.name === 'AbortError';
-    document.getElementById('scan-status').innerText = timedOut ? 'Scan timed out' : 'Scan failed';
-    showMessage(timedOut ? 'Roboflow took too long. Try again with a clearer photo.' : 'Scan failed. Check backend/Roboflow settings and try again.');
-  }
-}
-
-async function logScan(result) {
-  if (!result) return;
-
-  try {
-    const response = await fetch(`${apiBase}/api/scans`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`
-      },
-      body: JSON.stringify({
-        type: result.label,
-        binCategory: result.binCategory,
-        xpReward: result.xpReward,
-        co2Saved: result.co2Saved
-      })
-    });
-
-    const data = await response.json();
-    if (!response.ok) {
-      showMessage(data.error || 'Could not save scan to your profile.');
-    } else {
-      showMessage('Scan saved. You earned points and reduced credits.');
-    }
-  } catch (error) {
-    console.error(error);
-    showMessage('Error logging scan.');
-  }
-}
-
-async function sellScannedItem() {
-  const messageEl = document.getElementById('scan-message');
-  if (!lastScanResult) {
-    showMessage('Scan an item first before listing.');
-    return;
-  }
-
-  try {
-    const response = await fetch(`${apiBase}/api/market/list`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`
-      },
-      body: JSON.stringify({
-        title: lastScanResult.label,
-        description: `Identified waste item: ${lastScanResult.label} (${lastScanResult.binCategory}).`,
-        price: Math.max(1, Math.round((lastScanResult.confidence || 0.6) * 10)),
-        category: lastScanResult.materialCategory || lastScanResult.binCategory || 'Other',
-        image: ''
-      })
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      const message = data.message || data.error || 'Unable to list item';
-      showMessage(message);
-      if (data.paymentUrl) {
-        window.open(data.paymentUrl, '_blank');
+      if (!accessToken) {
+        await checkSession();
       }
-      return;
+
+      const video = document.getElementById("camera-feed");
+      const fallback = document.getElementById("camera-fallback");
+
+      const status = document.getElementById("scan-status");
+
+      const hint = document.getElementById("scan-hint");
+
+      if (!navigator.mediaDevices ||
+          !navigator.mediaDevices.getUserMedia) {
+
+        status.innerText = "Camera unavailable";
+
+        hint.innerText =
+          "Your device does not support camera access.";
+
+        return;
+      }
+
+      try {
+
+        const stream =
+          await navigator.mediaDevices.getUserMedia({
+            video: {
+              facingMode: {
+                ideal: "environment"
+              }
+            },
+            audio: false
+          });
+
+        video.srcObject = stream;
+
+        video.classList.remove("hidden");
+
+        fallback.classList.add("hidden");
+
+        status.innerText = "Analyzing item...";
+
+        hint.innerText =
+          "Hold the waste item inside the frame.";
+
+        setTimeout(captureFrameAndIdentify, 1800);
+
+      } catch (error) {
+
+        console.error(error);
+
+        status.innerText = "Camera permission needed";
+
+        hint.innerText =
+          "Allow camera permission and try again.";
+      }
     }
 
-    showMessage('Item listed in market. Redirecting...');
-    window.location.href = 'marketPlace.html';
-  } catch (error) {
-    console.error(error);
-    showMessage('Selling failed. Try again later.');
-  }
-}
+    function handleUpload(event) {
 
-function updateResultUI(result) {
-  document.getElementById('result-title').innerText = result.label;
-  document.getElementById('result-bin').innerText = `Place in ${result.binCategory}`;
-  document.getElementById('result-confidence').innerText = `Confidence: ${Math.round((result.confidence || 0) * 100)}%`;
-  document.getElementById('result-price').innerText = `Price estimate: ${result.priceEstimate || '--'}`;
-  setResultState(result.sellable, result.sellable);
-  document.getElementById('skip-sell-button').classList.toggle('hidden', !result.sellable);
-  showMessage(result.sellable ? 'Result saved. You can sell it in the market, or skip selling.' : (result.recommendation || 'Review the suggested bin category.'));
-  const drawerToggle = document.getElementById('drawer-toggle');
-  if (drawerToggle) drawerToggle.checked = true;
-  document.getElementById('scan-status').innerText = 'Analysis complete';
-}
+      const file = event.target.files[0];
 
-function setResultState(enabled, active) {
-  const button = document.getElementById('sell-button');
-  button.disabled = !enabled;
-  button.classList.toggle('bg-primary', active);
-  button.classList.toggle('bg-slate-300', !active);
-}
+      if (!file) return;
 
-function showMessage(text) {
-  document.getElementById('scan-message').innerText = text;
-}
+      const reader = new FileReader();
 
-function skipSelling() {
-  showMessage('No problem. Scan saved without listing it for sale.');
-  const drawerToggle = document.getElementById('drawer-toggle');
-  if (drawerToggle) drawerToggle.checked = false;
-}
+      reader.onload = async () => {
 
-window.addEventListener('load', checkSession);
+        const imageData = reader.result;
+
+        const base64 = imageData.split(',')[1];
+
+        await identifyImage(base64);
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    async function captureFrameAndIdentify() {
+
+      const video = document.getElementById("camera-feed");
+
+      const canvas = document.getElementById("capture-canvas");
+
+      const status = document.getElementById("scan-status");
+
+      if (!canvas) {
+
+        status.innerText = "Canvas unavailable.";
+
+        return;
+      }
+
+      if (!video.videoWidth || !video.videoHeight) {
+
+        status.innerText = "Waiting for camera feed...";
+
+        setTimeout(captureFrameAndIdentify, 500);
+
+        return;
+      }
+
+      canvas.width = video.videoWidth;
+
+      canvas.height = video.videoHeight;
+
+      const ctx = canvas.getContext("2d");
+
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+
+      const base64 = dataUrl.split(',')[1];
+
+      await identifyImage(base64);
+
+      // STOP CAMERA AFTER SCAN
+      const stream = video.srcObject;
+
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+      }
+    }
+
+    async function identifyImage(base64) {
+
+      setResultState(false, false);
+
+      document.getElementById('scan-status').innerText =
+        'Analyzing item...';
+
+      showMessage('Analyzing waste...');
+
+      try {
+
+        const response = await fetch(
+          'https://serverless.roboflow.com/znexs-workspace/workflows/detect-and-classify-5',
+          {
+            method: 'POST',
+
+            headers: {
+              'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+
+              api_key: 'ROBOFLOW_API_KEY',
+
+              inputs: {
+                image: {
+                  type: 'base64',
+                  value: base64
+                }
+              }
+            })
+          }
+        );
+
+        const roboflowResult = await response.json();
+
+        console.log("Roboflow Result:", roboflowResult);
+
+        if (!response.ok) {
+
+          throw new Error(
+            roboflowResult.error ||
+            "Roboflow API failed"
+          );
+        }
+
+        let predictions = [];
+
+        if (Array.isArray(roboflowResult.predictions)) {
+
+          predictions = roboflowResult.predictions;
+
+        } else if (Array.isArray(roboflowResult.outputs)) {
+
+          for (const output of roboflowResult.outputs) {
+
+            if (output &&
+                Array.isArray(output.predictions)) {
+
+              predictions = output.predictions;
+              break;
+            }
+
+            if (output &&
+                Array.isArray(output.classes)) {
+
+              predictions = output.classes;
+              break;
+            }
+          }
+
+        } else if (
+          roboflowResult.outputs &&
+          typeof roboflowResult.outputs === 'object'
+        ) {
+
+          for (const key in roboflowResult.outputs) {
+
+            const output = roboflowResult.outputs[key];
+
+            if (output &&
+                Array.isArray(output.predictions)) {
+
+              predictions = output.predictions;
+              break;
+            }
+
+            if (output &&
+                Array.isArray(output.classes)) {
+
+              predictions = output.classes;
+              break;
+            }
+          }
+        }
+
+        if (!predictions || predictions.length === 0) {
+
+          updateResultUI({
+            label: 'Could not identify waste',
+            binCategory: 'General Waste',
+            confidence: 0,
+            sellable: false,
+            xpReward: 0,
+            co2Saved: 0,
+            priceEstimate: '--'
+          });
+
+          return;
+        }
+
+        const topPrediction = predictions.sort(
+          (a, b) =>
+            (b.confidence || b.score || 0) -
+            (a.confidence || a.score || 0)
+        )[0];
+
+        const label =
+          topPrediction.class ||
+          topPrediction.label ||
+          topPrediction.predicted_class ||
+          topPrediction.name ||
+          'Unknown Item';
+
+        const confidence =
+          topPrediction.confidence ||
+          topPrediction.score ||
+          0;
+
+        const xpReward =
+          Math.max(
+            5,
+            Math.min(
+              30,
+              Math.round(confidence * 25)
+            )
+          );
+
+        const resultData = {
+
+          label,
+
+          binCategory: 'Recycle Bin',
+
+          confidence: Number(
+            confidence.toFixed(2)
+          ),
+
+          sellable: confidence > 0.5,
+
+          xpReward,
+
+          co2Saved: Number(
+            (xpReward * 0.35).toFixed(2)
+          ),
+
+          recommendation:
+            'Place this item in the correct recycling bin.',
+
+          priceEstimate:
+            '(estimate ' +
+            Math.max(1,
+              Math.round(confidence * 10)
+            ) +
+            ' EcoCoins)'
+        };
+
+        lastScanResult = resultData;
+
+        updateResultUI(resultData);
+
+        logScan(resultData)
+          .catch(e =>
+            console.error(
+              'Background log failed',
+              e
+            )
+          );
+
+      } catch (error) {
+
+        console.error(error);
+
+        document.getElementById('scan-status').innerText =
+          'Scan failed';
+
+        showMessage(
+          'Error connecting to AI: ' +
+          error.message
+        );
+
+        alert(
+          'Fetch error: ' +
+          error.message
+        );
+      }
+    }
+
+    async function logScan(result) {
+
+      if (!result) return;
+
+      try {
+
+        const response = await fetch(
+          `${apiBase}/api/scans`,
+          {
+            method: 'POST',
+
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${accessToken}`
+            },
+
+            body: JSON.stringify({
+              type: result.label,
+              binCategory: result.binCategory,
+              xpReward: result.xpReward,
+              co2Saved: result.co2Saved
+            })
+          }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+
+          showMessage(
+            data.error ||
+            'Could not save scan.'
+          );
+
+        } else {
+
+          showMessage(
+            'Scan saved successfully.'
+          );
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        showMessage(
+          'Error logging scan.'
+        );
+      }
+    }
+
+    async function sellScannedItem() {
+
+      if (!lastScanResult) {
+
+        showMessage(
+          'Scan an item first.'
+        );
+
+        return;
+      }
+
+      try {
+
+        const response = await fetch(
+          `${apiBase}/api/market/list`,
+          {
+            method: 'POST',
+
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${accessToken}`
+            },
+
+            body: JSON.stringify({
+
+              title: lastScanResult.label,
+
+              description:
+                `Identified waste item: ${lastScanResult.label}`,
+
+              price: Math.max(
+                1,
+                Math.round(
+                  (lastScanResult.confidence || 0.6) * 10
+                )
+              ),
+
+              category:
+                lastScanResult.materialCategory ||
+                lastScanResult.binCategory ||
+                'Other',
+
+              image: ''
+            })
+          }
+        );
+
+        const data = await response.json();
+
+        if (!response.ok) {
+
+          showMessage(
+            data.message ||
+            data.error ||
+            'Unable to list item'
+          );
+
+          return;
+        }
+
+        showMessage(
+          'Item listed successfully.'
+        );
+
+        window.location.href =
+          'marketPlace.html';
+
+      } catch (error) {
+
+        console.error(error);
+
+        showMessage(
+          'Selling failed.'
+        );
+      }
+    }
+
+    function updateResultUI(result) {
+
+      document.getElementById('result-title').innerText =
+        result.label;
+
+      document.getElementById('result-bin').innerText =
+        `Place in ${result.binCategory}`;
+
+      document.getElementById('result-confidence').innerText =
+        `Confidence: ${Math.round((result.confidence || 0) * 100)}%`;
+
+      document.getElementById('result-price').innerText =
+        `Price estimate: ${result.priceEstimate || '--'}`;
+
+      setResultState(
+        result.sellable,
+        result.sellable
+      );
+
+      document
+        .getElementById('skip-sell-button')
+        .classList.toggle(
+          'hidden',
+          !result.sellable
+        );
+
+      showMessage(
+        result.sellable
+          ? 'Item can be sold in market.'
+          : result.recommendation
+      );
+
+      const drawerToggle =
+        document.getElementById('drawer-toggle');
+
+      if (drawerToggle) {
+        drawerToggle.checked = true;
+      }
+
+      document.getElementById('scan-status').innerText =
+        'Analysis complete';
+    }
+
+    function setResultState(enabled, active) {
+
+      const button =
+        document.getElementById('sell-button');
+
+      button.disabled = !enabled;
+
+      button.classList.toggle(
+        'bg-primary',
+        active
+      );
+
+      button.classList.toggle(
+        'bg-slate-300',
+        !active
+      );
+    }
+
+    function showMessage(text) {
+
+      document.getElementById('scan-message').innerText =
+        text;
+    }
+
+    function skipSelling() {
+
+      showMessage(
+        'Scan saved without selling.'
+      );
+
+      const drawerToggle =
+        document.getElementById('drawer-toggle');
+
+      if (drawerToggle) {
+        drawerToggle.checked = false;
+      }
+    }
+
+    window.addEventListener(
+      'load',
+      checkSession
+    );
 </script>
 </body></html>
+
+
+
 

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-34:/values-port/values-port.xml",
+            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-31:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sundi\\.gradle\\caches\\9.0-milestone-1\\transforms\\e466248864f470cfab76659ade8df0b0\\transformed\\appcompat-1.1.0\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\1651cd165cc5e8a248fc6d3532c27d4d\\transformed\\appcompat-1.1.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

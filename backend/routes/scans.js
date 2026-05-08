@@ -69,33 +69,32 @@ function normalizePrediction(predictions) {
 
 async function queryRoboflow(imageBase64, imageUrl) {
   const apiKey = process.env.ROBOFLOW_API_KEY;
-  const modelPath = process.env.ROBOFLOW_MODEL_PATH;
 
-  if (!apiKey || !modelPath) {
+  if (!apiKey) {
     throw new Error('Roboflow API configuration missing');
   }
 
-  const endpoint = `https://detect.roboflow.com/${modelPath}`;
-  const params = {
+  const endpoint = `https://serverless.roboflow.com/znexs-workspace/workflows/detect-and-classify-5`;
+  const payload = {
     api_key: apiKey,
-    format: 'json'
+    inputs: {
+      image: imageUrl 
+        ? { type: "url", value: imageUrl } 
+        : { type: "base64", value: imageBase64 }
+    }
   };
-  const data = imageUrl ? undefined : imageBase64;
-
-  if (imageUrl) params.image = imageUrl;
 
   try {
-    const response = await axios.post(endpoint, data, {
-      params,
-      timeout: 20000,
+    const response = await axios.post(endpoint, payload, {
+      timeout: 30000,
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       }
     });
     return response.data;
   } catch (error) {
-    const detail = error.response?.data?.error || error.response?.statusText || error.message;
+    const detail = error.response?.data?.error || error.response?.data?.message || error.message;
     throw new Error(`Roboflow call failed: ${error.response?.status || 'network'} ${detail}`);
   }
 }
@@ -125,8 +124,47 @@ router.post('/identify', authenticateToken, async (req, res) => {
       });
     }
 
-    const roboflowResult = await queryRoboflow(imageBase64, imageUrl);
-    const predictions = Array.isArray(roboflowResult.predictions) ? roboflowResult.predictions : [];
+   const roboflowResult = await queryRoboflow(imageBase64, imageUrl);
+console.log("Raw Roboflow response:", JSON.stringify(roboflowResult, null, 2));
+
+// ── Flexible output extraction ──────────────────────────────
+let predictions = [];
+
+const extractFromOutput = (output) => {
+  if (!output) return [];
+  // Standard predictions array
+  if (Array.isArray(output.predictions)) return output.predictions;
+  // Classification output (object keyed by class name)
+  if (output.predictions && typeof output.predictions === 'object') {
+    return Object.entries(output.predictions).map(([cls, val]) => ({
+      class: cls,
+      confidence: typeof val === 'object' ? val.confidence : val
+    }));
+  }
+  // Classes array (some workflow versions)
+  if (Array.isArray(output.classes)) return output.classes;
+  // top_class shorthand
+  if (output.top_class) {
+    return [{ class: output.top_class, confidence: output.top_class_confidence || 0.8 }];
+  }
+  return [];
+};
+
+if (Array.isArray(roboflowResult.predictions)) {
+  predictions = roboflowResult.predictions;
+} else if (Array.isArray(roboflowResult.outputs)) {
+  for (const output of roboflowResult.outputs) {
+    predictions = extractFromOutput(output);
+    if (predictions.length > 0) break;
+  }
+} else if (roboflowResult.outputs && typeof roboflowResult.outputs === 'object') {
+  for (const key of Object.keys(roboflowResult.outputs)) {
+    predictions = extractFromOutput(roboflowResult.outputs[key]);
+    if (predictions.length > 0) break;
+  }
+}
+// ────────────────────────────────────────────────────────────
+     
     const prediction = normalizePrediction(predictions);
 
     if (!prediction) {
