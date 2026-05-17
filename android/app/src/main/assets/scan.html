@@ -109,7 +109,43 @@
         .scanner-gradient {
             background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.6) 100%);
         }
-    </style>
+    
+    /* Global Dark Mode Styles */
+    html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
+      background-color: #0f172a !important;
+      background-image: none !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    html.dark .border-slate-100, html.dark .border-slate-50 {
+      border-color: #334155 !important;
+    }
+    html.dark .text-slate-700, html.dark .text-on-surface, html.dark .text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .text-slate-500, html.dark .text-on-surface-variant, html.dark .text-outline {
+      color: #94a3b8 !important;
+    }
+    html.dark .bg-slate-50 {
+      background-color: #334155 !important;
+    }
+    html.dark aside#nav-drawer, html.dark header {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    html.dark #modal-backdrop + div {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark input {
+      background-color: #0f172a !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+
+</style>
 <style>
     body {
       min-height: max(884px, 100dvh);
@@ -145,17 +181,181 @@
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased overflow-hidden">
 <!-- TopAppBar -->
+<!-- TopAppBar & Navigation Drawer -->
 <header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
 <div class="flex items-center gap-3">
-<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
-<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly smiling man in his 30s with short hair, clean studio lighting, soft blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
-</a>
+<button class="w-11 h-11 rounded-full flex items-center justify-center text-teal-600 active:scale-95 transition-transform duration-200" onclick="document.getElementById('nav-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-overlay').classList.remove('hidden');" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
 <span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
 </div>
-<button class="w-11 h-11 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
-<span class="material-symbols-outlined text-2xl">notifications</span>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
 </button>
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+</div>
 </header>
+
+<!-- Navigation Drawer -->
+<div id="drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity" onclick="document.getElementById('nav-drawer').classList.add('-translate-x-full'); this.classList.add('hidden');"></div>
+<aside id="nav-drawer" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-slate-900 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-y-auto">
+<div class="p-6 border-b border-slate-100 flex items-center gap-4">
+<label for="drawer-avatar-upload" class="cursor-pointer relative group block flex-shrink-0">
+  <img id="nav-drawer-avatar" alt="User" class="w-14 h-14 rounded-full object-cover group-hover:opacity-75 transition-opacity" src="https://placehold.net/avatar.png"/>
+  <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+    <span class="material-symbols-outlined text-white text-sm">edit</span>
+  </div>
+</label>
+<input type="file" id="drawer-avatar-upload" accept="image/*" class="hidden" onchange="uploadDrawerAvatar(event)" />
+<div>
+<p class="text-sm text-slate-500">Hey!</p>
+<p id="nav-drawer-name" class="font-bold text-teal-700">Loading...</p>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-[#4caf50] text-white rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-semibold flex-1">Homepage</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="scan.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">center_focus_weak</span>
+<span class="font-semibold flex-1">Scanner</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="marketPlace.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-semibold flex-1">Market</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="Authentication/user.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-semibold flex-1">Profile</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="schedule.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-semibold flex-1">Schedule</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="recycle.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">recycling</span>
+<span class="font-semibold flex-1">Recycle</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="events.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">event</span>
+<span class="font-semibold flex-1">Events</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="tips.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-semibold flex-1">Tips</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="blog.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">article</span>
+<span class="font-semibold flex-1">Blog</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="donate.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-semibold flex-1">Donate</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="community.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-semibold flex-1">Community</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="reports.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-semibold flex-1">Reports</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="p-4 border-t border-slate-100">
+<button onclick="logout()" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl w-full text-left">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      if (!window.supabase) return;
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+      const { data: { session } } = await supa.auth.getSession();
+      if (session && session.user) {
+        const user = session.user;
+        const nameEl = document.getElementById('nav-drawer-name');
+        const avatarEl = document.getElementById('nav-drawer-avatar');
+        
+        if (nameEl) {
+          nameEl.innerText = user.user_metadata?.name || user.email.split('@')[0];
+        }
+        if (avatarEl && user.user_metadata?.avatar_url) {
+          avatarEl.src = user.user_metadata.avatar_url;
+        }
+      }
+    } catch(err) {
+      console.error("Error fetching user for drawer:", err);
+    }
+
+    // Apply dark mode theme if saved
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+  });
+
+  async function uploadDrawerAvatar(event) {
+    const file = event.target.files[0];
+    if (!file || !window.supabase) return;
+
+    try {
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+
+      const avatarEl = document.getElementById('nav-drawer-avatar');
+      avatarEl.style.opacity = '0.5';
+
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64 = reader.result;
+        
+        const { error } = await supa.auth.updateUser({
+          data: { avatar_url: base64 }
+        });
+
+        if (error) throw error;
+        
+        avatarEl.src = base64;
+        avatarEl.style.opacity = '1';
+      };
+      reader.readAsDataURL(file);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to update avatar.");
+      document.getElementById('nav-drawer-avatar').style.opacity = '1';
+    }
+  }
+</script>
+
+
 <main class="pt-28 pb-36 px-margin max-w-lg mx-auto">
 <!-- Mock Camera Feed -->
 <div class="absolute inset-0 w-full h-full">
@@ -174,22 +374,22 @@
 <div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
 <div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
 <!-- Analyzing Indicator -->
-<div class="absolute -top-16 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10">
-<div class="relative w-5 h-5">
+<div class="absolute -top-14 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 z-20 w-max max-w-[90vw]">
+<div class="relative w-5 h-5 flex-shrink-0">
 <svg class="w-full h-full animate-spin text-primary-container" viewbox="0 0 24 24">
 <circle class="opacity-25" cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="4"></circle>
 <path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
 </svg>
 </div>
-<span id="scan-status" class="text-white font-label-md text-label-md">Starting camera...</span>
+<span id="scan-status" class="text-white font-label-md text-label-md whitespace-nowrap">Starting camera...</span>
 </div>
 </div>
 <!-- Hint Text -->
 <p id="scan-hint" class="mt-8 text-white/80 font-body-md text-body-md tracking-wide px-12 text-center">
                 Center the item in the frame for instant AI identification
             </p>
-<button onclick="startCamera()" class="mt-5 pointer-events-auto bg-white/90 text-primary px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95" type="button">
-  Enable Camera
+<button id="camera-permission-btn" onclick="startCamera()" class="mt-5 pointer-events-auto bg-white/90 text-primary px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95" type="button">
+  Ask for Camera Permission
 </button>
     <label class="mt-4 pointer-events-auto bg-primary text-white px-5 py-3 rounded-2xl font-label-md shadow-lg cursor-pointer">
         Upload Image
@@ -255,24 +455,7 @@
 </div>
 </main>
 <!-- Dashboard (Active) -->
-<nav class="mobile-bottom-nav fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_12px_rgba(45,212,191,0.08)]">
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="dashboard.html">
-<span class="material-symbols-outlined" data-icon="home">home</span>
-<span class="font-plus-jakarta-sans text-[11px] font-semibold">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20 rounded-2xl px-4 py-2 active:scale-90 transition-all duration-300 ease-out"  href="scan.html">
-<span class="material-symbols-outlined mb-1">center_focus_weak</span>
-<span class="font-plus-jakarta text-[11px] font-medium">Scanner</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-2 hover:text-teal-500 dark:hover:text-teal-300 transition-colors active:scale-90 transition-all duration-300 ease-out" href="marketPlace.html">
-<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
-<span class="font-plus-jakarta-sans text-[11px] font-semibold">Market</span>
-</a>
-<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-teal-500 dark:hover:text-teal-300 active:scale-90 transition-transform duration-150" href="Authentication/user.html">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="font-plus-jakarta-sans text-[11px] font-semibold">Profile</span>
-</a>
-</nav>
+
 <script>
     const supabase = window.supabase.createClient(
       "https://eupolobairqsuzjnihkc.supabase.co",
@@ -344,6 +527,9 @@
         video.classList.remove("hidden");
 
         fallback.classList.add("hidden");
+        
+        const permBtn = document.getElementById("camera-permission-btn");
+        if (permBtn) permBtn.classList.add("hidden");
 
         status.innerText = "Analyzing item...";
 
@@ -430,54 +616,202 @@
     }
 
     async function identifyImage(base64) {
-  setResultState(false, false);
-  document.getElementById('scan-status').innerText = 'Analyzing item...';
-  showMessage('Analyzing waste...');
 
-  try {
-    // Route through YOUR backend instead of calling Roboflow directly
-    // This avoids CORS issues with file:// and keeps API key secure
-    const response = await fetch(`${apiBase}/api/scans/identify`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`
-      },
-      body: JSON.stringify({ imageBase64: base64 })
-    });
+      setResultState(false, false);
 
-    const data = await response.json();
+      document.getElementById('scan-status').innerText =
+        'Analyzing item...';
 
-    if (!response.ok) {
-      throw new Error(data.error || data.detail || 'Identify failed');
+      showMessage('Analyzing waste...');
+
+      try {
+
+        const response = await fetch(
+          'https://serverless.roboflow.com/znexs-workspace/workflows/detect-and-classify-5',
+          {
+            method: 'POST',
+
+            headers: {
+              'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify({
+
+              api_key: 'ROBOFLOW_API_KEY',
+
+              inputs: {
+                image: {
+                  type: 'base64',
+                  value: base64
+                }
+              }
+            })
+          }
+        );
+
+        const roboflowResult = await response.json();
+
+        console.log("Roboflow Result:", roboflowResult);
+
+        if (!response.ok) {
+
+          throw new Error(
+            roboflowResult.error ||
+            "Roboflow API failed"
+          );
+        }
+
+        let predictions = [];
+
+        if (Array.isArray(roboflowResult.predictions)) {
+
+          predictions = roboflowResult.predictions;
+
+        } else if (Array.isArray(roboflowResult.outputs)) {
+
+          for (const output of roboflowResult.outputs) {
+
+            if (output &&
+                Array.isArray(output.predictions)) {
+
+              predictions = output.predictions;
+              break;
+            }
+
+            if (output &&
+                Array.isArray(output.classes)) {
+
+              predictions = output.classes;
+              break;
+            }
+          }
+
+        } else if (
+          roboflowResult.outputs &&
+          typeof roboflowResult.outputs === 'object'
+        ) {
+
+          for (const key in roboflowResult.outputs) {
+
+            const output = roboflowResult.outputs[key];
+
+            if (output &&
+                Array.isArray(output.predictions)) {
+
+              predictions = output.predictions;
+              break;
+            }
+
+            if (output &&
+                Array.isArray(output.classes)) {
+
+              predictions = output.classes;
+              break;
+            }
+          }
+        }
+
+        if (!predictions || predictions.length === 0) {
+
+          updateResultUI({
+            label: 'Could not identify waste',
+            binCategory: 'General Waste',
+            confidence: 0,
+            sellable: false,
+            xpReward: 0,
+            co2Saved: 0,
+            priceEstimate: '--'
+          });
+
+          return;
+        }
+
+        const topPrediction = predictions.sort(
+          (a, b) =>
+            (b.confidence || b.score || 0) -
+            (a.confidence || a.score || 0)
+        )[0];
+
+        const label =
+          topPrediction.class ||
+          topPrediction.label ||
+          topPrediction.predicted_class ||
+          topPrediction.name ||
+          'Unknown Item';
+
+        const confidence =
+          topPrediction.confidence ||
+          topPrediction.score ||
+          0;
+
+        const xpReward =
+          Math.max(
+            5,
+            Math.min(
+              30,
+              Math.round(confidence * 25)
+            )
+          );
+
+        const resultData = {
+
+          label,
+
+          binCategory: 'Recycle Bin',
+
+          confidence: Number(
+            confidence.toFixed(2)
+          ),
+
+          sellable: confidence > 0.5,
+
+          xpReward,
+
+          co2Saved: Number(
+            (xpReward * 0.35).toFixed(2)
+          ),
+
+          recommendation:
+            'Place this item in the correct recycling bin.',
+
+          priceEstimate:
+            '(estimate ' +
+            Math.max(1,
+              Math.round(confidence * 10)
+            ) +
+            ' EcoCoins)'
+        };
+
+        lastScanResult = resultData;
+
+        updateResultUI(resultData);
+
+        logScan(resultData)
+          .catch(e =>
+            console.error(
+              'Background log failed',
+              e
+            )
+          );
+
+      } catch (error) {
+
+        console.error(error);
+
+        document.getElementById('scan-status').innerText =
+          'Scan failed';
+
+        showMessage(
+          'Error connecting to AI: ' +
+          error.message
+        );
+
+        alert(
+          'Fetch error: ' +
+          error.message
+        );
+      }
     }
-
-    const result = data.result;
-    if (!result || result.confidence === 0) {
-      updateResultUI({
-        label: 'Could not identify waste',
-        binCategory: 'General Waste',
-        confidence: 0,
-        sellable: false,
-        xpReward: 0,
-        priceEstimate: '--'
-      });
-      return;
-    }
-
-    lastScanResult = result;
-    updateResultUI(result);
-
-    // Log the scan automatically
-    logScan(result).catch(e => console.error('Background log failed', e));
-
-  } catch (error) {
-    console.error(error);
-    document.getElementById('scan-status').innerText = 'Scan failed';
-    showMessage('Error: ' + error.message);
-    alert('Fetch error: ' + error.message);
-  }
-}
 
     async function logScan(result) {
 
@@ -690,9 +1024,14 @@
 
     window.addEventListener(
       'load',
-      checkSession
+      async () => {
+        await checkSession();
+        startCamera();
+      }
     );
 </script>
+
+
 </body></html>
 
 

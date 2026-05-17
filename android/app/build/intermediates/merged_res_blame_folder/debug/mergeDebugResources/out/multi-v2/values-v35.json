@@ -8,10 +8,10 @@
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "17",
                         "endLines": "6",
                         "endColumns": "12",
-                        "endOffsets": "344"
+                        "endOffsets": "350"
                     },
                     "to": {
                         "startLines": "2",
@@ -33,17 +33,17 @@
                         "startLines": "1",
                         "startColumns": "4",
                         "startOffsets": "16",
-                        "endLines": "7",
+                        "endLines": "6",
                         "endColumns": "12",
-                        "endOffsets": "419"
+                        "endOffsets": "344"
                     },
                     "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endLines": "8",
+                        "endLines": "7",
                         "endColumns": "12",
-                        "endOffsets": "458"
+                        "endOffsets": "383"
                     }
                 }
             ]

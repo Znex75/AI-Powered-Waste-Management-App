@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#00201e",
+                    "on-secondary-fixed": "#002109",
+                    "on-background": "#191c1e",
+                    "primary-container": "#2dd4bf",
+                    "on-primary-fixed-variant": "#005047",
+                    "primary": "#006b5f",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#91c8c2",
+                    "surface-dim": "#d8dadc",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#3cddc7",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container": "#eceef0",
+                    "secondary": "#006e2f",
+                    "secondary-container": "#6bff8f",
+                    "background": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#1c5551",
+                    "tertiary-fixed-dim": "#9ad1cb",
+                    "secondary-fixed": "#6bff8f",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-secondary-container": "#007432",
+                    "tertiary": "#316763",
+                    "primary-fixed-dim": "#3cddc7",
+                    "on-primary-container": "#00574d",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed-variant": "#005321",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed": "#62fae3",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f4f6",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#144f4b",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00201c",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#b5ede7",
+                    "outline-variant": "#bacac5",
+                    "surface": "#f7f9fb",
+                    "on-surface-variant": "#3c4a46",
+                    "surface-tint": "#006b5f",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#6b7a76"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "margin": "20px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-gradient-teal {
+            background: linear-gradient(180deg, #2dd4bf 0%, #006b5f 100%);
+        }
+        .chart-gradient-secondary {
+            background: linear-gradient(180deg, #6bff8f 0%, #006e2f 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    
+    /* Global Dark Mode Styles */
+    html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
+      background-color: #0f172a !important;
+      background-image: none !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    html.dark .border-slate-100, html.dark .border-slate-50 {
+      border-color: #334155 !important;
+    }
+    html.dark .text-slate-700, html.dark .text-on-surface, html.dark .text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .text-slate-500, html.dark .text-on-surface-variant, html.dark .text-outline {
+      color: #94a3b8 !important;
+    }
+    html.dark .bg-slate-50 {
+      background-color: #334155 !important;
+    }
+    html.dark aside#nav-drawer, html.dark header {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    html.dark #modal-backdrop + div {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark input {
+      background-color: #0f172a !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar & Navigation Drawer -->
+<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+<div class="flex items-center gap-3">
+<button class="w-11 h-11 rounded-full flex items-center justify-center text-teal-600 active:scale-95 transition-transform duration-200" onclick="document.getElementById('nav-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-overlay').classList.remove('hidden');" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+</div>
+</header>
+
+<!-- Navigation Drawer -->
+<div id="drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity" onclick="document.getElementById('nav-drawer').classList.add('-translate-x-full'); this.classList.add('hidden');"></div>
+<aside id="nav-drawer" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-slate-900 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-y-auto">
+<div class="p-6 border-b border-slate-100 flex items-center gap-4">
+<label for="drawer-avatar-upload" class="cursor-pointer relative group block flex-shrink-0">
+  <img id="nav-drawer-avatar" alt="User" class="w-14 h-14 rounded-full object-cover group-hover:opacity-75 transition-opacity" src="https://placehold.net/avatar.png"/>
+  <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+    <span class="material-symbols-outlined text-white text-sm">edit</span>
+  </div>
+</label>
+<input type="file" id="drawer-avatar-upload" accept="image/*" class="hidden" onchange="uploadDrawerAvatar(event)" />
+<div>
+<p class="text-sm text-slate-500">Hey!</p>
+<p id="nav-drawer-name" class="font-bold text-teal-700">Loading...</p>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-[#4caf50] text-white rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-semibold flex-1">Homepage</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="scan.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">center_focus_weak</span>
+<span class="font-semibold flex-1">Scanner</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="marketPlace.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-semibold flex-1">Market</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="Authentication/user.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-semibold flex-1">Profile</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="schedule.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-semibold flex-1">Schedule</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="recycle.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">recycling</span>
+<span class="font-semibold flex-1">Recycle</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="events.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">event</span>
+<span class="font-semibold flex-1">Events</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="tips.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-semibold flex-1">Tips</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="blog.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">article</span>
+<span class="font-semibold flex-1">Blog</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="donate.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-semibold flex-1">Donate</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="community.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-semibold flex-1">Community</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="reports.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-semibold flex-1">Reports</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="p-4 border-t border-slate-100">
+<button onclick="logout()" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl w-full text-left">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      if (!window.supabase) return;
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+      const { data: { session } } = await supa.auth.getSession();
+      if (session && session.user) {
+        const user = session.user;
+        const nameEl = document.getElementById('nav-drawer-name');
+        const avatarEl = document.getElementById('nav-drawer-avatar');
+        
+        if (nameEl) {
+          nameEl.innerText = user.user_metadata?.name || user.email.split('@')[0];
+        }
+        if (avatarEl && user.user_metadata?.avatar_url) {
+          avatarEl.src = user.user_metadata.avatar_url;
+        }
+      }
+    } catch(err) {
+      console.error("Error fetching user for drawer:", err);
+    }
+
+    // Apply dark mode theme if saved
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+  });
+
+  async function uploadDrawerAvatar(event) {
+    const file = event.target.files[0];
+    if (!file || !window.supabase) return;
+
+    try {
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+
+      const avatarEl = document.getElementById('nav-drawer-avatar');
+      avatarEl.style.opacity = '0.5';
+
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64 = reader.result;
+        
+        const { error } = await supa.auth.updateUser({
+          data: { avatar_url: base64 }
+        });
+
+        if (error) throw error;
+        
+        avatarEl.src = base64;
+        avatarEl.style.opacity = '1';
+      };
+      reader.readAsDataURL(file);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to update avatar.");
+      document.getElementById('nav-drawer-avatar').style.opacity = '1';
+    }
+  }
+</script>
+
+
+<!-- Top AppBar -->
+
+<main class="max-w-7xl mx-auto px-margin pt-md space-y-lg">
+<!-- Hero: Lifetime Impact Card -->
+<section>
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-md shadow-lg text-on-primary-container">
+<div class="absolute -right-8 -top-8 w-48 h-48 bg-primary rounded-full opacity-10 blur-2xl"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="space-y-base text-center md:text-left">
+<span class="font-label-md text-label-md uppercase tracking-wider opacity-80">Lifetime Impact</span>
+<h2 class="font-display-lg text-display-lg">128.4 kg</h2>
+<p class="font-body-lg text-body-lg">Total CO2 Neutralized</p>
+</div>
+<div class="h-px md:h-20 w-32 md:w-px bg-on-primary-container/20"></div>
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded-full bg-on-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl" data-icon="forest">forest</span>
+</div>
+<div class="text-left">
+<div class="font-headline-md text-headline-md">14 Trees</div>
+<p class="font-label-md text-label-md opacity-80">Equivalent Forestation</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Reports -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md">
+<!-- Weekly Waste Reduction (Bar Chart) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(49,103,99,0.06)] border-l-4 border-primary">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Weekly Reduction</h3>
+<div class="flex items-center gap-xs text-primary font-label-md">
+<span>-12% vs last week</span>
+<span class="material-symbols-outlined text-sm" data-icon="trending_down">trending_down</span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-base px-base">
+<div class="flex-1 flex flex-col items-center gap-base">
+<div class="w-full bg-surface-container rounded-t-lg relative group h-40">
+<div class="absolute bottom-0 w-full chart-gradient-teal rounded-t-lg" style="height: 65%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Mon</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-base">
+<div class="w-full bg-surface-container rounded-t-lg relative h-40">
+<div class="absolute bottom-0 w-full chart-gradient-teal rounded-t-lg" style="height: 45%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Tue</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-base">
+<div class="w-full bg-surface-container rounded-t-lg relative h-40">
+<div class="absolute bottom-0 w-full chart-gradient-teal rounded-t-lg" style="height: 85%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Wed</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-base">
+<div class="w-full bg-surface-container rounded-t-lg relative h-40">
+<div class="absolute bottom-0 w-full chart-gradient-teal rounded-t-lg" style="height: 55%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Thu</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-base">
+<div class="w-full bg-surface-container rounded-t-lg relative h-40">
+<div class="absolute bottom-0 w-full chart-gradient-teal rounded-t-lg" style="height: 95%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Fri</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-base">
+<div class="w-full bg-surface-container rounded-t-lg relative h-40">
+<div class="absolute bottom-0 w-full chart-gradient-teal rounded-t-lg" style="height: 30%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Sat</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-base">
+<div class="w-full bg-surface-container rounded-t-lg relative h-40">
+<div class="absolute bottom-0 w-full chart-gradient-teal rounded-t-lg" style="height: 20%"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Sun</span>
+</div>
+</div>
+</div>
+<!-- Waste Distribution (Doughnut) -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(49,103,99,0.06)] flex flex-col items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface w-full mb-md">Waste Types</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="16"></circle>
+<circle class="text-primary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="150" stroke-width="16"></circle>
+<circle class="text-secondary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="400" stroke-width="16"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary">64%</span>
+<span class="font-label-sm text-label-sm text-outline">Recycled</span>
+</div>
+</div>
+<div class="mt-md w-full space-y-base">
+<div class="flex justify-between items-center px-base">
+<div class="flex items-center gap-base">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="font-body-md text-body-md">Plastic/Metal</span>
+</div>
+<span class="font-label-md text-label-md">42%</span>
+</div>
+<div class="flex justify-between items-center px-base">
+<div class="flex items-center gap-base">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="font-body-md text-body-md">Compost</span>
+</div>
+<span class="font-label-md text-label-md">22%</span>
+</div>
+<div class="flex justify-between items-center px-base">
+<div class="flex items-center gap-base">
+<div class="w-3 h-3 rounded-full bg-surface-container"></div>
+<span class="font-body-md text-body-md">Landfill</span>
+</div>
+<span class="font-label-md text-label-md">36%</span>
+</div>
+</div>
+</div>
+<!-- Neighborhood Leaderboard -->
+<div class="md:col-span-6 bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(49,103,99,0.06)]">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Community Rank</h3>
+<button class="text-primary font-label-md hover:underline">See All</button>
+</div>
+<div class="space-y-sm">
+<!-- Rank 1 -->
+<div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md text-secondary">1</span>
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img alt="Sarah J." data-alt="Close-up portrait of a cheerful young woman with curly hair, set against a bright, airy environment. The lighting is natural and glowing, conveying a sense of community and vitality. The overall aesthetic is clean and modern, fitting perfectly with the sustainable and friendly atmosphere of an eco-conscious mobile application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7sXdkXOjpsSD8QmCE8D7uX026B6pAW4qsDGm0-N6-zPIaL-7ixaih7tTFdGFgaS7h-5N_6Uri1jxAl1nnbsEf28GR1sArm-p8aXAWCSa-c2oabtlezrqAUOuDF9uwXyZPqjS5TuyWUMgYL6ZZHA3JBKm_3-AZaHu8QW27UO-0Z0i8yFfQtV0T9N2lbkTvh9YtKOX9cm63a6zFlnARQidXbzoptc2b7Au7wp5bIRa74sLzGix0fZrWBBuC6EVPTCrUvl13AJeS-Ecv"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Sarah J.</div>
+<div class="font-label-sm text-label-sm text-outline">Eco Master</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-secondary">2,450 pts</div>
+</div>
+</div>
+<!-- Current User Rank -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-primary-container/20 border border-primary/20">
+<div class="flex items-center gap-md">
+<span class="font-headline-md text-headline-md text-primary">12</span>
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
+<img alt="You" data-alt="A professional headshot of a friendly man with a warm smile, set against a clean and bright minimalist background. The lighting is soft and high-key, emphasizing a modern and approachable look. The color palette is dominated by neutral tones with subtle hints of teal in his attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7drgNu-PbgWJkir6KKKhCSW4szaAnws05ouYyP5fm-WRg__FJBdWVr6FfBC_JXr9exdJhT8LjgQLQW7KhB-fyAMjyLmPdJGMb1aMnVcDaWvnBH-A5-3a-Wmyb-nFGrn2OWIa0p_Ahj1BPbScdumAdo4hmi-8yf1OmO0yYyeCzIuHgp5Ky-xSaYuOK5bIvaSvkjgZIrIk2lPmCiFlnM5wJ1fYV0gs7QPsV3-QxVgN3vpK-12ChgEmz6GxvRsL-AbgVWssFMMei4H-Z"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">You (Eco Warrior)</div>
+<div class="font-label-sm text-label-sm text-outline">Neighborhood Hero</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-primary">1,820 pts</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Achievements -->
+<div class="md:col-span-6 bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(49,103,99,0.06)]">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Badges Earned</h3>
+<div class="grid grid-cols-3 gap-md">
+<div class="flex flex-col items-center text-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">30 Day Streak</span>
+</div>
+<div class="flex flex-col items-center text-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" data-icon="compost">compost</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Compost King</span>
+</div>
+<div class="flex flex-col items-center text-center gap-xs opacity-40 grayscale">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-3xl" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Carbon Zero</span>
+</div>
+<div class="flex flex-col items-center text-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-tertiary-container flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl" data-icon="group">group</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Influencer</span>
+</div>
+<div class="flex flex-col items-center text-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Top 10%</span>
+</div>
+<div class="flex flex-col items-center text-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center border-2 border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-outline-variant text-2xl" data-icon="lock">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant">Locked</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

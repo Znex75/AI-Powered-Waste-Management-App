@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoPulse Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#00201e",
+                    "on-secondary-fixed": "#002109",
+                    "on-background": "#191c1e",
+                    "primary-container": "#2dd4bf",
+                    "on-primary-fixed-variant": "#005047",
+                    "primary": "#006b5f",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#91c8c2",
+                    "surface-dim": "#d8dadc",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#3cddc7",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container": "#eceef0",
+                    "secondary": "#006e2f",
+                    "secondary-container": "#6bff8f",
+                    "background": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#1c5551",
+                    "tertiary-fixed-dim": "#9ad1cb",
+                    "secondary-fixed": "#6bff8f",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-secondary-container": "#007432",
+                    "tertiary": "#316763",
+                    "primary-fixed-dim": "#3cddc7",
+                    "on-primary-container": "#00574d",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed-variant": "#005321",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed": "#62fae3",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f4f6",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#144f4b",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00201c",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#b5ede7",
+                    "outline-variant": "#bacac5",
+                    "surface": "#f7f9fb",
+                    "on-surface-variant": "#3c4a46",
+                    "surface-tint": "#006b5f",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#6b7a76"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "margin": "20px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #006b5f;
+            border-radius: 9999px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    
+    /* Global Dark Mode Styles */
+    html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
+      background-color: #0f172a !important;
+      background-image: none !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    html.dark .border-slate-100, html.dark .border-slate-50 {
+      border-color: #334155 !important;
+    }
+    html.dark .text-slate-700, html.dark .text-on-surface, html.dark .text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .text-slate-500, html.dark .text-on-surface-variant, html.dark .text-outline {
+      color: #94a3b8 !important;
+    }
+    html.dark .bg-slate-50 {
+      background-color: #334155 !important;
+    }
+    html.dark aside#nav-drawer, html.dark header {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    html.dark #modal-backdrop + div {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark input {
+      background-color: #0f172a !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-xl">
+<!-- TopAppBar & Navigation Drawer -->
+<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+<div class="flex items-center gap-3">
+<button class="w-11 h-11 rounded-full flex items-center justify-center text-teal-600 active:scale-95 transition-transform duration-200" onclick="document.getElementById('nav-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-overlay').classList.remove('hidden');" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+</div>
+</header>
+
+<!-- Navigation Drawer -->
+<div id="drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity" onclick="document.getElementById('nav-drawer').classList.add('-translate-x-full'); this.classList.add('hidden');"></div>
+<aside id="nav-drawer" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-slate-900 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-y-auto">
+<div class="p-6 border-b border-slate-100 flex items-center gap-4">
+<label for="drawer-avatar-upload" class="cursor-pointer relative group block flex-shrink-0">
+  <img id="nav-drawer-avatar" alt="User" class="w-14 h-14 rounded-full object-cover group-hover:opacity-75 transition-opacity" src="https://placehold.net/avatar.png"/>
+  <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+    <span class="material-symbols-outlined text-white text-sm">edit</span>
+  </div>
+</label>
+<input type="file" id="drawer-avatar-upload" accept="image/*" class="hidden" onchange="uploadDrawerAvatar(event)" />
+<div>
+<p class="text-sm text-slate-500">Hey!</p>
+<p id="nav-drawer-name" class="font-bold text-teal-700">Loading...</p>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-[#4caf50] text-white rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-semibold flex-1">Homepage</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="scan.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">center_focus_weak</span>
+<span class="font-semibold flex-1">Scanner</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="marketPlace.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-semibold flex-1">Market</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="Authentication/user.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-semibold flex-1">Profile</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="schedule.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-semibold flex-1">Schedule</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="recycle.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">recycling</span>
+<span class="font-semibold flex-1">Recycle</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="events.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">event</span>
+<span class="font-semibold flex-1">Events</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="tips.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-semibold flex-1">Tips</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="blog.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">article</span>
+<span class="font-semibold flex-1">Blog</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="donate.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-semibold flex-1">Donate</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="community.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-semibold flex-1">Community</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="reports.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-semibold flex-1">Reports</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="p-4 border-t border-slate-100">
+<button onclick="logout()" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl w-full text-left">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      if (!window.supabase) return;
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+      const { data: { session } } = await supa.auth.getSession();
+      if (session && session.user) {
+        const user = session.user;
+        const nameEl = document.getElementById('nav-drawer-name');
+        const avatarEl = document.getElementById('nav-drawer-avatar');
+        
+        if (nameEl) {
+          nameEl.innerText = user.user_metadata?.name || user.email.split('@')[0];
+        }
+        if (avatarEl && user.user_metadata?.avatar_url) {
+          avatarEl.src = user.user_metadata.avatar_url;
+        }
+      }
+    } catch(err) {
+      console.error("Error fetching user for drawer:", err);
+    }
+
+    // Apply dark mode theme if saved
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+  });
+
+  async function uploadDrawerAvatar(event) {
+    const file = event.target.files[0];
+    if (!file || !window.supabase) return;
+
+    try {
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+
+      const avatarEl = document.getElementById('nav-drawer-avatar');
+      avatarEl.style.opacity = '0.5';
+
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64 = reader.result;
+        
+        const { error } = await supa.auth.updateUser({
+          data: { avatar_url: base64 }
+        });
+
+        if (error) throw error;
+        
+        avatarEl.src = base64;
+        avatarEl.style.opacity = '1';
+      };
+      reader.readAsDataURL(file);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to update avatar.");
+      document.getElementById('nav-drawer-avatar').style.opacity = '1';
+    }
+  }
+</script>
+
+
+<!-- Top App Bar -->
+
+<main class="max-w-7xl mx-auto px-margin pt-md">
+<!-- Tabbed Interface -->
+<div class="flex border-b border-outline-variant mb-md relative">
+<button class="flex-1 py-md font-label-md text-label-md text-primary relative">
+                Feed
+                <div class="active-tab-indicator"></div>
+</button>
+<button class="flex-1 py-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">
+                Groups
+            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md">
+<!-- Left Column: Feed -->
+<div class="md:col-span-8 flex flex-col gap-md">
+<!-- Post Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border-l-4 border-primary">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Post author avatar" data-alt="A high-resolution portrait of a young woman with a radiant expression, standing in a sunlit urban park filled with lush greenery. The image uses a soft, airy color palette of light teals and natural greens, reflecting an optimistic and environmentally-conscious brand persona. The lighting is high-key and diffused, creating a professional and approachable modern minimalist feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCffGqyIaoMo0kGBCj1UkrzL-D1miftH-OfoBq5cgRR847l43gxpzAHjYO2745AqDjkQLpnXZESZZ7PhVO0zYOYaiaHgVqiwB-aWaZINnZyp8HDVPeGf6NDNsWh56cDWQrZFH4Gc_ekFncgA_tt0PD9rNdYsOMnyTq8kFB0YhOWUYwVVf_7mXpY90Xqmj4-EeJy7cVlrit1IfgcPdgpZ0SjEuGInpYS4K4iGyeIzH--tVU9iki-b_vQ00F4h869pL7MGVDLv5tmx91i"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Sarah Jenkins</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2h ago • Maple Street Hub</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">Just dropped off 5kg of organic compost at the neighborhood bin! The bin fullness gauge is at about 60% right now for anyone heading that way. 🌱</p>
+<div class="rounded-xl overflow-hidden mb-md">
+<img alt="Compost bin image" data-alt="A clean, modern wooden compost bin located in a bright community garden setting during a sunny afternoon. The composition is minimalist and organized, with vibrant green plants in the background and soft, natural lighting. The color story highlights refreshing teals and forest greens, emphasizing a sense of clarity and ecological stewardship in an urban environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA26QRuSxK4K95ITtR-i5q3yOf0T-Zh-w-KAwKVWPthucv4lWTjeKB4U7lIyJg2ZCQFMNctLlNgkQP_GKif53Ik2IeG9j6ZCORduob6iXEcVLtpTpYywOP7NA-BovO_ViMV2RtfajXEqbTBv4Bjf9nrm9uH4MkGPAaKAzE8b2v38eDLq5y64YrHxLwtOFGDgCwVIIANexrm5IVWYw20IHpxUW3PkjcHgtJoyJpWVfVrjmUvN70P2hOowLkL76NqjUF-wa1exCNBd9Vx"/>
+</div>
+<div class="flex items-center justify-between pt-base border-t border-surface-container">
+<div class="flex gap-md">
+<button class="flex items-center gap-xs text-primary transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-sm text-label-sm">24</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">8</span>
+</button>
+</div>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<!-- Post Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border-l-4 border-secondary">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img alt="Post author avatar" data-alt="A close-up portrait of a man with glasses and a friendly, proactive look, set against a bright white architectural background with teal accents. The lighting is clear and shadowless, reinforcing a soft-high-tech aesthetic. The atmosphere is optimistic and organized, representing a community leader in an eco-conscious movement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA33jN8Lh0U9LWvAeJ89GMGqzZzPAQC-V8StZ1nTjF9nct72H8DKE60Pafk_DQaArckfSOkvToH4Rxpt6JQ4pTS5qIk-kr1Y2TS3rENc4Pd-3LVstyMfiEjS6Jc3aQAJb9c5BsE8zCSQGD5a24Sp2u26c5QsXPb82T6EIvEZqk8-BxHov7S21e3KioxAvwMdvFHiHgZ-sIHFHe8REAZcVnA2ZtBwe4oudopjnXijFVDWkYcBOB9PBG6rwrlu1uR-Ej1zQ8oAzPA9q3s"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Mark Thompson</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">5h ago • Tool Sharing Collective</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">Does anyone need a heavy-duty shredder for the weekend? I'm lending mine out to help with cardboard recycling prep. Pickup at 42 Brook Lane.</p>
+<div class="flex items-center justify-between pt-base border-t border-surface-container">
+<div class="flex gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="thumb_up">thumb_up</span>
+<span class="font-label-sm text-label-sm">12</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">3</span>
+</button>
+</div>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Trending & Groups -->
+<div class="md:col-span-4 flex flex-col gap-md">
+<!-- Trending Neighborhood Topics -->
+<div class="bg-surface-container-low rounded-xl p-md shadow-sm">
+<h2 class="font-label-md text-label-md text-primary mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]" data-icon="trending_up">trending_up</span>
+                        Trending Near You
+                    </h2>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-center justify-between p-sm hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
+<div>
+<p class="font-label-md text-label-md text-on-surface">#ToolSharing</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">15 posts today</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</li>
+<li class="flex items-center justify-between p-sm hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
+<div>
+<p class="font-label-md text-label-md text-on-surface">#CompostCollective</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">8 posts today</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</li>
+<li class="flex items-center justify-between p-sm hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
+<div>
+<p class="font-label-md text-label-md text-on-surface">#PlasticFreeJuly</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">42 people joined</p>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</li>
+</ul>
+</div>
+<!-- Active Groups (Bento-ish Card) -->
+<div class="bg-primary-container/10 rounded-xl p-md border border-primary-container/20">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-label-md text-label-md text-on-primary-container">Local Groups</h2>
+<button class="text-primary font-label-sm text-label-sm">View All</button>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="bg-surface-container-lowest p-sm rounded-lg flex flex-col items-center text-center gap-xs hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+</div>
+<p class="font-label-sm text-label-sm font-bold">Green Up</p>
+</div>
+<div class="bg-surface-container-lowest p-sm rounded-lg flex flex-col items-center text-center gap-xs hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<p class="font-label-sm text-label-sm font-bold">Energy Fix</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-[100px] right-margin w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center transition-all active:scale-90 hover:scale-105 z-40">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+
+</body></html>

@@ -91,21 +91,25 @@ uses-permission#android.permission.READ_MEDIA_IMAGES
 ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:6:5-76
 	android:name
 		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:6:22-73
+uses-permission#android.permission.READ_MEDIA_VISUAL_USER_SELECTED
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:5-90
+	android:name
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:22-87
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:5-107
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:8:5-107
 	android:maxSdkVersion
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:78-104
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:8:78-104
 	android:name
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:22-77
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:8:22-77
 uses-feature#android.hardware.camera
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:9:5-11:35
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:10:5-12:35
 	android:required
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:11:9-32
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:12:9-32
 	android:name
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:10:9-47
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:11:9-47
 application
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:13:5-54:19
-INJECTED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:13:5-54:19
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:14:5-54:19
+INJECTED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:14:5-54:19
 MERGED from [com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:28:5-73:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:23:5-42:19
@@ -149,55 +153,53 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\c
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:16:9-41
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:17:9-41
 	android:roundIcon
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:17:9-61
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:18:9-61
 	android:icon
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:15:9-56
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:16:9-56
 	android:allowBackup
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:19:9-40
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:20:9-40
 	android:usesCleartextTraffic
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:20:9-44
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:21:9-44
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:23:9-25:55
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:24:9-26:55
 	android:value
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:25:13-52
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:26:13-52
 	android:name
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:24:13-58
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:25:13-58
 activity#com.ecocycle.wastemanagement.MainActivity
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:27:9-35:20
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:28:9-36:20
 	android:exported
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:30:13-36
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:31:13-36
 	android:configChanges
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:29:13-74
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:30:13-74
 	android:name
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:28:13-41
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:29:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:31:13-34:29
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:17-69
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:25-66
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:17-77
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:27-74
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:27-74
 activity#com.facebook.FacebookActivity
-ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:38:9-41:48
+ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:39:9-41:99
 MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:22:9-25:66
 MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:22:9-25:66
-	android:label
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:41:13-45
 	android:configChanges
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:40:13-96
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:41:13-96
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:25:13-63
 	android:name
-		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:39:13-57
+		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:40:13-57
 activity#com.facebook.CustomTabActivity
 ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:44:9-53:20
 MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:27:9-41:20

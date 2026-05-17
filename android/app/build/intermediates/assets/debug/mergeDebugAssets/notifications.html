@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoCycle - Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#2dd4bf",
+                    "secondary-fixed": "#6bff8f",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-highest": "#e0e3e5",
+                    "background": "#f7f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#191c1e",
+                    "on-tertiary-container": "#1c5551",
+                    "primary-fixed-dim": "#3cddc7",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#144f4b",
+                    "inverse-surface": "#2d3133",
+                    "surface-container": "#eceef0",
+                    "secondary": "#006e2f",
+                    "on-secondary-fixed-variant": "#005321",
+                    "primary-fixed": "#62fae3",
+                    "on-secondary-fixed": "#002109",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface": "#f7f9fb",
+                    "on-primary-container": "#00574d",
+                    "on-primary-fixed-variant": "#005047",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#91c8c2",
+                    "outline-variant": "#bacac5",
+                    "secondary-fixed-dim": "#4ae176",
+                    "surface-tint": "#006b5f",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00201c",
+                    "on-tertiary-fixed": "#00201e",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f7f9fb",
+                    "surface-dim": "#d8dadc",
+                    "on-surface-variant": "#3c4a46",
+                    "secondary-container": "#6bff8f",
+                    "inverse-primary": "#3cddc7",
+                    "primary": "#006b5f",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#b5ede7",
+                    "tertiary": "#316763",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-container": "#007432",
+                    "surface-variant": "#e0e3e5",
+                    "outline": "#6b7a76",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-fixed-dim": "#9ad1cb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "16px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "base": "8px",
+                    "margin": "20px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "xs": "4px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        .notification-card {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .notification-card:active {
+            transform: scale(0.98);
+        }
+    
+    /* Global Dark Mode Styles */
+    html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
+      background-color: #0f172a !important;
+      background-image: none !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    html.dark .border-slate-100, html.dark .border-slate-50 {
+      border-color: #334155 !important;
+    }
+    html.dark .text-slate-700, html.dark .text-on-surface, html.dark .text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .text-slate-500, html.dark .text-on-surface-variant, html.dark .text-outline {
+      color: #94a3b8 !important;
+    }
+    html.dark .bg-slate-50 {
+      background-color: #334155 !important;
+    }
+    html.dark aside#nav-drawer, html.dark header {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    html.dark #modal-backdrop + div {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark input {
+      background-color: #0f172a !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface flex justify-between items-center px-margin py-base max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button onclick="history.back()" class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Notifications</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full overflow-hidden hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling young woman with warm lighting and a soft-focus background. She has a friendly, eco-conscious professional aesthetic. The image is crisp and modern, fitting a high-end sustainable lifestyle application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBn_8JZBKWJ2ZX2Qrvprli0QhP-webl-JMB_gbZiDC8nmwk2SLSTh2FAYTYqkdw82fzQCwCP7EPgVcLiFfXuJ9cksjAvC6M9H835fOrxPbcQ4D2ZaQ5fgZCnW-NkfhsDl9HgtQE1xLQV6R3bbfiMRBq4U8SJ_yu9KU6OgmhU5oWk9FkOHTm23MgvBkq9TP-UYQLKHycAl_DwKyuEEeg-obb8MGt4vmb2rjsaRcwamB1SRFsszdMryOEY3JPY6RWLwHL3JA2Y7UNMjy"/>
+</button>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="max-w-2xl mx-auto px-margin pt-base pb-xl">
+<!-- Section: Today -->
+<section class="mb-lg">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Today</h2>
+<div class="space-y-gutter">
+<!-- Recycling Milestone -->
+<div class="notification-card bg-surface-container-lowest rounded-2xl p-md shadow-[0_4px_12px_rgba(45,212,191,0.08)] border-l-4 border-primary relative">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="trophy" style="font-variation-settings: 'FILL' 1;">trophy</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-label-md text-label-md text-primary mb-1">Recycling Milestone</p>
+<span class="w-2.5 h-2.5 bg-primary-container rounded-full" title="Unread"></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">You've saved 50kg of CO2! Check out your new badge.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 block">2h ago</span>
+</div>
+</div>
+</div>
+<!-- Community Activity -->
+<div class="notification-card bg-surface-container-lowest rounded-2xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.03)] border-l-4 border-secondary relative">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary" data-icon="comment" style="font-variation-settings: 'FILL' 1;">comment</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="font-label-md text-label-md text-secondary mb-1">Community Activity</p>
+<span class="w-2.5 h-2.5 bg-primary-container rounded-full" title="Unread"></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface"><span class="font-bold">Sarah J.</span> commented on your post in Urban Network.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 block">5h ago</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Yesterday -->
+<section class="mb-lg">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Yesterday</h2>
+<div class="space-y-gutter">
+<!-- Pickup Reminder -->
+<div class="notification-card bg-surface-container-lowest rounded-2xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.03)] border-l-4 border-primary/40">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="local_shipping">local_shipping</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Pickup Reminder</p>
+<p class="font-body-md text-body-md text-on-surface">Smart Pickup tomorrow at 8:00 AM. Ensure your bins are out.</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 block">Yesterday, 6:30 PM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Earlier -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Earlier</h2>
+<div class="space-y-gutter">
+<!-- Marketplace Alert -->
+<div class="notification-card bg-surface-container-lowest rounded-2xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.03)] border-l-4 border-tertiary-container">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="storefront">storefront</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Marketplace Alert</p>
+<p class="font-body-md text-body-md text-on-surface">A new 'Vintage Glass Set' was listed near you.</p>
+<div class="mt-base rounded-xl overflow-hidden h-24 relative">
+<img alt="Vintage Glass" class="w-full h-full object-cover" data-alt="A collection of beautifully crafted vintage glass bottles and jars arranged on a rustic wooden table. The lighting is soft and natural, emphasizing the organic textures and green tints of the recycled glass. The overall atmosphere is peaceful, showcasing high-quality sustainable craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFmAvY7KsWTNKN9o4NhaS7D1HyZTVGSX_Pkmt8TsGQ8K7pTNqKoxZ1M_cdmPA5MQmPpAiw1C4xKFq2KFFfPt61R-su-3ZSY_EfsnkojzWLCHzIWIKu7BhYOba-EDUM-AKoUndp21ENDwtlQ74jUV8p-cuo4WJUpcahXOxAc_fAB0CxhxifuCVOD6SnDr9ZEyOoy7GNvxZ8AbFXPmxpWUBis6by5vLiCLkySWDjNjx_buDA2ilF5O5kvBcXPgMwcwwBkc9JFVzHJAfu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 block">Oct 24, 2:15 PM</span>
+</div>
+</div>
+</div>
+<!-- Daily Tip -->
+<div class="notification-card bg-surface-container-lowest rounded-2xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.03)] border-l-4 border-primary/20">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="lightbulb">lightbulb</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Daily Tip</p>
+<p class="font-body-md text-body-md text-on-surface">New Tip: Composting in Small Spaces is now available.</p>
+<button class="mt-base px-gutter py-xs border border-primary text-primary font-label-md rounded-full hover:bg-primary/5 active:scale-95 transition-all">
+                                Read More
+                            </button>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 block">Oct 23, 9:00 AM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+    // Apply dark mode theme if saved
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+</script>
+</body></html>

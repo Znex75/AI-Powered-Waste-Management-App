@@ -17,104 +17,105 @@
 13    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 13-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:6:5-76
 13-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:6:22-73
-14    <uses-permission
-14-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:5-107
-15        android:name="android.permission.READ_EXTERNAL_STORAGE"
-15-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:22-77
-16        android:maxSdkVersion="32" />
-16-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:78-104
-17
-18    <uses-feature
-18-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:9:5-11:35
-19        android:name="android.hardware.camera"
-19-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:10:9-47
-20        android:required="true" />
-20-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:11:9-32
-21
-22    <!-- Facebook requires these queries for Android 11+ -->
-23    <queries>
-23-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:57:5-59:15
-24        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
-24-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:58:9-89
-24-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:58:19-86
-25
-26        <package android:name="com.facebook.katana" />
-26-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:9-55
-26-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:18-52
-27    </queries>
-28
-29    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-29-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:26:5-79
-29-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:26:22-76
-30    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-30-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:5-98
-30-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:22-95
-31    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-31-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:5-79
-31-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:22-76
-32    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-32-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
-32-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
-33
-34    <application
-34-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:13:5-54:19
-35        android:allowBackup="true"
-35-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:14:9-35
-36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-36-->[androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
-37        android:debuggable="true"
-38        android:extractNativeLibs="false"
-39        android:icon="@drawable/ic_launcher_foreground"
-39-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:15:9-56
-40        android:label="@string/app_name"
-40-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:16:9-41
-41        android:roundIcon="@drawable/ic_launcher_foreground"
-41-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:17:9-61
-42        android:supportsRtl="true"
-42-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:18:9-35
-43        android:testOnly="true"
-44        android:theme="@style/AppTheme"
-44-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:19:9-40
-45        android:usesCleartextTraffic="true" >
-45-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:20:9-44
-46
-47        <!-- Facebook App ID -->
-48        <meta-data
-48-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:23:9-25:55
-49            android:name="com.facebook.sdk.ApplicationId"
-49-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:24:13-58
-50            android:value="@string/facebook_app_id" />
-50-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:25:13-52
-51
-52        <activity
-52-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:27:9-35:20
-53            android:name="com.ecocycle.wastemanagement.MainActivity"
-53-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:28:13-41
-54            android:configChanges="keyboardHidden|orientation|screenSize"
-54-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:29:13-74
-55            android:exported="true" >
-55-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:30:13-36
-56            <intent-filter>
-56-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:31:13-34:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:17-69
-57-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:25-66
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:17-77
-59-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:27-74
-60            </intent-filter>
-61        </activity>
-62
-63        <!-- Facebook Login Activity -->
-64        <activity
-64-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:38:9-41:48
-65            android:name="com.facebook.FacebookActivity"
-65-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:39:13-57
-66            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-66-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:40:13-96
-67            android:label="@string/app_name"
-67-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:41:13-45
+14    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+14-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:5-90
+14-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:7:22-87
+15    <uses-permission
+15-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:8:5-107
+16        android:name="android.permission.READ_EXTERNAL_STORAGE"
+16-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:8:22-77
+17        android:maxSdkVersion="32" />
+17-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:8:78-104
+18
+19    <uses-feature
+19-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:10:5-12:35
+20        android:name="android.hardware.camera"
+20-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:11:9-47
+21        android:required="true" />
+21-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:12:9-32
+22
+23    <!-- Facebook requires these queries for Android 11+ -->
+24    <queries>
+24-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:57:5-59:15
+25        <provider android:authorities="com.facebook.katana.provider.PlatformProvider" />
+25-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:58:9-89
+25-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:58:19-86
+26
+27        <package android:name="com.facebook.katana" />
+27-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:9-55
+27-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:18-52
+28    </queries>
+29
+30    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+30-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:26:5-79
+30-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:26:22-76
+31    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+31-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:5-98
+31-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:22-95
+32    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+32-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:5-79
+32-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:22-76
+33    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+33-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+33-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+34
+35    <application
+35-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:14:5-54:19
+36        android:allowBackup="true"
+36-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:15:9-35
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+38        android:debuggable="true"
+39        android:extractNativeLibs="false"
+40        android:icon="@drawable/ic_launcher_foreground"
+40-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:16:9-56
+41        android:label="@string/app_name"
+41-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:17:9-41
+42        android:roundIcon="@drawable/ic_launcher_foreground"
+42-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:18:9-61
+43        android:supportsRtl="true"
+43-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:19:9-35
+44        android:testOnly="true"
+45        android:theme="@style/AppTheme"
+45-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:20:9-40
+46        android:usesCleartextTraffic="true" >
+46-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:21:9-44
+47
+48        <!-- Facebook App ID -->
+49        <meta-data
+49-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:24:9-26:55
+50            android:name="com.facebook.sdk.ApplicationId"
+50-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:25:13-58
+51            android:value="@string/facebook_app_id" />
+51-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:26:13-52
+52
+53        <activity
+53-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:28:9-36:20
+54            android:name="com.ecocycle.wastemanagement.MainActivity"
+54-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:29:13-41
+55            android:configChanges="keyboardHidden|orientation|screenSize"
+55-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:30:13-74
+56            android:exported="true" >
+56-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:31:13-36
+57            <intent-filter>
+57-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:13-35:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:17-69
+58-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:17-77
+60-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:27-74
+61            </intent-filter>
+62        </activity>
+63
+64        <!-- Facebook Login Activity -->
+65        <activity
+65-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:39:9-41:99
+66            android:name="com.facebook.FacebookActivity"
+66-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:40:13-57
+67            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+67-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:41:13-96
 68            android:theme="@style/com_facebook_activity_theme" />
 68-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:25:13-63
 69

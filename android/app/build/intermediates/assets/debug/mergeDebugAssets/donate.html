@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoPulse | Environmental Stories</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#00201e",
+                        "on-secondary-fixed": "#002109",
+                        "on-background": "#191c1e",
+                        "primary-container": "#2dd4bf",
+                        "on-primary-fixed-variant": "#005047",
+                        "primary": "#006b5f",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#91c8c2",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#3cddc7",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "secondary": "#006e2f",
+                        "secondary-container": "#6bff8f",
+                        "background": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#1c5551",
+                        "tertiary-fixed-dim": "#9ad1cb",
+                        "secondary-fixed": "#6bff8f",
+                        "secondary-fixed-dim": "#4ae176",
+                        "on-secondary-container": "#007432",
+                        "tertiary": "#316763",
+                        "primary-fixed-dim": "#3cddc7",
+                        "on-primary-container": "#00574d",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-fixed-variant": "#005321",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#62fae3",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#144f4b",
+                        "on-surface": "#191c1e",
+                        "on-primary-fixed": "#00201c",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#b5ede7",
+                        "outline-variant": "#bacac5",
+                        "surface": "#f7f9fb",
+                        "on-surface-variant": "#3c4a46",
+                        "surface-tint": "#006b5f",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#6b7a76"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xl": "64px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "margin": "20px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    
+    /* Global Dark Mode Styles */
+    html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
+      background-color: #0f172a !important;
+      background-image: none !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    html.dark .border-slate-100, html.dark .border-slate-50 {
+      border-color: #334155 !important;
+    }
+    html.dark .text-slate-700, html.dark .text-on-surface, html.dark .text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .text-slate-500, html.dark .text-on-surface-variant, html.dark .text-outline {
+      color: #94a3b8 !important;
+    }
+    html.dark .bg-slate-50 {
+      background-color: #334155 !important;
+    }
+    html.dark aside#nav-drawer, html.dark header {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    html.dark #modal-backdrop + div {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark input {
+      background-color: #0f172a !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar & Navigation Drawer -->
+<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+<div class="flex items-center gap-3">
+<button class="w-11 h-11 rounded-full flex items-center justify-center text-teal-600 active:scale-95 transition-transform duration-200" onclick="document.getElementById('nav-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-overlay').classList.remove('hidden');" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+</div>
+</header>
+
+<!-- Navigation Drawer -->
+<div id="drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity" onclick="document.getElementById('nav-drawer').classList.add('-translate-x-full'); this.classList.add('hidden');"></div>
+<aside id="nav-drawer" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-slate-900 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-y-auto">
+<div class="p-6 border-b border-slate-100 flex items-center gap-4">
+<label for="drawer-avatar-upload" class="cursor-pointer relative group block flex-shrink-0">
+  <img id="nav-drawer-avatar" alt="User" class="w-14 h-14 rounded-full object-cover group-hover:opacity-75 transition-opacity" src="https://placehold.net/avatar.png"/>
+  <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+    <span class="material-symbols-outlined text-white text-sm">edit</span>
+  </div>
+</label>
+<input type="file" id="drawer-avatar-upload" accept="image/*" class="hidden" onchange="uploadDrawerAvatar(event)" />
+<div>
+<p class="text-sm text-slate-500">Hey!</p>
+<p id="nav-drawer-name" class="font-bold text-teal-700">Loading...</p>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-[#4caf50] text-white rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-semibold flex-1">Homepage</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="scan.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">center_focus_weak</span>
+<span class="font-semibold flex-1">Scanner</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="marketPlace.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-semibold flex-1">Market</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="Authentication/user.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-semibold flex-1">Profile</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="schedule.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-semibold flex-1">Schedule</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="recycle.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">recycling</span>
+<span class="font-semibold flex-1">Recycle</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="events.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">event</span>
+<span class="font-semibold flex-1">Events</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="tips.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-semibold flex-1">Tips</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="blog.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">article</span>
+<span class="font-semibold flex-1">Blog</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="donate.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-semibold flex-1">Donate</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="community.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-semibold flex-1">Community</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="reports.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-semibold flex-1">Reports</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="p-4 border-t border-slate-100">
+<button onclick="logout()" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl w-full text-left">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      if (!window.supabase) return;
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+      const { data: { session } } = await supa.auth.getSession();
+      if (session && session.user) {
+        const user = session.user;
+        const nameEl = document.getElementById('nav-drawer-name');
+        const avatarEl = document.getElementById('nav-drawer-avatar');
+        
+        if (nameEl) {
+          nameEl.innerText = user.user_metadata?.name || user.email.split('@')[0];
+        }
+        if (avatarEl && user.user_metadata?.avatar_url) {
+          avatarEl.src = user.user_metadata.avatar_url;
+        }
+      }
+    } catch(err) {
+      console.error("Error fetching user for drawer:", err);
+    }
+
+    // Apply dark mode theme if saved
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+  });
+
+  async function uploadDrawerAvatar(event) {
+    const file = event.target.files[0];
+    if (!file || !window.supabase) return;
+
+    try {
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+
+      const avatarEl = document.getElementById('nav-drawer-avatar');
+      avatarEl.style.opacity = '0.5';
+
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64 = reader.result;
+        
+        const { error } = await supa.auth.updateUser({
+          data: { avatar_url: base64 }
+        });
+
+        if (error) throw error;
+        
+        avatarEl.src = base64;
+        avatarEl.style.opacity = '1';
+      };
+      reader.readAsDataURL(file);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to update avatar.");
+      document.getElementById('nav-drawer-avatar').style.opacity = '1';
+    }
+  }
+</script>
+
+
+<!-- Top Navigation -->
+
+<main class="max-w-7xl mx-auto px-margin pb-xl">
+<!-- Hero Section: Latest Stories -->
+<section class="mt-lg mb-xl">
+<div class="relative overflow-hidden rounded-[2rem] aspect-[16/9] md:aspect-[21/9] group shadow-lg">
+<img alt="Latest Story Hero" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sweeping, cinematic landscape of a lush, vibrant forest at dawn with golden sunlight filtering through the canopy. The image uses a refreshing palette of deep greens and soft teals, creating an atmosphere of environmental stewardship and optimism. The lighting is atmospheric and ethereal, fitting a high-end eco-modernist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8-t-MZ2e8hSoZEAAKopX4YgK0wQsNF317HKcItUxOHShtLUgTV_m0-KoXu8x7TTXCdD2dPrgqbBh0KuRSLWIVHdgADiXvUqF7u6HwXCtwm_wThmVmnRWJRtotBAlXqbl0DGNFGViyL4dNcNSvPZPq_5QIeBCFKpuUMvY1B-N7rVlf_lAjUsJw2_YoFXz7oRHh25poBmQvyjeeFFDeXja8S2W2fiMjmyLPzcR5RENAcln0aEe0HzLiCJVBW78sbdjYMEc21o2T84Pi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-tertiary-fixed/80 via-on-tertiary-fixed/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md md:p-lg lg:p-xl w-full md:w-2/3">
+<span class="inline-block bg-primary-container text-on-primary-container font-label-md text-label-md px-4 py-1 rounded-full mb-sm">Featured Story</span>
+<h2 class="font-display-lg text-display-lg text-white mb-sm">The Zero-Waste Urban Ritual</h2>
+<p class="font-body-lg text-body-lg text-white/90 mb-md line-clamp-2">Discover how modern city dwellers are transforming daily routines into high-impact ecological movements through thoughtful minimalism.</p>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-label-md text-label-md flex items-center gap-sm hover:opacity-90 transition-all Active: scale-95 transition-transform duration-200">
+                        Read Article
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filters -->
+<section class="flex flex-wrap gap-sm mb-lg items-center">
+<span class="font-label-md text-label-md text-on-surface-variant mr-base">Filter by:</span>
+<button class="bg-primary-container text-on-primary-container px-md py-base rounded-full font-label-md text-label-md transition-all">Latest</button>
+<button class="bg-surface-container-low text-on-surface-variant px-md py-base rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-all">Impact</button>
+<button class="bg-surface-container-low text-on-surface-variant px-md py-base rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-all">Local News</button>
+<button class="bg-surface-container-low text-on-surface-variant px-md py-base rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-all">How-to Guides</button>
+</section>
+<!-- Article Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Article Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-56 relative border-l-[6px] border-secondary">
+<img alt="Impact Article" class="w-full h-full object-cover" data-alt="A clean, minimalist composition of glass recycling jars and organic cotton bags arranged on a light stone surface. The palette is dominated by natural tones, soft teals, and white space, creating a tactile and sophisticated feel. High-key natural light creates soft, diffused shadows in a modern light-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQhLcGYDKYoS3mA0SVYhchmFMGRGMzC_MRbJakURH2IPQx0rzKtSbSEN0nlRXjjIWJx_BPV4VkrE5HfNY5GPpgWqSkl66MtVi5ZURd5BiAu2MvIbTCLPirVdyPUCQSdezutko5U1cofoWfx9YCM6eWfamT1HIkGrtxkni6PKgOVjzBYeudXWp8kpCiAjgjrCfdmob1qPQuXEOSFhpW_0PGYdlFTtO6J4HC8Ru9JfQVxlzyQzfIVzSdZ4vQJmyyrGbwo0j3fef_vy59"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm">Impact</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Closing the Loop on Plastic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">An in-depth look at new circular economy initiatives revitalizing urban recycling centers across the country.</p>
+<div class="flex items-center justify-between pt-md border-t border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">EM</div>
+<span class="font-label-md text-label-md text-on-surface">Elena Marks</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">6 min read</span>
+</div>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-56 relative border-l-[6px] border-primary">
+<img alt="How-to Article" class="w-full h-full object-cover" data-alt="Macro photography of vibrant, healthy microgreens growing in a sleek, minimalist indoor hydroponic system. The image features crisp details and a fresh, green-centric palette with teal accents. The lighting is bright and modern, emphasizing clarity and sustainable living in an urban setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs5hUhexJUlkCddbpLZxvsQK7NRu5-Craxz1aewKxzDhomXfhg5R01r0ViihzPrKflTaTiMNr8R6t8rOCQU8xPKDWHtuCQtq-eSN9u3ExYJRVTPzL3cB8_XuYVsqn-nOkZzfjQrFnv5i6-6lKcq7s-xXco1AAZRqg__iKYLZSMf-S4Tqw3TCXgVClEtUed6E4SiCXF1QdBMhmjihsjnrfOAYJP5IPA3MMfMrzYcc0PikfJ2Hr82CEjL-PTx09a0me1Inq6Y5vCjgks"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm">How-to Guide</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Composting in Small Spaces</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">A practical guide to odor-free indoor composting techniques perfect for modern apartment living.</p>
+<div class="flex items-center justify-between pt-md border-t border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">JS</div>
+<span class="font-label-md text-label-md text-on-surface">Julian Smith</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">4 min read</span>
+</div>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-56 relative border-l-[6px] border-tertiary">
+<img alt="Local News" class="w-full h-full object-cover" data-alt="A modern, architectural view of a city park featuring solar-powered benches and smart waste bins. The scene is bright and airy, with a focus on high-tech sustainable infrastructure. The palette uses cool greys, bright teals, and natural greens, illuminated by clean, midday sunlight for a proactive, organized feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOsRmexjRRjiEaF34xBzV4Wtam9i1js7721KhrizbkEvRUt1BPVbwv86HDpOTVus-e3Bq2XyLutuTZHpGDsEyoS3bKAu8z6zFjb25HSoHEZMWFUQCFl2eGqBgnRQ-xIDM2YYoCbjHYoZa1oiNFyjlG7qVYMCyTqctP1Z4MomEHrSwab6pGLTS-CAOkKr2S35eHKKDdiSF0abHapg7OCHqnfA-1eETxD8VnzkUYVV31D4tp3i6gI5y-l32lVEzgjbID6CaSAixvc3uR"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm">Local News</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Smart Bins Arrive Downtown</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">The city’s new AI-powered sorting hubs are making public waste management 40% more efficient this quarter.</p>
+<div class="flex items-center justify-between pt-md border-t border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs">SK</div>
+<span class="font-label-md text-label-md text-on-surface">Sarah Kova</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">5 min read</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Newsletter Subscription (Bento Extension) -->
+<section class="mt-lg">
+<div class="bg-tertiary-container/30 rounded-[2rem] p-lg md:p-xl flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-tertiary-container mb-base">Stay in the Eco-Loop</h2>
+<p class="font-body-md text-body-md text-on-tertiary-container opacity-80">Join 15,000+ Eco Warriors receiving weekly updates on local impact stories and sustainable living hacks.</p>
+</div>
+<div class="flex flex-col sm:flex-row w-full md:w-auto gap-base">
+<input class="bg-surface-container-lowest border-none rounded-xl px-md py-sm font-body-md text-body-md w-full sm:w-64 focus:ring-2 focus:ring-primary" placeholder="Email Address" type="email"/>
+<button class="bg-tertiary text-white px-lg py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-all Active: scale-95 transition-transform">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+
+</body></html>

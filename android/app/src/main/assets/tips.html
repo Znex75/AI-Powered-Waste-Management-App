@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#00201e",
+                    "on-secondary-fixed": "#002109",
+                    "on-background": "#191c1e",
+                    "primary-container": "#2dd4bf",
+                    "on-primary-fixed-variant": "#005047",
+                    "primary": "#006b5f",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#91c8c2",
+                    "surface-dim": "#d8dadc",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#3cddc7",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container": "#eceef0",
+                    "secondary": "#006e2f",
+                    "secondary-container": "#6bff8f",
+                    "background": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-container": "#1c5551",
+                    "tertiary-fixed-dim": "#9ad1cb",
+                    "secondary-fixed": "#6bff8f",
+                    "secondary-fixed-dim": "#4ae176",
+                    "on-secondary-container": "#007432",
+                    "tertiary": "#316763",
+                    "primary-fixed-dim": "#3cddc7",
+                    "on-primary-container": "#00574d",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed-variant": "#005321",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "primary-fixed": "#62fae3",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f4f6",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#144f4b",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#00201c",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#b5ede7",
+                    "outline-variant": "#bacac5",
+                    "surface": "#f7f9fb",
+                    "on-surface-variant": "#3c4a46",
+                    "surface-tint": "#006b5f",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#6b7a76"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "margin": "20px",
+                    "lg": "40px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    /* Global Dark Mode Styles */
+    html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
+      background-color: #0f172a !important;
+      background-image: none !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark .bg-white {
+      background-color: #1e293b !important;
+    }
+    html.dark .border-slate-100, html.dark .border-slate-50 {
+      border-color: #334155 !important;
+    }
+    html.dark .text-slate-700, html.dark .text-on-surface, html.dark .text-slate-800 {
+      color: #f1f5f9 !important;
+    }
+    html.dark .text-slate-500, html.dark .text-on-surface-variant, html.dark .text-outline {
+      color: #94a3b8 !important;
+    }
+    html.dark .bg-slate-50 {
+      background-color: #334155 !important;
+    }
+    html.dark aside#nav-drawer, html.dark header {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    html.dark #modal-backdrop + div {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+    }
+    html.dark input {
+      background-color: #0f172a !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar & Navigation Drawer -->
+<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+<div class="flex items-center gap-3">
+<button class="w-11 h-11 rounded-full flex items-center justify-center text-teal-600 active:scale-95 transition-transform duration-200" onclick="document.getElementById('nav-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-overlay').classList.remove('hidden');" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
+</a>
+</div>
+</header>
+
+<!-- Navigation Drawer -->
+<div id="drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity" onclick="document.getElementById('nav-drawer').classList.add('-translate-x-full'); this.classList.add('hidden');"></div>
+<aside id="nav-drawer" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-slate-900 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-y-auto">
+<div class="p-6 border-b border-slate-100 flex items-center gap-4">
+<label for="drawer-avatar-upload" class="cursor-pointer relative group block flex-shrink-0">
+  <img id="nav-drawer-avatar" alt="User" class="w-14 h-14 rounded-full object-cover group-hover:opacity-75 transition-opacity" src="https://placehold.net/avatar.png"/>
+  <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+    <span class="material-symbols-outlined text-white text-sm">edit</span>
+  </div>
+</label>
+<input type="file" id="drawer-avatar-upload" accept="image/*" class="hidden" onchange="uploadDrawerAvatar(event)" />
+<div>
+<p class="text-sm text-slate-500">Hey!</p>
+<p id="nav-drawer-name" class="font-bold text-teal-700">Loading...</p>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-2 flex-1">
+<a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 bg-[#4caf50] text-white rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-semibold flex-1">Homepage</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="scan.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">center_focus_weak</span>
+<span class="font-semibold flex-1">Scanner</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="marketPlace.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-semibold flex-1">Market</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="Authentication/user.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-semibold flex-1">Profile</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="schedule.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-semibold flex-1">Schedule</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="recycle.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">recycling</span>
+<span class="font-semibold flex-1">Recycle</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="events.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">event</span>
+<span class="font-semibold flex-1">Events</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="tips.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="font-semibold flex-1">Tips</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="blog.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">article</span>
+<span class="font-semibold flex-1">Blog</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="donate.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-semibold flex-1">Donate</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="community.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-semibold flex-1">Community</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+<a href="reports.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="font-semibold flex-1">Reports</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+<div class="p-4 border-t border-slate-100">
+<button onclick="logout()" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl w-full text-left">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-semibold">Logout</span>
+</button>
+</div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      if (!window.supabase) return;
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+      const { data: { session } } = await supa.auth.getSession();
+      if (session && session.user) {
+        const user = session.user;
+        const nameEl = document.getElementById('nav-drawer-name');
+        const avatarEl = document.getElementById('nav-drawer-avatar');
+        
+        if (nameEl) {
+          nameEl.innerText = user.user_metadata?.name || user.email.split('@')[0];
+        }
+        if (avatarEl && user.user_metadata?.avatar_url) {
+          avatarEl.src = user.user_metadata.avatar_url;
+        }
+      }
+    } catch(err) {
+      console.error("Error fetching user for drawer:", err);
+    }
+
+    // Apply dark mode theme if saved
+    const isDark = localStorage.getItem('theme') === 'dark';
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+  });
+
+  async function uploadDrawerAvatar(event) {
+    const file = event.target.files[0];
+    if (!file || !window.supabase) return;
+
+    try {
+      const supa = window.supabase.createClient(
+        "https://eupolobairqsuzjnihkc.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+      );
+
+      const avatarEl = document.getElementById('nav-drawer-avatar');
+      avatarEl.style.opacity = '0.5';
+
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64 = reader.result;
+        
+        const { error } = await supa.auth.updateUser({
+          data: { avatar_url: base64 }
+        });
+
+        if (error) throw error;
+        
+        avatarEl.src = base64;
+        avatarEl.style.opacity = '1';
+      };
+      reader.readAsDataURL(file);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to update avatar.");
+      document.getElementById('nav-drawer-avatar').style.opacity = '1';
+    }
+  }
+</script>
+
+
+<!-- Top Navigation Anchor -->
+
+<main class="max-w-7xl mx-auto px-margin pt-md pb-xl">
+<!-- Daily Challenge Hero Section -->
+<section class="mb-lg">
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-md min-h-[220px] flex flex-col justify-end shadow-lg">
+<div class="absolute inset-0 z-0">
+<img alt="Eco Lifestyle" class="w-full h-full object-cover opacity-30 mix-blend-overlay" data-alt="A high-quality lifestyle photograph featuring a sustainable wooden table set with a glass carafe and metal straws. The scene is bathed in warm, soft morning sunlight filtering through leaves. The aesthetic is tactile and minimalist, using a soft teal and organic color palette to evoke a sense of environmental stewardship and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSMT92goVtxGXnb7cnBRFq-P2ZfKIotSEZPdsYndaV8HaEZaJpmKm01PQOWO_dxVupN5tA6cDs2CiDnH1hwrnLygcbiHrvxqgWOEgTTgjtuqTCDGPxhuhBzlok7C2HR9AulaqRuN2WdyByzM1t6a38jrEtlX6_605vhMT6HGteTFa3HoFGYQm2qEp2pkHEm320d-dYdbOy2tj4IVmv-9V9eJWmc0G9UlZ7iQETvkEeQAm94uY0utEQUq7UqVpxXg3CaPbPzeSYbnGQ"/>
+</div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-xs bg-on-primary-container text-surface-container-lowest px-sm py-xs rounded-full mb-base">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Daily Challenge</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-primary-container mb-xs">No Plastic Straws Today</h2>
+<p class="text-on-primary-container/80 font-body-md max-w-md">Small changes lead to big impacts. Join 1,240 others who ditched the straw today!</p>
+<button class="mt-md bg-primary text-on-primary px-md py-sm rounded-full font-label-md shadow-md Active: scale-95 transition-transform duration-200">
+                        I'm In!
+                    </button>
+</div>
+</div>
+</section>
+<!-- Tip Categories Grid -->
+<section class="mb-lg">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Browse by Category</h3>
+<button class="text-primary font-label-md flex items-center gap-xs">
+                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<!-- Kitchen -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col items-center text-center hover:bg-surface-container-low transition-colors cursor-pointer group border-l-4 border-primary">
+<div class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Kitchen</span>
+</div>
+<!-- Energy -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col items-center text-center hover:bg-surface-container-low transition-colors cursor-pointer group border-l-4 border-secondary">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-full flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Energy</span>
+</div>
+<!-- Travel -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col items-center text-center hover:bg-surface-container-low transition-colors cursor-pointer group border-l-4 border-tertiary">
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-full flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary">commute</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Travel</span>
+</div>
+<!-- Shopping -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col items-center text-center hover:bg-surface-container-low transition-colors cursor-pointer group border-l-4 border-outline">
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center mb-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant">shopping_bag</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Shopping</span>
+</div>
+</div>
+</section>
+<!-- Trending Tips Feed - Asymmetric Layout -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Trending Tips</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Tip Card 1 (Large) -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-lg group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 relative h-64 md:h-auto">
+<img alt="Zero Waste Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A bright and airy kitchen counter featuring glass jars filled with bulk grains and pasta. The background is a clean white tile with minimalist wooden shelving. The lighting is bright and high-key, creating a refreshing and organized atmosphere. A small potted herb sits in the corner, emphasizing a tactile, eco-conscious ritual of waste management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAH1dm-oHlaqRhEEJxB62Y1yilEnWXv--AZcI0bZtZePwVpt0jj4xDdfzqEdTVJ-omLdxw2618PJGZCJU80xrG86xo72LW75klZrVrUAoiKdpwHDW8QNzqQd3oCa8lYbm3CflS7LWt1Bt3dz_FIP8WFMHKE4xIFS1trVpM6zko_onhGaLfnNDFWxQBWidJKdNwon-qXo7k-I9rIh1RrcjFusTB4tIjYsyvnKIdeaFA8NXxgRIt7l9ZJG0Sg8V_Cz_Cu-0VxrnZ1uiu"/>
+<div class="absolute top-sm left-sm">
+<span class="bg-surface-container-lowest/90 backdrop-blur px-sm py-xs rounded-full font-label-sm text-primary">Masterclass</span>
+</div>
+</div>
+<div class="md:w-1/2 p-md flex flex-col justify-between">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-sm">The 5-Step Guide to a Zero Waste Kitchen</h4>
+<p class="text-on-surface-variant font-body-md line-clamp-3">Transitioning to zero waste doesn't happen overnight. Start with these simple swaps in your pantry and fridge to reduce single-use plastic by up to 70%...</p>
+</div>
+<div class="flex items-center justify-between mt-md pt-md border-t border-surface-variant">
+<div class="flex items-center gap-base">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">favorite</span>
+<span class="font-label-sm">428</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">share</span>
+<span class="font-label-sm">12</span>
+</button>
+</div>
+<button class="text-primary font-label-md">Read More</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Tip Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-lg flex flex-col">
+<div class="h-48 relative">
+<img alt="Energy Saving" class="w-full h-full object-cover" data-alt="Close up of a modern smart thermostat mounted on a clean, grey wall. The interface shows a leaf icon indicating energy-saving mode. The mood is soft-high-tech and efficient. Gentle natural light creates soft shadows, maintaining a minimalist and proactive brand personality focused on modern utility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfm0CyEDGKFTvDuWB3TxviTYRz9zfy8LgkGZgdRGYdEx3yVfjNYoLwvutqGLmD_jy2MHbkdDdwy3OA2gAv81XSkugAzt7ksG___Uv2qc63GeKkaL9hvu412HUmCI3Wm1Xbq1gjrf8wdT9lSyMcVu_2GzqwodgbZgvglHnQzf_k-aZqvkupKYeprrBUuaIr9TpVNBDqMQlAsnWcf3UdsyrZOQr_2XsV_1c7B4vbZrqBCq7c6h_reVxFa9QOHMKaJu2Bw7Nedlx4RNJB"/>
+</div>
+<div class="p-md flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-xs uppercase">Energy Efficiency</h4>
+<h5 class="font-headline-md text-[20px] text-on-surface mb-sm">Mastering Your Smart Thermostat</h5>
+<p class="text-on-surface-variant font-body-md text-sm line-clamp-2 text-sm">Save up to 15% on your monthly bill with these simple automation schedules.</p>
+</div>
+<div class="flex items-center justify-between mt-md">
+<div class="flex items-center -space-x-2">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-[10px] text-on-primary ring-2 ring-surface-container-lowest">EW</div>
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-[10px] text-on-secondary ring-2 ring-surface-container-lowest">JH</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">bookmark</span>
+</div>
+</div>
+</div>
+<!-- Tip Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-lg flex flex-col">
+<div class="h-48 relative">
+<img alt="Eco Travel" class="w-full h-full object-cover" data-alt="A serene scene of a commuter cycling through a lush urban park during golden hour. The bike has a minimalist wicker basket containing fresh produce in reusable mesh bags. The lighting is warm and hazy, evoking a sense of optimism and a rewarding eco-conscious ritual. The overall style is modern minimalist with a tactile edge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK3yRHugE9iSFJIJSG2w4UiGUspgXj9h8goW9F2nETxn5NBGg7Y-puM4TM8lhU5CTQHwADwNm9mE8LLxy74gYPToLuLRtZ2LYlxkTSrrkEhTnj-SDK06fuIps9oxg4q27K3RKW9Y2SqvkMiZJGNuS0A2F-E9gUUXw9-0BotbNc4fb1DRinzMV0ABAb8FaoPAWkmKx-DXs7KWEytURCYriSFqDwu0tsdcjkgpa3Y1ZQLAk_dZb4Li-kLbvZXZO5XETkXRnlgzCSzQWh"/>
+</div>
+<div class="p-md flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-secondary mb-xs uppercase">Eco Travel</h4>
+<h5 class="font-headline-md text-[20px] text-on-surface mb-sm">Biking to Work: A Beginner's Kit</h5>
+<p class="text-on-surface-variant font-body-md text-sm line-clamp-2 text-sm">Everything you need for a sweat-free, sustainable commute to the office.</p>
+</div>
+<div class="flex items-center justify-between mt-md">
+<span class="text-label-sm text-outline">2 min read</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">bookmark</span>
+</div>
+</div>
+</div>
+<!-- Tip Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-lg flex flex-col">
+<div class="h-48 relative">
+<img alt="Sustainable Fashion" class="w-full h-full object-cover" data-alt="Close-up of high-quality organic cotton fabric in a soft off-white color. A small recycled paper tag is attached with a natural hemp string. The lighting is soft and diffused, emphasizing the tactile quality of sustainable materials. The aesthetic is clean and high-end, aligning with an environmentally-conscious household's values." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApZOoZED4mcu43hQdd_O4WBFmCGfHEFWlLziuq4g3nR8_MpywvFktm-B0uNqUGqdk7dGRs_qx3XhnBXZjVDssj2v2EIKXTjfD6G6gBJQ7G2x-xvRkaDKEt42AvMRF1DCMJ5ag8wQFlv27Z0IwYhGytpltUuX6NOHAu0RzXKXerNB4_SX2Vr--P_QvDMsrI9WpCvjmIEWTJg7hdu-gg6HgDLpwZwOvgH-i-95UaryjH6pXcor58MtRC3gs2fIEMt1UaxRBwT4PhblAS"/>
+</div>
+<div class="p-md flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-tertiary mb-xs uppercase">Sustainable Shopping</h4>
+<h5 class="font-headline-md text-[20px] text-on-surface mb-sm">Reading Fabric Labels Like a Pro</h5>
+<p class="text-on-surface-variant font-body-md text-sm line-clamp-2 text-sm">Learn which materials are truly compostable and which to avoid at the thrift store.</p>
+</div>
+<div class="flex items-center justify-between mt-md">
+<span class="text-label-sm text-outline">5 min read</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">bookmark</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- FAB Overlay for Search/Add Tip -->
+<div class="fixed bottom-24 right-margin md:bottom-12 md:right-12 z-40">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</div>
+</body></html>
