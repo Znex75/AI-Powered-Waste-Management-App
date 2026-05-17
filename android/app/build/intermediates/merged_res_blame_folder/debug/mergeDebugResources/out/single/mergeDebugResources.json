@@ -2,9 +2,5 @@
     {
         "merged": "com.ecocycle.wastemanagement.app-debug-33:/drawable_ic_launcher_foreground.xml.flat",
         "source": "com.ecocycle.wastemanagement.app-main-35:/drawable/ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\sundi\\.gradle\\daemon\\8.7\\com.ecocycle.wastemanagement.app-debug-33:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\sundi\\.gradle\\daemon\\8.7\\com.ecocycle.wastemanagement.app-main-35:\\drawable\\ic_launcher_foreground.xml"
     }
 ]

@@ -83,16 +83,47 @@ public class MainActivity extends Activity {
         settings.setAllowUniversalAccessFromFileURLs(true);
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        
+        // Custom mobile Chrome User Agent to bypass Google's WebView OAuth block (disallowed_useragent)
+        settings.setUserAgentString("Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36");
+        
         webView.requestApplyInsets();
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
+            public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
+                if (url.startsWith("http://localhost/dashboard.html") || url.startsWith("https://localhost/dashboard.html")) {
+                    view.stopLoading();
+                    Uri uri = Uri.parse(url);
+                    String fragment = uri.getFragment();
+                    String localUrl = "file:///android_asset/dashboard.html";
+                    if (fragment != null && !fragment.isEmpty()) {
+                        localUrl += "#" + fragment;
+                    }
+                    view.loadUrl(localUrl);
+                    return;
+                }
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 Uri uri = request.getUrl();
+                String url = uri.toString();
                 String scheme = uri.getScheme();
 
                 if ("mailto".equals(scheme) || "tel".equals(scheme)) {
                     startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                    return true;
+                }
+
+                if (url.startsWith("http://localhost/dashboard.html") || url.startsWith("https://localhost/dashboard.html")) {
+                    String fragment = uri.getFragment();
+                    String localUrl = "file:///android_asset/dashboard.html";
+                    if (fragment != null && !fragment.isEmpty()) {
+                        localUrl += "#" + fragment;
+                    }
+                    view.loadUrl(localUrl);
                     return true;
                 }
 
