@@ -382,14 +382,20 @@
 <label class="font-label-md text-label-md text-on-surface-variant mb-xs block">Password</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">lock</span>
-<input class="w-full pl-12 pr-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface" id="password" placeholder="••••••••" type="password"/>
+<input class="w-full pl-12 pr-12 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface" id="password" placeholder="••••••••" type="password"/>
+<button onclick="togglePasswordVisibility('password', this)" class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline-variant hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
 </div>
 </div>
 <div class="group">
 <label class="font-label-md text-label-md text-on-surface-variant mb-xs block">Confirm Password</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">lock_reset</span>
-<input class="w-full pl-12 pr-4 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface" id="confirmPassword" placeholder="••••••••" type="password"/>
+<input class="w-full pl-12 pr-12 py-3 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-on-surface" id="confirmPassword" placeholder="••••••••" type="password"/>
+<button onclick="togglePasswordVisibility('confirmPassword', this)" class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline-variant hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
 </div>
 </div>
 </div>
@@ -528,5 +534,17 @@ async function signUpWithFacebook() {
     options: { redirectTo: 'http://localhost/dashboard.html' }
   });
   if (error) { document.getElementById("message").innerText = error.message; }
+}
+
+function togglePasswordVisibility(inputId, btn) {
+  const input = document.getElementById(inputId);
+  const icon = btn.querySelector('.material-symbols-outlined');
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.textContent = 'visibility_off';
+  } else {
+    input.type = 'password';
+    icon.textContent = 'visibility';
+  }
 }
 </script>

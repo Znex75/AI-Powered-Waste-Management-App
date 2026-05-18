@@ -367,10 +367,10 @@
 <div class="flex justify-between items-end mb-sm">
 <div>
 <h1 class="text-headline-lg font-headline-lg text-on-surface">Weekly Impact</h1>
-<p class="text-label-md font-label-md text-outline">You've diverted 12.4kg of waste</p>
+<p id="impact-total" class="text-label-md font-label-md text-outline">Loading your impact...</p>
 </div>
 <div class="bg-primary-container/20 px-3 py-1 rounded-full">
-<span class="text-label-sm font-label-sm text-primary">+12% vs last wk</span>
+<span id="impact-week-change" class="text-label-sm font-label-sm text-primary">Live data</span>
 </div>
 </div>
 <!-- Bento Card: Donut Chart & Legend -->
@@ -380,14 +380,14 @@
 <svg class="w-full h-full" viewbox="0 0 36 36">
 <circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#f1f5f9" stroke-width="3"></circle>
 <!-- Recyclables (Blue-ish Teal) 50% -->
-<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#2dd4bf" stroke-dasharray="50 50" stroke-dashoffset="25" stroke-width="3"></circle>
+<circle id="donut-recyclables" class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#2dd4bf" stroke-dasharray="0 100" stroke-dashoffset="25" stroke-width="3"></circle>
 <!-- Compost (Green) 30% -->
-<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#6bff8f" stroke-dasharray="30 70" stroke-dashoffset="-25" stroke-width="3"></circle>
+<circle id="donut-compost" class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#6bff8f" stroke-dasharray="0 100" stroke-dashoffset="25" stroke-width="3"></circle>
 <!-- Landfill (Grey) 20% -->
-<circle class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#e0e3e5" stroke-dasharray="20 80" stroke-dashoffset="-55" stroke-width="3"></circle>
+<circle id="donut-landfill" class="donut-segment" cx="18" cy="18" fill="transparent" r="15.915" stroke="#e0e3e5" stroke-dasharray="0 100" stroke-dashoffset="25" stroke-width="3"></circle>
 </svg>
 <div class="absolute inset-0 flex flex-col items-center justify-center">
-<span class="text-headline-md font-headline-md leading-none">82%</span>
+<span id="impact-sorted" class="text-headline-md font-headline-md leading-none">0%</span>
 <span class="text-[10px] uppercase font-bold text-outline">Sorted</span>
 </div>
 </div>
@@ -396,21 +396,21 @@
 <div class="w-2 h-2 rounded-full bg-[#2dd4bf]"></div>
 <div class="flex-1">
 <p class="text-label-sm font-label-sm text-outline">Recyclables</p>
-<p class="text-label-md font-label-md">6.2 kg</p>
+<p id="impact-recyclables" class="text-label-md font-label-md">0.0 kg</p>
 </div>
 </div>
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-[#6bff8f]"></div>
 <div class="flex-1">
 <p class="text-label-sm font-label-sm text-outline">Compost</p>
-<p class="text-label-md font-label-md">3.7 kg</p>
+<p id="impact-compost" class="text-label-md font-label-md">0.0 kg</p>
 </div>
 </div>
 <div class="flex items-center gap-2">
 <div class="w-2 h-2 rounded-full bg-[#e0e3e5]"></div>
 <div class="flex-1">
 <p class="text-label-sm font-label-sm text-outline">Landfill</p>
-<p class="text-label-md font-label-md">2.5 kg</p>
+<p id="impact-landfill" class="text-label-md font-label-md">0.0 kg</p>
 </div>
 </div>
 </div>
@@ -575,6 +575,7 @@ const supabase = window.supabase.createClient(
   "https://eupolobairqsuzjnihkc.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
 );
+const apiBase = window.ECOCYCLE_API_BASE || "http://10.200.54.163:3000";
 
 // ✅ Check auth (only ONE function)
 async function checkAuth() {
@@ -586,6 +587,76 @@ async function checkAuth() {
 
   if (!session) {
     window.location.href = "Authentication/signIn.html";
+    return null;
+  }
+
+  return session;
+}
+
+function setText(id, value) {
+  const element = document.getElementById(id);
+  if (element) element.innerText = value;
+}
+
+function setDonutSegment(id, percent, offset) {
+  const segment = document.getElementById(id);
+  if (!segment) return;
+  segment.setAttribute("stroke-dasharray", `${percent} ${100 - percent}`);
+  segment.setAttribute("stroke-dashoffset", String(offset));
+}
+
+function scanWeight(scan) {
+  return Number(scan.co2Saved || 0);
+}
+
+function scanGroup(scan) {
+  const text = `${scan.binCategory || ''} ${scan.type || ''}`.toLowerCase();
+  if (text.includes('compost') || text.includes('organic')) return 'compost';
+  if (text.includes('general') || text.includes('landfill') || text.includes('hazard')) return 'landfill';
+  return 'recyclables';
+}
+
+async function loadDashboardImpact() {
+  const session = await checkAuth();
+  if (!session) return;
+
+  try {
+    const response = await fetch(`${apiBase}/api/user/profile`, {
+      headers: {
+        Authorization: `Bearer ${session.access_token}`
+      }
+    });
+
+    if (!response.ok) throw new Error("Profile fetch failed");
+
+    const data = await response.json();
+    const scans = data.user?.scans || [];
+    const totals = { recyclables: 0, compost: 0, landfill: 0 };
+
+    scans.forEach((scan) => {
+      totals[scanGroup(scan)] += scanWeight(scan);
+    });
+
+    const total = totals.recyclables + totals.compost + totals.landfill;
+    const safeTotal = total || 1;
+    const recyclablePct = Math.round((totals.recyclables / safeTotal) * 100);
+    const compostPct = Math.round((totals.compost / safeTotal) * 100);
+    const landfillPct = Math.max(0, 100 - recyclablePct - compostPct);
+    const sortedPct = total ? Math.round(((totals.recyclables + totals.compost) / total) * 100) : 0;
+
+    setText("impact-total", `You've saved ${total.toFixed(1)}kg CO2 from ${scans.length} scans`);
+    setText("impact-week-change", `${scans.length} total scans`);
+    setText("impact-sorted", `${sortedPct}%`);
+    setText("impact-recyclables", `${totals.recyclables.toFixed(1)} kg`);
+    setText("impact-compost", `${totals.compost.toFixed(1)} kg`);
+    setText("impact-landfill", `${totals.landfill.toFixed(1)} kg`);
+
+    setDonutSegment("donut-recyclables", recyclablePct, 25);
+    setDonutSegment("donut-compost", compostPct, 25 - recyclablePct);
+    setDonutSegment("donut-landfill", landfillPct, 25 - recyclablePct - compostPct);
+  } catch (error) {
+    console.error(error);
+    setText("impact-total", "Impact data unavailable");
   }
 }
 
@@ -607,6 +678,5 @@ async function logout() {
   }
 }
 
-// Run auth check
-checkAuth();
+loadDashboardImpact();
 </script>

@@ -1,2 +1,6 @@
 *.hprof 
 *.hprof 
+.env
+.env.*
+!.env.example
+backend/.env

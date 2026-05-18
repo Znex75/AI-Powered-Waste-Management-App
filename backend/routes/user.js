@@ -2,26 +2,14 @@ const express = require('express');
 const router = express.Router();
 const authenticateToken = require('../middleware/auth');
 const prisma = require('../prisma');
+const { getOrCreateUser } = require('../utils/users');
 
 // Create user profile (after Supabase signup)
 router.post('/profile', authenticateToken, async (req, res) => {
   const { name, email } = req.body;
   
   try {
-    // Check if user already exists
-    let user = await prisma.user.findUnique({
-      where: { id: req.user.id }
-    });
-
-    if (!user) {
-      user = await prisma.user.create({
-        data: {
-          id: req.user.id,
-          name: name || 'Eco Warrior',
-          email: email || req.user.email,
-        }
-      });
-    }
+    const user = await getOrCreateUser(req.user, { name, email });
     
     res.json({ message: 'Profile created/verified successfully', user });
   } catch (error) {
@@ -42,14 +30,13 @@ router.get('/profile', authenticateToken, async (req, res) => {
     });
 
     if (!user) {
-      // Auto-create local profile if it doesn't exist yet!
-      user = await prisma.user.create({
-        data: {
-          id: req.user.id,
-          name: req.user.user_metadata?.name || req.user.email.split('@')[0],
-          email: req.user.email,
-        },
-        include: { scans: true, listings: true }
+      user = await getOrCreateUser(req.user);
+      user = await prisma.user.findUnique({
+        where: { id: user.id },
+        include: {
+          scans: true,
+          listings: true
+        }
       });
     }
 

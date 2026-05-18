@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authenticateToken = require('../middleware/auth');
 const prisma = require('../prisma');
+const { getOrCreateUser } = require('../utils/users');
 
 router.get('/listings', authenticateToken, async (req, res) => {
   try {
@@ -32,11 +33,7 @@ router.post('/list', authenticateToken, async (req, res) => {
   }
 
   try {
-    const user = await prisma.user.findUnique({ where: { id: req.user.id } });
-
-    if (!user) {
-      return res.status(404).json({ error: 'User profile not found' });
-    }
+    const user = await getOrCreateUser(req.user);
 
     if (user.marketCredits <= 0) {
       return res.status(402).json({
@@ -56,12 +53,12 @@ router.post('/list', authenticateToken, async (req, res) => {
         price: Number(price),
         category: category || 'Other',
         image: image || '',
-        sellerId: req.user.id
+        sellerId: user.id
       }
     });
 
     const updatedUser = await prisma.user.update({
-      where: { id: req.user.id },
+      where: { id: user.id },
       data: {
         marketCredits: { decrement: 1 }
       }

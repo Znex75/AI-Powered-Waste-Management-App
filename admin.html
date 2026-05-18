@@ -215,31 +215,52 @@
     </section>
 
     <section class="mt-6 grid grid-cols-2 gap-4">
-      <article class="rounded-2xl bg-white p-4 shadow-sm">
-        <span class="material-symbols-outlined text-primary">groups</span>
-        <p class="mt-4 text-2xl font-extrabold">Users</p>
-        <p class="text-sm text-slate-500">Manage accounts</p>
+      <article onclick="showSection('users')" class="rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 active:scale-[0.98]">
+        <span class="material-symbols-outlined text-primary dark:text-teal-400">groups</span>
+        <p id="stat-users" class="mt-4 text-2xl font-extrabold text-teal-700 dark:text-teal-300">--</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">Users</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Manage accounts & credits</p>
       </article>
-      <article class="rounded-2xl bg-white p-4 shadow-sm">
-        <span class="material-symbols-outlined text-primary">qr_code_scanner</span>
-        <p class="mt-4 text-2xl font-extrabold">Scans</p>
-        <p class="text-sm text-slate-500">Review activity</p>
+      <article onclick="showSection('scans')" class="rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 active:scale-[0.98]">
+        <span class="material-symbols-outlined text-primary dark:text-teal-400">qr_code_scanner</span>
+        <p id="stat-scans" class="mt-4 text-2xl font-extrabold text-teal-700 dark:text-teal-300">--</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">Scans</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Review scan logs</p>
       </article>
-      <article class="rounded-2xl bg-white p-4 shadow-sm">
-        <span class="material-symbols-outlined text-primary">storefront</span>
-        <p class="mt-4 text-2xl font-extrabold">Market</p>
-        <p class="text-sm text-slate-500">Listings</p>
+      <article onclick="showSection('market')" class="rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 active:scale-[0.98]">
+        <span class="material-symbols-outlined text-primary dark:text-teal-400">storefront</span>
+        <p id="stat-market" class="mt-4 text-2xl font-extrabold text-teal-700 dark:text-teal-300">--</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">Market</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Active marketplace listings</p>
       </article>
-      <article class="rounded-2xl bg-white p-4 shadow-sm">
-        <span class="material-symbols-outlined text-primary">analytics</span>
-        <p class="mt-4 text-2xl font-extrabold">Reports</p>
-        <p class="text-sm text-slate-500">Insights</p>
+      <article onclick="showSection('reports')" class="rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-md cursor-pointer transition-all duration-200 active:scale-[0.98]">
+        <span class="material-symbols-outlined text-primary dark:text-teal-400">analytics</span>
+        <p id="stat-co2" class="mt-4 text-2xl font-extrabold text-teal-700 dark:text-teal-300">-- kg</p>
+        <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">CO2 Saved</p>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Total eco impact saved</p>
       </article>
     </section>
 
+    <!-- Admin Modal Overlay -->
+    <div id="admin-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] hidden flex items-end justify-center sm:items-center p-4">
+      <div class="bg-white dark:bg-slate-900 rounded-3xl w-full max-w-xl max-h-[80vh] flex flex-col shadow-2xl overflow-hidden transition-all duration-300 transform translate-y-4">
+        <!-- Modal Header -->
+        <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-950">
+          <h3 id="modal-title" class="font-extrabold text-lg text-teal-700 dark:text-teal-400 flex items-center gap-2">Modal Title</h3>
+          <button onclick="closeModal()" class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-200 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 active:scale-95 transition-all">
+            <span class="material-symbols-outlined text-lg">close</span>
+          </button>
+        </div>
+        <!-- Modal Content -->
+        <div id="modal-body" class="p-6 overflow-y-auto flex-1 text-slate-700 dark:text-slate-200">
+          <!-- Dynamic list will go here -->
+        </div>
+      </div>
+    </div>
+
     <nav class="mt-auto grid grid-cols-2 gap-3 pb-4 pt-8">
-      <a href="dashboard.html" class="rounded-xl border border-teal-100 bg-white px-4 py-3 text-center font-semibold text-primary">User Dashboard</a>
-      <button onclick="adminLogout()" class="rounded-xl bg-primary px-4 py-3 font-semibold text-white" type="button">Log Out</button>
+      <a href="dashboard.html" class="rounded-xl border border-teal-100 dark:border-slate-800 bg-white dark:bg-slate-800 px-4 py-3 text-center font-semibold text-primary dark:text-teal-400 shadow-sm">User Dashboard</a>
+      <button onclick="adminLogout()" class="rounded-xl bg-primary px-4 py-3 font-semibold text-white shadow-sm hover:bg-teal-700 active:scale-98 transition-transform" type="button">Log Out</button>
     </nav>
   </main>
 
@@ -248,9 +269,270 @@
       window.location.href = "Authentication/signIn.html";
     }
 
+    const apiBase = "http://10.200.54.163:3000";
+
     function adminLogout() {
       localStorage.removeItem("ecocycle_admin");
       window.location.href = "Authentication/signIn.html";
+    }
+
+    // Fetch Stats on Page Load
+    async function loadStats() {
+      try {
+        const response = await fetch(`${apiBase}/api/admin/stats`);
+        const data = await response.json();
+        if (data.success) {
+          document.getElementById('stat-users').innerText = data.stats.users;
+          document.getElementById('stat-scans').innerText = data.stats.scans;
+          document.getElementById('stat-market').innerText = data.stats.listings;
+          document.getElementById('stat-co2').innerText = `${data.stats.totalCO2} kg`;
+        }
+      } catch (err) {
+        printAdminMessage("Error loading statistics: " + err.message);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', loadStats);
+
+    // Modal Control
+    function openModal(title) {
+      document.getElementById('modal-title').innerText = title;
+      const modal = document.getElementById('admin-modal');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.firstElementChild.classList.remove('translate-y-4');
+      }, 50);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('admin-modal');
+      modal.firstElementChild.classList.add('translate-y-4');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
+      loadStats(); // Reload stats upon closure
+    }
+
+    function printAdminMessage(msg) {
+      const body = document.getElementById('modal-body');
+      body.innerHTML = `<p class="text-center py-4 text-slate-500">${msg}</p>`;
+    }
+
+    // Modal Section Rendering
+    async function showSection(type) {
+      openModal(`EcoCycle Admin - ${type.charAt(0).toUpperCase() + type.slice(1)}`);
+      printAdminMessage("Loading records from database...");
+
+      try {
+        if (type === 'users') {
+          const res = await fetch(`${apiBase}/api/admin/users`);
+          const data = await res.json();
+          renderUsers(data.users || []);
+        } else if (type === 'scans') {
+          const res = await fetch(`${apiBase}/api/admin/scans`);
+          const data = await res.json();
+          renderScans(data.scans || []);
+        } else if (type === 'market') {
+          const res = await fetch(`${apiBase}/api/admin/market`);
+          const data = await res.json();
+          renderMarket(data.listings || []);
+        } else if (type === 'reports') {
+          const res = await fetch(`${apiBase}/api/admin/stats`);
+          const data = await res.json();
+          renderReports(data.stats);
+        }
+      } catch (err) {
+        printAdminMessage(`Failed to retrieve data: ${err.message}. Please make sure backend is running!`);
+      }
+    }
+
+    function renderUsers(users) {
+      const body = document.getElementById('modal-body');
+      if (users.length === 0) {
+        printAdminMessage("No registered users found.");
+        return;
+      }
+
+      let html = `<div class="flex flex-col gap-4">`;
+      users.forEach(u => {
+        html += `
+          <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/50 flex flex-col gap-2">
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="font-bold text-slate-800 dark:text-slate-100">${u.name || 'Unnamed'}</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">${u.email}</p>
+              </div>
+              <span class="text-xs bg-teal-50 dark:bg-teal-900/30 text-teal-600 dark:text-teal-300 font-semibold px-2.5 py-1 rounded-full border border-teal-100 dark:border-teal-800/40">Active</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700/40 text-center">
+              <div>
+                <p class="text-xs text-slate-400">XP</p>
+                <p class="font-bold text-sm text-slate-700 dark:text-slate-300">${u.xpPoints || 0}</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">CO2</p>
+                <p class="font-bold text-sm text-slate-700 dark:text-slate-300">${(u.co2Saved || 0).toFixed(1)}kg</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Scans</p>
+                <p class="font-bold text-sm text-slate-700 dark:text-slate-300">${u.scanCredits || 0}</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Market</p>
+                <p class="font-bold text-sm text-slate-700 dark:text-slate-300">${u.marketCredits || 0}</p>
+              </div>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button onclick="editCreditsPrompt('${u.id}', '${u.name}', ${u.scanCredits}, ${u.marketCredits})" class="flex-1 bg-teal-500 text-white font-semibold text-xs py-2 rounded-xl hover:bg-teal-600 active:scale-95 transition-all">Manage Credits</button>
+            </div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      body.innerHTML = html;
+    }
+
+    function renderScans(scans) {
+      const body = document.getElementById('modal-body');
+      if (scans.length === 0) {
+        printAdminMessage("No logged scans found.");
+        return;
+      }
+
+      let html = `<div class="flex flex-col gap-3">`;
+      scans.forEach(s => {
+        const dateStr = new Date(s.createdAt).toLocaleDateString() + ' ' + new Date(s.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        html += `
+          <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700/50 flex justify-between items-center">
+            <div>
+              <p class="font-semibold text-slate-800 dark:text-slate-100">${s.type}</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">By: ${s.user?.name || s.user?.email || 'System'}</p>
+              <p class="text-[10px] text-slate-400 mt-1">${dateStr}</p>
+            </div>
+            <div class="text-right">
+              <p class="text-xs font-semibold text-teal-600 dark:text-teal-400">${s.binCategory}</p>
+              <p class="text-xs font-bold text-slate-700 dark:text-slate-300 mt-0.5">+${s.xpReward} XP</p>
+            </div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      body.innerHTML = html;
+    }
+
+    function renderMarket(listings) {
+      const body = document.getElementById('modal-body');
+      if (listings.length === 0) {
+        printAdminMessage("No active marketplace listings found.");
+        return;
+      }
+
+      let html = `<div class="flex flex-col gap-3">`;
+      listings.forEach(l => {
+        const dateStr = new Date(l.createdAt).toLocaleDateString();
+        html += `
+          <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700/50 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              ${l.image ? `<img src="${l.image}" class="w-10 h-10 object-cover rounded-lg border border-slate-200 dark:border-slate-700" />` : `<div class="w-10 h-10 bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center text-slate-400"><span class="material-symbols-outlined text-sm">image</span></div>`}
+              <div>
+                <p class="font-semibold text-slate-800 dark:text-slate-100">${l.title}</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Seller: ${l.seller?.name || l.seller?.email || 'Unknown'}</p>
+                <p class="text-[10px] text-slate-400">${dateStr}</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="text-sm font-extrabold text-teal-600 dark:text-teal-400">${l.price} Coins</p>
+              <p class="text-[10px] text-slate-400">${l.category}</p>
+            </div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      body.innerHTML = html;
+    }
+
+    function renderReports(stats) {
+      const body = document.getElementById('modal-body');
+      body.innerHTML = `
+        <div class="flex flex-col gap-4">
+          <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+            <h4 class="font-bold text-sm text-slate-500 uppercase tracking-wider mb-3">Eco Impact Statistics</h4>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-white dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                <p class="text-xs text-slate-400">Total CO2 Prevented</p>
+                <p class="text-2xl font-black text-teal-600 dark:text-teal-400 mt-1">${stats.totalCO2} kg</p>
+              </div>
+              <div class="bg-white dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                <p class="text-xs text-slate-400">Total XP Distributed</p>
+                <p class="text-2xl font-black text-teal-600 dark:text-teal-400 mt-1">${stats.totalXP} XP</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700/50">
+            <h4 class="font-bold text-sm text-slate-500 uppercase tracking-wider mb-2">Usage Activity Overview</h4>
+            <ul class="flex flex-col gap-2 mt-2 text-sm text-slate-600 dark:text-slate-300">
+              <li class="flex justify-between"><span>Total Registered Users</span> <span class="font-semibold">${stats.users}</span></li>
+              <li class="flex justify-between"><span>Total Identified Waste Scans</span> <span class="font-semibold">${stats.scans}</span></li>
+              <li class="flex justify-between"><span>Active Listings on Market</span> <span class="font-semibold">${stats.listings}</span></li>
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+
+    // Credits Update Prompt
+    function editCreditsPrompt(userId, name, scan, market) {
+      const body = document.getElementById('modal-body');
+      body.innerHTML = `
+        <div class="flex flex-col gap-4">
+          <div>
+            <h4 class="font-bold text-base text-slate-800 dark:text-slate-100">Adjust Credits for ${name}</h4>
+            <p class="text-xs text-slate-400 mt-0.5">Define new credits for waste operations.</p>
+          </div>
+          
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-xs text-slate-500">Scan Credits</label>
+            <input type="number" id="edit-scan" value="${scan}" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 outline-none focus:ring-1 focus:ring-teal-500 font-bold" />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold text-xs text-slate-500">Market Credits</label>
+            <input type="number" id="edit-market" value="${market}" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 outline-none focus:ring-1 focus:ring-teal-500 font-bold" />
+          </div>
+
+          <div class="flex gap-2 mt-2">
+            <button onclick="showSection('users')" class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold py-3 rounded-xl active:scale-95 transition-all text-sm">Cancel</button>
+            <button onclick="saveCredits('${userId}')" class="flex-1 bg-teal-500 text-white font-semibold py-3 rounded-xl hover:bg-teal-600 active:scale-95 transition-all text-sm">Save Changes</button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function saveCredits(userId) {
+      const scan = document.getElementById('edit-scan').value;
+      const market = document.getElementById('edit-market').value;
+
+      try {
+        const res = await fetch(`${apiBase}/api/admin/user/update-credits`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            userId,
+            scanCredits: scan,
+            marketCredits: market
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showSection('users'); // Go back to the users section and refresh
+        } else {
+          alert("Error: " + data.error);
+        }
+      } catch (err) {
+        alert("Failed to update credits: " + err.message);
+      }
     }
   </script>
 

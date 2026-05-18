@@ -436,12 +436,12 @@
 <div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
 <span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
 <p class="font-label-md text-label-md text-on-surface-variant">Eco Impact</p>
-<p class="font-headline-md text-headline-md text-primary">+12 XP</p>
+<p id="result-xp" class="font-headline-md text-headline-md text-primary">+0 XP</p>
 </div>
 <div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
 <span class="material-symbols-outlined text-primary" data-icon="info">info</span>
 <p class="font-label-md text-label-md text-on-surface-variant">Pro Tip</p>
-<p class="font-body-md text-[13px] leading-tight text-on-surface-variant">Remove cap before disposal.</p>
+<p id="result-tip" class="font-body-md text-[13px] leading-tight text-on-surface-variant">Scan an item to get a disposal tip.</p>
 </div>
 <button id="sell-button" onclick="sellScannedItem()" class="col-span-2 mt-2 w-full bg-primary text-white rounded-2xl py-4 font-label-md active:scale-95 transition-transform disabled:opacity-40" type="button" disabled>
   Sell this item in Market
@@ -463,9 +463,10 @@
 
     );
 
-    const apiBase = window.ECOCYCLE_API_BASE || "http://10.212.187.163:3000";
+    const apiBase = window.ECOCYCLE_API_BASE || "http://10.200.54.163:3000";
 
     let lastScanResult = null;
+    let lastScanImage = '';
     let accessToken = null;
 
     async function checkSession() {
@@ -562,6 +563,7 @@
         const imageData = reader.result;
 
         const base64 = imageData.split(',')[1];
+        lastScanImage = imageData;
 
         await identifyImage(base64);
       };
@@ -604,6 +606,7 @@
       const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
 
       const base64 = dataUrl.split(',')[1];
+      lastScanImage = dataUrl;
 
       await identifyImage(base64);
 
@@ -627,160 +630,35 @@
       try {
 
         const response = await fetch(
-          'https://serverless.roboflow.com/znexs-workspace/workflows/detect-and-classify-5',
+          `${apiBase}/api/scans/identify`,
           {
             method: 'POST',
 
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${accessToken}`
             },
 
             body: JSON.stringify({
-
-              api_key: 'ROBOFLOW_API_KEY',
-
-              inputs: {
-                image: {
-                  type: 'base64',
-                  value: base64
-                }
-              }
+              imageBase64: base64
             })
           }
         );
 
-        const roboflowResult = await response.json();
-
-        console.log("Roboflow Result:", roboflowResult);
+        const data = await response.json();
 
         if (!response.ok) {
 
           throw new Error(
-            roboflowResult.error ||
-            "Roboflow API failed"
+            data.detail ||
+            data.message ||
+            data.error ||
+            "AI scan failed"
           );
         }
 
-        let predictions = [];
-
-        if (Array.isArray(roboflowResult.predictions)) {
-
-          predictions = roboflowResult.predictions;
-
-        } else if (Array.isArray(roboflowResult.outputs)) {
-
-          for (const output of roboflowResult.outputs) {
-
-            if (output &&
-                Array.isArray(output.predictions)) {
-
-              predictions = output.predictions;
-              break;
-            }
-
-            if (output &&
-                Array.isArray(output.classes)) {
-
-              predictions = output.classes;
-              break;
-            }
-          }
-
-        } else if (
-          roboflowResult.outputs &&
-          typeof roboflowResult.outputs === 'object'
-        ) {
-
-          for (const key in roboflowResult.outputs) {
-
-            const output = roboflowResult.outputs[key];
-
-            if (output &&
-                Array.isArray(output.predictions)) {
-
-              predictions = output.predictions;
-              break;
-            }
-
-            if (output &&
-                Array.isArray(output.classes)) {
-
-              predictions = output.classes;
-              break;
-            }
-          }
-        }
-
-        if (!predictions || predictions.length === 0) {
-
-          updateResultUI({
-            label: 'Could not identify waste',
-            binCategory: 'General Waste',
-            confidence: 0,
-            sellable: false,
-            xpReward: 0,
-            co2Saved: 0,
-            priceEstimate: '--'
-          });
-
-          return;
-        }
-
-        const topPrediction = predictions.sort(
-          (a, b) =>
-            (b.confidence || b.score || 0) -
-            (a.confidence || a.score || 0)
-        )[0];
-
-        const label =
-          topPrediction.class ||
-          topPrediction.label ||
-          topPrediction.predicted_class ||
-          topPrediction.name ||
-          'Unknown Item';
-
-        const confidence =
-          topPrediction.confidence ||
-          topPrediction.score ||
-          0;
-
-        const xpReward =
-          Math.max(
-            5,
-            Math.min(
-              30,
-              Math.round(confidence * 25)
-            )
-          );
-
-        const resultData = {
-
-          label,
-
-          binCategory: 'Recycle Bin',
-
-          confidence: Number(
-            confidence.toFixed(2)
-          ),
-
-          sellable: confidence > 0.5,
-
-          xpReward,
-
-          co2Saved: Number(
-            (xpReward * 0.35).toFixed(2)
-          ),
-
-          recommendation:
-            'Place this item in the correct recycling bin.',
-
-          priceEstimate:
-            '(estimate ' +
-            Math.max(1,
-              Math.round(confidence * 10)
-            ) +
-            ' EcoCoins)'
-        };
+        const resultData = data.result;
+        resultData.image = lastScanImage;
 
         lastScanResult = resultData;
 
@@ -906,7 +784,7 @@
                 lastScanResult.binCategory ||
                 'Other',
 
-              image: ''
+              image: lastScanResult.image || ''
             })
           }
         );
@@ -954,6 +832,12 @@
 
       document.getElementById('result-price').innerText =
         `Price estimate: ${result.priceEstimate || '--'}`;
+
+      document.getElementById('result-xp').innerText =
+        `+${result.xpReward || 0} XP`;
+
+      document.getElementById('result-tip').innerText =
+        result.recommendation || `Place in ${result.binCategory}`;
 
       setResultState(
         result.sellable,

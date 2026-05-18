@@ -20,6 +20,8 @@ const scanRoutes = require('./routes/scans');
 app.use('/api/scans', scanRoutes);
 const marketRoutes = require('./routes/market');
 app.use('/api/market', marketRoutes);
+const adminRoutes = require('./routes/admin');
+app.use('/api/admin', adminRoutes);
 
 // Basic health check route
 app.get('/health', (req, res) => {
