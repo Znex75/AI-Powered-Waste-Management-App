@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-31:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-32:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\1651cd165cc5e8a248fc6d3532c27d4d\\transformed\\appcompat-1.1.0\\res\\values-en-rGB\\values-en-rGB.xml",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\272aada5032478ee88de432c37d61d26\\transformed\\jetified-play-services-base-18.0.1\\res\\values-en-rGB\\values.xml",
+                    "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\cca0f194119853ef97fb3bd9c6e0cf34\\transformed\\jetified-play-services-base-18.3.0\\res\\values-en-rGB\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -106,7 +106,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\d94dff7d050b827dfeafff2b7574a2c3\\transformed\\jetified-facebook-login-16.3.0\\res\\values-en-rGB\\values-en-rGB.xml",
+                    "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\85c9bce748bfb773099a421085b3d829\\transformed\\jetified-facebook-login-18.0.3\\res\\values-en-rGB\\values-en-rGB.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

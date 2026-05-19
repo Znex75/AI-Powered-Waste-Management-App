@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "953873322461-mm9r35ccdd0pkgk7g5clt8qopp4bk0i2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ecocycle.wastemanagement",
+            "certificate_hash": "be979d00b05d3e5f1c1ab9f7ed3c055d73f5d6db"
+          }
+        },
+        {
           "client_id": "953873322461-glu84n0hegd2bdembdfcl3kp0h1f6ocn.apps.googleusercontent.com",
           "client_type": 3
         }

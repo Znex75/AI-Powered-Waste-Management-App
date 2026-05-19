@@ -176,7 +176,7 @@ com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.Widget.ActionMo
 com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.Tooltip = 0x7f0e0029
 com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.Title.Inverse = 0x7f0e0028
 com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.Subhead = 0x7f0e0025
-com.ecocycle.wastemanagement:xml/image_share_filepaths = 0x7f100000
+com.ecocycle.wastemanagement:xml/image_share_filepaths = 0x7f100001
 com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.Small.Inverse = 0x7f0e0024
 com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.Small = 0x7f0e0023
 com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.SearchResult.Title = 0x7f0e0022
@@ -919,6 +919,7 @@ com.ecocycle.wastemanagement:style/Base.TextAppearance.AppCompat.Widget.ActionBa
 com.ecocycle.wastemanagement:id/accessibility_custom_action_12 = 0x7f08000b
 com.ecocycle.wastemanagement:style/AppTheme = 0x7f0e0005
 com.ecocycle.wastemanagement:color/cardview_light_background = 0x7f05002d
+com.ecocycle.wastemanagement:xml/ad_services_config = 0x7f100000
 com.ecocycle.wastemanagement:id/useLogo = 0x7f0800dd
 com.ecocycle.wastemanagement:dimen/abc_text_size_medium_material = 0x7f060046
 com.ecocycle.wastemanagement:attr/nestedScrollViewStyle = 0x7f0300d9

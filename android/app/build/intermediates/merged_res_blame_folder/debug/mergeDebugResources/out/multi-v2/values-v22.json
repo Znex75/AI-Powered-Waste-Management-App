@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-31:/values-v22/values-v22.xml",
+            "outputFile": "com.ecocycle.wastemanagement.app-mergeDebugResources-32:/values-v22/values-v22.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sundi\\.gradle\\caches\\transforms-4\\1651cd165cc5e8a248fc6d3532c27d4d\\transformed\\appcompat-1.1.0\\res\\values-v22\\values-v22.xml",

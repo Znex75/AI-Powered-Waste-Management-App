@@ -5,7 +5,6 @@ plugins {
 
 android {
     namespace 'com.ecocycle.wastemanagement'
-
     compileSdk 34
 
     defaultConfig {
@@ -20,19 +19,18 @@ android {
 
     buildTypes {
         release {
-
             minifyEnabled false
 
-            proguardFiles
-            getDefaultProguardFile(
-                    'proguard-android-optimize.txt'
+            proguardFiles(
+                    getDefaultProguardFile(
+                            'proguard-android-optimize.txt'
+                    ),
+                    'proguard-rules.pro'
             )
-            'proguard-rules.pro'
         }
     }
 
     compileOptions {
-
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
@@ -45,15 +43,15 @@ dependencies {
             'com.google.firebase:firebase-bom:34.12.0'
     )
 
-    // Firebase Auth
+    // Firebase Authentication
     implementation 'com.google.firebase:firebase-auth'
 
-    // Google Sign In
-    implementation 'com.google.android.gms:play-services-auth:21.0.0'
+    // Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
 
     // Facebook Login
-    implementation 'com.facebook.android:facebook-login:16.3.0'
+    implementation 'com.facebook.android:facebook-login:18.0.3'
 
-    // Roboflow API
+    // Roboflow / Networking
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
 }

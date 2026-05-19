@@ -7,16 +7,16 @@ INJECTED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\m
 MERGED from [com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:17:1-75:12
 MERGED from [androidx.credentials:credentials:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\e51a061e17285a5d20aebfaf711a6ef1\transformed\jetified-credentials-1.2.0-rc01\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:17:1-44:12
-MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:17:1-40:12
-MERGED from [com.facebook.android:facebook-login:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\d94dff7d050b827dfeafff2b7574a2c3\transformed\jetified-facebook-login-16.3.0\AndroidManifest.xml:9:1-19:12
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:17:1-40:12
+MERGED from [com.facebook.android:facebook-login:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\85c9bce748bfb773099a421085b3d829\transformed\jetified-facebook-login-18.0.3\AndroidManifest.xml:9:1-17:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\sundi\.gradle\caches\transforms-4\4d672d54f0d956b738bbf0be93469112\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:15:1-41:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.2] C:\Users\sundi\.gradle\caches\transforms-4\8402712529d7a8e6fb9e797f48bfa832\transformed\jetified-play-services-auth-api-phone-18.0.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.10] C:\Users\sundi\.gradle\caches\transforms-4\83a5f88b5fa8b965ec65aaba43de2e5a\transformed\jetified-play-services-auth-base-18.0.10\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\sundi\.gradle\caches\transforms-4\625a989b9e37943f55bb30b452aadfb2\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:15:1-25:12
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\sundi\.gradle\caches\transforms-4\9ad259ac5aecd03d724813ca5cae516d\transformed\jetified-play-services-fido-20.1.0\AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:9:1-44:12
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:16:1-24:12
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:9:1-42:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\1651cd165cc5e8a248fc6d3532c27d4d\transformed\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\sundi\.gradle\caches\transforms-4\f8cbf2989992cef04cb05612f221a65a\transformed\jetified-integrity-1.3.0\AndroidManifest.xml:2:1-7:12
@@ -25,7 +25,7 @@ MERGED from [androidx.datastore:datastore-preferences-core-android:1.1.7] C:\Use
 MERGED from [androidx.datastore:datastore-android:1.1.7] C:\Users\sundi\.gradle\caches\transforms-4\d8e1eeb7389f3d55fc315dbf4db963a5\transformed\jetified-datastore-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.7] C:\Users\sundi\.gradle\caches\transforms-4\c9318d8b08aaa772b83c7f12335c7590\transformed\jetified-datastore-preferences-release\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.5.1] C:\Users\sundi\.gradle\caches\transforms-4\329547001f7ebd5810a80589ff2b2e77\transformed\jetified-activity-1.5.1\AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:9:1-50:12
+MERGED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:9:1-53:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\f576a1b45683f90665db8e1142265ae6\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\888d37ea6fd55879627cbcc76b020119\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\4016a5ec92021a5d20fabe82d9c85c85\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -36,7 +36,7 @@ MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\sundi\.
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\sundi\.gradle\caches\transforms-4\c8c5a849b5ca14d4acdbe362b4b6bc0a\transformed\fragment-1.5.7\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\sundi\.gradle\caches\transforms-4\784d407ad97ae1b53eafb7c870573be3\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.android:facebook-bolts:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\1305d32c7e739eb51f989c28125919bc\transformed\jetified-facebook-bolts-16.3.0\AndroidManifest.xml:9:1-19:12
+MERGED from [com.facebook.android:facebook-bolts:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\d7ffff3bed21da856c66e02a8d2fa8dc\transformed\jetified-facebook-bolts-18.0.3\AndroidManifest.xml:9:1-17:12
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\sundi\.gradle\caches\transforms-4\6fd29650c735a92c04833a5296fa99b6\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\8c75f20ca3341d3ec4772487b483fec7\transformed\jetified-googleid-1.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.browser:browser:1.4.0] C:\Users\sundi\.gradle\caches\transforms-4\57588149a9aaa25f66da405c2b328098\transformed\browser-1.4.0\AndroidManifest.xml:17:1-24:12
@@ -47,15 +47,15 @@ MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\sundi\.gradle\ca
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\b74e7beef64c880ab61795fe7ad25e6a\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\c3ed869d64e16f6168dd08134b4d6436\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\99b5768ea1255d63c93f4823c831456c\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media:media:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\84abacff42abd877d86a7c293ef67f4f\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\41b4740594c5e77ddb33fc4b183a4d62\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\b90cf2ec91707410ed8aed86082ac10c\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\84abacff42abd877d86a7c293ef67f4f\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\726ed011f03a6ddd7ef02a5a0ff87cea\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\58db8090264eecc2721a0218960b2491\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sundi\.gradle\caches\transforms-4\0aaed6900a1834cf32c58d992e13b4e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\70e38576841ebbdd1e1f2c50719199bb\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\6d3a3e7e0be34659ffd24cf26aaedc42\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\70e38576841ebbdd1e1f2c50719199bb\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\2cab9e88aa926819673bad4355515728\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:19.0.0] C:\Users\sundi\.gradle\caches\transforms-4\28f38f49138db04aeb2e50fa4ff1d7bc\transformed\jetified-firebase-components-19.0.0\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\sundi\.gradle\caches\transforms-4\03a841842faeb4211b837654269762e4\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
@@ -114,10 +114,10 @@ MERGED from [com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\ca
 MERGED from [com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:28:5-73:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:23:5-42:19
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:23:5-42:19
-MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:22:5-38:19
-MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:22:5-38:19
-MERGED from [com.facebook.android:facebook-login:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\d94dff7d050b827dfeafff2b7574a2c3\transformed\jetified-facebook-login-16.3.0\AndroidManifest.xml:16:5-17:19
-MERGED from [com.facebook.android:facebook-login:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\d94dff7d050b827dfeafff2b7574a2c3\transformed\jetified-facebook-login-16.3.0\AndroidManifest.xml:16:5-17:19
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.facebook.android:facebook-login:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\85c9bce748bfb773099a421085b3d829\transformed\jetified-facebook-login-18.0.3\AndroidManifest.xml:14:5-15:19
+MERGED from [com.facebook.android:facebook-login:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\85c9bce748bfb773099a421085b3d829\transformed\jetified-facebook-login-18.0.3\AndroidManifest.xml:14:5-15:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\sundi\.gradle\caches\transforms-4\4d672d54f0d956b738bbf0be93469112\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\sundi\.gradle\caches\transforms-4\4d672d54f0d956b738bbf0be93469112\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:22:5-39:19
@@ -126,20 +126,20 @@ MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\sund
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\sundi\.gradle\caches\transforms-4\625a989b9e37943f55bb30b452aadfb2\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:23:5-20
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\sundi\.gradle\caches\transforms-4\9ad259ac5aecd03d724813ca5cae516d\transformed\jetified-play-services-fido-20.1.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\sundi\.gradle\caches\transforms-4\9ad259ac5aecd03d724813ca5cae516d\transformed\jetified-play-services-fido-20.1.0\AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:19:5-23:19
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:21:5-42:19
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:21:5-42:19
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:19:5-40:19
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:19:5-40:19
 MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\sundi\.gradle\caches\transforms-4\f8cbf2989992cef04cb05612f221a65a\transformed\jetified-integrity-1.3.0\AndroidManifest.xml:5:5-6:19
 MERGED from [com.google.android.play:integrity:1.3.0] C:\Users\sundi\.gradle\caches\transforms-4\f8cbf2989992cef04cb05612f221a65a\transformed\jetified-integrity-1.3.0\AndroidManifest.xml:5:5-6:19
-MERGED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:18:5-48:19
-MERGED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:18:5-48:19
+MERGED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:21:5-51:19
+MERGED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:21:5-51:19
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\sundi\.gradle\caches\transforms-4\d3f0b42fb980a4d653c23242cfab3f6e\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\sundi\.gradle\caches\transforms-4\d3f0b42fb980a4d653c23242cfab3f6e\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
-MERGED from [com.facebook.android:facebook-bolts:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\1305d32c7e739eb51f989c28125919bc\transformed\jetified-facebook-bolts-16.3.0\AndroidManifest.xml:16:5-17:19
-MERGED from [com.facebook.android:facebook-bolts:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\1305d32c7e739eb51f989c28125919bc\transformed\jetified-facebook-bolts-16.3.0\AndroidManifest.xml:16:5-17:19
+MERGED from [com.facebook.android:facebook-bolts:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\d7ffff3bed21da856c66e02a8d2fa8dc\transformed\jetified-facebook-bolts-18.0.3\AndroidManifest.xml:14:5-15:19
+MERGED from [com.facebook.android:facebook-bolts:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\d7ffff3bed21da856c66e02a8d2fa8dc\transformed\jetified-facebook-bolts-18.0.3\AndroidManifest.xml:14:5-15:19
 MERGED from [androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sundi\.gradle\caches\transforms-4\0aaed6900a1834cf32c58d992e13b4e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
@@ -192,18 +192,18 @@ ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main
 		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:27-74
 activity#com.facebook.FacebookActivity
 ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:39:9-41:99
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:22:9-25:66
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:22:9-25:66
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:20:9-23:66
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:20:9-23:66
 	android:configChanges
 		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:41:13-96
 	android:theme
-		ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:25:13-63
+		ADDED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:23:13-63
 	android:name
 		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:40:13-57
 activity#com.facebook.CustomTabActivity
 ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:44:9-53:20
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:27:9-41:20
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:27:9-41:20
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:25:9-39:20
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:25:9-39:20
 	android:exported
 		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:46:13-36
 	android:name
@@ -228,8 +228,8 @@ ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main
 		ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
 queries
 ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:57:5-59:15
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:17:5-19:15
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:17:5-19:15
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:15:5-17:15
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:15:5-17:15
 provider
 ADDED from C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:58:9-89
 	android:authorities
@@ -244,10 +244,10 @@ MERGED from [androidx.credentials:credentials:1.2.0-rc01] C:\Users\sundi\.gradle
 MERGED from [androidx.credentials:credentials:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\e51a061e17285a5d20aebfaf711a6ef1\transformed\jetified-credentials-1.2.0-rc01\AndroidManifest.xml:5:5-44
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:21:5-44
 MERGED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:21:5-44
-MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.android:facebook-login:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\d94dff7d050b827dfeafff2b7574a2c3\transformed\jetified-facebook-login-16.3.0\AndroidManifest.xml:12:5-14:41
-MERGED from [com.facebook.android:facebook-login:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\d94dff7d050b827dfeafff2b7574a2c3\transformed\jetified-facebook-login-16.3.0\AndroidManifest.xml:12:5-14:41
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.android:facebook-login:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\85c9bce748bfb773099a421085b3d829\transformed\jetified-facebook-login-18.0.3\AndroidManifest.xml:12:5-44
+MERGED from [com.facebook.android:facebook-login:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\85c9bce748bfb773099a421085b3d829\transformed\jetified-facebook-login-18.0.3\AndroidManifest.xml:12:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\sundi\.gradle\caches\transforms-4\4d672d54f0d956b738bbf0be93469112\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\sundi\.gradle\caches\transforms-4\4d672d54f0d956b738bbf0be93469112\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:19:5-44
@@ -260,10 +260,10 @@ MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\sund
 MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] C:\Users\sundi\.gradle\caches\transforms-4\625a989b9e37943f55bb30b452aadfb2\transformed\jetified-firebase-appcheck-interop-17.0.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\sundi\.gradle\caches\transforms-4\9ad259ac5aecd03d724813ca5cae516d\transformed\jetified-play-services-fido-20.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-fido:20.1.0] C:\Users\sundi\.gradle\caches\transforms-4\9ad259ac5aecd03d724813ca5cae516d\transformed\jetified-play-services-fido-20.1.0\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:18:5-43
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:13:5-15:41
-MERGED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:13:5-15:41
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:18:5-43
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:13:5-44
+MERGED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:13:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\1651cd165cc5e8a248fc6d3532c27d4d\transformed\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\1651cd165cc5e8a248fc6d3532c27d4d\transformed\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:5:5-44
@@ -280,8 +280,8 @@ MERGED from [androidx.datastore:datastore-preferences-android:1.1.7] C:\Users\su
 MERGED from [androidx.datastore:datastore-preferences-android:1.1.7] C:\Users\sundi\.gradle\caches\transforms-4\c9318d8b08aaa772b83c7f12335c7590\transformed\jetified-datastore-preferences-release\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.5.1] C:\Users\sundi\.gradle\caches\transforms-4\329547001f7ebd5810a80589ff2b2e77\transformed\jetified-activity-1.5.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.5.1] C:\Users\sundi\.gradle\caches\transforms-4\329547001f7ebd5810a80589ff2b2e77\transformed\jetified-activity-1.5.1\AndroidManifest.xml:20:5-22:41
-MERGED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:12:5-14:41
-MERGED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:12:5-44
+MERGED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:12:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\f576a1b45683f90665db8e1142265ae6\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\f576a1b45683f90665db8e1142265ae6\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\888d37ea6fd55879627cbcc76b020119\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
@@ -302,8 +302,8 @@ MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\sundi\.gradle\caches\tra
 MERGED from [androidx.fragment:fragment:1.5.7] C:\Users\sundi\.gradle\caches\transforms-4\c8c5a849b5ca14d4acdbe362b4b6bc0a\transformed\fragment-1.5.7\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\sundi\.gradle\caches\transforms-4\784d407ad97ae1b53eafb7c870573be3\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\sundi\.gradle\caches\transforms-4\784d407ad97ae1b53eafb7c870573be3\transformed\jetified-savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.facebook.android:facebook-bolts:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\1305d32c7e739eb51f989c28125919bc\transformed\jetified-facebook-bolts-16.3.0\AndroidManifest.xml:12:5-14:41
-MERGED from [com.facebook.android:facebook-bolts:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\1305d32c7e739eb51f989c28125919bc\transformed\jetified-facebook-bolts-16.3.0\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.android:facebook-bolts:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\d7ffff3bed21da856c66e02a8d2fa8dc\transformed\jetified-facebook-bolts-18.0.3\AndroidManifest.xml:12:5-44
+MERGED from [com.facebook.android:facebook-bolts:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\d7ffff3bed21da856c66e02a8d2fa8dc\transformed\jetified-facebook-bolts-18.0.3\AndroidManifest.xml:12:5-44
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\sundi\.gradle\caches\transforms-4\6fd29650c735a92c04833a5296fa99b6\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\sundi\.gradle\caches\transforms-4\6fd29650c735a92c04833a5296fa99b6\transformed\jetified-core-ktx-1.3.2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.libraries.identity.googleid:googleid:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\8c75f20ca3341d3ec4772487b483fec7\transformed\jetified-googleid-1.1.0\AndroidManifest.xml:5:5-44
@@ -324,12 +324,12 @@ MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\sundi\
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\c3ed869d64e16f6168dd08134b4d6436\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\99b5768ea1255d63c93f4823c831456c\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\99b5768ea1255d63c93f4823c831456c\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\84abacff42abd877d86a7c293ef67f4f\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.media:media:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\84abacff42abd877d86a7c293ef67f4f\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\41b4740594c5e77ddb33fc4b183a4d62\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\41b4740594c5e77ddb33fc4b183a4d62\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\b90cf2ec91707410ed8aed86082ac10c\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\sundi\.gradle\caches\transforms-4\b90cf2ec91707410ed8aed86082ac10c\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\84abacff42abd877d86a7c293ef67f4f\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\84abacff42abd877d86a7c293ef67f4f\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\726ed011f03a6ddd7ef02a5a0ff87cea\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\726ed011f03a6ddd7ef02a5a0ff87cea\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\58db8090264eecc2721a0218960b2491\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
@@ -338,10 +338,10 @@ MERGED from [androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-
 MERGED from [androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sundi\.gradle\caches\transforms-4\0aaed6900a1834cf32c58d992e13b4e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\sundi\.gradle\caches\transforms-4\0aaed6900a1834cf32c58d992e13b4e4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\70e38576841ebbdd1e1f2c50719199bb\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\70e38576841ebbdd1e1f2c50719199bb\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\6d3a3e7e0be34659ffd24cf26aaedc42\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\6d3a3e7e0be34659ffd24cf26aaedc42\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\70e38576841ebbdd1e1f2c50719199bb\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\70e38576841ebbdd1e1f2c50719199bb\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\2cab9e88aa926819673bad4355515728\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\sundi\.gradle\caches\transforms-4\2cab9e88aa926819673bad4355515728\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:19.0.0] C:\Users\sundi\.gradle\caches\transforms-4\28f38f49138db04aeb2e50fa4ff1d7bc\transformed\jetified-firebase-components-19.0.0\AndroidManifest.xml:18:5-44
@@ -453,25 +453,25 @@ ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\U
 	android:name
 		ADDED from [androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:23:9-27:75
+ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:25:13-46
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:25:13-46
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:26:13-37
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:26:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:27:13-72
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:27:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:24:13-93
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:24:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:33:9-37:51
+ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:33:9-37:51
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:35:13-36
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:35:13-36
 	android:visibleToInstantApps
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:37:13-48
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:37:13-48
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:36:13-107
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:36:13-107
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:34:13-89
+		ADDED from [com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:34:13-89
 provider#com.google.firebase.provider.FirebaseInitProvider
 ADDED from [com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:23:9-28:39
 	android:authorities
@@ -491,65 +491,81 @@ ADDED from [com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\c
 	android:name
 		ADDED from [com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:36:17-109
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:22:19-43
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:21:19-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:19-85
 package#com.facebook.katana
-ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:9-55
+ADDED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:16:9-55
 	android:name
-		ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:18-52
+		ADDED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:16:18-52
 activity#com.facebook.CustomTabMainActivity
-ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:26:9-71
+ADDED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:24:9-71
 	android:name
-		ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:26:19-68
+		ADDED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:24:19-68
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:cct.${applicationId}+data:scheme:fbconnect
-ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:31:13-40:29
+ADDED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:29:13-38:29
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:cct.com.ecocycle.wastemanagement+data:scheme:fbconnect
-ADDED from [com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:31:13-40:29
+ADDED from [com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:29:13-38:29
 uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
 ADDED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:5-98
 	android:name
 		ADDED from [com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:22-95
 uses-permission#com.google.android.gms.permission.AD_ID
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:5-79
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:14:5-79
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:22-76
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:16:5-88
+	android:name
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:16:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:17:5-82
+	android:name
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:17:22-79
+uses-permission#android.permission.ACCESS_ADSERVICES_CUSTOM_AUDIENCE
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:18:5-92
+	android:name
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:18:22-89
+uses-permission#android.permission.ACCESS_ADSERVICES_TOPICS
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:19:5-83
+	android:name
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:19:22-80
 provider#com.facebook.internal.FacebookInitProvider
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:29:9-32:40
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:32:9-35:40
 	android:authorities
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:31:13-72
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:34:13-72
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:32:13-37
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:30:13-70
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:33:13-70
 receiver#com.facebook.CurrentAccessTokenExpirationBroadcastReceiver
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:34:9-40:20
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:37:9-43:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:36:13-37
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:35:13-86
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:38:13-86
 intent-filter#action:name:com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:37:13-39:29
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:40:13-42:29
 action#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:38:17-95
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:41:17-95
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:38:25-92
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:41:25-92
 receiver#com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:41:9-47:20
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:44:9-50:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:43:13-37
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:42:13-118
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:45:13-118
 intent-filter#action:name:com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:44:13-46:29
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:47:13-49:29
 action#com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:45:17-103
+ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:48:17-103
 	android:name
-		ADDED from [com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:45:25-100
+		ADDED from [com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:48:25-100
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
 	android:value

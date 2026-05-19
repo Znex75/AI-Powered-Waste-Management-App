@@ -42,8 +42,8 @@
 25-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:58:19-86
 26
 27        <package android:name="com.facebook.katana" />
-27-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:9-55
-27-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:18:18-52
+27-->[com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:16:9-55
+27-->[com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:16:18-52
 28    </queries>
 29
 30    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -52,345 +52,357 @@
 31    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 31-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:5-98
 31-->[com.google.android.recaptcha:recaptcha:18.6.1] C:\Users\sundi\.gradle\caches\transforms-4\121e7d92f7c000d7a03711dd3de0c382\transformed\jetified-recaptcha-18.6.1\AndroidManifest.xml:9:22-95
-32    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-32-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:5-79
-32-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:16:22-76
-33    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-33-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
-33-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
-34
-35    <application
-35-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:14:5-54:19
-36        android:allowBackup="true"
-36-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:15:9-35
-37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-37-->[androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
-38        android:debuggable="true"
-39        android:extractNativeLibs="false"
-40        android:icon="@drawable/ic_launcher_foreground"
-40-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:16:9-56
-41        android:label="@string/app_name"
-41-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:17:9-41
-42        android:roundIcon="@drawable/ic_launcher_foreground"
-42-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:18:9-61
-43        android:supportsRtl="true"
-43-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:19:9-35
-44        android:theme="@style/AppTheme"
-44-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:20:9-40
-45        android:usesCleartextTraffic="true" >
-45-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:21:9-44
-46
-47        <!-- Facebook App ID -->
-48        <meta-data
-48-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:24:9-26:55
-49            android:name="com.facebook.sdk.ApplicationId"
-49-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:25:13-58
-50            android:value="@string/facebook_app_id" />
-50-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:26:13-52
-51
-52        <activity
-52-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:28:9-36:20
-53            android:name="com.ecocycle.wastemanagement.MainActivity"
-53-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:29:13-41
-54            android:configChanges="keyboardHidden|orientation|screenSize"
-54-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:30:13-74
-55            android:exported="true" >
-55-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:31:13-36
-56            <intent-filter>
-56-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:13-35:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:17-69
-57-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:25-66
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:17-77
-59-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:27-74
-60            </intent-filter>
-61        </activity>
+32    <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- Support for Google Privacy Sandbox adservices API -->
+32-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:14:5-79
+32-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:14:22-76
+33    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+33-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:16:5-88
+33-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:16:22-85
+34    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+34-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:17:5-82
+34-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:17:22-79
+35    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_CUSTOM_AUDIENCE" />
+35-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:18:5-92
+35-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:18:22-89
+36    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_TOPICS" />
+36-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:19:5-83
+36-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:19:22-80
+37    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+37-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
+37-->[com.android.installreferrer:installreferrer:1.0] C:\Users\sundi\.gradle\caches\transforms-4\9c693533dfd3327e737b0f0bebc1e253\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:22-107
+38
+39    <application
+39-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:14:5-54:19
+40        android:allowBackup="true"
+40-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:15:9-35
+41        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+41-->[androidx.core:core:1.8.0] C:\Users\sundi\.gradle\caches\transforms-4\8562781c04d6e45100acea0d8c2c8a86\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+42        android:debuggable="true"
+43        android:extractNativeLibs="false"
+44        android:icon="@drawable/ic_launcher_foreground"
+44-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:16:9-56
+45        android:label="@string/app_name"
+45-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:17:9-41
+46        android:roundIcon="@drawable/ic_launcher_foreground"
+46-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:18:9-61
+47        android:supportsRtl="true"
+47-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:19:9-35
+48        android:theme="@style/AppTheme"
+48-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:20:9-40
+49        android:usesCleartextTraffic="true" >
+49-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:21:9-44
+50
+51        <!-- Facebook App ID -->
+52        <meta-data
+52-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:24:9-26:55
+53            android:name="com.facebook.sdk.ApplicationId"
+53-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:25:13-58
+54            android:value="@string/facebook_app_id" />
+54-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:26:13-52
+55
+56        <activity
+56-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:28:9-36:20
+57            android:name="com.ecocycle.wastemanagement.MainActivity"
+57-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:29:13-41
+58            android:configChanges="keyboardHidden|orientation|screenSize"
+58-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:30:13-74
+59            android:exported="true" >
+59-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:31:13-36
+60            <intent-filter>
+60-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:32:13-35:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:17-69
+61-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:33:25-66
 62
-63        <!-- Facebook Login Activity -->
-64        <activity
-64-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:39:9-41:99
-65            android:name="com.facebook.FacebookActivity"
-65-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:40:13-57
-66            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-66-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:41:13-96
-67            android:theme="@style/com_facebook_activity_theme" />
-67-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:25:13-63
-68
-69        <!-- Facebook Custom Tab Activity -->
-70        <activity
-70-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:44:9-53:20
-71            android:name="com.facebook.CustomTabActivity"
-71-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:45:13-58
-72            android:exported="true" >
-72-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:46:13-36
-73            <intent-filter>
-73-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:47:13-52:29
-74                <action android:name="android.intent.action.VIEW" />
-74-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
-74-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
-75
-76                <category android:name="android.intent.category.DEFAULT" />
-76-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
-76-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
-77                <category android:name="android.intent.category.BROWSABLE" />
-77-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
-77-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
-78
-79                <data android:scheme="@string/fb_login_protocol_scheme" />
-79-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
-79-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
-80            </intent-filter>
-81            <intent-filter>
-81-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:31:13-40:29
-82                <action android:name="android.intent.action.VIEW" />
-82-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
-82-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
-83
-84                <category android:name="android.intent.category.DEFAULT" />
-84-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
-84-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
-85                <category android:name="android.intent.category.BROWSABLE" />
-85-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
-85-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
-86
-87                <data
-87-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
-88                    android:host="cct.com.ecocycle.wastemanagement"
-89                    android:scheme="fbconnect" />
-89-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
-90            </intent-filter>
-91        </activity>
-92        <activity
-92-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:29:9-46:20
-93            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-93-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:30:13-80
-94            android:excludeFromRecents="true"
-94-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:31:13-46
-95            android:exported="true"
-95-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:32:13-36
-96            android:launchMode="singleTask"
-96-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:33:13-44
-97            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-97-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:34:13-72
-98            <intent-filter>
-98-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:35:13-45:29
-99                <action android:name="android.intent.action.VIEW" />
-99-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
-99-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
-100
-101                <category android:name="android.intent.category.DEFAULT" />
-101-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
-101-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
-102                <category android:name="android.intent.category.BROWSABLE" />
-102-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
-102-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
-103
-104                <data
-104-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
-105                    android:host="firebase.auth"
-106                    android:path="/"
-107                    android:scheme="genericidp" />
-107-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
-108            </intent-filter>
-109        </activity>
-110        <activity
-110-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:47:9-64:20
-111            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-111-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:48:13-79
-112            android:excludeFromRecents="true"
-112-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:49:13-46
-113            android:exported="true"
-113-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:50:13-36
-114            android:launchMode="singleTask"
-114-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:51:13-44
-115            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-115-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:52:13-72
-116            <intent-filter>
-116-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:53:13-63:29
-117                <action android:name="android.intent.action.VIEW" />
-117-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
-117-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
-118
-119                <category android:name="android.intent.category.DEFAULT" />
-119-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
-119-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
-120                <category android:name="android.intent.category.BROWSABLE" />
-120-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
-120-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
-121
-122                <data
-122-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
-123                    android:host="firebase.auth"
-124                    android:path="/"
-125                    android:scheme="recaptcha" />
-125-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
-126            </intent-filter>
-127        </activity>
-128
-129        <service
-129-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:66:9-72:19
-130            android:name="com.google.firebase.components.ComponentDiscoveryService"
-130-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:67:13-84
-131            android:directBootAware="true"
-131-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:32:13-43
-132            android:exported="false" >
-132-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:68:13-37
-133            <meta-data
-133-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:69:13-71:85
-134                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-134-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:70:17-109
-135                android:value="com.google.firebase.components.ComponentRegistrar" />
-135-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:71:17-82
-136            <meta-data
-136-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:35:13-37:85
-137                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-137-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:36:17-109
-138                android:value="com.google.firebase.components.ComponentRegistrar" />
-138-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:37:17-82
-139        </service>
-140        <service
-140-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
-141            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-141-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
-142            android:enabled="true"
-142-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
-143            android:exported="false" >
-143-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
-144            <meta-data
-144-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
-145                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-145-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
-146                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-146-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
-147        </service>
-148
-149        <activity
-149-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
-150            android:name="androidx.credentials.playservices.HiddenActivity"
-150-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
-151            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-151-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
-152            android:enabled="true"
-152-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
-153            android:exported="false"
-153-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
-154            android:fitsSystemWindows="true"
-154-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
-155            android:theme="@style/Theme.Hidden" >
-155-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
-156        </activity>
-157        <activity
-157-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:23:9-27:75
-158            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-158-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:24:13-93
-159            android:excludeFromRecents="true"
-159-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:25:13-46
-160            android:exported="false"
-160-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:26:13-37
-161            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-161-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:27:13-72
-162        <!--
-163            Service handling Google Sign-In user revocation. For apps that do not integrate with
-164            Google Sign-In, this service will never be started.
-165        -->
-166        <service
-166-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:33:9-37:51
-167            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-167-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:34:13-89
-168            android:exported="true"
-168-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:35:13-36
-169            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-169-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:36:13-107
-170            android:visibleToInstantApps="true" />
-170-->[com.google.android.gms:play-services-auth:21.0.0] C:\Users\sundi\.gradle\caches\transforms-4\df2bb77de4353de1d884e606590bcedc\transformed\jetified-play-services-auth-21.0.0\AndroidManifest.xml:37:13-48
-171
-172        <provider
-172-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:23:9-28:39
-173            android:name="com.google.firebase.provider.FirebaseInitProvider"
-173-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:24:13-77
-174            android:authorities="com.ecocycle.wastemanagement.firebaseinitprovider"
-174-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:25:13-72
-175            android:directBootAware="true"
-175-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:26:13-43
-176            android:exported="false"
-176-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:27:13-37
-177            android:initOrder="100" />
-177-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:28:13-36
-178
-179        <activity
-179-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-180            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-180-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-181            android:exported="false"
-181-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-182            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-182-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\sundi\.gradle\caches\transforms-4\272aada5032478ee88de432c37d61d26\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-183        <activity android:name="com.facebook.CustomTabMainActivity" />
-183-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:26:9-71
-183-->[com.facebook.android:facebook-common:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\6fd3d60c759a7841f44fbc49a70e4073\transformed\jetified-facebook-common-16.3.0\AndroidManifest.xml:26:19-68
-184        <!--
-185         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
-186         with the application context. This config is merged in with the host app's manifest,
-187         but there can only be one provider with the same authority activated at any given
-188         point; so if the end user has two or more different apps that use Facebook SDK, only the
-189         first one will be able to use the provider. To work around this problem, we use the
-190         following placeholder in the authority to identify each host application as if it was
-191         a completely different provider.
-192        -->
-193        <provider
-193-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:29:9-32:40
-194            android:name="com.facebook.internal.FacebookInitProvider"
-194-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:30:13-70
-195            android:authorities="com.ecocycle.wastemanagement.FacebookInitProvider"
-195-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:31:13-72
-196            android:exported="false" />
-196-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:32:13-37
-197
-198        <receiver
-198-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:34:9-40:20
-199            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-199-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:35:13-86
-200            android:exported="false" >
-200-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:36:13-37
-201            <intent-filter>
-201-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:37:13-39:29
-202                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-202-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:38:17-95
-202-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:38:25-92
-203            </intent-filter>
-204        </receiver>
-205        <receiver
-205-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:41:9-47:20
-206            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
-206-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:42:13-118
-207            android:exported="false" >
-207-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:43:13-37
-208            <intent-filter>
-208-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:44:13-46:29
-209                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
-209-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:45:17-103
-209-->[com.facebook.android:facebook-core:16.3.0] C:\Users\sundi\.gradle\caches\transforms-4\2765fbb1efa3b42daa944d4d0434dd9e\transformed\jetified-facebook-core-16.3.0\AndroidManifest.xml:45:25-100
-210            </intent-filter>
-211        </receiver>
-212
-213        <meta-data
-213-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
-214            android:name="com.google.android.gms.version"
-214-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
-215            android:value="@integer/google_play_services_version" /> <!-- The activities will be merged into the manifest of the hosting app. -->
-215-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
-216        <activity
-216-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:14:9-18:65
-217            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-217-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:15:13-93
-218            android:exported="false"
-218-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:16:13-37
-219            android:stateNotNeeded="true"
-219-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:17:13-42
-220            android:theme="@style/Theme.PlayCore.Transparent" />
-220-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:18:13-62
-221    </application>
-222
-223</manifest>
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:17-77
+63-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:34:27-74
+64            </intent-filter>
+65        </activity>
+66
+67        <!-- Facebook Login Activity -->
+68        <activity
+68-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:39:9-41:99
+69            android:name="com.facebook.FacebookActivity"
+69-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:40:13-57
+70            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+70-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:41:13-96
+71            android:theme="@style/com_facebook_activity_theme" />
+71-->[com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:23:13-63
+72
+73        <!-- Facebook Custom Tab Activity -->
+74        <activity
+74-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:44:9-53:20
+75            android:name="com.facebook.CustomTabActivity"
+75-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:45:13-58
+76            android:exported="true" >
+76-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:46:13-36
+77            <intent-filter>
+77-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:47:13-52:29
+78                <action android:name="android.intent.action.VIEW" />
+78-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
+78-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
+79
+80                <category android:name="android.intent.category.DEFAULT" />
+80-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
+80-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
+81                <category android:name="android.intent.category.BROWSABLE" />
+81-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
+81-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
+82
+83                <data android:scheme="@string/fb_login_protocol_scheme" />
+83-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
+83-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
+84            </intent-filter>
+85            <intent-filter>
+85-->[com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:29:13-38:29
+86                <action android:name="android.intent.action.VIEW" />
+86-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
+86-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
+87
+88                <category android:name="android.intent.category.DEFAULT" />
+88-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
+88-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
+89                <category android:name="android.intent.category.BROWSABLE" />
+89-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
+89-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
+90
+91                <data
+91-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
+92                    android:host="cct.com.ecocycle.wastemanagement"
+93                    android:scheme="fbconnect" />
+93-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
+94            </intent-filter>
+95        </activity>
+96        <activity
+96-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:29:9-46:20
+97            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+97-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:30:13-80
+98            android:excludeFromRecents="true"
+98-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:31:13-46
+99            android:exported="true"
+99-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:32:13-36
+100            android:launchMode="singleTask"
+100-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:33:13-44
+101            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+101-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:34:13-72
+102            <intent-filter>
+102-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:35:13-45:29
+103                <action android:name="android.intent.action.VIEW" />
+103-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
+103-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
+104
+105                <category android:name="android.intent.category.DEFAULT" />
+105-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
+105-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
+106                <category android:name="android.intent.category.BROWSABLE" />
+106-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
+106-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
+107
+108                <data
+108-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
+109                    android:host="firebase.auth"
+110                    android:path="/"
+111                    android:scheme="genericidp" />
+111-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
+112            </intent-filter>
+113        </activity>
+114        <activity
+114-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:47:9-64:20
+115            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+115-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:48:13-79
+116            android:excludeFromRecents="true"
+116-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:49:13-46
+117            android:exported="true"
+117-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:50:13-36
+118            android:launchMode="singleTask"
+118-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:51:13-44
+119            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+119-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:52:13-72
+120            <intent-filter>
+120-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:53:13-63:29
+121                <action android:name="android.intent.action.VIEW" />
+121-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:17-69
+121-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:48:25-66
+122
+123                <category android:name="android.intent.category.DEFAULT" />
+123-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:17-76
+123-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:49:27-73
+124                <category android:name="android.intent.category.BROWSABLE" />
+124-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:17-78
+124-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:50:27-75
+125
+126                <data
+126-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:17-75
+127                    android:host="firebase.auth"
+128                    android:path="/"
+129                    android:scheme="recaptcha" />
+129-->C:\Users\sundi\OneDrive\Desktop\Waste Management\android\app\src\main\AndroidManifest.xml:51:23-72
+130            </intent-filter>
+131        </activity>
+132
+133        <service
+133-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:66:9-72:19
+134            android:name="com.google.firebase.components.ComponentDiscoveryService"
+134-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:67:13-84
+135            android:directBootAware="true"
+135-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:32:13-43
+136            android:exported="false" >
+136-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:68:13-37
+137            <meta-data
+137-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:69:13-71:85
+138                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+138-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:70:17-109
+139                android:value="com.google.firebase.components.ComponentRegistrar" />
+139-->[com.google.firebase:firebase-auth:24.0.1] C:\Users\sundi\.gradle\caches\transforms-4\d31f8cc58b7f695572d6443d347fb71f\transformed\jetified-firebase-auth-24.0.1\AndroidManifest.xml:71:17-82
+140            <meta-data
+140-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:35:13-37:85
+141                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+141-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:36:17-109
+142                android:value="com.google.firebase.components.ComponentRegistrar" />
+142-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:37:17-82
+143        </service>
+144        <service
+144-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:24:9-32:19
+145            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+145-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:25:13-94
+146            android:enabled="true"
+146-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:26:13-35
+147            android:exported="false" >
+147-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:27:13-37
+148            <meta-data
+148-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:29:13-31:104
+149                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+149-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:30:17-76
+150                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+150-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:31:17-101
+151        </service>
+152
+153        <activity
+153-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:34:9-41:20
+154            android:name="androidx.credentials.playservices.HiddenActivity"
+154-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:35:13-76
+155            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+155-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:36:13-87
+156            android:enabled="true"
+156-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:37:13-35
+157            android:exported="false"
+157-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:38:13-37
+158            android:fitsSystemWindows="true"
+158-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:39:13-45
+159            android:theme="@style/Theme.Hidden" >
+159-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] C:\Users\sundi\.gradle\caches\transforms-4\1dcf03c2bd4a716599684fb31835717b\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\AndroidManifest.xml:40:13-48
+160        </activity>
+161        <activity
+161-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:23:9-27:75
+162            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+162-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:24:13-93
+163            android:excludeFromRecents="true"
+163-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:25:13-46
+164            android:exported="false"
+164-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:26:13-37
+165            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+165-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:27:13-72
+166        <!--
+167            Service handling Google Sign-In user revocation. For apps that do not integrate with
+168            Google Sign-In, this service will never be started.
+169        -->
+170        <service
+170-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:33:9-37:51
+171            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+171-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:34:13-89
+172            android:exported="true"
+172-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:35:13-36
+173            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+173-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:36:13-107
+174            android:visibleToInstantApps="true" />
+174-->[com.google.android.gms:play-services-auth:21.2.0] C:\Users\sundi\.gradle\caches\transforms-4\5b03058f5bb54fbab50ad99202458516\transformed\jetified-play-services-auth-21.2.0\AndroidManifest.xml:37:13-48
+175
+176        <provider
+176-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:23:9-28:39
+177            android:name="com.google.firebase.provider.FirebaseInitProvider"
+177-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:24:13-77
+178            android:authorities="com.ecocycle.wastemanagement.firebaseinitprovider"
+178-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:25:13-72
+179            android:directBootAware="true"
+179-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:26:13-43
+180            android:exported="false"
+180-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:27:13-37
+181            android:initOrder="100" />
+181-->[com.google.firebase:firebase-common:22.0.1] C:\Users\sundi\.gradle\caches\transforms-4\7f154d9011f00ce3c63f01c45e519325\transformed\jetified-firebase-common-22.0.1\AndroidManifest.xml:28:13-36
+182
+183        <activity
+183-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:9-22:45
+184            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+184-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:20:19-85
+185            android:exported="false"
+185-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:22:19-43
+186            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+186-->[com.google.android.gms:play-services-base:18.3.0] C:\Users\sundi\.gradle\caches\transforms-4\cca0f194119853ef97fb3bd9c6e0cf34\transformed\jetified-play-services-base-18.3.0\AndroidManifest.xml:21:19-78
+187        <activity android:name="com.facebook.CustomTabMainActivity" />
+187-->[com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:24:9-71
+187-->[com.facebook.android:facebook-common:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\a07a8e9f6070c64ee78eac1040f96414\transformed\jetified-facebook-common-18.0.3\AndroidManifest.xml:24:19-68
+188        <!--
+189         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+190         with the application context. This config is merged in with the host app's manifest,
+191         but there can only be one provider with the same authority activated at any given
+192         point; so if the end user has two or more different apps that use Facebook SDK, only the
+193         first one will be able to use the provider. To work around this problem, we use the
+194         following placeholder in the authority to identify each host application as if it was
+195         a completely different provider.
+196        -->
+197        <provider
+197-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:32:9-35:40
+198            android:name="com.facebook.internal.FacebookInitProvider"
+198-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:33:13-70
+199            android:authorities="com.ecocycle.wastemanagement.FacebookInitProvider"
+199-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:34:13-72
+200            android:exported="false" />
+200-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:35:13-37
+201
+202        <receiver
+202-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:37:9-43:20
+203            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+203-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:38:13-86
+204            android:exported="false" >
+204-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:39:13-37
+205            <intent-filter>
+205-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:40:13-42:29
+206                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+206-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:41:17-95
+206-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:41:25-92
+207            </intent-filter>
+208        </receiver>
+209        <receiver
+209-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:44:9-50:20
+210            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+210-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:45:13-118
+211            android:exported="false" >
+211-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:46:13-37
+212            <intent-filter>
+212-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:47:13-49:29
+213                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+213-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:48:17-103
+213-->[com.facebook.android:facebook-core:18.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0bc25e56bc0b0bd748275724cab149fa\transformed\jetified-facebook-core-18.0.3\AndroidManifest.xml:48:25-100
+214            </intent-filter>
+215        </receiver>
+216
+217        <meta-data
+217-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+218            android:name="com.google.android.gms.version"
+218-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+219            android:value="@integer/google_play_services_version" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+219-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\sundi\.gradle\caches\transforms-4\55a5304f344ff654561f9891b728de40\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+220        <activity
+220-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+221            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+221-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:15:13-93
+222            android:exported="false"
+222-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:16:13-37
+223            android:stateNotNeeded="true"
+223-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:17:13-42
+224            android:theme="@style/Theme.PlayCore.Transparent" />
+224-->[com.google.android.play:core-common:2.0.3] C:\Users\sundi\.gradle\caches\transforms-4\0a0421b80c16889bf68a511be55068b3\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:18:13-62
+225    </application>
+226
+227</manifest>
