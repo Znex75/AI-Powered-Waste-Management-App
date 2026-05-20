@@ -518,7 +518,9 @@
             video: {
               facingMode: {
                 ideal: "environment"
-              }
+              },
+              width: { ideal: 1280 },
+              height: { ideal: 720 }
             },
             audio: false
           });
@@ -537,7 +539,7 @@
         hint.innerText =
           "Hold the waste item inside the frame.";
 
-        setTimeout(captureFrameAndIdentify, 1800);
+        setTimeout(captureFrameAndIdentify, 3000);
 
       } catch (error) {
 
@@ -595,15 +597,31 @@
         return;
       }
 
-      canvas.width = video.videoWidth;
+      const sourceWidth = video.videoWidth;
+      const sourceHeight = video.videoHeight;
+      const cropSize = Math.floor(Math.min(sourceWidth, sourceHeight) * 0.78);
+      const cropX = Math.floor((sourceWidth - cropSize) / 2);
+      const cropY = Math.floor((sourceHeight - cropSize) / 2);
 
-      canvas.height = video.videoHeight;
+      canvas.width = 768;
+
+      canvas.height = 768;
 
       const ctx = canvas.getContext("2d");
 
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      ctx.drawImage(
+        video,
+        cropX,
+        cropY,
+        cropSize,
+        cropSize,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
 
-      const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+      const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
 
       const base64 = dataUrl.split(',')[1];
       lastScanImage = dataUrl;
@@ -664,13 +682,17 @@
 
         updateResultUI(resultData);
 
-        logScan(resultData)
-          .catch(e =>
-            console.error(
-              'Background log failed',
-              e
-            )
-          );
+        if (resultData.xpReward > 0 && resultData.label !== 'Could not identify waste') {
+          logScan(resultData)
+            .catch(e =>
+              console.error(
+                'Background log failed',
+                e
+              )
+            );
+        } else {
+          showMessage('No item identified. Try again with the item closer and centered.');
+        }
 
       } catch (error) {
 
