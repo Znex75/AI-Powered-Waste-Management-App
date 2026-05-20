@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "npx prisma generate"
+    "start": "prisma db push --accept-data-loss && node server.js",
+    "build": "prisma generate && prisma db push --accept-data-loss"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +16,10 @@
     "@prisma/client": "^7.8.0",
     "@supabase/supabase-js": "^2.105.1",
     "axios": "^1.6.0",
+    "better-sqlite3": "^12.6.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
-    "express": "^5.2.1"
-  },
-  "devDependencies": {
+    "express": "^5.2.1",
     "prisma": "^7.8.0"
   }
 }
