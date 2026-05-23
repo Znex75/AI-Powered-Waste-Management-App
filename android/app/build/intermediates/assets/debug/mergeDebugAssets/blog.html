@@ -3,123 +3,114 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EcoPulse Community</title>
+<title>EcoPulse - Events</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-tertiary-fixed": "#00201e",
-                    "on-secondary-fixed": "#002109",
-                    "on-background": "#191c1e",
-                    "primary-container": "#2dd4bf",
-                    "on-primary-fixed-variant": "#005047",
-                    "primary": "#006b5f",
-                    "error-container": "#ffdad6",
-                    "tertiary-container": "#91c8c2",
-                    "surface-dim": "#d8dadc",
-                    "surface-bright": "#f7f9fb",
-                    "on-secondary": "#ffffff",
-                    "inverse-primary": "#3cddc7",
-                    "inverse-on-surface": "#eff1f3",
-                    "surface-container": "#eceef0",
-                    "secondary": "#006e2f",
-                    "secondary-container": "#6bff8f",
-                    "background": "#f7f9fb",
-                    "surface-container-highest": "#e0e3e5",
-                    "on-tertiary-container": "#1c5551",
-                    "tertiary-fixed-dim": "#9ad1cb",
-                    "secondary-fixed": "#6bff8f",
-                    "secondary-fixed-dim": "#4ae176",
-                    "on-secondary-container": "#007432",
-                    "tertiary": "#316763",
-                    "primary-fixed-dim": "#3cddc7",
-                    "on-primary-container": "#00574d",
-                    "surface-container-high": "#e6e8ea",
-                    "on-secondary-fixed-variant": "#005321",
-                    "surface-container-lowest": "#ffffff",
-                    "inverse-surface": "#2d3133",
-                    "primary-fixed": "#62fae3",
-                    "on-error-container": "#93000a",
-                    "surface-container-low": "#f2f4f6",
-                    "on-error": "#ffffff",
-                    "on-primary": "#ffffff",
-                    "surface-variant": "#e0e3e5",
-                    "on-tertiary-fixed-variant": "#144f4b",
-                    "on-surface": "#191c1e",
-                    "on-primary-fixed": "#00201c",
-                    "error": "#ba1a1a",
-                    "tertiary-fixed": "#b5ede7",
-                    "outline-variant": "#bacac5",
-                    "surface": "#f7f9fb",
-                    "on-surface-variant": "#3c4a46",
-                    "surface-tint": "#006b5f",
-                    "on-tertiary": "#ffffff",
-                    "outline": "#6b7a76"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "md": "24px",
-                    "sm": "12px",
-                    "base": "8px",
-                    "xl": "64px",
-                    "gutter": "16px",
-                    "xs": "4px",
-                    "margin": "20px",
-                    "lg": "40px"
-            },
-            "fontFamily": {
-                    "headline-md": ["Plus Jakarta Sans"],
-                    "headline-lg": ["Plus Jakarta Sans"],
-                    "label-sm": ["Plus Jakarta Sans"],
-                    "label-md": ["Plus Jakarta Sans"],
-                    "display-lg": ["Plus Jakarta Sans"],
-                    "body-md": ["Plus Jakarta Sans"],
-                    "body-lg": ["Plus Jakarta Sans"]
-            },
-            "fontSize": {
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
-            }
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-tertiary-fixed": "#00201e",
+                  "on-secondary-fixed": "#002109",
+                  "on-background": "#191c1e",
+                  "primary-container": "#2dd4bf",
+                  "on-primary-fixed-variant": "#005047",
+                  "primary": "#006b5f",
+                  "error-container": "#ffdad6",
+                  "tertiary-container": "#91c8c2",
+                  "surface-dim": "#d8dadc",
+                  "surface-bright": "#f7f9fb",
+                  "on-secondary": "#ffffff",
+                  "inverse-primary": "#3cddc7",
+                  "inverse-on-surface": "#eff1f3",
+                  "surface-container": "#eceef0",
+                  "secondary": "#006e2f",
+                  "secondary-container": "#6bff8f",
+                  "background": "#f7f9fb",
+                  "surface-container-highest": "#e0e3e5",
+                  "on-tertiary-container": "#1c5551",
+                  "tertiary-fixed-dim": "#9ad1cb",
+                  "secondary-fixed": "#6bff8f",
+                  "secondary-fixed-dim": "#4ae176",
+                  "on-secondary-container": "#007432",
+                  "tertiary": "#316763",
+                  "primary-fixed-dim": "#3cddc7",
+                  "on-primary-container": "#00574d",
+                  "surface-container-high": "#e6e8ea",
+                  "on-secondary-fixed-variant": "#005321",
+                  "surface-container-lowest": "#ffffff",
+                  "inverse-surface": "#2d3133",
+                  "primary-fixed": "#62fae3",
+                  "on-error-container": "#93000a",
+                  "surface-container-low": "#f2f4f6",
+                  "on-error": "#ffffff",
+                  "on-primary": "#ffffff",
+                  "surface-variant": "#e0e3e5",
+                  "on-tertiary-fixed-variant": "#144f4b",
+                  "on-surface": "#191c1e",
+                  "on-primary-fixed": "#00201c",
+                  "error": "#ba1a1a",
+                  "tertiary-fixed": "#b5ede7",
+                  "outline-variant": "#bacac5",
+                  "surface": "#f7f9fb",
+                  "on-surface-variant": "#3c4a46",
+                  "surface-tint": "#006b5f",
+                  "on-tertiary": "#ffffff",
+                  "outline": "#6b7a76"
           },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "md": "24px",
+                  "sm": "12px",
+                  "base": "8px",
+                  "xl": "64px",
+                  "gutter": "16px",
+                  "xs": "4px",
+                  "margin": "20px",
+                  "lg": "40px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Plus Jakarta Sans"],
+                  "headline-lg": ["Plus Jakarta Sans"],
+                  "label-sm": ["Plus Jakarta Sans"],
+                  "label-md": ["Plus Jakarta Sans"],
+                  "display-lg": ["Plus Jakarta Sans"],
+                  "body-md": ["Plus Jakarta Sans"],
+                  "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                  "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+          }
         },
-      }
-    </script>
+      },
+    }
+  </script>
 <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .active-tab-indicator {
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background-color: #006b5f;
-            border-radius: 9999px;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-    
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  
     /* Global Dark Mode Styles */
     html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
       background-color: #0f172a !important;
@@ -162,7 +153,7 @@
     }
   </style>
   </head>
-<body class="bg-background text-on-background min-h-screen pb-xl">
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
 <!-- TopAppBar & Navigation Drawer -->
 <header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
 <div class="flex items-center gap-3">
@@ -338,147 +329,162 @@
 </script>
 
 
-<!-- Top App Bar -->
+<!-- TopAppBar -->
 
-<main class="max-w-7xl mx-auto px-margin pt-md">
-<!-- Tabbed Interface -->
-<div class="flex border-b border-outline-variant mb-md relative">
-<button class="flex-1 py-md font-label-md text-label-md text-primary relative">
-                Feed
-                <div class="active-tab-indicator"></div>
-</button>
-<button class="flex-1 py-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">
-                Groups
-            </button>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-md">
-<!-- Left Column: Feed -->
-<div class="md:col-span-8 flex flex-col gap-md">
-<!-- Post Item 1 -->
-<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border-l-4 border-primary">
-<div class="flex items-center justify-between mb-sm">
-<div class="flex items-center gap-sm">
-<div class="w-10 h-10 rounded-full overflow-hidden">
-<img alt="Post author avatar" data-alt="A high-resolution portrait of a young woman with a radiant expression, standing in a sunlit urban park filled with lush greenery. The image uses a soft, airy color palette of light teals and natural greens, reflecting an optimistic and environmentally-conscious brand persona. The lighting is high-key and diffused, creating a professional and approachable modern minimalist feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCffGqyIaoMo0kGBCj1UkrzL-D1miftH-OfoBq5cgRR847l43gxpzAHjYO2745AqDjkQLpnXZESZZ7PhVO0zYOYaiaHgVqiwB-aWaZINnZyp8HDVPeGf6NDNsWh56cDWQrZFH4Gc_ekFncgA_tt0PD9rNdYsOMnyTq8kFB0YhOWUYwVVf_7mXpY90Xqmj4-EeJy7cVlrit1IfgcPdgpZ0SjEuGInpYS4K4iGyeIzH--tVU9iki-b_vQ00F4h869pL7MGVDLv5tmx91i"/>
-</div>
-<div>
-<h3 class="font-label-md text-label-md text-on-surface">Sarah Jenkins</h3>
-<p class="font-label-sm text-label-sm text-on-surface-variant">2h ago • Maple Street Hub</p>
-</div>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface mb-md">Just dropped off 5kg of organic compost at the neighborhood bin! The bin fullness gauge is at about 60% right now for anyone heading that way. 🌱</p>
-<div class="rounded-xl overflow-hidden mb-md">
-<img alt="Compost bin image" data-alt="A clean, modern wooden compost bin located in a bright community garden setting during a sunny afternoon. The composition is minimalist and organized, with vibrant green plants in the background and soft, natural lighting. The color story highlights refreshing teals and forest greens, emphasizing a sense of clarity and ecological stewardship in an urban environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA26QRuSxK4K95ITtR-i5q3yOf0T-Zh-w-KAwKVWPthucv4lWTjeKB4U7lIyJg2ZCQFMNctLlNgkQP_GKif53Ik2IeG9j6ZCORduob6iXEcVLtpTpYywOP7NA-BovO_ViMV2RtfajXEqbTBv4Bjf9nrm9uH4MkGPAaKAzE8b2v38eDLq5y64YrHxLwtOFGDgCwVIIANexrm5IVWYw20IHpxUW3PkjcHgtJoyJpWVfVrjmUvN70P2hOowLkL76NqjUF-wa1exCNBd9Vx"/>
-</div>
-<div class="flex items-center justify-between pt-base border-t border-surface-container">
-<div class="flex gap-md">
-<button class="flex items-center gap-xs text-primary transition-transform active:scale-95">
-<span class="material-symbols-outlined" data-icon="thumb_up">thumb_up</span>
-<span class="font-label-sm text-label-sm">24</span>
-</button>
-<button class="flex items-center gap-xs text-on-surface-variant">
-<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
-<span class="font-label-sm text-label-sm">8</span>
+<main class="max-w-7xl mx-auto px-margin space-y-xl mt-md">
+<!-- Horizontal Date Selector -->
+<section>
+<div class="flex items-center justify-between mb-base">
+<h2 class="font-headline-md text-headline-md text-on-surface">September 2024</h2>
+<button class="text-primary font-label-md flex items-center gap-xs">
+          Calendar <span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
 </button>
 </div>
-<button class="text-on-surface-variant">
-<span class="material-symbols-outlined" data-icon="share">share</span>
+<div class="flex gap-sm overflow-x-auto custom-scrollbar py-base -mx-margin px-margin">
+<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="font-label-sm text-label-sm">MON</span>
+<span class="font-headline-md text-headline-md">11</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="font-label-sm text-label-sm">TUE</span>
+<span class="font-headline-md text-headline-md">12</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[64px] h-[84px] bg-primary-container text-on-primary-container rounded-xl shadow-lg scale-105 ring-2 ring-primary">
+<span class="font-label-sm text-label-sm">WED</span>
+<span class="font-headline-md text-headline-md">13</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="font-label-sm text-label-sm">THU</span>
+<span class="font-headline-md text-headline-md">14</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="font-label-sm text-label-sm">FRI</span>
+<span class="font-headline-md text-headline-md">15</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="font-label-sm text-label-sm">SAT</span>
+<span class="font-headline-md text-headline-md">16</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="font-label-sm text-label-sm">SUN</span>
+<span class="font-headline-md text-headline-md">17</span>
+</div>
+</div>
+</section>
+<!-- Featured Hero Card -->
+<section>
+<div class="relative w-full h-[280px] rounded-xl overflow-hidden shadow-xl bg-surface-container-lowest group">
+<img class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" data-alt="A wide-angle, high-resolution shot of a diverse group of enthusiastic community volunteers cleaning up a beautiful sun-drenched coastal area at golden hour. The image features soft, warm lighting that highlights the textures of the sand and the vibrant green of the coastal plants. The overall mood is optimistic and proactive, with a focus on teamwork and environmental stewardship in a clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAABvuBafFdKfRQE5kqik-xPNMgKZlg3Rc5Zr6yJWHGWopJh5lHT8QBwhHGtLZT3V2up1yJmvbA-R1MEJvc_UxZr6EZN4sWpVbkGL8F6Nhh0kSG_Q_OQzlu4OW1KvEg7GCMV_w54QKCHKShJyln62Gtugejq4LMXJiLUTuuzLgF6ukTYWO2TdMCH9GlhovyFIqfYWB-xhJ6rfQtRiBUPwoEw2r8tljjoSRTZ8yCNwN2j1zDSii-jHyPb3p1MSWXb43VYnHoSV78UFTQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-black/20 to-transparent flex flex-col justify-end p-md text-white">
+<span class="inline-block bg-secondary-container text-on-secondary-container font-label-sm px-base py-1 rounded-full mb-base w-fit">FEATURED EVENT</span>
+<h3 class="font-headline-lg text-headline-lg mb-xs">Community Clean-up</h3>
+<div class="flex items-center gap-sm font-label-md text-surface-container-lowest mb-md opacity-90">
+<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span> Riverside Park</div>
+<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> 09:00 AM</div>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-md py-sm px-lg rounded-full w-full sm:w-fit Active: scale-95 transition-transform duration-200 flex items-center justify-center gap-sm">
+            Join Now
+          </button>
+</div>
+</div>
+</section>
+<!-- Upcoming Events List -->
+<section class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">Upcoming Events</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-md">
+<!-- Event Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-md relative overflow-hidden border-l-[4px] border-secondary">
+<div class="w-full lg:w-48 h-40 lg:h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A top-down, minimalist close-up of a rustic wooden box filled with rich, dark organic compost and fresh vegetable scraps, surrounded by soft green foliage. The lighting is diffused and natural, emphasizing the organic textures and vibrant earthy tones. The composition is clean and organized, reflecting a sophisticated approach to sustainable living and composting education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq5-bfuXCNeNLF7vJd7OP_8DHF7fZOF8IDgMAYuygSPzuyTJBdejsD98_DbzEOG4KrnfhfsGyvB2Dr0UXWfdpFckhrA5zhks2YcyeWbfXTxyPHg6-tueOa7qdYIzTLO25RbO2AjDHLYdsLt-wuKfKLhNH6_qk3DJkFhzXctneS_Bxg9gQ4zQYlNXLMCTrzzFCrHbsHLKh0P3afiJnwMrjcpVq21EYX9cFeAY6Fceqg7hW4tS39YDMd-Hr1MwWYQGu0CqJGxSCUIXXt"/>
+</div>
+<div class="flex-grow space-y-xs">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-on-surface">Composting Workshop</h4>
+<button class="p-base rounded-full hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="favorite">favorite</span>
 </button>
 </div>
+<p class="font-body-md text-on-surface-variant line-clamp-1">Master the art of creating black gold from your kitchen waste.</p>
+<div class="flex flex-wrap gap-md mt-sm pt-sm border-t border-surface-variant/50">
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="event">event</span>
+                Sep 20, 2024
+              </div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="schedule">schedule</span>
+                02:00 PM - 04:30 PM
+              </div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="location_on">location_on</span>
+                Urban Garden Hub
+              </div>
 </div>
-<!-- Post Item 2 -->
-<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border-l-4 border-secondary">
-<div class="flex items-center justify-between mb-sm">
-<div class="flex items-center gap-sm">
-<div class="w-10 h-10 rounded-full overflow-hidden">
-<img alt="Post author avatar" data-alt="A close-up portrait of a man with glasses and a friendly, proactive look, set against a bright white architectural background with teal accents. The lighting is clear and shadowless, reinforcing a soft-high-tech aesthetic. The atmosphere is optimistic and organized, representing a community leader in an eco-conscious movement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA33jN8Lh0U9LWvAeJ89GMGqzZzPAQC-V8StZ1nTjF9nct72H8DKE60Pafk_DQaArckfSOkvToH4Rxpt6JQ4pTS5qIk-kr1Y2TS3rENc4Pd-3LVstyMfiEjS6Jc3aQAJb9c5BsE8zCSQGD5a24Sp2u26c5QsXPb82T6EIvEZqk8-BxHov7S21e3KioxAvwMdvFHiHgZ-sIHFHe8REAZcVnA2ZtBwe4oudopjnXijFVDWkYcBOB9PBG6rwrlu1uR-Ej1zQ8oAzPA9q3s"/>
-</div>
-<div>
-<h3 class="font-label-md text-label-md text-on-surface">Mark Thompson</h3>
-<p class="font-label-sm text-label-sm text-on-surface-variant">5h ago • Tool Sharing Collective</p>
 </div>
 </div>
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_horiz">more_horiz</span>
+<!-- Event Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-md relative overflow-hidden border-l-[4px] border-primary">
+<div class="w-full lg:w-48 h-40 lg:h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of young green saplings being carefully planted in fertile soil by gentle hands. The background is a soft-focus forest landscape with dappled sunlight filtering through the canopy. The lighting is crisp and refreshing, with a cool-toned, high-tech nature aesthetic that feels professional and inspiring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXFtVAGJlRPh-LltjfqZdJWDz7WyDY5z938nc4uguJFNYh-_aVqet_wSuDs7RfE71PDkhmSs7WGa1NczizKyjitU57FWivlST2pyXv_0FwHUMNiaTQCPoN3GfgbWRG5h0OX4_-sSkLPASR3EVh2DzDuYFN40lU99_sBg38h29GkgvsEmKToHkK6d0pRdIk49PRBedIWLFSD5y5v9Ih_Ak4Na5CaMLePXoRwj4KMSF6U4SYau4FNK9GSi6ZU3kJmt0BSqOWdncJpe2B"/>
 </div>
-<p class="font-body-md text-body-md text-on-surface mb-md">Does anyone need a heavy-duty shredder for the weekend? I'm lending mine out to help with cardboard recycling prep. Pickup at 42 Brook Lane.</p>
-<div class="flex items-center justify-between pt-base border-t border-surface-container">
-<div class="flex gap-md">
-<button class="flex items-center gap-xs text-on-surface-variant">
-<span class="material-symbols-outlined" data-icon="thumb_up">thumb_up</span>
-<span class="font-label-sm text-label-sm">12</span>
-</button>
-<button class="flex items-center gap-xs text-on-surface-variant">
-<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
-<span class="font-label-sm text-label-sm">3</span>
-</button>
-</div>
-<button class="text-on-surface-variant">
-<span class="material-symbols-outlined" data-icon="share">share</span>
+<div class="flex-grow space-y-xs">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-on-surface">Tree Planting Day</h4>
+<button class="p-base rounded-full bg-primary-container/20 group">
+<span class="material-symbols-outlined text-primary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
 </button>
 </div>
+<p class="font-body-md text-on-surface-variant line-clamp-1">Join us in our mission to plant 500 new trees in the city center.</p>
+<div class="flex flex-wrap gap-md mt-sm pt-sm border-t border-surface-variant/50">
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="event">event</span>
+                Sep 24, 2024
+              </div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="schedule">schedule</span>
+                08:00 AM - 12:00 PM
+              </div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="location_on">location_on</span>
+                Downtown Plaza
+              </div>
 </div>
 </div>
-<!-- Right Column: Trending & Groups -->
-<div class="md:col-span-4 flex flex-col gap-md">
-<!-- Trending Neighborhood Topics -->
-<div class="bg-surface-container-low rounded-xl p-md shadow-sm">
-<h2 class="font-label-md text-label-md text-primary mb-md flex items-center gap-xs">
-<span class="material-symbols-outlined text-[20px]" data-icon="trending_up">trending_up</span>
-                        Trending Near You
-                    </h2>
-<ul class="flex flex-col gap-sm">
-<li class="flex items-center justify-between p-sm hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
-<div>
-<p class="font-label-md text-label-md text-on-surface">#ToolSharing</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">15 posts today</p>
 </div>
-<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
-</li>
-<li class="flex items-center justify-between p-sm hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
-<div>
-<p class="font-label-md text-label-md text-on-surface">#CompostCollective</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">8 posts today</p>
+<!-- Event Card 3 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-md relative overflow-hidden border-l-[4px] border-tertiary">
+<div class="w-full lg:w-48 h-40 lg:h-32 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A bright, high-key studio shot of organized recycling bins containing neatly separated glass, plastic, and paper. The background is a clean, neutral white that makes the colorful recycled materials pop. The lighting is even and soft, creating a tactile and modern professional aesthetic that emphasizes clarity and sustainability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7nBoS8QvSeK08l4pTpSy4St3MMMD9n6mt7pQ0MoMTlHYcXfo643cs3aLtKisK6daSFbCQIQlzoFTzzNVd5Gz8Ozvmnqg0UPvChngxxocxn9AsWLnY_T5N-Wjxxonlk2i3ZjXSlNSK9FUOzQTLdwzymnkIgPESoMSMnoD3JZZ73wGpuZfZQ6q6CuJcB6CAg2Yypugr2qT40iwYReeeEjpa7EyI2m8jZMEKCF0wVUwdMkfAZnL8qJ8ZSykf2mIUx3QyTQ_sus_NFMxO"/>
 </div>
-<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
-</li>
-<li class="flex items-center justify-between p-sm hover:bg-surface-container rounded-lg transition-colors cursor-pointer">
-<div>
-<p class="font-label-md text-label-md text-on-surface">#PlasticFreeJuly</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">42 people joined</p>
+<div class="flex-grow space-y-xs">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-md text-on-surface">Recycling Drive</h4>
+<button class="p-base rounded-full hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="favorite">favorite</span>
+</button>
 </div>
-<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
-</li>
-</ul>
-</div>
-<!-- Active Groups (Bento-ish Card) -->
-<div class="bg-primary-container/10 rounded-xl p-md border border-primary-container/20">
-<div class="flex items-center justify-between mb-md">
-<h2 class="font-label-md text-label-md text-on-primary-container">Local Groups</h2>
-<button class="text-primary font-label-sm text-label-sm">View All</button>
-</div>
-<div class="grid grid-cols-2 gap-sm">
-<div class="bg-surface-container-lowest p-sm rounded-lg flex flex-col items-center text-center gap-xs hover:shadow-md transition-shadow cursor-pointer">
-<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
-<span class="material-symbols-outlined" data-icon="eco">eco</span>
-</div>
-<p class="font-label-sm text-label-sm font-bold">Green Up</p>
-</div>
-<div class="bg-surface-container-lowest p-sm rounded-lg flex flex-col items-center text-center gap-xs hover:shadow-md transition-shadow cursor-pointer">
-<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
-<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
-</div>
-<p class="font-label-sm text-label-sm font-bold">Energy Fix</p>
+<p class="font-body-md text-on-surface-variant line-clamp-1">Bring your old electronics and hard-to-recycle items.</p>
+<div class="flex flex-wrap gap-md mt-sm pt-sm border-t border-surface-variant/50">
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="event">event</span>
+                Sep 28, 2024
+              </div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="schedule">schedule</span>
+                10:00 AM - 04:00 PM
+              </div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="location_on">location_on</span>
+                Community Center
+              </div>
 </div>
 </div>
 </div>
 </div>
-</div>
+</section>
 </main>
-<!-- Floating Action Button -->
-<button class="fixed bottom-[100px] right-margin w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center transition-all active:scale-90 hover:scale-105 z-40">
-<span class="material-symbols-outlined" data-icon="edit">edit</span>
-</button>
 
+<!-- FAB (Contextual for Events) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-xl flex items-center justify-center Active: scale-95 transition-transform duration-200 z-40">
+<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
+</button>
 </body></html>
