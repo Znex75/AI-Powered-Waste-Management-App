@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EcoPulse - Events</title>
+<title>EcoPulse | Environmental Stories</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -132,6 +132,22 @@
     html.dark .bg-slate-50 {
       background-color: #334155 !important;
     }
+    html.dark .bg-surface-container-lowest {
+      background-color: #1e293b !important;
+    }
+    html.dark .bg-surface-container-low,
+    html.dark .bg-surface-container-high,
+    html.dark .bg-surface-container-highest {
+      background-color: #334155 !important;
+    }
+    html.dark .text-on-tertiary-container,
+    html.dark .text-on-primary-container,
+    html.dark .text-on-secondary-container {
+      color: #f1f5f9 !important;
+    }
+    html.dark .border-surface-variant {
+      border-color: #334155 !important;
+    }
     html.dark aside#nav-drawer, html.dark header {
       background-color: #0f172a !important;
       border-color: #334155 !important;
@@ -150,6 +166,15 @@
 <style>
     body {
       min-height: max(884px, 100dvh);
+      padding-top: var(--app-top-bar-height) !important;
+    }
+    :root {
+      --app-safe-top: env(safe-area-inset-top, 0px);
+      --app-top-bar-height: calc(64px + var(--app-safe-top));
+    }
+    .mobile-top-bar {
+      height: var(--app-top-bar-height);
+      padding: var(--app-safe-top) 16px 0;
     }
   </style>
   </head>
@@ -329,162 +354,102 @@
 </script>
 
 
-<!-- TopAppBar -->
+<main class="max-w-7xl mx-auto px-margin pb-xl">
+<!-- Hero Section: Latest Stories -->
+<section class="mt-lg mb-xl">
+<div class="relative overflow-hidden rounded-[2rem] aspect-[16/9] md:aspect-[21/9] group shadow-lg">
+<img alt="Latest Story Hero" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sweeping, cinematic landscape of a lush, vibrant forest at dawn with golden sunlight filtering through the canopy. The image uses a refreshing palette of deep greens and soft teals, creating an atmosphere of environmental stewardship and optimism. The lighting is atmospheric and ethereal, fitting a high-end eco-modernist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8-t-MZ2e8hSoZEAAKopX4YgK0wQsNF317HKcItUxOHShtLUgTV_m0-KoXu8x7TTXCdD2dPrgqbBh0KuRSLWIVHdgADiXvUqF7u6HwXCtwm_wThmVmnRWJRtotBAlXqbl0DGNFGViyL4dNcNSvPZPq_5QIeBCFKpuUMvY1B-N7rVlf_lAjUsJw2_YoFXz7oRHh25poBmQvyjeeFFDeXja8S2W2fiMjmyLPzcR5RENAcln0aEe0HzLiCJVBW78sbdjYMEc21o2T84Pi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-tertiary-fixed/80 via-on-tertiary-fixed/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md md:p-lg lg:p-xl w-full md:w-2/3">
+<span class="inline-block bg-primary-container text-on-primary-container font-label-md text-label-md px-4 py-1 rounded-full mb-sm">Featured Story</span>
+<h2 class="font-display-lg text-[32px] leading-[38px] md:text-display-lg text-white mb-sm">The Zero-Waste Urban Ritual</h2>
+<p class="font-body-lg text-body-lg text-white/90 mb-md line-clamp-2">Discover how modern city dwellers are transforming daily routines into high-impact ecological movements through thoughtful minimalism.</p>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-label-md text-label-md flex items-center gap-sm hover:opacity-90 transition-all active:scale-95">
+Read Article
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
 
-<main class="max-w-7xl mx-auto px-margin space-y-xl mt-md">
-<!-- Horizontal Date Selector -->
-<section>
-<div class="flex items-center justify-between mb-base">
-<h2 class="font-headline-md text-headline-md text-on-surface">September 2024</h2>
-<button class="text-primary font-label-md flex items-center gap-xs">
-          Calendar <span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
-</button>
-</div>
-<div class="flex gap-sm overflow-x-auto custom-scrollbar py-base -mx-margin px-margin">
-<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="font-label-sm text-label-sm">MON</span>
-<span class="font-headline-md text-headline-md">11</span>
-</div>
-<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="font-label-sm text-label-sm">TUE</span>
-<span class="font-headline-md text-headline-md">12</span>
-</div>
-<div class="flex flex-col items-center justify-center min-w-[64px] h-[84px] bg-primary-container text-on-primary-container rounded-xl shadow-lg scale-105 ring-2 ring-primary">
-<span class="font-label-sm text-label-sm">WED</span>
-<span class="font-headline-md text-headline-md">13</span>
-</div>
-<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="font-label-sm text-label-sm">THU</span>
-<span class="font-headline-md text-headline-md">14</span>
-</div>
-<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="font-label-sm text-label-sm">FRI</span>
-<span class="font-headline-md text-headline-md">15</span>
-</div>
-<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="font-label-sm text-label-sm">SAT</span>
-<span class="font-headline-md text-headline-md">16</span>
-</div>
-<div class="flex flex-col items-center justify-center min-w-[56px] h-[84px] bg-surface-container-low rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="font-label-sm text-label-sm">SUN</span>
-<span class="font-headline-md text-headline-md">17</span>
-</div>
-</div>
+<!-- Filters -->
+<section class="flex flex-wrap gap-sm mb-lg items-center">
+<span class="font-label-md text-label-md text-on-surface-variant mr-base">Filter by:</span>
+<button class="bg-primary-container text-on-primary-container px-md py-base rounded-full font-label-md text-label-md transition-all">Latest</button>
+<button class="bg-surface-container-low text-on-surface-variant px-md py-base rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-all">Impact</button>
+<button class="bg-surface-container-low text-on-surface-variant px-md py-base rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-all">Local News</button>
+<button class="bg-surface-container-low text-on-surface-variant px-md py-base rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-all">How-to Guides</button>
 </section>
-<!-- Featured Hero Card -->
-<section>
-<div class="relative w-full h-[280px] rounded-xl overflow-hidden shadow-xl bg-surface-container-lowest group">
-<img class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" data-alt="A wide-angle, high-resolution shot of a diverse group of enthusiastic community volunteers cleaning up a beautiful sun-drenched coastal area at golden hour. The image features soft, warm lighting that highlights the textures of the sand and the vibrant green of the coastal plants. The overall mood is optimistic and proactive, with a focus on teamwork and environmental stewardship in a clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAABvuBafFdKfRQE5kqik-xPNMgKZlg3Rc5Zr6yJWHGWopJh5lHT8QBwhHGtLZT3V2up1yJmvbA-R1MEJvc_UxZr6EZN4sWpVbkGL8F6Nhh0kSG_Q_OQzlu4OW1KvEg7GCMV_w54QKCHKShJyln62Gtugejq4LMXJiLUTuuzLgF6ukTYWO2TdMCH9GlhovyFIqfYWB-xhJ6rfQtRiBUPwoEw2r8tljjoSRTZ8yCNwN2j1zDSii-jHyPb3p1MSWXb43VYnHoSV78UFTQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-black/20 to-transparent flex flex-col justify-end p-md text-white">
-<span class="inline-block bg-secondary-container text-on-secondary-container font-label-sm px-base py-1 rounded-full mb-base w-fit">FEATURED EVENT</span>
-<h3 class="font-headline-lg text-headline-lg mb-xs">Community Clean-up</h3>
-<div class="flex items-center gap-sm font-label-md text-surface-container-lowest mb-md opacity-90">
-<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span> Riverside Park</div>
-<div class="flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span> 09:00 AM</div>
+
+<!-- Article Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-56 relative border-l-[6px] border-secondary">
+<img alt="Impact Article" class="w-full h-full object-cover" data-alt="A clean, minimalist composition of glass recycling jars and organic cotton bags arranged on a light stone surface. The palette is dominated by natural tones, soft teals, and white space, creating a tactile and sophisticated feel. High-key natural light creates soft, diffused shadows in a modern light-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQhLcGYDKYoS3mA0SVYhchmFMGRGMzC_MRbJakURH2IPQx0rzKtSbSEN0nlRXjjIWJx_BPV4VkrE5HfNY5GPpgWqSkl66MtVi5ZURd5BiAu2MvIbTCLPirVdyPUCQSdezutko5U1cofoWfx9YCM6eWfamT1HIkGrtxkni6PKgOVjzBYeudXWp8kpCiAjgjrCfdmob1qPQuXEOSFhpW_0PGYdlFTtO6J4HC8Ru9JfQVxlzyQzfIVzSdZ4vQJmyyrGbwo0j3fef_vy59"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm">Impact</div>
 </div>
-<button class="bg-primary-container text-on-primary-container font-label-md py-sm px-lg rounded-full w-full sm:w-fit Active: scale-95 transition-transform duration-200 flex items-center justify-center gap-sm">
-            Join Now
-          </button>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Closing the Loop on Plastic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">An in-depth look at new circular economy initiatives revitalizing urban recycling centers across the country.</p>
+<div class="flex items-center justify-between pt-md border-t border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">EM</div>
+<span class="font-label-md text-label-md text-on-surface">Elena Marks</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">6 min read</span>
 </div>
 </div>
+</article>
+
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-56 relative border-l-[6px] border-primary">
+<img alt="How-to Article" class="w-full h-full object-cover" data-alt="Macro photography of vibrant, healthy microgreens growing in a sleek, minimalist indoor hydroponic system. The image features crisp details and a fresh, green-centric palette with teal accents. The lighting is bright and modern, emphasizing clarity and sustainable living in an urban setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs5hUhexJUlkCddbpLZxvsQK7NRu5-Craxz1aewKxzDhomXfhg5R01r0ViihzPrKflTaTiMNr8R6t8rOCQU8xPKDWHtuCQtq-eSN9u3ExYJRVTPzL3cB8_XuYVsqn-nOkZzfjQrFnv5i6-6lKcq7s-xXco1AAZRqg__iKYLZSMf-S4Tqw3TCXgVClEtUed6E4SiCXF1QdBMhmjihsjnrfOAYJP5IPA3MMfMrzYcc0PikfJ2Hr82CEjL-PTx09a0me1Inq6Y5vCjgks"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm">How-to Guide</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Composting in Small Spaces</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">A practical guide to odor-free indoor composting techniques perfect for modern apartment living.</p>
+<div class="flex items-center justify-between pt-md border-t border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs">JS</div>
+<span class="font-label-md text-label-md text-on-surface">Julian Smith</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">4 min read</span>
+</div>
+</div>
+</article>
+
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.08)] flex flex-col hover:translate-y-[-4px] transition-transform duration-300">
+<div class="h-56 relative border-l-[6px] border-tertiary">
+<img alt="Local News" class="w-full h-full object-cover" data-alt="A modern, architectural view of a city park featuring solar-powered benches and smart waste bins. The scene is bright and airy, with a focus on high-tech sustainable infrastructure. The palette uses cool greys, bright teals, and natural greens, illuminated by clean, midday sunlight for a proactive, organized feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOsRmexjRRjiEaF34xBzV4Wtam9i1js7721KhrizbkEvRUt1BPVbwv86HDpOTVus-e3Bq2XyLutuTZHpGDsEyoS3bKAu8z6zFjb25HSoHEZMWFUQCFl2eGqBgnRQ-xIDM2YYoCbjHYoZa1oiNFyjlG7qVYMCyTqctP1Z4MomEHrSwab6pGLTS-CAOkKr2S35eHKKDdiSF0abHapg7OCHqnfA-1eETxD8VnzkUYVV31D4tp3i6gI5y-l32lVEzgjbID6CaSAixvc3uR"/>
+<div class="absolute top-sm right-sm bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm">Local News</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Smart Bins Arrive Downtown</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">The city's new AI-powered sorting hubs are making public waste management 40% more efficient this quarter.</p>
+<div class="flex items-center justify-between pt-md border-t border-surface-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container font-bold text-xs">SK</div>
+<span class="font-label-md text-label-md text-on-surface">Sarah Kova</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">5 min read</span>
+</div>
+</div>
+</article>
 </section>
-<!-- Upcoming Events List -->
-<section class="space-y-md">
-<h2 class="font-headline-md text-headline-md text-on-surface">Upcoming Events</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-md">
-<!-- Event Card 1 -->
-<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-md relative overflow-hidden border-l-[4px] border-secondary">
-<div class="w-full lg:w-48 h-40 lg:h-32 rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" data-alt="A top-down, minimalist close-up of a rustic wooden box filled with rich, dark organic compost and fresh vegetable scraps, surrounded by soft green foliage. The lighting is diffused and natural, emphasizing the organic textures and vibrant earthy tones. The composition is clean and organized, reflecting a sophisticated approach to sustainable living and composting education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq5-bfuXCNeNLF7vJd7OP_8DHF7fZOF8IDgMAYuygSPzuyTJBdejsD98_DbzEOG4KrnfhfsGyvB2Dr0UXWfdpFckhrA5zhks2YcyeWbfXTxyPHg6-tueOa7qdYIzTLO25RbO2AjDHLYdsLt-wuKfKLhNH6_qk3DJkFhzXctneS_Bxg9gQ4zQYlNXLMCTrzzFCrHbsHLKh0P3afiJnwMrjcpVq21EYX9cFeAY6Fceqg7hW4tS39YDMd-Hr1MwWYQGu0CqJGxSCUIXXt"/>
+
+<!-- Newsletter Subscription -->
+<section class="mt-lg">
+<div class="bg-tertiary-container/30 rounded-[2rem] p-lg md:p-xl flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-tertiary-container mb-base">Stay in the Eco-Loop</h2>
+<p class="font-body-md text-body-md text-on-tertiary-container opacity-80">Join 15,000+ Eco Warriors receiving weekly updates on local impact stories and sustainable living hacks.</p>
 </div>
-<div class="flex-grow space-y-xs">
-<div class="flex justify-between items-start">
-<h4 class="font-headline-md text-on-surface">Composting Workshop</h4>
-<button class="p-base rounded-full hover:bg-surface-container-low transition-colors group">
-<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="favorite">favorite</span>
-</button>
-</div>
-<p class="font-body-md text-on-surface-variant line-clamp-1">Master the art of creating black gold from your kitchen waste.</p>
-<div class="flex flex-wrap gap-md mt-sm pt-sm border-t border-surface-variant/50">
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="event">event</span>
-                Sep 20, 2024
-              </div>
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="schedule">schedule</span>
-                02:00 PM - 04:30 PM
-              </div>
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="location_on">location_on</span>
-                Urban Garden Hub
-              </div>
-</div>
-</div>
-</div>
-<!-- Event Card 2 -->
-<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-md relative overflow-hidden border-l-[4px] border-primary">
-<div class="w-full lg:w-48 h-40 lg:h-32 rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of young green saplings being carefully planted in fertile soil by gentle hands. The background is a soft-focus forest landscape with dappled sunlight filtering through the canopy. The lighting is crisp and refreshing, with a cool-toned, high-tech nature aesthetic that feels professional and inspiring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXFtVAGJlRPh-LltjfqZdJWDz7WyDY5z938nc4uguJFNYh-_aVqet_wSuDs7RfE71PDkhmSs7WGa1NczizKyjitU57FWivlST2pyXv_0FwHUMNiaTQCPoN3GfgbWRG5h0OX4_-sSkLPASR3EVh2DzDuYFN40lU99_sBg38h29GkgvsEmKToHkK6d0pRdIk49PRBedIWLFSD5y5v9Ih_Ak4Na5CaMLePXoRwj4KMSF6U4SYau4FNK9GSi6ZU3kJmt0BSqOWdncJpe2B"/>
-</div>
-<div class="flex-grow space-y-xs">
-<div class="flex justify-between items-start">
-<h4 class="font-headline-md text-on-surface">Tree Planting Day</h4>
-<button class="p-base rounded-full bg-primary-container/20 group">
-<span class="material-symbols-outlined text-primary" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</button>
-</div>
-<p class="font-body-md text-on-surface-variant line-clamp-1">Join us in our mission to plant 500 new trees in the city center.</p>
-<div class="flex flex-wrap gap-md mt-sm pt-sm border-t border-surface-variant/50">
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-primary" data-icon="event">event</span>
-                Sep 24, 2024
-              </div>
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-primary" data-icon="schedule">schedule</span>
-                08:00 AM - 12:00 PM
-              </div>
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-primary" data-icon="location_on">location_on</span>
-                Downtown Plaza
-              </div>
-</div>
-</div>
-</div>
-<!-- Event Card 3 -->
-<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-md relative overflow-hidden border-l-[4px] border-tertiary">
-<div class="w-full lg:w-48 h-40 lg:h-32 rounded-lg overflow-hidden flex-shrink-0">
-<img class="w-full h-full object-cover" data-alt="A bright, high-key studio shot of organized recycling bins containing neatly separated glass, plastic, and paper. The background is a clean, neutral white that makes the colorful recycled materials pop. The lighting is even and soft, creating a tactile and modern professional aesthetic that emphasizes clarity and sustainability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7nBoS8QvSeK08l4pTpSy4St3MMMD9n6mt7pQ0MoMTlHYcXfo643cs3aLtKisK6daSFbCQIQlzoFTzzNVd5Gz8Ozvmnqg0UPvChngxxocxn9AsWLnY_T5N-Wjxxonlk2i3ZjXSlNSK9FUOzQTLdwzymnkIgPESoMSMnoD3JZZ73wGpuZfZQ6q6CuJcB6CAg2Yypugr2qT40iwYReeeEjpa7EyI2m8jZMEKCF0wVUwdMkfAZnL8qJ8ZSykf2mIUx3QyTQ_sus_NFMxO"/>
-</div>
-<div class="flex-grow space-y-xs">
-<div class="flex justify-between items-start">
-<h4 class="font-headline-md text-on-surface">Recycling Drive</h4>
-<button class="p-base rounded-full hover:bg-surface-container-low transition-colors group">
-<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="favorite">favorite</span>
-</button>
-</div>
-<p class="font-body-md text-on-surface-variant line-clamp-1">Bring your old electronics and hard-to-recycle items.</p>
-<div class="flex flex-wrap gap-md mt-sm pt-sm border-t border-surface-variant/50">
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="event">event</span>
-                Sep 28, 2024
-              </div>
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="schedule">schedule</span>
-                10:00 AM - 04:00 PM
-              </div>
-<div class="flex items-center gap-xs text-on-surface-variant font-label-sm">
-<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="location_on">location_on</span>
-                Community Center
-              </div>
-</div>
-</div>
+<div class="flex flex-col sm:flex-row w-full md:w-auto gap-base">
+<input class="bg-surface-container-lowest border-none rounded-xl px-md py-sm font-body-md text-body-md w-full sm:w-64 focus:ring-2 focus:ring-primary" placeholder="Email Address" type="email"/>
+<button class="bg-tertiary text-white px-lg py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-all active:scale-95">Subscribe</button>
 </div>
 </div>
 </section>
 </main>
-
-<!-- FAB (Contextual for Events) -->
-<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-xl flex items-center justify-center Active: scale-95 transition-transform duration-200 z-40">
-<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
-</button>
 </body></html>
