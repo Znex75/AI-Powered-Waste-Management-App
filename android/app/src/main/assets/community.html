@@ -159,6 +159,15 @@
 <style>
     body {
       min-height: max(884px, 100dvh);
+      padding-top: var(--app-top-bar-height) !important;
+    }
+    :root {
+      --app-safe-top: env(safe-area-inset-top, 0px);
+      --app-top-bar-height: calc(64px + var(--app-safe-top));
+    }
+    .mobile-top-bar {
+      height: var(--app-top-bar-height);
+      padding: var(--app-safe-top) 16px 0;
     }
   </style>
   </head>
