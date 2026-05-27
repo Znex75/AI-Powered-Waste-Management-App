@@ -1,152 +1,175 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-error": "#ffffff",
-                        "surface": "#f7f9fb",
-                        "primary-container": "#2dd4bf",
-                        "on-tertiary-fixed-variant": "#144f4b",
-                        "primary-fixed-dim": "#3cddc7",
-                        "tertiary-container": "#91c8c2",
-                        "on-background": "#191c1e",
-                        "tertiary": "#316763",
-                        "on-tertiary-container": "#1c5551",
-                        "surface-container-high": "#e6e8ea",
-                        "on-secondary-fixed-variant": "#005321",
-                        "on-secondary-fixed": "#002109",
-                        "inverse-primary": "#3cddc7",
-                        "background": "#f7f9fb",
-                        "secondary-fixed": "#6bff8f",
-                        "surface-container": "#eceef0",
-                        "secondary": "#006e2f",
-                        "surface-bright": "#f7f9fb",
-                        "outline-variant": "#bacac5",
-                        "surface-variant": "#e0e3e5",
-                        "tertiary-fixed-dim": "#9ad1cb",
-                        "outline": "#6b7a76",
-                        "on-primary": "#ffffff",
-                        "on-secondary-container": "#007432",
-                        "on-primary-container": "#00574d",
-                        "tertiary-fixed": "#b5ede7",
-                        "inverse-surface": "#2d3133",
-                        "on-primary-fixed-variant": "#005047",
-                        "surface-container-lowest": "#ffffff",
-                        "inverse-on-surface": "#eff1f3",
-                        "primary-fixed": "#62fae3",
-                        "surface-tint": "#006b5f",
-                        "on-surface-variant": "#3c4a46",
-                        "on-tertiary": "#ffffff",
-                        "surface-container-highest": "#e0e3e5",
-                        "on-error-container": "#93000a",
-                        "secondary-fixed-dim": "#4ae176",
-                        "on-surface": "#191c1e",
-                        "on-primary-fixed": "#00201c",
-                        "primary": "#006b5f",
-                        "surface-dim": "#d8dadc",
-                        "surface-container-low": "#f2f4f6",
-                        "error": "#ba1a1a",
-                        "on-secondary": "#ffffff",
-                        "secondary-container": "#6bff8f",
-                        "on-tertiary-fixed": "#00201e",
-                        "error-container": "#ffdad6"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "lg": "40px",
-                        "xl": "64px",
-                        "margin": "20px",
-                        "md": "24px",
-                        "xs": "4px",
-                        "base": "8px",
-                        "sm": "12px",
-                        "gutter": "16px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Plus Jakarta Sans"],
-                        "label-sm": ["Plus Jakarta Sans"],
-                        "body-md": ["Plus Jakarta Sans"],
-                        "headline-lg": ["Plus Jakarta Sans"],
-                        "label-md": ["Plus Jakarta Sans"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "display-lg": ["Plus Jakarta Sans"]
-                    },
-                    "fontSize": {
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
-                    }
-                }
-            }
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2.39.3/dist/umd/supabase.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#ffffff",
+            "surface": "#f7f9fb",
+            "primary-container": "#2dd4bf",
+            "on-tertiary-fixed-variant": "#144f4b",
+            "primary-fixed-dim": "#3cddc7",
+            "tertiary-container": "#91c8c2",
+            "on-background": "#191c1e",
+            "tertiary": "#316763",
+            "on-tertiary-container": "#1c5551",
+            "surface-container-high": "#e6e8ea",
+            "on-secondary-fixed-variant": "#005321",
+            "on-secondary-fixed": "#002109",
+            "inverse-primary": "#3cddc7",
+            "background": "#f7f9fb",
+            "secondary-fixed": "#6bff8f",
+            "surface-container": "#eceef0",
+            "secondary": "#006e2f",
+            "surface-bright": "#f7f9fb",
+            "outline-variant": "#bacac5",
+            "surface-variant": "#e0e3e5",
+            "tertiary-fixed-dim": "#9ad1cb",
+            "outline": "#6b7a76",
+            "on-primary": "#ffffff",
+            "on-secondary-container": "#007432",
+            "on-primary-container": "#00574d",
+            "tertiary-fixed": "#b5ede7",
+            "inverse-surface": "#2d3133",
+            "on-primary-fixed-variant": "#005047",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "primary-fixed": "#62fae3",
+            "surface-tint": "#006b5f",
+            "on-surface-variant": "#3c4a46",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e0e3e5",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#4ae176",
+            "on-surface": "#191c1e",
+            "on-primary-fixed": "#00201c",
+            "primary": "#006b5f",
+            "surface-dim": "#d8dadc",
+            "surface-container-low": "#f2f4f6",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#6bff8f",
+            "on-tertiary-fixed": "#00201e",
+            "error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "40px",
+            "xl": "64px",
+            "margin": "20px",
+            "md": "24px",
+            "xs": "4px",
+            "base": "8px",
+            "sm": "12px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
         }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .scanner-gradient {
-            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.6) 100%);
-        }
-    
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .scanner-gradient {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.6) 100%);
+    }
+
     /* Global Dark Mode Styles */
-    html.dark body, html.dark .bg-mesh, html.dark .bg-surface {
+    html.dark body,
+    html.dark .bg-mesh,
+    html.dark .bg-surface {
       background-color: #0f172a !important;
       background-image: none !important;
       color: #f1f5f9 !important;
     }
+
     html.dark .bg-white {
       background-color: #1e293b !important;
     }
-    html.dark .border-slate-100, html.dark .border-slate-50 {
+
+    html.dark .border-slate-100,
+    html.dark .border-slate-50 {
       border-color: #334155 !important;
     }
-    html.dark .text-slate-700, html.dark .text-on-surface, html.dark .text-slate-800 {
+
+    html.dark .text-slate-700,
+    html.dark .text-on-surface,
+    html.dark .text-slate-800 {
       color: #f1f5f9 !important;
     }
-    html.dark .text-slate-500, html.dark .text-on-surface-variant, html.dark .text-outline {
+
+    html.dark .text-slate-500,
+    html.dark .text-on-surface-variant,
+    html.dark .text-outline {
       color: #94a3b8 !important;
     }
+
     html.dark .bg-slate-50 {
       background-color: #334155 !important;
     }
-    html.dark aside#nav-drawer, html.dark header {
+
+    html.dark aside#nav-drawer,
+    html.dark header {
       background-color: #0f172a !important;
       border-color: #334155 !important;
     }
-    html.dark #modal-backdrop + div {
+
+    html.dark #modal-backdrop+div {
       background-color: #1e293b !important;
       color: #f1f5f9 !important;
     }
+
     html.dark input {
       background-color: #0f172a !important;
       color: #f1f5f9 !important;
       border-color: #334155 !important;
     }
-
-</style>
-<style>
+  </style>
+  <style>
     :root {
       --app-safe-top: env(safe-area-inset-top, 0px);
       --app-safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -209,331 +232,415 @@
     }
   </style>
 </head>
+
 <body class="bg-surface font-body-md text-on-surface antialiased">
-<!-- TopAppBar -->
-<!-- TopAppBar & Navigation Drawer -->
-<header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
-<div class="flex items-center gap-3">
-<button class="w-11 h-11 rounded-full flex items-center justify-center text-teal-600 active:scale-95 transition-transform duration-200" onclick="document.getElementById('nav-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-overlay').classList.remove('hidden');" aria-label="Menu">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-<span class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
-</div>
-<div class="flex items-center gap-2">
-<button onclick="location.href='notifications.html'" class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity" aria-label="Notifications">
-<span class="material-symbols-outlined text-xl">notifications</span>
-</button>
-<a href="Authentication/user.html" class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
-<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH"/>
-</a>
-</div>
-</header>
+  <!-- TopAppBar -->
+  <!-- TopAppBar & Navigation Drawer -->
+  <header
+    class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
+    <div class="flex items-center gap-3">
+      <button
+        class="w-11 h-11 rounded-full flex items-center justify-center text-teal-600 active:scale-95 transition-transform duration-200"
+        onclick="document.getElementById('nav-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-overlay').classList.remove('hidden');"
+        aria-label="Menu">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+      <span
+        class="text-2xl font-extrabold text-teal-600 dark:text-teal-400 tracking-normal font-plus-jakarta">EcoCycle</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="location.href='notifications.html'"
+        class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-50 text-slate-500 active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity"
+        aria-label="Notifications">
+        <span class="material-symbols-outlined text-xl">notifications</span>
+      </button>
+      <a href="Authentication/user.html"
+        class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container block">
+        <img alt="User profile photo" class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsODJt1tT752FfsIlf0EVEMTPh7CkI3YaxCo-859HcXYCzVTTzxlLgZcN1NmoRV1ml8gHGZiqvCN35yCqoErdR9q3yvcnCoXln3aCKjItRjVYZ9oaL2-3yOEq4ol6vimRiHBXwYbXj_An-EV7kwXJRWABHI_u1Hk26svrJZ-5TSCxrw9jPWuXkkTBTrALiGQcQpwf3eiJhTtYVmIjRknR_-_fM6-mC4312HnyvetCCHWuZzmtlKmfFirAWrTpl1s7lMdM8zqg9IVkH" />
+      </a>
+    </div>
+  </header>
 
-<!-- Navigation Drawer -->
-<div id="drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity" onclick="document.getElementById('nav-drawer').classList.add('-translate-x-full'); this.classList.add('hidden');"></div>
-<aside id="nav-drawer" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-slate-900 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-y-auto">
-<div class="p-6 border-b border-slate-100 flex items-center gap-4">
-<label for="drawer-avatar-upload" class="cursor-pointer relative group block flex-shrink-0">
-  <img id="nav-drawer-avatar" alt="User" class="w-14 h-14 rounded-full object-cover group-hover:opacity-75 transition-opacity" src="https://placehold.net/avatar.png"/>
-  <div class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-    <span class="material-symbols-outlined text-white text-sm">edit</span>
+  <!-- Navigation Drawer -->
+  <div id="drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden transition-opacity"
+    onclick="document.getElementById('nav-drawer').classList.add('-translate-x-full'); this.classList.add('hidden');">
   </div>
-</label>
-<input type="file" id="drawer-avatar-upload" accept="image/*" class="hidden" onchange="uploadDrawerAvatar(event)" />
-<div>
-<p class="text-sm text-slate-500">Hey!</p>
-<p id="nav-drawer-name" class="font-bold text-teal-700">Loading...</p>
-</div>
-</div>
-<div class="p-4 flex flex-col gap-2 flex-1">
-<a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">home</span>
-<span class="font-semibold flex-1">Homepage</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="scan.html" class="flex items-center gap-4 px-4 py-3 bg-[#4caf50] text-white rounded-xl">
-<span class="material-symbols-outlined">center_focus_weak</span>
-<span class="font-semibold flex-1">Scanner</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="marketPlace.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">storefront</span>
-<span class="font-semibold flex-1">Market</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="Authentication/user.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">person</span>
-<span class="font-semibold flex-1">Profile</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="schedule.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">calendar_today</span>
-<span class="font-semibold flex-1">Schedule</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="recycle.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">recycling</span>
-<span class="font-semibold flex-1">Recycle</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="events.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">event</span>
-<span class="font-semibold flex-1">Events</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="tips.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">lightbulb</span>
-<span class="font-semibold flex-1">Tips</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="blog.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">article</span>
-<span class="font-semibold flex-1">Blog</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="donate.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">volunteer_activism</span>
-<span class="font-semibold flex-1">Donate</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="community.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">groups</span>
-<span class="font-semibold flex-1">Community</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-<a href="reports.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
-<span class="material-symbols-outlined">pie_chart</span>
-<span class="font-semibold flex-1">Reports</span>
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-</div>
-<div class="p-4 border-t border-slate-100">
-<button onclick="logout()" class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl w-full text-left">
-<span class="material-symbols-outlined">logout</span>
-<span class="font-semibold">Logout</span>
-</button>
-</div>
-</aside>
+  <aside id="nav-drawer"
+    class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-slate-900 z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-y-auto">
+    <div class="p-6 border-b border-slate-100 flex items-center gap-4">
+      <label for="drawer-avatar-upload" class="cursor-pointer relative group block flex-shrink-0">
+        <img id="nav-drawer-avatar" alt="User"
+          class="w-14 h-14 rounded-full object-cover group-hover:opacity-75 transition-opacity"
+          src="https://placehold.net/avatar.png" />
+        <div
+          class="absolute inset-0 flex items-center justify-center bg-black/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+          <span class="material-symbols-outlined text-white text-sm">edit</span>
+        </div>
+      </label>
+      <input type="file" id="drawer-avatar-upload" accept="image/*" class="hidden"
+        onchange="uploadDrawerAvatar(event)" />
+      <div>
+        <p class="text-sm text-slate-500">Hey!</p>
+        <p id="nav-drawer-name" class="font-bold text-teal-700">Loading...</p>
+      </div>
+    </div>
+    <div class="p-4 flex flex-col gap-2 flex-1">
+      <a href="dashboard.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-semibold flex-1">Homepage</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="scan.html" class="flex items-center gap-4 px-4 py-3 bg-[#4caf50] text-white rounded-xl">
+        <span class="material-symbols-outlined">center_focus_weak</span>
+        <span class="font-semibold flex-1">Scanner</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="marketPlace.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">storefront</span>
+        <span class="font-semibold flex-1">Market</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="Authentication/user.html"
+        class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-semibold flex-1">Profile</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="schedule.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">calendar_today</span>
+        <span class="font-semibold flex-1">Schedule</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="recycle.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">recycling</span>
+        <span class="font-semibold flex-1">Recycle</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="events.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">event</span>
+        <span class="font-semibold flex-1">Events</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="tips.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">lightbulb</span>
+        <span class="font-semibold flex-1">Tips</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="blog.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">article</span>
+        <span class="font-semibold flex-1">Blog</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="donate.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">volunteer_activism</span>
+        <span class="font-semibold flex-1">Donate</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="community.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">groups</span>
+        <span class="font-semibold flex-1">Community</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+      <a href="reports.html" class="flex items-center gap-4 px-4 py-3 text-slate-700 hover:bg-slate-50 rounded-xl">
+        <span class="material-symbols-outlined">pie_chart</span>
+        <span class="font-semibold flex-1">Reports</span>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </a>
+    </div>
+    <div class="p-4 border-t border-slate-100">
+      <button onclick="logout()"
+        class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 rounded-xl w-full text-left">
+        <span class="material-symbols-outlined">logout</span>
+        <span class="font-semibold">Logout</span>
+      </button>
+    </div>
+  </aside>
 
-<script>
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      if (!window.supabase) return;
-      const supa = window.supabase.createClient(
-        "https://eupolobairqsuzjnihkc.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
-      );
-      const { data: { session } } = await supa.auth.getSession();
-      if (session && session.user) {
-        const user = session.user;
-        const nameEl = document.getElementById('nav-drawer-name');
-        const avatarEl = document.getElementById('nav-drawer-avatar');
-        
-        if (nameEl) {
-          nameEl.innerText = user.user_metadata?.name || user.email.split('@')[0];
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        if (!window.supabase) return;
+        const supa = window.supabase.createClient(
+          "https://eupolobairqsuzjnihkc.supabase.co",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+        );
+        const { data: { session } } = await supa.auth.getSession();
+        if (session && session.user) {
+          const user = session.user;
+          const nameEl = document.getElementById('nav-drawer-name');
+          const avatarEl = document.getElementById('nav-drawer-avatar');
+
+          if (nameEl) {
+            nameEl.innerText = user.user_metadata?.name || user.email.split('@')[0];
+          }
+          if (avatarEl && user.user_metadata?.avatar_url) {
+            avatarEl.src = user.user_metadata.avatar_url;
+          }
+        } else if (localStorage.getItem("ecocycle_admin") === "true") {
+          const nameEl = document.getElementById('nav-drawer-name');
+          if (nameEl) {
+            nameEl.innerText = 'EcoCycle Admin';
+          }
         }
-        if (avatarEl && user.user_metadata?.avatar_url) {
-          avatarEl.src = user.user_metadata.avatar_url;
-        }
-      } else if (localStorage.getItem("ecocycle_admin") === "true") {
-        const nameEl = document.getElementById('nav-drawer-name');
-        if (nameEl) {
-          nameEl.innerText = 'EcoCycle Admin';
-        }
+      } catch (err) {
+        console.error("Error fetching user for drawer:", err);
       }
-    } catch(err) {
-      console.error("Error fetching user for drawer:", err);
+
+      // Apply dark mode theme if saved
+      const isDark = localStorage.getItem('theme') === 'dark';
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+    });
+
+    async function uploadDrawerAvatar(event) {
+      const file = event.target.files[0];
+      if (!file || !window.supabase) return;
+
+      try {
+        const supa = window.supabase.createClient(
+          "https://eupolobairqsuzjnihkc.supabase.co",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
+        );
+
+        const avatarEl = document.getElementById('nav-drawer-avatar');
+        avatarEl.style.opacity = '0.5';
+
+        const reader = new FileReader();
+        reader.onload = async () => {
+          const base64 = reader.result;
+
+          const { error } = await supa.auth.updateUser({
+            data: { avatar_url: base64 }
+          });
+
+          if (error) throw error;
+
+          avatarEl.src = base64;
+          avatarEl.style.opacity = '1';
+        };
+        reader.readAsDataURL(file);
+      } catch (e) {
+        console.error(e);
+        alert("Failed to update avatar.");
+        document.getElementById('nav-drawer-avatar').style.opacity = '1';
+      }
     }
-
-    // Apply dark mode theme if saved
-    const isDark = localStorage.getItem('theme') === 'dark';
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-
-  });
-
-  async function uploadDrawerAvatar(event) {
-    const file = event.target.files[0];
-    if (!file || !window.supabase) return;
-
-    try {
-      const supa = window.supabase.createClient(
-        "https://eupolobairqsuzjnihkc.supabase.co",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
-      );
-
-      const avatarEl = document.getElementById('nav-drawer-avatar');
-      avatarEl.style.opacity = '0.5';
-
-      const reader = new FileReader();
-      reader.onload = async () => {
-        const base64 = reader.result;
-        
-        const { error } = await supa.auth.updateUser({
-          data: { avatar_url: base64 }
-        });
-
-        if (error) throw error;
-        
-        avatarEl.src = base64;
-        avatarEl.style.opacity = '1';
-      };
-      reader.readAsDataURL(file);
-    } catch (e) {
-      console.error(e);
-      alert("Failed to update avatar.");
-      document.getElementById('nav-drawer-avatar').style.opacity = '1';
-    }
-  }
-</script>
+  </script>
 
 
-<main class="scan-stage">
-<!-- Mock Camera Feed -->
-<div class="scan-camera-layer w-full h-full">
-<video id="camera-feed" class="hidden w-full h-full object-cover opacity-90" autoplay muted playsinline></video>
-<canvas id="capture-canvas" class="hidden"></canvas>
-<img id="camera-fallback" class="w-full h-full object-cover opacity-80" data-alt="a clear plastic water bottle sitting on a clean modern wooden table in a brightly lit eco-friendly apartment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCI2CkRmRabsexq5s2yCcYuRocjSqMecK_1_q1x7_1brJENDviy-nUte7uXupU1U9ubm_wLHunyE9h6z8TWXhR0GuYAn8ihc8nsW4XgztOn8e2WTlc4ooMkHceKjJ93mQLor8j-U3WjzzIL43R2pT2SBFPmnaCn7UUluWiwP-kzbisY08HCbr03-mMnUObCZyCfBgpfme8_23loZOAJfhaW82qz6Lxw0ap2ECmGAZV1OWRwXxWU7z6wE03dHnIEdZcYaoXL-gZOGD8"/>
-<div class="absolute inset-0 scanner-gradient"></div>
-</div>
-<!-- Scanning Overlay -->
-<div class="scan-overlay flex flex-col items-center justify-center pointer-events-none">
-<!-- Bounding Box Around Bottle -->
-<div class="scan-frame relative border-2 border-primary-container rounded-3xl shadow-[0_0_40px_rgba(45,212,191,0.3)]">
-<!-- Corner Accents -->
-<div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
-<div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
-<div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
-<div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
-<!-- Analyzing Indicator -->
-<div class="absolute -top-14 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 z-20 w-max max-w-[90vw]">
-<div class="relative w-5 h-5 flex-shrink-0">
-<svg class="w-full h-full animate-spin text-primary-container" viewbox="0 0 24 24">
-<circle class="opacity-25" cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="4"></circle>
-<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
-</svg>
-</div>
-<span id="scan-status" class="text-white font-label-md text-label-md whitespace-nowrap">Starting camera...</span>
-</div>
-</div>
-<!-- Hint Text -->
-<p id="scan-hint" class="mt-8 text-white/80 font-body-md text-body-md tracking-wide px-12 text-center">
-                Center the item in the frame for instant AI identification
-            </p>
-<button id="camera-permission-btn" onclick="startCamera()" class="mt-5 pointer-events-auto bg-white/90 text-primary px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95" type="button">
-  Ask for Camera Permission
-</button>
-    <label class="mt-4 pointer-events-auto bg-primary text-white px-5 py-3 rounded-2xl font-label-md shadow-lg cursor-pointer">
+  <main class="scan-stage">
+    <!-- Mock Camera Feed -->
+    <div class="scan-camera-layer w-full h-full">
+      <video id="camera-feed" class="hidden w-full h-full object-cover opacity-90" autoplay muted playsinline></video>
+      <canvas id="capture-canvas" class="hidden"></canvas>
+      <img id="camera-fallback" class="w-full h-full object-cover opacity-80"
+        data-alt="a clear plastic water bottle sitting on a clean modern wooden table in a brightly lit eco-friendly apartment"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCI2CkRmRabsexq5s2yCcYuRocjSqMecK_1_q1x7_1brJENDviy-nUte7uXupU1U9ubm_wLHunyE9h6z8TWXhR0GuYAn8ihc8nsW4XgztOn8e2WTlc4ooMkHceKjJ93mQLor8j-U3WjzzIL43R2pT2SBFPmnaCn7UUluWiwP-kzbisY08HCbr03-mMnUObCZyCfBgpfme8_23loZOAJfhaW82qz6Lxw0ap2ECmGAZV1OWRwXxWU7z6wE03dHnIEdZcYaoXL-gZOGD8" />
+      <div class="absolute inset-0 scanner-gradient"></div>
+    </div>
+    <!-- Scanning Overlay -->
+    <div class="scan-overlay flex flex-col items-center justify-center pointer-events-none">
+      <!-- Bounding Box Around Bottle -->
+      <div
+        class="scan-frame relative border-2 border-primary-container rounded-3xl shadow-[0_0_40px_rgba(45,212,191,0.3)]">
+        <!-- Corner Accents -->
+        <div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
+        <div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
+        <div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
+        <div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
+        <!-- Analyzing Indicator -->
+        <div
+          class="absolute -top-14 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 z-20 w-max max-w-[90vw]">
+          <div class="relative w-5 h-5 flex-shrink-0">
+            <svg class="w-full h-full animate-spin text-primary-container" viewbox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="4">
+              </circle>
+              <path class="opacity-75"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+          <span id="scan-status" class="text-white font-label-md text-label-md whitespace-nowrap">Starting
+            camera...</span>
+        </div>
+      </div>
+      <!-- Hint Text -->
+      <p id="scan-hint" class="mt-8 text-white/80 font-body-md text-body-md tracking-wide px-12 text-center">
+        Center the item in the frame for instant AI identification
+      </p>
+      <button id="camera-permission-btn" onclick="startCamera()"
+        class="mt-5 pointer-events-auto bg-white/90 text-primary px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95"
+        type="button">
+        Ask for Camera Permission
+      </button>
+      <label
+        class="mt-4 pointer-events-auto bg-primary text-white px-5 py-3 rounded-2xl font-label-md shadow-lg cursor-pointer">
         Upload Image
-        <input type="file"
-               accept="image/*"
-               onchange="handleUpload(event)"
-               class="hidden">
-    </label>
-<button id="rescan-button" onclick="rescan()" class="mt-4 pointer-events-auto bg-black/60 text-white border border-white/20 px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95 flex items-center gap-2" type="button">
-  <span class="material-symbols-outlined text-[20px]">refresh</span>
-  Re-scan
-</button>
-</div>
-<!-- Result Drawer (Actionable) -->
-<input class="hidden peer" id="drawer-toggle" type="checkbox"/>
-<style>
-    .result-drawer {
+        <input type="file" accept="image/*" onchange="handleUpload(event)" class="hidden">
+      </label>
+      <button id="rescan-button" onclick="rescan()"
+        class="mt-4 pointer-events-auto bg-black/60 text-white border border-white/20 px-5 py-3 rounded-2xl font-label-md shadow-lg active:scale-95 flex items-center gap-2"
+        type="button">
+        <span class="material-symbols-outlined text-[20px]">refresh</span>
+        Re-scan
+      </button>
+    </div>
+    <!-- Result Drawer (Actionable) -->
+    <input class="hidden peer" id="drawer-toggle" type="checkbox" />
+    <style>
+      .result-drawer {
         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translateY(100%);
-    }
-    #drawer-toggle:checked ~ .result-drawer {
-        transform: translateY(0);
-    }
-    #drawer-toggle:checked ~ .result-drawer .drawer-handle {
-        background-color: #2dd4bf;
-    }
-</style><div class="fixed bottom-0 left-0 w-full transform transition-transform duration-500 ease-out result-drawer">
-<div class="result-drawer-panel bg-white dark:bg-slate-900 rounded-t-[32px] shadow-[0_-12px_40px_rgba(0,0,0,0.15)] px-6 pt-3">
-<!-- Drawer Handle -->
-<div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6 cursor-pointer" onclick="document.getElementById('drawer-toggle').click()"></div>
-<!-- Result Content -->
-<div class="flex items-center gap-5 p-4 bg-primary-container/10 border border-primary-container/20 rounded-2xl">
-<div class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20">
-<span class="material-symbols-outlined text-white text-3xl" data-icon="recycling">recycling</span>
-</div>
-<div class="flex-1">
-<h2 id="result-title" class="font-headline-md text-headline-md text-on-surface">Waiting for scan</h2>
-<p id="result-bin" class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5">
-<span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
-                            Place the item in the correct bin.
-                        </p>
-<p id="result-confidence" class="text-sm text-slate-600 mt-2">Confidence: --</p>
-<p id="result-price" class="text-sm text-slate-600 mt-1">Price estimate: --</p>
-</div>
-</div>
-<!-- Extra Info/Tips Grid (Bento Style) -->
-<div class="grid grid-cols-2 gap-4 mt-6">
-<div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
-<p class="font-label-md text-label-md text-on-surface-variant">Eco Impact</p>
-<p id="result-xp" class="font-headline-md text-headline-md text-primary">+0 XP</p>
-</div>
-<div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
-<p class="font-label-md text-label-md text-on-surface-variant">Pro Tip</p>
-<p id="result-tip" class="font-body-md text-[13px] leading-tight text-on-surface-variant">Scan an item to get a disposal tip.</p>
-</div>
-<button id="sell-button" onclick="sellScannedItem()" class="col-span-2 mt-2 w-full bg-primary text-white rounded-2xl py-4 font-label-md active:scale-95 transition-transform disabled:opacity-40" type="button" disabled>
-  Sell this item in Market
-</button>
-<button id="skip-sell-button" onclick="skipSelling()" class="col-span-2 w-full border border-outline-variant text-on-surface-variant rounded-2xl py-3 font-label-md active:scale-95 transition-transform hidden" type="button">
-  Do not sell
-</button>
-<button id="drawer-rescan-button" onclick="rescan()" class="col-span-2 w-full bg-surface-container-low text-primary border border-primary-container/40 rounded-2xl py-3 font-label-md active:scale-95 transition-transform flex items-center justify-center gap-2" type="button">
-  <span class="material-symbols-outlined text-[20px]">refresh</span>
-  Re-scan item
-</button>
-<p id="scan-message" class="col-span-2 mt-1 text-center text-sm text-slate-600"></p>
-</div>
-</div>
-</div>
-<div id="payment-modal" class="fixed inset-0 z-[90] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-5">
-<div class="w-full max-w-md rounded-[28px] bg-white dark:bg-slate-900 p-6 shadow-2xl border border-white/20 dark:border-slate-800">
-<div class="flex items-start justify-between gap-4">
-<div>
-<p class="text-sm font-semibold uppercase tracking-wide text-primary">Scan credits</p>
-<h2 class="mt-1 text-2xl font-extrabold text-on-surface">Continue scanning</h2>
-</div>
-<button onclick="closePaymentModal()" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center active:scale-95" type="button" aria-label="Close payment options">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<p id="payment-message" class="mt-3 text-sm leading-6 text-on-surface-variant">
-Your free scans are finished. Buy more scan credits with EcoCoins to keep identifying waste.
-</p>
-<div class="mt-5 grid grid-cols-3 gap-3">
-<button onclick="purchaseScanCredits(5)" class="rounded-2xl bg-primary-container px-3 py-4 text-center active:scale-95 transition-transform" type="button">
-<span class="block text-xl font-extrabold text-on-primary-container">+5</span>
-<span class="text-xs font-semibold text-on-primary-container/80">50 coins</span>
-</button>
-<button onclick="purchaseScanCredits(10)" class="rounded-2xl bg-primary px-3 py-4 text-center text-white shadow-lg shadow-teal-900/20 active:scale-95 transition-transform" type="button">
-<span class="block text-xl font-extrabold">+10</span>
-<span class="text-xs font-semibold text-white/80">100 coins</span>
-</button>
-<button onclick="purchaseScanCredits(25)" class="rounded-2xl bg-tertiary-container px-3 py-4 text-center active:scale-95 transition-transform" type="button">
-<span class="block text-xl font-extrabold text-on-tertiary-container">+25</span>
-<span class="text-xs font-semibold text-on-tertiary-container/80">250 coins</span>
-</button>
-</div>
-<button onclick="topUpEcoCoins()" class="mt-4 w-full rounded-2xl border border-outline-variant py-3 font-label-md text-on-surface-variant active:scale-95 transition-transform" type="button">
-  Top up EcoCoins
-</button>
-<p id="payment-status" class="mt-3 text-center text-sm text-slate-500"></p>
-</div>
-</div>
-</main>
-<!-- Dashboard (Active) -->
+      }
 
-<script>
+      #drawer-toggle:checked~.result-drawer {
+        transform: translateY(0);
+      }
+
+      #drawer-toggle:checked~.result-drawer .drawer-handle {
+        background-color: #2dd4bf;
+      }
+    </style>
+    <div class="fixed bottom-0 left-0 w-full transform transition-transform duration-500 ease-out result-drawer">
+      <div
+        class="result-drawer-panel bg-white dark:bg-slate-900 rounded-t-[32px] shadow-[0_-12px_40px_rgba(0,0,0,0.15)] px-6 pt-3">
+        <!-- Drawer Handle -->
+        <div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6 cursor-pointer"
+          onclick="document.getElementById('drawer-toggle').click()"></div>
+        <!-- Result Content -->
+        <div class="flex items-center gap-5 p-4 bg-primary-container/10 border border-primary-container/20 rounded-2xl">
+          <div
+            class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20">
+            <span class="material-symbols-outlined text-white text-3xl" data-icon="recycling">recycling</span>
+          </div>
+          <div class="flex-1">
+            <h2 id="result-title" class="font-headline-md text-headline-md text-on-surface">Waiting for scan</h2>
+            <p id="result-bin" class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+              Place the item in the correct bin.
+            </p>
+            <p id="result-confidence" class="text-sm text-slate-600 mt-2">Confidence: --</p>
+            <p id="result-price" class="text-sm text-slate-600 mt-1">Price estimate: --</p>
+          </div>
+        </div>
+        <!-- Extra Info/Tips Grid (Bento Style) -->
+        <div class="grid grid-cols-2 gap-4 mt-6">
+          <div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
+            <span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+            <p class="font-label-md text-label-md text-on-surface-variant">Eco Impact</p>
+            <p id="result-xp" class="font-headline-md text-headline-md text-primary">+0 XP</p>
+          </div>
+          <div class="p-4 bg-surface-container-low rounded-2xl border border-outline-variant/30 flex flex-col gap-2">
+            <span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+            <p class="font-label-md text-label-md text-on-surface-variant">Pro Tip</p>
+            <p id="result-tip" class="font-body-md text-[13px] leading-tight text-on-surface-variant">Scan an item to
+              get a disposal tip.</p>
+          </div>
+          <button id="sell-button" onclick="sellScannedItem()"
+            class="col-span-2 mt-2 w-full bg-primary text-white rounded-2xl py-4 font-label-md active:scale-95 transition-transform disabled:opacity-40"
+            type="button" disabled>
+            Sell this item in Market
+          </button>
+          <button id="skip-sell-button" onclick="skipSelling()"
+            class="col-span-2 w-full border border-outline-variant text-on-surface-variant rounded-2xl py-3 font-label-md active:scale-95 transition-transform hidden"
+            type="button">
+            Do not sell
+          </button>
+        </div>
+      </div>
+
+      <!-- Manual Price & Description Modal -->
+      <div id="manual-price-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-5">
+        <div
+          class="w-full max-w-md rounded-[28px] bg-white dark:bg-slate-900 p-6 shadow-2xl border border-white/20 dark:border-slate-800">
+          <div class="flex items-start justify-between gap-4 mb-4">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wide text-primary">Sell Waste</p>
+              <h2 class="mt-1 text-2xl font-extrabold text-on-surface">Mark your price</h2>
+            </div>
+            <button onclick="closeManualPriceModal()"
+              class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center active:scale-95"
+              type="button">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <div class="space-y-4">
+            <label class="block">
+              <span class="text-sm font-semibold text-slate-600 dark:text-slate-400">Custom Price (EcoCoins)</span>
+              <input id="manual-item-price" type="number"
+                class="mt-1.5 w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-5 py-4 outline-none focus:ring-2 focus:ring-primary/20 text-lg font-bold"
+                value="10" min="1" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-slate-600 dark:text-slate-400">Waste Description</span>
+              <textarea id="manual-item-desc" rows="3"
+                class="mt-1.5 w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 px-5 py-4 outline-none focus:ring-2 focus:ring-primary/20"
+                placeholder="Describe your waste (e.g., Clean plastic, 2kg total...)"></textarea>
+            </label>
+            <button onclick="confirmScanSell()"
+              class="w-full bg-primary text-white rounded-2xl py-4 font-bold text-lg shadow-lg shadow-teal-900/20 active:scale-95 transition-transform"
+              type="button">
+              List in Marketplace
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="payment-modal"
+        class="fixed inset-0 z-[90] hidden items-center justify-center bg-black/60 backdrop-blur-sm px-5">
+        <div
+          class="w-full max-w-md rounded-[28px] bg-white dark:bg-slate-900 p-6 shadow-2xl border border-white/20 dark:border-slate-800">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wide text-primary">Scan credits</p>
+              <h2 class="mt-1 text-2xl font-extrabold text-on-surface">Continue scanning</h2>
+            </div>
+            <button onclick="closePaymentModal()"
+              class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center active:scale-95"
+              type="button" aria-label="Close payment options">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <p id="payment-message" class="mt-3 text-sm leading-6 text-on-surface-variant">
+            Your free scans are finished. Buy more scan credits with EcoCoins to keep identifying waste.
+          </p>
+          <div class="mt-5 grid grid-cols-3 gap-3">
+            <button onclick="purchaseScanCredits(5)"
+              class="rounded-2xl bg-primary-container px-3 py-4 text-center active:scale-95 transition-transform"
+              type="button">
+              <span class="block text-xl font-extrabold text-on-primary-container">+5</span>
+              <span class="text-xs font-semibold text-on-primary-container/80">50 coins</span>
+            </button>
+            <button onclick="purchaseScanCredits(10)"
+              class="rounded-2xl bg-primary px-3 py-4 text-center text-white shadow-lg shadow-teal-900/20 active:scale-95 transition-transform"
+              type="button">
+              <span class="block text-xl font-extrabold">+10</span>
+              <span class="text-xs font-semibold text-white/80">100 coins</span>
+            </button>
+            <button onclick="purchaseScanCredits(25)"
+              class="rounded-2xl bg-tertiary-container px-3 py-4 text-center active:scale-95 transition-transform"
+              type="button">
+              <span class="block text-xl font-extrabold text-on-tertiary-container">+25</span>
+              <span class="text-xs font-semibold text-on-tertiary-container/80">250 coins</span>
+            </button>
+          </div>
+          <button onclick="topUpEcoCoins()"
+            class="mt-4 w-full rounded-2xl border border-outline-variant py-3 font-label-md text-on-surface-variant active:scale-95 transition-transform"
+            type="button">
+            Top up EcoCoins
+          </button>
+          <p id="payment-status" class="mt-3 text-center text-sm text-slate-500"></p>
+        </div>
+      </div>
+  </main>
+  <!-- Dashboard (Active) -->
+
+  <script>
     const supabase = window.supabase.createClient(
       "https://eupolobairqsuzjnihkc.supabase.co",
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1cG9sb2JhaXJxc3V6am5paGtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODA5ODQsImV4cCI6MjA5MzA1Njk4NH0._rUClX25cP5g6N1SOnggotJe0mqL63jisqLjjz7ZWK4"
@@ -594,7 +701,7 @@ Your free scans are finished. Buy more scan credits with EcoCoins to keep identi
       const hint = document.getElementById("scan-hint");
 
       if (!navigator.mediaDevices ||
-          !navigator.mediaDevices.getUserMedia) {
+        !navigator.mediaDevices.getUserMedia) {
 
         status.innerText = "Camera unavailable";
 
@@ -623,7 +730,7 @@ Your free scans are finished. Buy more scan credits with EcoCoins to keep identi
         video.classList.remove("hidden");
 
         fallback.classList.add("hidden");
-        
+
         const permBtn = document.getElementById("camera-permission-btn");
         if (permBtn) permBtn.classList.add("hidden");
 
@@ -899,51 +1006,75 @@ Your free scans are finished. Buy more scan credits with EcoCoins to keep identi
     }
 
     async function sellScannedItem() {
-
       if (!lastScanResult) {
-
-        showMessage(
-          'Scan an item first.'
-        );
-
+        showMessage('Scan an item first.');
         return;
       }
 
       if (!accessToken) {
-        showMessage(
-          'Admin scan mode can identify items without limits. Sign in as a user to list items in the market.'
-        );
+        showMessage('Admin scan mode can identify items without limits. Sign in as a user to list items in the market.');
         return;
       }
 
-      try {
+      // Pre-fill modal
+      const priceInput = document.getElementById('manual-item-price');
+      const descInput = document.getElementById('manual-item-desc');
 
+      if (priceInput) {
+        priceInput.value = Math.max(
+          1,
+          Math.round((lastScanResult.confidence || 0.6) * 10)
+        );
+      }
+      if (descInput) {
+        descInput.value = `Identified waste item: ${lastScanResult.label}. Total scan confidence: ${Math.round((lastScanResult.confidence || 0) * 100)}%`;
+      }
+
+      openManualPriceModal();
+    }
+
+    function openManualPriceModal() {
+      const modal = document.getElementById('manual-price-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeManualPriceModal() {
+      const modal = document.getElementById('manual-price-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    async function confirmScanSell() {
+      const price = document.getElementById('manual-item-price').value;
+      const description = document.getElementById('manual-item-desc').value;
+
+      if (!price || price <= 0) {
+        alert("Please enter a valid price.");
+        return;
+      }
+
+      closeManualPriceModal();
+      showMessage('Listing item...');
+
+      try {
         const response = await fetch(
           `${apiBase}/api/market/list`,
           {
             method: 'POST',
-
             headers: buildRequestHeaders(),
-
             body: JSON.stringify({
-
               title: lastScanResult.label,
-
-              description:
-                `Identified waste item: ${lastScanResult.label}`,
-
-              price: Math.max(
-                1,
-                Math.round(
-                  (lastScanResult.confidence || 0.6) * 10
-                )
-              ),
-
+              description: description || `Identified waste item: ${lastScanResult.label}`,
+              price: Number(price),
               category:
                 lastScanResult.materialCategory ||
                 lastScanResult.binCategory ||
                 'Other',
-
               image: lastScanResult.image || ''
             })
           }
@@ -952,30 +1083,16 @@ Your free scans are finished. Buy more scan credits with EcoCoins to keep identi
         const data = await response.json();
 
         if (!response.ok) {
-
-          showMessage(
-            data.message ||
-            data.error ||
-            'Unable to list item'
-          );
-
+          showMessage(data.message || data.error || 'Unable to list item');
           return;
         }
 
-        showMessage(
-          'Item listed successfully.'
-        );
-
-        window.location.href =
-          'marketPlace.html';
+        showMessage('Item listed successfully.');
+        window.location.href = 'marketPlace.html';
 
       } catch (error) {
-
         console.error(error);
-
-        showMessage(
-          'Selling failed.'
-        );
+        showMessage('Selling failed.');
       }
     }
 
@@ -1251,11 +1368,9 @@ Your free scans are finished. Buy more scan credits with EcoCoins to keep identi
         startCamera();
       }
     );
-</script>
+  </script>
 
 
-</body></html>
+</body>
 
-
-
-
+</html>
