@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="980" viewBox="0 0 1500 980">
+  <defs>
+    <style>
+      .bg { fill: #fbfdfb; }
+      .title { font: 700 30px Arial, sans-serif; fill: #12372a; }
+      .subtitle { font: 15px Arial, sans-serif; fill: #486457; }
+      .entity { fill: #ffffff; stroke: #1b4332; stroke-width: 2; rx: 12; }
+      .external { fill: #eef8f3; stroke: #37875b; stroke-width: 2; stroke-dasharray: 8 5; rx: 12; }
+      .header { fill: #166534; rx: 10; }
+      .externalHeader { fill: #2d6a4f; rx: 10; }
+      .htext { font: 700 19px Arial, sans-serif; fill: #ffffff; }
+      .field { font: 15px Arial, sans-serif; fill: #263a32; }
+      .pk { font: 700 14px Arial, sans-serif; fill: #166534; }
+      .fk { font: 700 14px Arial, sans-serif; fill: #0f766e; }
+      .rule { stroke: #d6e8df; stroke-width: 1; }
+      .rel { stroke: #29493c; stroke-width: 2; fill: none; }
+      .card { font: 700 15px Arial, sans-serif; fill: #12372a; }
+      .labelBox { fill: #fbfdfb; stroke: #b6d7c7; stroke-width: 1; rx: 12; }
+      .label { font: 700 14px Arial, sans-serif; fill: #295242; }
+      .note { fill: #edf7f1; stroke: #b7dcca; stroke-width: 1; rx: 12; }
+      .noteText { font: 14px Arial, sans-serif; fill: #315447; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#29493c"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1500" height="980"/>
+  <text class="title" x="55" y="52">EcoCycle Waste Management System - ER Diagram</text>
+  <text class="subtitle" x="55" y="79">Persistent entities from the application database with connected AI and authentication services</text>
+
+  <!-- Relationships beneath entity boxes -->
+  <path class="rel" d="M350 260 H435"/>
+  <rect class="labelBox" x="365" y="242" width="62" height="34"/>
+  <text class="label" x="396" y="264" text-anchor="middle">logs</text>
+  <text class="card" x="354" y="235">1</text>
+  <text class="card" x="424" y="235">M</text>
+
+  <path class="rel" d="M350 420 H400 V620 H435"/>
+  <rect class="labelBox" x="351" y="503" width="79" height="34"/>
+  <text class="label" x="390" y="525" text-anchor="middle">sells</text>
+  <text class="card" x="354" y="445">1</text>
+  <text class="card" x="420" y="612">M</text>
+
+  <path class="rel" d="M350 480 H375 V780 H435"/>
+  <rect class="labelBox" x="344" y="662" width="83" height="34"/>
+  <text class="label" x="385" y="684" text-anchor="middle">buys</text>
+  <text class="card" x="354" y="501">1</text>
+  <text class="card" x="419" y="772">0..M</text>
+
+  <path class="rel" d="M695 650 H855"/>
+  <rect class="labelBox" x="735" y="632" width="84" height="34"/>
+  <text class="label" x="777" y="654" text-anchor="middle">records</text>
+  <text class="card" x="702" y="624">0..1</text>
+  <text class="card" x="828" y="624">M</text>
+
+  <path class="rel" d="M350 355 H795 V690 H855"/>
+  <rect class="labelBox" x="706" y="671" width="108" height="34"/>
+  <text class="label" x="760" y="693" text-anchor="middle">transacts</text>
+  <text class="card" x="355" y="347">1</text>
+  <text class="card" x="827" y="682">M</text>
+
+  <path class="rel" d="M695 245 H855" marker-end="url(#arrow)"/>
+  <rect class="labelBox" x="730" y="227" width="87" height="34"/>
+  <text class="label" x="774" y="249" text-anchor="middle">classified by</text>
+
+  <path class="rel" d="M225 617 V535"/>
+  <rect class="labelBox" x="164" y="552" width="122" height="34"/>
+  <text class="label" x="225" y="574" text-anchor="middle">authenticates</text>
+
+  <!-- User -->
+  <rect class="entity" x="55" y="145" width="295" height="390"/>
+  <rect class="header" x="55" y="145" width="295" height="56"/>
+  <text class="htext" x="76" y="180">USER</text>
+  <text class="pk" x="76" y="227">PK</text><text class="field" x="120" y="227">id</text>
+  <line class="rule" x1="76" y1="242" x2="329" y2="242"/>
+  <text class="field" x="76" y="268">name</text>
+  <text class="field" x="76" y="298">email (unique)</text>
+  <text class="field" x="76" y="328">xpPoints</text>
+  <text class="field" x="76" y="358">co2Saved</text>
+  <text class="field" x="76" y="388">ecoCoins</text>
+  <text class="field" x="76" y="418">scanCredits</text>
+  <text class="field" x="76" y="448">marketCredits</text>
+  <text class="field" x="76" y="478">createdAt</text>
+
+  <!-- Scan -->
+  <rect class="entity" x="435" y="120" width="260" height="285"/>
+  <rect class="header" x="435" y="120" width="260" height="56"/>
+  <text class="htext" x="456" y="155">SCAN</text>
+  <text class="pk" x="456" y="202">PK</text><text class="field" x="500" y="202">id</text>
+  <text class="fk" x="456" y="232">FK</text><text class="field" x="500" y="232">userId</text>
+  <line class="rule" x1="456" y1="247" x2="674" y2="247"/>
+  <text class="field" x="456" y="273">type</text>
+  <text class="field" x="456" y="303">binCategory</text>
+  <text class="field" x="456" y="333">xpReward</text>
+  <text class="field" x="456" y="363">co2Saved, createdAt</text>
+
+  <!-- Classification external service -->
+  <rect class="external" x="855" y="115" width="395" height="300"/>
+  <rect class="externalHeader" x="855" y="115" width="395" height="62"/>
+  <text class="htext" x="879" y="143">AI CLASSIFICATION SERVICE</text>
+  <text class="subtitle" x="879" y="163" style="fill:#d8f3dc">external workflow / not stored as a table</text>
+  <text class="field" x="880" y="214">Input: captured or uploaded image</text>
+  <text class="field" x="880" y="249">detectedItem / materialCategory</text>
+  <text class="field" x="880" y="284">binCategory / confidence</text>
+  <text class="field" x="880" y="319">recommendation / sellable</text>
+  <text class="field" x="880" y="354">xpReward / co2Saved estimate</text>
+
+  <!-- Auth external service -->
+  <rect class="external" x="55" y="617" width="295" height="135"/>
+  <rect class="externalHeader" x="55" y="617" width="295" height="52"/>
+  <text class="htext" x="76" y="650">SUPABASE AUTH</text>
+  <text class="field" x="76" y="704">Sign in, sign up and token identity</text>
+  <text class="field" x="76" y="728">matches User.id and email</text>
+
+  <!-- Listing -->
+  <rect class="entity" x="435" y="505" width="260" height="390"/>
+  <rect class="header" x="435" y="505" width="260" height="56"/>
+  <text class="htext" x="456" y="540">LISTING</text>
+  <text class="pk" x="456" y="587">PK</text><text class="field" x="500" y="587">id</text>
+  <text class="fk" x="456" y="617">FK</text><text class="field" x="500" y="617">sellerId</text>
+  <text class="fk" x="456" y="647">FK</text><text class="field" x="500" y="647">buyerId (optional)</text>
+  <line class="rule" x1="456" y1="663" x2="674" y2="663"/>
+  <text class="field" x="456" y="691">title</text>
+  <text class="field" x="456" y="721">description</text>
+  <text class="field" x="456" y="751">price / category</text>
+  <text class="field" x="456" y="781">image</text>
+  <text class="field" x="456" y="811">status</text>
+  <text class="field" x="456" y="841">createdAt</text>
+
+  <!-- Transaction -->
+  <rect class="entity" x="855" y="505" width="305" height="350"/>
+  <rect class="header" x="855" y="505" width="305" height="56"/>
+  <text class="htext" x="876" y="540">TRANSACTION</text>
+  <text class="pk" x="876" y="587">PK</text><text class="field" x="920" y="587">id</text>
+  <text class="fk" x="876" y="617">FK</text><text class="field" x="920" y="617">fromUserId (optional)</text>
+  <text class="fk" x="876" y="647">FK</text><text class="field" x="920" y="647">toUserId (optional)</text>
+  <text class="fk" x="876" y="677">REF</text><text class="field" x="920" y="677">listingId (optional)</text>
+  <line class="rule" x1="876" y1="692" x2="1138" y2="692"/>
+  <text class="field" x="876" y="720">type</text>
+  <text class="field" x="876" y="750">amount</text>
+  <text class="field" x="876" y="780">description</text>
+  <text class="field" x="876" y="810">createdAt</text>
+
+  <rect class="note" x="55" y="918" width="1195" height="40"/>
+  <text class="noteText" x="75" y="944">Note: Classification results are used to create Scan records; only the fields present in the SQLite/Prisma database are modeled as persistent entities.</text>
+</svg>

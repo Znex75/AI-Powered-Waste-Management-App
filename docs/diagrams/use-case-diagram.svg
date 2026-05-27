@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1020" viewBox="0 0 1400 1020">
+  <defs>
+    <style>
+      .bg { fill: #fbfdfb; }
+      .title { font: 700 30px Arial, sans-serif; fill: #12372a; }
+      .subtitle { font: 15px Arial, sans-serif; fill: #486457; }
+      .boundary { fill: #ffffff; stroke: #1b4332; stroke-width: 2.5; rx: 12; }
+      .system { font: 700 20px Arial, sans-serif; fill: #166534; }
+      .actor { stroke: #254438; stroke-width: 2.5; fill: none; }
+      .actorLabel { font: 700 18px Arial, sans-serif; fill: #16372b; }
+      .usecase { fill: #edf7f1; stroke: #2d6a4f; stroke-width: 2; }
+      .adminCase { fill: #e8f4f2; stroke: #0f766e; stroke-width: 2; }
+      .ucText { font: 16px Arial, sans-serif; fill: #183a2e; }
+      .connector { stroke: #647b70; stroke-width: 1.6; fill: none; }
+      .include { stroke: #6c8278; stroke-width: 1.4; stroke-dasharray: 6 5; fill: none; }
+      .small { font: italic 13px Arial, sans-serif; fill: #52685e; }
+    </style>
+    <marker id="openArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#6c8278" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1400" height="1020"/>
+  <text class="title" x="48" y="51">EcoCycle Waste Management System - Use Case Diagram</text>
+  <text class="subtitle" x="48" y="78">User and administrator interactions with AI-powered waste identification and marketplace features</text>
+  <rect class="boundary" x="250" y="105" width="900" height="850"/>
+  <text class="system" x="700" y="143" text-anchor="middle">EcoCycle Application Boundary</text>
+
+  <!-- User actor -->
+  <circle class="actor" cx="102" cy="378" r="27"/>
+  <path class="actor" d="M102 405 V493 M55 440 L102 419 L149 440 M102 493 L65 553 M102 493 L139 553"/>
+  <text class="actorLabel" x="102" y="584" text-anchor="middle">User</text>
+
+  <!-- Admin actor -->
+  <circle class="actor" cx="1295" cy="378" r="27"/>
+  <path class="actor" d="M1295 405 V493 M1248 440 L1295 419 L1342 440 M1295 493 L1258 553 M1295 493 L1332 553"/>
+  <text class="actorLabel" x="1295" y="584" text-anchor="middle">Admin</text>
+
+  <!-- AI service actor -->
+  <rect x="1190" y="720" width="175" height="65" fill="#eef8f3" stroke="#37875b" stroke-width="2" rx="9"/>
+  <text class="actorLabel" x="1277" y="747" text-anchor="middle" style="font-size:16px">AI Classification</text>
+  <text class="actorLabel" x="1277" y="768" text-anchor="middle" style="font-size:16px">Service</text>
+
+  <!-- Use cases -->
+  <ellipse class="usecase" cx="480" cy="213" rx="160" ry="42"/>
+  <text class="ucText" x="480" y="218" text-anchor="middle">Register / Sign In</text>
+  <ellipse class="usecase" cx="480" cy="319" rx="160" ry="42"/>
+  <text class="ucText" x="480" y="324" text-anchor="middle">View Dashboard &amp; Profile</text>
+  <ellipse class="usecase" cx="480" cy="425" rx="160" ry="42"/>
+  <text class="ucText" x="480" y="430" text-anchor="middle">Capture / Upload Waste Image</text>
+  <ellipse class="usecase" cx="480" cy="531" rx="160" ry="42"/>
+  <text class="ucText" x="480" y="526" text-anchor="middle">Identify Waste &amp; Get</text>
+  <text class="ucText" x="480" y="548" text-anchor="middle">Disposal Recommendation</text>
+  <ellipse class="usecase" cx="480" cy="637" rx="160" ry="42"/>
+  <text class="ucText" x="480" y="632" text-anchor="middle">Earn XP / Track CO2</text>
+  <text class="ucText" x="480" y="654" text-anchor="middle">Impact</text>
+  <ellipse class="usecase" cx="480" cy="743" rx="160" ry="42"/>
+  <text class="ucText" x="480" y="748" text-anchor="middle">List or Buy Reusable Items</text>
+  <ellipse class="usecase" cx="480" cy="849" rx="160" ry="42"/>
+  <text class="ucText" x="480" y="854" text-anchor="middle">Manage EcoCoins / Credits</text>
+
+  <ellipse class="adminCase" cx="902" cy="247" rx="160" ry="42"/>
+  <text class="ucText" x="902" y="252" text-anchor="middle">View System Statistics</text>
+  <ellipse class="adminCase" cx="902" cy="375" rx="160" ry="42"/>
+  <text class="ucText" x="902" y="380" text-anchor="middle">Review Users and Scans</text>
+  <ellipse class="adminCase" cx="902" cy="503" rx="160" ry="42"/>
+  <text class="ucText" x="902" y="508" text-anchor="middle">Review Market Listings</text>
+  <ellipse class="adminCase" cx="902" cy="631" rx="160" ry="42"/>
+  <text class="ucText" x="902" y="626" text-anchor="middle">Update Scan / Market</text>
+  <text class="ucText" x="902" y="648" text-anchor="middle">Credits</text>
+
+  <!-- User associations -->
+  <path class="connector" d="M149 436 L320 213"/>
+  <path class="connector" d="M149 440 L320 319"/>
+  <path class="connector" d="M149 444 L320 425"/>
+  <path class="connector" d="M149 450 L320 531"/>
+  <path class="connector" d="M149 456 L320 637"/>
+  <path class="connector" d="M149 462 L320 743"/>
+  <path class="connector" d="M149 468 L320 849"/>
+
+  <!-- Admin associations -->
+  <path class="connector" d="M1248 436 L1062 247"/>
+  <path class="connector" d="M1248 443 L1062 375"/>
+  <path class="connector" d="M1248 450 L1062 503"/>
+  <path class="connector" d="M1248 457 L1062 631"/>
+  <path class="connector" d="M1248 430 L640 213"/>
+
+  <!-- Includes -->
+  <path class="include" d="M480 467 V487" marker-end="url(#openArrow)"/>
+  <text class="small" x="493" y="483">&lt;&lt;include&gt;&gt;</text>
+  <path class="include" d="M480 573 V595" marker-end="url(#openArrow)"/>
+  <text class="small" x="493" y="590">&lt;&lt;include&gt;&gt;</text>
+  <path class="include" d="M640 531 C825 548, 1030 674, 1190 750" marker-end="url(#openArrow)"/>
+  <text class="small" x="838" y="594">&lt;&lt;uses AI service&gt;&gt;</text>
+</svg>

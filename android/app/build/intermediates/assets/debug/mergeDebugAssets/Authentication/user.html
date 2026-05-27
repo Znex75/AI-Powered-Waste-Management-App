@@ -171,6 +171,17 @@
       min-width: 64px;
     }
 
+    .profile-stat-value {
+      display: block;
+      max-width: 100%;
+      font-size: 28px;
+      line-height: 34px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: 0;
+    }
+
     @media (max-width: 380px) {
       .mobile-bottom-nav {
         padding-left: 8px;
@@ -408,24 +419,24 @@
       <div class="grid grid-cols-2 gap-sm w-full pt-md">
         <div
           class="bg-white p-sm rounded-xl shadow-sm border-l-4 border-primary flex flex-col items-center justify-center">
-          <span id="xp-points" class="text-primary font-bold text-headline-md">...</span>
+          <span id="xp-points" class="profile-stat-value text-primary font-bold">...</span>
           <span class="font-label-sm text-label-sm text-on-surface-variant">EcoPoints</span>
         </div>
         <div
           class="bg-white p-sm rounded-xl shadow-sm border-l-4 border-secondary flex flex-col items-center justify-center">
-          <span id="co2-saved" class="text-secondary font-bold text-headline-md">...</span>
+          <span id="co2-saved" class="profile-stat-value text-secondary font-bold">...</span>
           <span class="font-label-sm text-label-sm text-on-surface-variant">CO2 Saved</span>
         </div>
       </div>
       <div class="grid grid-cols-2 gap-sm w-full pt-md">
         <div
           class="bg-white p-sm rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center">
-          <span id="scan-credits" class="text-primary font-bold text-headline-md">...</span>
+          <span id="scan-credits" class="profile-stat-value text-primary font-bold">...</span>
           <span class="font-label-sm text-label-sm text-on-surface-variant">Scan Credits</span>
         </div>
         <div
           class="bg-white p-sm rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center">
-          <span id="market-credits" class="text-secondary font-bold text-headline-md">...</span>
+          <span id="market-credits" class="profile-stat-value text-secondary font-bold">...</span>
           <span class="font-label-sm text-label-sm text-on-surface-variant">Market Credits</span>
         </div>
       </div>
@@ -629,6 +640,21 @@ const supabase = window.supabase.createClient(
 );
 const apiBase = window.ECOCYCLE_API_BASE || "https://ecocycle-backend-dw88.onrender.com";
 
+function formatWholeNumber(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "0";
+  return Math.round(number).toLocaleString("en-US");
+}
+
+function formatDecimalNumber(value, digits = 2) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "0";
+  return number.toLocaleString("en-US", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: digits
+  });
+}
+
 // ================= AUTH CHECK =================
 async function checkUser() {
   const { data: { session } } = await supabase.auth.getSession();
@@ -658,10 +684,10 @@ async function checkUser() {
 
     if (response.ok && data.user) {
       document.getElementById("username").innerText = data.user.name;
-      document.getElementById("xp-points").innerText = data.user.xpPoints;
-      document.getElementById("co2-saved").innerText = data.user.co2Saved + "kg";
-      document.getElementById("scan-credits").innerText = data.user.scanCredits ?? 0;
-      document.getElementById("market-credits").innerText = data.user.marketCredits ?? 0;
+      document.getElementById("xp-points").innerText = formatWholeNumber(data.user.xpPoints);
+      document.getElementById("co2-saved").innerText = `${formatDecimalNumber(data.user.co2Saved, 2)} kg`;
+      document.getElementById("scan-credits").innerText = formatWholeNumber(data.user.scanCredits);
+      document.getElementById("market-credits").innerText = formatWholeNumber(data.user.marketCredits);
     }
   } catch (err) {
     console.log("Backend not working, using fallback");

@@ -147,39 +147,69 @@
 
 </style>
 <style>
+    :root {
+      --app-safe-top: env(safe-area-inset-top, 0px);
+      --app-safe-bottom: env(safe-area-inset-bottom, 0px);
+      --app-top-bar-height: calc(72px + var(--app-safe-top));
+    }
+
     body {
-      min-height: max(884px, 100dvh);
+      min-height: 100dvh;
+      padding-top: var(--app-top-bar-height) !important;
+      overflow: hidden;
     }
 
     .mobile-top-bar {
-      height: 72px;
-      padding: 10px 20px;
+      height: var(--app-top-bar-height);
+      padding: var(--app-safe-top) 20px 0;
     }
 
-    .mobile-bottom-nav {
-      min-height: 76px;
-      padding: 8px 16px 12px;
+    .scan-stage {
+      position: relative;
+      width: 100%;
+      min-height: calc(100dvh - var(--app-top-bar-height));
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
     }
 
-    .mobile-bottom-nav a {
-      min-width: 64px;
+    .scan-camera-layer,
+    .scan-overlay {
+      position: absolute;
+      inset: 0;
+    }
+
+    .scan-overlay {
+      padding: 24px 20px calc(92px + var(--app-safe-bottom));
+    }
+
+    .scan-frame {
+      width: min(72vw, 320px);
+      height: min(56vh, 420px);
+      max-height: calc(100dvh - var(--app-top-bar-height) - 260px);
+    }
+
+    .result-drawer {
+      z-index: 45;
+      max-height: calc(100dvh - var(--app-top-bar-height));
+    }
+
+    .result-drawer-panel {
+      max-height: calc(100dvh - var(--app-top-bar-height));
+      overflow-y: auto;
+      padding-bottom: calc(32px + var(--app-safe-bottom));
+      -webkit-overflow-scrolling: touch;
     }
 
     @media (max-width: 380px) {
-      .mobile-bottom-nav {
-        padding-left: 8px;
-        padding-right: 8px;
-      }
-
-      .mobile-bottom-nav a {
-        min-width: 56px;
-        padding-left: 10px;
-        padding-right: 10px;
+      .scan-frame {
+        width: min(76vw, 300px);
+        height: min(52vh, 380px);
       }
     }
   </style>
 </head>
-<body class="bg-surface font-body-md text-on-surface antialiased overflow-hidden">
+<body class="bg-surface font-body-md text-on-surface antialiased">
 <!-- TopAppBar -->
 <!-- TopAppBar & Navigation Drawer -->
 <header class="mobile-top-bar fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/50 shadow-sm shadow-teal-900/5">
@@ -361,18 +391,18 @@
 </script>
 
 
-<main class="pt-28 pb-36 px-margin max-w-lg mx-auto">
+<main class="scan-stage">
 <!-- Mock Camera Feed -->
-<div class="absolute inset-0 w-full h-full">
+<div class="scan-camera-layer w-full h-full">
 <video id="camera-feed" class="hidden w-full h-full object-cover opacity-90" autoplay muted playsinline></video>
 <canvas id="capture-canvas" class="hidden"></canvas>
 <img id="camera-fallback" class="w-full h-full object-cover opacity-80" data-alt="a clear plastic water bottle sitting on a clean modern wooden table in a brightly lit eco-friendly apartment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCI2CkRmRabsexq5s2yCcYuRocjSqMecK_1_q1x7_1brJENDviy-nUte7uXupU1U9ubm_wLHunyE9h6z8TWXhR0GuYAn8ihc8nsW4XgztOn8e2WTlc4ooMkHceKjJ93mQLor8j-U3WjzzIL43R2pT2SBFPmnaCn7UUluWiwP-kzbisY08HCbr03-mMnUObCZyCfBgpfme8_23loZOAJfhaW82qz6Lxw0ap2ECmGAZV1OWRwXxWU7z6wE03dHnIEdZcYaoXL-gZOGD8"/>
 <div class="absolute inset-0 scanner-gradient"></div>
 </div>
 <!-- Scanning Overlay -->
-<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<div class="scan-overlay flex flex-col items-center justify-center pointer-events-none">
 <!-- Bounding Box Around Bottle -->
-<div class="relative w-64 h-80 border-2 border-primary-container rounded-3xl shadow-[0_0_40px_rgba(45,212,191,0.3)]">
+<div class="scan-frame relative border-2 border-primary-container rounded-3xl shadow-[0_0_40px_rgba(45,212,191,0.3)]">
 <!-- Corner Accents -->
 <div class="absolute -top-1 -left-1 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg"></div>
 <div class="absolute -top-1 -right-1 w-6 h-6 border-t-4 border-r-4 border-primary rounded-tr-lg"></div>
@@ -421,8 +451,8 @@
     #drawer-toggle:checked ~ .result-drawer .drawer-handle {
         background-color: #2dd4bf;
     }
-</style><div class="fixed bottom-0 left-0 w-full z-50 transform transition-transform duration-500 ease-out result-drawer">
-<div class="bg-white dark:bg-slate-900 rounded-t-[32px] shadow-[0_-12px_40px_rgba(0,0,0,0.15)] px-6 pt-3 pb-32">
+</style><div class="fixed bottom-0 left-0 w-full transform transition-transform duration-500 ease-out result-drawer">
+<div class="result-drawer-panel bg-white dark:bg-slate-900 rounded-t-[32px] shadow-[0_-12px_40px_rgba(0,0,0,0.15)] px-6 pt-3">
 <!-- Drawer Handle -->
 <div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6 cursor-pointer" onclick="document.getElementById('drawer-toggle').click()"></div>
 <!-- Result Content -->

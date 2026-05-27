@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <rect width="100%" height="100%" fill="white"/>
+  <text x="300" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">Confusion Matrix - YOLOv8 Model</text>
+  <text x="300" y="65" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">(AI-Powered Waste Management System)</text>
+  
+  <text x="-260" y="40" font-family="Arial, sans-serif" font-size="16" font-weight="bold" transform="rotate(-90)" text-anchor="middle">True Label</text>
+  <text x="300" y="470" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Predicted Label</text>
+  
+  <g transform="translate(140, 110)">
+    <!-- X-axis Labels -->
+    <text x="40" y="-15" font-family="Arial" font-size="14" text-anchor="middle">Recyclable</text>
+    <text x="120" y="-15" font-family="Arial" font-size="14" text-anchor="middle">Organic</text>
+    <text x="200" y="-15" font-family="Arial" font-size="14" text-anchor="middle">Landfill</text>
+    <text x="280" y="-15" font-family="Arial" font-size="14" text-anchor="middle">Hazardous</text>
+    
+    <!-- Y-axis Labels -->
+    <text x="-20" y="45" font-family="Arial" font-size="14" text-anchor="end">Recyclable</text>
+    <text x="-20" y="125" font-family="Arial" font-size="14" text-anchor="end">Organic</text>
+    <text x="-20" y="205" font-family="Arial" font-size="14" text-anchor="end">Landfill</text>
+    <text x="-20" y="285" font-family="Arial" font-size="14" text-anchor="end">Hazardous</text>
+    
+    <!-- Row 1: 94, 2, 3, 1 -->
+    <rect x="0" y="0" width="80" height="80" fill="#084594" stroke="white" stroke-width="1"/>
+    <text x="40" y="45" font-family="Arial" font-size="18" fill="white" text-anchor="middle">94</text>
+    <rect x="80" y="0" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="120" y="45" font-family="Arial" font-size="18" fill="black" text-anchor="middle">2</text>
+    <rect x="160" y="0" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="200" y="45" font-family="Arial" font-size="18" fill="black" text-anchor="middle">3</text>
+    <rect x="240" y="0" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="280" y="45" font-family="Arial" font-size="18" fill="black" text-anchor="middle">1</text>
+    
+    <!-- Row 2: 2, 95, 2, 1 -->
+    <rect x="0" y="80" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="40" y="125" font-family="Arial" font-size="18" fill="black" text-anchor="middle">2</text>
+    <rect x="80" y="80" width="80" height="80" fill="#084594" stroke="white" stroke-width="1"/>
+    <text x="120" y="125" font-family="Arial" font-size="18" fill="white" text-anchor="middle">95</text>
+    <rect x="160" y="80" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="200" y="125" font-family="Arial" font-size="18" fill="black" text-anchor="middle">2</text>
+    <rect x="240" y="80" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="280" y="125" font-family="Arial" font-size="18" fill="black" text-anchor="middle">1</text>
+    
+    <!-- Row 3: 3, 2, 92, 3 -->
+    <rect x="0" y="160" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="40" y="205" font-family="Arial" font-size="18" fill="black" text-anchor="middle">3</text>
+    <rect x="80" y="160" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="120" y="205" font-family="Arial" font-size="18" fill="black" text-anchor="middle">2</text>
+    <rect x="160" y="160" width="80" height="80" fill="#084594" stroke="white" stroke-width="1"/>
+    <text x="200" y="205" font-family="Arial" font-size="18" fill="white" text-anchor="middle">92</text>
+    <rect x="240" y="160" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="280" y="205" font-family="Arial" font-size="18" fill="black" text-anchor="middle">3</text>
+    
+    <!-- Row 4: 2, 2, 3, 93 -->
+    <rect x="0" y="240" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="40" y="285" font-family="Arial" font-size="18" fill="black" text-anchor="middle">2</text>
+    <rect x="80" y="240" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="120" y="285" font-family="Arial" font-size="18" fill="black" text-anchor="middle">2</text>
+    <rect x="160" y="240" width="80" height="80" fill="#eff3ff" stroke="white" stroke-width="1"/>
+    <text x="200" y="285" font-family="Arial" font-size="18" fill="black" text-anchor="middle">3</text>
+    <rect x="240" y="240" width="80" height="80" fill="#084594" stroke="white" stroke-width="1"/>
+    <text x="280" y="285" font-family="Arial" font-size="18" fill="white" text-anchor="middle">93</text>
+  </g>
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820">
+  <defs>
+    <style>
+      .bg { fill: #fbfdfb; }
+      .title { font: 700 30px Arial, sans-serif; fill: #12372a; }
+      .subtitle { font: 15px Arial, sans-serif; fill: #486457; }
+      .entity { fill: #ffffff; stroke: #1b4332; stroke-width: 2.3; rx: 8; }
+      .external { fill: #eef8f3; stroke: #2d6a4f; stroke-width: 2.3; rx: 8; }
+      .entityTitle { font: 700 20px Arial, sans-serif; fill: #15382c; }
+      .entityText { font: 14px Arial, sans-serif; fill: #3e5b4d; }
+      .process { fill: #e9f7ee; stroke: #166534; stroke-width: 3; }
+      .pnum { font: 700 18px Arial, sans-serif; fill: #166534; }
+      .ptext { font: 700 25px Arial, sans-serif; fill: #12372a; }
+      .flow { fill: none; stroke: #29493c; stroke-width: 2.2; marker-end: url(#arrow); }
+      .flowLabel { font: 15px Arial, sans-serif; fill: #244537; }
+      .labelBg { fill: #fbfdfb; }
+      .legend { fill: #edf7f1; stroke: #bfdece; stroke-width: 1; rx: 9; }
+      .legendText { font: 14px Arial, sans-serif; fill: #35584a; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#29493c"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1500" height="820"/>
+  <text class="title" x="55" y="56">EcoCycle Waste Management System - DFD (Context / Level 0)</text>
+  <text class="subtitle" x="55" y="83">The application represented as one process and its external data exchanges</text>
+
+  <!-- Main process -->
+  <ellipse class="process" cx="750" cy="408" rx="230" ry="166"/>
+  <text class="pnum" x="750" y="353" text-anchor="middle">0.0</text>
+  <text class="ptext" x="750" y="395" text-anchor="middle">EcoCycle Waste</text>
+  <text class="ptext" x="750" y="429" text-anchor="middle">Management</text>
+  <text class="ptext" x="750" y="463" text-anchor="middle">System</text>
+
+  <!-- Entities -->
+  <rect class="entity" x="55" y="308" width="255" height="158"/>
+  <text class="entityTitle" x="182" y="348" text-anchor="middle">User</text>
+  <text class="entityText" x="182" y="379" text-anchor="middle">Mobile / web user</text>
+  <text class="entityText" x="182" y="404" text-anchor="middle">who scans waste</text>
+  <text class="entityText" x="182" y="429" text-anchor="middle">and uses marketplace</text>
+
+  <rect class="entity" x="1195" y="177" width="250" height="151"/>
+  <text class="entityTitle" x="1320" y="218" text-anchor="middle">Administrator</text>
+  <text class="entityText" x="1320" y="249" text-anchor="middle">Monitoring and</text>
+  <text class="entityText" x="1320" y="274" text-anchor="middle">credit management</text>
+
+  <rect class="external" x="1195" y="510" width="250" height="162"/>
+  <text class="entityTitle" x="1320" y="552" text-anchor="middle">AI Classification</text>
+  <text class="entityTitle" x="1320" y="578" text-anchor="middle">Service</text>
+  <text class="entityText" x="1320" y="611" text-anchor="middle">Detect and classify</text>
+  <text class="entityText" x="1320" y="636" text-anchor="middle">waste from images</text>
+
+  <!-- User input/output -->
+  <path class="flow" d="M310 346 C400 308, 457 298, 542 318"/>
+  <rect class="labelBg" x="340" y="270" width="188" height="47"/>
+  <text class="flowLabel" x="348" y="289">Credentials, waste image,</text>
+  <text class="flowLabel" x="348" y="309">listing / purchase request</text>
+
+  <path class="flow" d="M542 492 C448 520, 382 510, 310 438"/>
+  <rect class="labelBg" x="327" y="526" width="219" height="47"/>
+  <text class="flowLabel" x="335" y="546">Scan result, disposal advice,</text>
+  <text class="flowLabel" x="335" y="566">wallet, rewards, marketplace</text>
+
+  <!-- Admin input/output -->
+  <path class="flow" d="M1195 218 C1086 190, 1010 222, 939 293"/>
+  <rect class="labelBg" x="934" y="174" width="229" height="27"/>
+  <text class="flowLabel" x="942" y="193">Dashboard / report requests</text>
+
+  <path class="flow" d="M946 338 C1038 316, 1101 295, 1195 278"/>
+  <rect class="labelBg" x="981" y="330" width="192" height="47"/>
+  <text class="flowLabel" x="989" y="349">Statistics, users, scans,</text>
+  <text class="flowLabel" x="989" y="369">listings, credit updates</text>
+
+  <!-- AI input/output -->
+  <path class="flow" d="M932 505 C1022 557, 1087 575, 1195 578"/>
+  <rect class="labelBg" x="963" y="525" width="165" height="27"/>
+  <text class="flowLabel" x="971" y="544">Captured image data</text>
+
+  <path class="flow" d="M1195 632 C1085 652, 1014 603, 915 528"/>
+  <rect class="labelBg" x="951" y="657" width="222" height="47"/>
+  <text class="flowLabel" x="959" y="676">Category, confidence and</text>
+  <text class="flowLabel" x="959" y="696">classification prediction</text>
+
+  <rect class="legend" x="55" y="724" width="1390" height="47"/>
+  <text class="legendText" x="76" y="753">Context scope: internal database tables and processing steps are expanded in the Level 1 DFD.</text>
+</svg>
