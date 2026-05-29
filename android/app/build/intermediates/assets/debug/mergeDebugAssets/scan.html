@@ -550,15 +550,14 @@
 
       try {
 
-        const stream =
-          await navigator.mediaDevices.getUserMedia({
-            video: {
-              facingMode: {
-                ideal: "environment"
-              }
-            },
-            audio: false
-          });
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: { ideal: 'environment' },
+            width: { ideal: 1920 },
+            height: { ideal: 1080 }
+          },
+          audio: false
+        });
 
         video.srcObject = stream;
 
@@ -574,7 +573,7 @@
         hint.innerText =
           "Hold the waste item inside the frame.";
 
-        setTimeout(captureFrameAndIdentify, 1800);
+        setTimeout(captureFrameAndIdentify, 3000);
 
       } catch (error) {
 
@@ -636,15 +635,14 @@
         return;
       }
 
-      canvas.width = video.videoWidth;
-
-      canvas.height = video.videoHeight;
+      canvas.width = Math.min(video.videoWidth, 1280);
+      canvas.height = Math.round(canvas.width * (video.videoHeight / video.videoWidth));
 
       const ctx = canvas.getContext("2d");
 
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-      const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+      const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
 
       const base64 = dataUrl.split(',')[1];
       lastScanImage = dataUrl;
