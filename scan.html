@@ -374,7 +374,7 @@
 <div class="absolute -bottom-1 -left-1 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg"></div>
 <div class="absolute -bottom-1 -right-1 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg"></div>
 <!-- Analyzing Indicator -->
-<div class="absolute -top-14 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 z-20 w-max max-w-[90vw]">
+<div id="scanning-indicator" class="absolute -top-14 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/60 backdrop-blur-xl px-4 py-2 rounded-full border border-white/10 z-20 w-max max-w-[90vw]">
 <div class="relative w-5 h-5 flex-shrink-0">
 <svg class="w-full h-full animate-spin text-primary-container" viewbox="0 0 24 24">
 <circle class="opacity-25" cx="12" cy="12" fill="none" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -405,14 +405,16 @@
     .result-drawer {
         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translateY(100%);
+        pointer-events: none;
     }
-    #drawer-toggle:checked ~ .result-drawer {
+    .result-drawer.is-open {
         transform: translateY(0);
+        pointer-events: auto;
     }
-    #drawer-toggle:checked ~ .result-drawer .drawer-handle {
+    .result-drawer.is-open .drawer-handle {
         background-color: #2dd4bf;
     }
-</style><div class="fixed bottom-0 left-0 w-full z-50 transform transition-transform duration-500 ease-out result-drawer">
+</style><div id="result-drawer" class="fixed bottom-0 left-0 w-full z-[60] transition-transform duration-500 ease-out result-drawer">
 <div class="bg-white dark:bg-slate-900 rounded-t-[32px] shadow-[0_-12px_40px_rgba(0,0,0,0.15)] px-6 pt-3 pb-32">
 <!-- Drawer Handle -->
 <div class="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6 cursor-pointer" onclick="document.getElementById('drawer-toggle').click()"></div>
@@ -468,6 +470,37 @@
     let lastScanResult = null;
     let lastScanImage = '';
     let accessToken = null;
+
+    async function fetchWithTimeout(url, options, ms = 60000) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), ms);
+      try {
+        return await fetch(url, { ...options, signal: controller.signal });
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    }
+
+    function setScanning(active) {
+      const indicator = document.getElementById('scanning-indicator');
+      if (indicator) {
+        indicator.classList.toggle('hidden', !active);
+      }
+    }
+
+    function showResultDrawer() {
+      const drawer = document.getElementById('result-drawer');
+      const toggle = document.getElementById('drawer-toggle');
+      if (drawer) drawer.classList.add('is-open');
+      if (toggle) toggle.checked = true;
+    }
+
+    function hideResultDrawer() {
+      const drawer = document.getElementById('result-drawer');
+      const toggle = document.getElementById('drawer-toggle');
+      if (drawer) drawer.classList.remove('is-open');
+      if (toggle) toggle.checked = false;
+    }
 
     async function checkSession() {
 
@@ -552,11 +585,15 @@
       }
     }
 
-    function handleUpload(event) {
+    async function handleUpload(event) {
 
       const file = event.target.files[0];
 
       if (!file) return;
+
+      if (!accessToken) {
+        await checkSession();
+      }
 
       const reader = new FileReader();
 
@@ -638,7 +675,12 @@
 
     async function identifyImage(base64) {
 
+      if (!accessToken) {
+        await checkSession();
+      }
+
       setResultState(false, false);
+      setScanning(true);
 
       document.getElementById('scan-status').innerText =
         'Analyzing item...';
@@ -647,7 +689,7 @@
 
       try {
 
-        const response = await fetch(
+        const response = await fetchWithTimeout(
           `${apiBase}/api/scans/identify`,
           {
             method: 'POST',
@@ -667,12 +709,24 @@
 
         if (!response.ok) {
 
+          if (response.status === 402 && data.paymentRequired) {
+            showMessage(data.message || 'No scan credits left.');
+            hideResultDrawer();
+            setScanning(false);
+            document.getElementById('scan-status').innerText = 'No scan credits';
+            return;
+          }
+
           throw new Error(
             data.detail ||
             data.message ||
             data.error ||
             "AI scan failed"
           );
+        }
+
+        if (!data.result) {
+          throw new Error('Invalid response from scan service');
         }
 
         const resultData = data.result;
@@ -698,18 +752,17 @@
 
         console.error(error);
 
+        setScanning(false);
+
         document.getElementById('scan-status').innerText =
           'Scan failed';
 
-        showMessage(
-          'Error connecting to AI: ' +
-          error.message
-        );
+        const message = error.name === 'AbortError'
+          ? 'Scan timed out. Check your connection and try again.'
+          : ('Error connecting to AI: ' + error.message);
 
-        alert(
-          'Fetch error: ' +
-          error.message
-        );
+        showMessage(message);
+
       }
     }
 
@@ -879,12 +932,8 @@
           : result.recommendation
       );
 
-      const drawerToggle =
-        document.getElementById('drawer-toggle');
-
-      if (drawerToggle) {
-        drawerToggle.checked = true;
-      }
+      setScanning(false);
+      showResultDrawer();
 
       document.getElementById('scan-status').innerText =
         'Analysis complete';
@@ -920,19 +969,17 @@
         'Scan saved without selling.'
       );
 
-      const drawerToggle =
-        document.getElementById('drawer-toggle');
-
-      if (drawerToggle) {
-        drawerToggle.checked = false;
-      }
+      hideResultDrawer();
     }
 
     window.addEventListener(
       'load',
       async () => {
         await checkSession();
-        startCamera();
+        const status = document.getElementById('scan-status');
+        if (status) {
+          status.innerText = 'Ready to scan';
+        }
       }
     );
 </script>
